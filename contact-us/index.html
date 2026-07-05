@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Contact Us | Teas Gurus</title>
+  <meta
+    name="description"
+    content="Contact Teas Gurus by WhatsApp, email, website, or telephone for TEAS practice test support."
+  />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://www.teasgurus.com/contact" />
+
+  <style>
+    @font-face {
+      font-family: "Outfit";
+      font-style: normal;
+      font-weight: 300 900;
+      font-display: swap;
+      src: url("https://www.teasgurus.com/_next/static/media/7b0b24f36b1a6d0b-s.p.woff2") format("woff2");
+    }
+
+    @font-face {
+      font-family: "Outfit Fallback";
+      src: local("Arial");
+      ascent-override: 100.18%;
+      descent-override: 26.05%;
+      line-gap-override: 0%;
+      size-adjust: 99.82%;
+    }
+
+    :root {
+      --font-outfit: "Outfit", "Outfit Fallback", Arial, Helvetica, sans-serif;
+      --tg-yellow: #f5b400;
+      --tg-yellow-dark: #d99700;
+      --tg-navy: #101827;
+      --tg-dark: #1f2937;
+      --tg-muted: #6b7280;
+      --tg-light: #f8fafc;
+      --tg-card: #ffffff;
+      --tg-border: #e5e7eb;
+      --tg-green: #16a34a;
+      --tg-soft-yellow: #fff7df;
+      --tg-soft-green: #ecfdf5;
+      --tg-shadow: 0 18px 42px rgba(16, 24, 39, 0.08);
+      --radius-lg: 24px;
+      --max-width: 1080px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font-outfit);
+      background: #ffffff;
+      color: var(--tg-dark);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .top-bar {
+      background: var(--tg-navy);
+      color: #ffffff;
+      font-size: 14px;
+      padding: 8px 20px;
+    }
+
+    .top-bar-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .top-bar strong {
+      color: var(--tg-yellow);
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--tg-border);
+    }
+
+    .nav-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 13px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 900;
+      font-size: 21px;
+      color: var(--tg-navy);
+      letter-spacing: -0.03em;
+      white-space: nowrap;
+    }
+
+    .brand-mark {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--tg-yellow), #ffd76b);
+      color: var(--tg-navy);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      box-shadow: 0 8px 20px rgba(245, 180, 0, 0.24);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      font-size: 15px;
+      font-weight: 700;
+      color: #374151;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--tg-yellow-dark);
+    }
+
+    .btn {
+      border: none;
+      border-radius: 999px;
+      padding: 13px 20px;
+      font-size: 14px;
+      font-weight: 900;
+      cursor: pointer;
+      transition: 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      line-height: 1;
+    }
+
+    .btn-primary {
+      background: var(--tg-yellow);
+      color: var(--tg-navy);
+      box-shadow: 0 10px 20px rgba(245, 180, 0, 0.24);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      background: #ffc225;
+    }
+
+    .btn-whatsapp {
+      background: #25d366;
+      color: #ffffff;
+      box-shadow: 0 10px 20px rgba(37, 211, 102, 0.22);
+    }
+
+    .btn-whatsapp:hover {
+      transform: translateY(-1px);
+      background: #1fbd5a;
+    }
+
+    .btn-outline {
+      background: #ffffff;
+      color: var(--tg-navy);
+      border: 1px solid var(--tg-border);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--tg-yellow);
+      background: var(--tg-soft-yellow);
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      border: 1px solid var(--tg-border);
+      background: #ffffff;
+      border-radius: 12px;
+      width: 42px;
+      height: 42px;
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+    .mobile-menu {
+      display: none;
+      border-top: 1px solid var(--tg-border);
+      background: #ffffff;
+      padding: 12px 20px 18px;
+    }
+
+    .mobile-menu a {
+      display: block;
+      padding: 12px 0;
+      font-weight: 800;
+      color: var(--tg-dark);
+      border-bottom: 1px solid #f3f4f6;
+    }
+
+    .mobile-menu.show {
+      display: block;
+    }
+
+    .hero {
+      background:
+        radial-gradient(circle at top right, rgba(245, 180, 0, 0.18), transparent 30%),
+        linear-gradient(135deg, #fff8e1 0%, #ffffff 55%, #f8fafc 100%);
+      padding: 44px 20px 38px;
+      border-bottom: 1px solid var(--tg-border);
+    }
+
+    .hero-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 340px;
+      gap: 26px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--tg-navy);
+      color: #ffffff;
+      padding: 7px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+
+    .eyebrow span {
+      color: var(--tg-yellow);
+    }
+
+    h1 {
+      margin: 0;
+      color: var(--tg-navy);
+      font-size: clamp(36px, 5vw, 58px);
+      line-height: 1.02;
+      letter-spacing: -0.06em;
+    }
+
+    .hero p {
+      font-size: 17px;
+      color: #4b5563;
+      margin: 12px 0 0;
+      max-width: 720px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .quick-card {
+      background: #ffffff;
+      border: 1px solid var(--tg-border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--tg-shadow);
+      padding: 22px;
+    }
+
+    .quick-card h2 {
+      margin: 0 0 8px;
+      color: var(--tg-navy);
+      font-size: 24px;
+      line-height: 1.1;
+      letter-spacing: -0.04em;
+    }
+
+    .quick-card p {
+      margin: 0 0 14px;
+      color: var(--tg-muted);
+      font-size: 14px;
+    }
+
+    .section {
+      padding: 42px 20px;
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .contact-card {
+      background: #ffffff;
+      border: 1px solid var(--tg-border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--tg-shadow);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .contact-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 15px;
+      background: var(--tg-soft-yellow);
+      display: grid;
+      place-items: center;
+      font-size: 22px;
+    }
+
+    .contact-card.whatsapp .contact-icon {
+      background: var(--tg-soft-green);
+    }
+
+    .contact-card h2 {
+      margin: 0;
+      color: var(--tg-navy);
+      font-size: 24px;
+      line-height: 1.1;
+      letter-spacing: -0.04em;
+    }
+
+    .contact-card p {
+      margin: 0;
+      color: var(--tg-muted);
+      font-size: 15px;
+    }
+
+    .contact-value {
+      color: var(--tg-navy);
+      font-size: 18px;
+      font-weight: 900;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-actions {
+      margin-top: auto;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .note-card {
+      margin-top: 20px;
+      background:
+        radial-gradient(circle at top right, rgba(245, 180, 0, 0.25), transparent 28%),
+        var(--tg-navy);
+      color: #ffffff;
+      border-radius: var(--radius-lg);
+      padding: 30px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 20px;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .note-card h2 {
+      margin: 0 0 8px;
+      font-size: clamp(26px, 4vw, 38px);
+      letter-spacing: -0.04em;
+      line-height: 1.05;
+    }
+
+    .note-card p {
+      margin: 0;
+      color: #d1d5db;
+      max-width: 720px;
+    }
+
+    .footer {
+      background: #0b1220;
+      color: #d1d5db;
+      padding: 34px 20px;
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .footer strong {
+      color: #ffffff;
+    }
+
+    .footer a {
+      color: var(--tg-yellow);
+      font-weight: 800;
+    }
+
+    @media (max-width: 880px) {
+      .nav-links,
+      .nav-action {
+        display: none;
+      }
+
+      .mobile-menu-btn {
+        display: block;
+      }
+
+      .hero-inner,
+      .note-card {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .top-bar-inner {
+        justify-content: center;
+        text-align: center;
+      }
+
+      .hero {
+        padding: 30px 16px 28px;
+      }
+
+      .section {
+        padding: 30px 16px;
+      }
+
+      .hero-actions .btn,
+      .contact-actions .btn,
+      .note-card .btn {
+        width: 100%;
+      }
+
+      .contact-card,
+      .quick-card,
+      .note-card {
+        padding: 20px;
+      }
+
+      .brand {
+        font-size: 18px;
+      }
+
+      .brand-mark {
+        width: 32px;
+        height: 32px;
+      }
+
+      .footer-inner {
+        text-align: center;
+        justify-content: center;
+      }
+    }
+  
+    .footer {
+      background: #0b1220;
+      color: #d1d5db;
+      padding: 36px 20px;
+      border-top: 1px solid rgba(255, 255, 255, .08);
+    }
+
+    .footer-inner {
+      max-width: var(--max-width, 1180px);
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      text-align: center;
+    }
+
+    .footer-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 14px;
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 999px;
+      transition: background .2s ease, color .2s ease;
+    }
+
+    .footer-links a:hover {
+      background: rgba(245, 180, 0, .14);
+      color: var(--tg-yellow, #f5b400);
+    }
+
+    .footer-copy {
+      margin: 0;
+      color: #9ca3af;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+  
+    /* Shared site layout standards */
+    :root {
+      --max-width: 1180px;
+      --page-pad: 20px;
+      --mobile-pad: 14px;
+      --section-y: 48px;
+    }
+
+    body {
+      font-family: var(--font-outfit, "Outfit", Arial, sans-serif);
+      font-size: 16px;
+      line-height: 1.55;
+      text-rendering: optimizeLegibility;
+    }
+
+    .top-bar,
+    .site-top,
+    .nav,
+    .site-nav,
+    .hero,
+    .mini-hero,
+    .section,
+    .footer {
+      padding-left: var(--page-pad);
+      padding-right: var(--page-pad);
+    }
+
+    .top-bar-inner,
+    .site-top-inner,
+    .nav-inner,
+    .site-nav-inner,
+    .hero-inner,
+    .mini-hero-inner,
+    .section-inner,
+    .footer-inner,
+    .quiz-wrap,
+    .exam-shell {
+      max-width: var(--max-width);
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .top-bar-inner,
+    .site-top-inner {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .nav-inner,
+    .site-nav-inner {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .section {
+      padding-top: var(--section-y);
+      padding-bottom: var(--section-y);
+    }
+
+    .footer {
+      padding-top: 36px;
+      padding-bottom: 36px;
+    }
+
+    @media (max-width: 760px) {
+      .top-bar,
+      .site-top,
+      .nav,
+      .site-nav,
+      .mobile-menu,
+      .hero,
+      .mini-hero,
+      .section,
+      .footer {
+        padding-left: var(--mobile-pad);
+        padding-right: var(--mobile-pad);
+      }
+
+      .section {
+        padding-top: 34px;
+        padding-bottom: 34px;
+      }
+    }
+
+  </style>
+  <link rel="stylesheet" href="../assets/whatsapp-popup.css" />
+</head>
+
+<body>
+  <div class="top-bar">
+    <div class="top-bar-inner">
+      <div><strong>Contact Teas Gurus:</strong> Get help with practice test access.</div>
+      <div>WhatsApp, email, website, and phone support.</div>
+    </div>
+  </div>
+
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="../" class="brand" aria-label="Teas Gurus Home">
+        <span class="brand-mark">TG</span>
+        <span>Teas Gurus</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="../">Home</a>
+        <a href="../about-us/">About Us</a>
+        <a class="active" href="../contact-us/">Contact</a>
+        <a href="../pricing/">Pricing</a>
+      </nav>
+
+      <a class="btn btn-primary nav-action" href="../teas-version-7-set-9/">Start Practice</a>
+
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">☰</button>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="../">Home</a>
+      <a href="../about-us/">About Us</a>
+      <a href="../contact-us/">Contact</a>
+      <a href="../pricing/">Pricing</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <div>
+          <div class="eyebrow"><span>●</span> Contact Us</div>
+
+          <h1>Need help? Contact Teas Gurus.</h1>
+
+          <p>
+            Reach us by WhatsApp, email, website, or phone. Use the WhatsApp button for the fastest response.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-whatsapp" href="https://wa.me/254700000000" target="_blank" rel="noopener">
+              WhatsApp Us
+            </a>
+            <a class="btn btn-outline" href="mailto:support@teasgurus.com">
+              Email Support
+            </a>
+          </div>
+        </div>
+
+        <aside class="quick-card">
+          <h2>Fast contact options</h2>
+          <p>
+            Replace the phone number and email below with your real business contact details before publishing.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="contact-grid">
+          <article class="contact-card whatsapp">
+            <div class="contact-icon">💬</div>
+            <h2>WhatsApp</h2>
+            <p>Message us directly for practice set access or quick support.</p>
+            <div class="contact-value">+254 700 000 000</div>
+
+            <div class="contact-actions">
+              <a class="btn btn-whatsapp" href="https://wa.me/254700000000" target="_blank" rel="noopener">
+                Chat on WhatsApp
+              </a>
+            </div>
+          </article>
+
+          <article class="contact-card">
+            <div class="contact-icon">✉️</div>
+            <h2>Email</h2>
+            <p>Send us a message about practice sets, access, or general support.</p>
+            <div class="contact-value">support@teasgurus.com</div>
+
+            <div class="contact-actions">
+              <a class="btn btn-primary" href="mailto:support@teasgurus.com">
+                Send Email
+              </a>
+            </div>
+          </article>
+
+          <article class="contact-card">
+            <div class="contact-icon">🌐</div>
+            <h2>Website</h2>
+            <p>Visit the main website to choose a TEAS practice set.</p>
+            <div class="contact-value">www.teasgurus.com</div>
+
+            <div class="contact-actions">
+              <a class="btn btn-outline" href="https://www.teasgurus.com/" target="_blank" rel="noopener">
+                Visit Website
+              </a>
+            </div>
+          </article>
+
+          <article class="contact-card">
+            <div class="contact-icon">📞</div>
+            <h2>Telephone</h2>
+            <p>Call us during available support hours.</p>
+            <div class="contact-value">+254 700 000 000</div>
+
+            <div class="contact-actions">
+              <a class="btn btn-outline" href="tel:+254700000000">
+                Call Now
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <div class="note-card">
+          <div>
+            <h2>Ready to start practicing?</h2>
+            <p>
+              Open a TEAS practice set and begin reviewing questions by subject.
+            </p>
+          </div>
+
+          <a class="btn btn-primary" href="../teas-version-7-set-9/">Start Practice</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="../">Home</a>
+        <a href="../about-us/">About Us</a>
+        <a href="../contact-us/">Contact</a>
+        <a href="../pricing/">Pricing</a>
+      </nav>
+      <p class="footer-copy">&copy; 2026 Teas Gurus. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    mobileMenuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("show");
+    });
+  </script>
+  <script src="../assets/whatsapp-popup.js" defer></script>
+</body>
+</html>

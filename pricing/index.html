@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Pricing | Teas Gurus</title>
+  <meta
+    name="description"
+    content="Choose Teas Gurus pricing options for TEAS questions or TEAS coaching. Get practice sets, explanations, and personalized support."
+  />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://www.teasgurus.com/pricing" />
+
+  <style>
+    @font-face {
+      font-family: "Outfit";
+      font-style: normal;
+      font-weight: 300 900;
+      font-display: swap;
+      src: url("https://www.teasgurus.com/_next/static/media/7b0b24f36b1a6d0b-s.p.woff2") format("woff2");
+    }
+
+    @font-face {
+      font-family: "Outfit Fallback";
+      src: local("Arial");
+      ascent-override: 100.18%;
+      descent-override: 26.05%;
+      line-gap-override: 0%;
+      size-adjust: 99.82%;
+    }
+
+    :root {
+      --font-outfit: "Outfit", "Outfit Fallback", Arial, Helvetica, sans-serif;
+      --tg-yellow: #f5b400;
+      --tg-yellow-dark: #d99700;
+      --tg-navy: #101827;
+      --tg-dark: #1f2937;
+      --tg-muted: #6b7280;
+      --tg-light: #f8fafc;
+      --tg-card: #ffffff;
+      --tg-border: #e5e7eb;
+      --tg-green: #16a34a;
+      --tg-soft-yellow: #fff7df;
+      --tg-soft-green: #ecfdf5;
+      --tg-shadow: 0 18px 42px rgba(16, 24, 39, 0.08);
+      --radius-lg: 24px;
+      --max-width: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font-outfit);
+      background: #ffffff;
+      color: var(--tg-dark);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font-family: inherit;
+    }
+
+    .top-bar {
+      background: var(--tg-navy);
+      color: #ffffff;
+      font-size: 14px;
+      padding: 8px 20px;
+    }
+
+    .top-bar-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .top-bar strong {
+      color: var(--tg-yellow);
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--tg-border);
+    }
+
+    .nav-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 13px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 900;
+      font-size: 21px;
+      color: var(--tg-navy);
+      letter-spacing: -0.03em;
+      white-space: nowrap;
+    }
+
+    .brand-mark {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--tg-yellow), #ffd76b);
+      color: var(--tg-navy);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      box-shadow: 0 8px 20px rgba(245, 180, 0, 0.24);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      font-size: 15px;
+      font-weight: 700;
+      color: #374151;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--tg-yellow-dark);
+    }
+
+    .btn {
+      border: none;
+      border-radius: 999px;
+      padding: 13px 20px;
+      font-size: 14px;
+      font-weight: 900;
+      cursor: pointer;
+      transition: 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      line-height: 1;
+    }
+
+    .btn-primary {
+      background: var(--tg-yellow);
+      color: var(--tg-navy);
+      box-shadow: 0 10px 20px rgba(245, 180, 0, 0.24);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      background: #ffc225;
+    }
+
+    .btn-dark {
+      background: var(--tg-navy);
+      color: #ffffff;
+    }
+
+    .btn-dark:hover {
+      transform: translateY(-1px);
+      background: #050b16;
+    }
+
+    .btn-outline {
+      background: #ffffff;
+      color: var(--tg-navy);
+      border: 1px solid var(--tg-border);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--tg-yellow);
+      background: var(--tg-soft-yellow);
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      border: 1px solid var(--tg-border);
+      background: #ffffff;
+      border-radius: 12px;
+      width: 42px;
+      height: 42px;
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+    .mobile-menu {
+      display: none;
+      border-top: 1px solid var(--tg-border);
+      background: #ffffff;
+      padding: 12px 20px 18px;
+    }
+
+    .mobile-menu a {
+      display: block;
+      padding: 12px 0;
+      font-weight: 800;
+      color: var(--tg-dark);
+      border-bottom: 1px solid #f3f4f6;
+    }
+
+    .mobile-menu.show {
+      display: block;
+    }
+
+    .hero {
+      background:
+        radial-gradient(circle at top right, rgba(245, 180, 0, 0.18), transparent 30%),
+        linear-gradient(135deg, #fff8e1 0%, #ffffff 55%, #f8fafc 100%);
+      padding: 44px 20px 36px;
+      border-bottom: 1px solid var(--tg-border);
+    }
+
+    .hero-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--tg-navy);
+      color: #ffffff;
+      padding: 7px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+
+    .eyebrow span {
+      color: var(--tg-yellow);
+    }
+
+    h1 {
+      margin: 0 auto;
+      color: var(--tg-navy);
+      font-size: clamp(36px, 5vw, 60px);
+      line-height: 1.02;
+      letter-spacing: -0.06em;
+      max-width: 860px;
+    }
+
+    .hero p {
+      font-size: 17px;
+      color: #4b5563;
+      margin: 12px auto 0;
+      max-width: 760px;
+    }
+
+    .section {
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .pricing-tabs {
+      max-width: 760px;
+      margin: 0 auto 24px;
+      background: var(--tg-light);
+      border: 1px solid var(--tg-border);
+      border-radius: 999px;
+      padding: 6px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 6px;
+      box-shadow: 0 8px 20px rgba(16, 24, 39, 0.04);
+    }
+
+    .pricing-tab {
+      border: none;
+      background: transparent;
+      color: #4b5563;
+      border-radius: 999px;
+      padding: 14px 16px;
+      font-size: 15px;
+      font-weight: 900;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .pricing-tab:hover {
+      background: #ffffff;
+      color: var(--tg-navy);
+    }
+
+    .pricing-tab.active {
+      background: var(--tg-navy);
+      color: #ffffff;
+      box-shadow: 0 10px 20px rgba(16, 24, 39, 0.14);
+    }
+
+    .tab-panel {
+      display: none;
+    }
+
+    .tab-panel.active {
+      display: block;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .price-card {
+      position: relative;
+      background: #ffffff;
+      border: 1px solid var(--tg-border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--tg-shadow);
+      padding: 30px;
+      overflow: hidden;
+    }
+
+    .price-card.featured {
+      border-color: rgba(245, 180, 0, 0.65);
+    }
+
+    .price-badge {
+      display: inline-flex;
+      align-items: center;
+      background: var(--tg-soft-yellow);
+      border: 1px solid #fde68a;
+      color: #705000;
+      border-radius: 999px;
+      padding: 7px 11px;
+      font-size: 12px;
+      font-weight: 900;
+      margin-bottom: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .price-card h2 {
+      margin: 0;
+      color: var(--tg-navy);
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.04;
+      letter-spacing: -0.05em;
+    }
+
+    .price-card .description {
+      margin: 10px 0 0;
+      color: var(--tg-muted);
+      font-size: 15px;
+      max-width: 680px;
+    }
+
+    .price {
+      display: flex;
+      align-items: flex-end;
+      gap: 8px;
+      margin: 22px 0 8px;
+      color: var(--tg-navy);
+    }
+
+    .price .currency {
+      font-size: 22px;
+      font-weight: 900;
+      margin-bottom: 7px;
+    }
+
+    .price .amount {
+      font-size: clamp(46px, 7vw, 66px);
+      line-height: 0.9;
+      font-weight: 900;
+      letter-spacing: -0.08em;
+    }
+
+    .price .period {
+      color: var(--tg-muted);
+      font-weight: 800;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+
+    .price-note {
+      color: var(--tg-muted);
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    .feature-list {
+      display: grid;
+      gap: 12px;
+      margin: 22px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .feature-list li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      color: #374151;
+      font-weight: 800;
+      font-size: 15px;
+    }
+
+    .feature-list li::before {
+      content: "✓";
+      width: 22px;
+      height: 22px;
+      flex: 0 0 22px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--tg-soft-green);
+      color: var(--tg-green);
+      font-size: 13px;
+      font-weight: 900;
+      margin-top: 1px;
+    }
+
+    .price-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    .side-card {
+      background:
+        radial-gradient(circle at top right, rgba(245, 180, 0, 0.22), transparent 32%),
+        var(--tg-navy);
+      color: #ffffff;
+      border-radius: var(--radius-lg);
+      box-shadow: 0 22px 45px rgba(16, 24, 39, 0.16);
+      padding: 30px;
+    }
+
+    .side-card h3 {
+      margin: 0 0 10px;
+      font-size: 28px;
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+    }
+
+    .side-card p {
+      margin: 0;
+      color: #d1d5db;
+      font-size: 15px;
+    }
+
+    .side-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .side-item {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 15px;
+      padding: 13px;
+      font-weight: 800;
+    }
+
+    .compare-section {
+      margin-top: 24px;
+      background: #ffffff;
+      border: 1px solid var(--tg-border);
+      border-radius: var(--radius-lg);
+      box-shadow: 0 10px 24px rgba(16, 24, 39, 0.05);
+      overflow: hidden;
+    }
+
+    .compare-row {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr 1fr;
+      border-bottom: 1px solid var(--tg-border);
+    }
+
+    .compare-row:last-child {
+      border-bottom: none;
+    }
+
+    .compare-cell {
+      padding: 16px;
+      font-weight: 800;
+      color: #374151;
+      border-right: 1px solid var(--tg-border);
+    }
+
+    .compare-cell:last-child {
+      border-right: none;
+    }
+
+    .compare-row.header .compare-cell {
+      background: var(--tg-navy);
+      color: #ffffff;
+      font-weight: 900;
+    }
+
+    .faq-grid {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .faq-card {
+      background: #ffffff;
+      border: 1px solid var(--tg-border);
+      border-radius: 20px;
+      padding: 22px;
+      box-shadow: 0 10px 24px rgba(16, 24, 39, 0.05);
+    }
+
+    .faq-card h3 {
+      margin: 0 0 8px;
+      color: var(--tg-navy);
+      font-size: 19px;
+      letter-spacing: -0.03em;
+    }
+
+    .faq-card p {
+      margin: 0;
+      color: var(--tg-muted);
+      font-size: 14px;
+    }
+
+    .footer {
+      background: #0b1220;
+      color: #d1d5db;
+      padding: 34px 20px;
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .footer strong {
+      color: #ffffff;
+    }
+
+    .footer a {
+      color: var(--tg-yellow);
+      font-weight: 800;
+    }
+
+    @media (max-width: 920px) {
+      .nav-links,
+      .nav-action {
+        display: none;
+      }
+
+      .mobile-menu-btn {
+        display: block;
+      }
+
+      .pricing-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .faq-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .top-bar-inner {
+        justify-content: center;
+        text-align: center;
+      }
+
+      .hero {
+        padding: 34px 16px 28px;
+      }
+
+      .section {
+        padding: 30px 16px;
+      }
+
+      .pricing-tabs {
+        border-radius: 20px;
+        grid-template-columns: 1fr;
+      }
+
+      .pricing-tab {
+        border-radius: 16px;
+      }
+
+      .price-card,
+      .side-card {
+        padding: 24px 20px;
+      }
+
+      .price-actions .btn {
+        width: 100%;
+      }
+
+      .compare-row {
+        grid-template-columns: 1fr;
+      }
+
+      .compare-cell {
+        border-right: none;
+        border-bottom: 1px solid var(--tg-border);
+      }
+
+      .compare-cell:last-child {
+        border-bottom: none;
+      }
+
+      .compare-row.header {
+        display: none;
+      }
+
+      .compare-cell::before {
+        display: block;
+        color: var(--tg-muted);
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        margin-bottom: 4px;
+      }
+
+      .compare-row .compare-cell:nth-child(1)::before {
+        content: "Feature";
+      }
+
+      .compare-row .compare-cell:nth-child(2)::before {
+        content: "TEAS Questions";
+      }
+
+      .compare-row .compare-cell:nth-child(3)::before {
+        content: "TEAS Coaching";
+      }
+    }
+
+    @media (max-width: 460px) {
+      .top-bar,
+      .nav-inner,
+      .mobile-menu,
+      .hero,
+      .section,
+      .footer {
+        padding-left: 14px;
+        padding-right: 14px;
+      }
+
+      .brand {
+        font-size: 18px;
+        min-width: 0;
+      }
+
+      .brand-mark {
+        width: 32px;
+        height: 32px;
+        flex: 0 0 32px;
+      }
+
+      h1 {
+        font-size: clamp(34px, 12vw, 48px);
+        overflow-wrap: anywhere;
+      }
+
+      .footer-inner {
+        text-align: center;
+        justify-content: center;
+      }
+    }
+  
+    .footer {
+      background: #0b1220;
+      color: #d1d5db;
+      padding: 36px 20px;
+      border-top: 1px solid rgba(255, 255, 255, .08);
+    }
+
+    .footer-inner {
+      max-width: var(--max-width, 1180px);
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      text-align: center;
+    }
+
+    .footer-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 14px;
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 999px;
+      transition: background .2s ease, color .2s ease;
+    }
+
+    .footer-links a:hover {
+      background: rgba(245, 180, 0, .14);
+      color: var(--tg-yellow, #f5b400);
+    }
+
+    .footer-copy {
+      margin: 0;
+      color: #9ca3af;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+  
+    /* Shared site layout standards */
+    :root {
+      --max-width: 1180px;
+      --page-pad: 20px;
+      --mobile-pad: 14px;
+      --section-y: 48px;
+    }
+
+    body {
+      font-family: var(--font-outfit, "Outfit", Arial, sans-serif);
+      font-size: 16px;
+      line-height: 1.55;
+      text-rendering: optimizeLegibility;
+    }
+
+    .top-bar,
+    .site-top,
+    .nav,
+    .site-nav,
+    .hero,
+    .mini-hero,
+    .section,
+    .footer {
+      padding-left: var(--page-pad);
+      padding-right: var(--page-pad);
+    }
+
+    .top-bar-inner,
+    .site-top-inner,
+    .nav-inner,
+    .site-nav-inner,
+    .hero-inner,
+    .mini-hero-inner,
+    .section-inner,
+    .footer-inner,
+    .quiz-wrap,
+    .exam-shell {
+      max-width: var(--max-width);
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .top-bar-inner,
+    .site-top-inner {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .nav-inner,
+    .site-nav-inner {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .section {
+      padding-top: var(--section-y);
+      padding-bottom: var(--section-y);
+    }
+
+    .footer {
+      padding-top: 36px;
+      padding-bottom: 36px;
+    }
+
+    @media (max-width: 760px) {
+      .top-bar,
+      .site-top,
+      .nav,
+      .site-nav,
+      .mobile-menu,
+      .hero,
+      .mini-hero,
+      .section,
+      .footer {
+        padding-left: var(--mobile-pad);
+        padding-right: var(--mobile-pad);
+      }
+
+      .section {
+        padding-top: 34px;
+        padding-bottom: 34px;
+      }
+    }
+
+  </style>
+  <link rel="stylesheet" href="../assets/whatsapp-popup.css" />
+</head>
+
+<body>
+  <div class="top-bar">
+    <div class="top-bar-inner">
+      <div><strong>Teas Gurus Pricing:</strong> Choose questions or coaching.</div>
+      <div>Simple TEAS prep options.</div>
+    </div>
+  </div>
+
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="../" class="brand" aria-label="Teas Gurus Home">
+        <span class="brand-mark">TG</span>
+        <span>Teas Gurus</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="../">Home</a>
+        <a href="../about-us/">About Us</a>
+        <a href="../contact-us/">Contact</a>
+        <a class="active" href="../pricing/">Pricing</a>
+      </nav>
+
+      <a class="btn btn-primary nav-action" href="#pricing-options">View Pricing</a>
+
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">☰</button>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="../">Home</a>
+      <a href="../about-us/">About Us</a>
+      <a href="../contact-us/">Contact</a>
+      <a href="../pricing/">Pricing</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="eyebrow"><span>●</span> Pricing</div>
+        <h1>Choose the TEAS prep option that fits you.</h1>
+        <p>
+          Get access to organized TEAS practice questions, or choose TEAS coaching if you want guided support while preparing.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="pricing-options">
+      <div class="container">
+        <div class="pricing-tabs" role="tablist" aria-label="Pricing options">
+          <button class="pricing-tab active" type="button" data-tab="questions" role="tab" aria-selected="true">
+            Get TEAS Questions
+          </button>
+          <button class="pricing-tab" type="button" data-tab="coaching" role="tab" aria-selected="false">
+            TEAS Coaching
+          </button>
+        </div>
+
+        <section class="tab-panel active" id="questions" role="tabpanel">
+          <div class="pricing-grid">
+            <article class="price-card featured">
+              <span class="price-badge">Most direct option</span>
+              <h2>TEAS Questions Access</h2>
+              <p class="description">
+                Best for students who want direct access to TEAS-style practice sets with subject tabs and answer feedback.
+              </p>
+
+              <div class="price">
+                <span class="currency">$</span>
+                <span class="amount">99</span>
+                <span class="period">one-time</span>
+              </div>
+
+              <div class="price-note">
+                Replace this price with your final checkout price if needed.
+              </div>
+
+              <ul class="feature-list">
+                <li>Access to TEAS practice sets</li>
+                <li>Reading, Math, Science, and English sections</li>
+                <li>Question-by-question answer feedback</li>
+                <li>Explanations after answering</li>
+                <li>Mobile-friendly practice pages</li>
+                <li>Preview flow with unlock option</li>
+              </ul>
+
+              <div class="price-actions">
+                <a class="btn btn-primary" href="../pricing/#pricing-options">Get TEAS Questions</a>
+                <a class="btn btn-outline" href="../teas-version-7-set-9/">Preview Questions</a>
+              </div>
+            </article>
+
+            <aside class="side-card">
+              <h3>Good for self-study</h3>
+              <p>
+                Choose this if you already know how you want to study and mainly need organized practice questions.
+              </p>
+
+              <div class="side-list">
+                <div class="side-item">Best for independent learners</div>
+                <div class="side-item">Simple access to question sets</div>
+                <div class="side-item">Practice by subject and set</div>
+                <div class="side-item">Review explanations after answers</div>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <section class="tab-panel" id="coaching" role="tabpanel">
+          <div class="pricing-grid">
+            <article class="price-card featured">
+              <span class="price-badge">Guided support</span>
+              <h2>TEAS Coaching</h2>
+              <p class="description">
+                Best for students who want help planning study time, reviewing weak areas, and staying on track before test day.
+              </p>
+
+              <div class="price">
+                <span class="currency">$</span>
+                <span class="amount">149</span>
+                <span class="period">starting</span>
+              </div>
+
+              <div class="price-note">
+                Final coaching price can depend on the support level and schedule.
+              </div>
+
+              <ul class="feature-list">
+                <li>Personalized TEAS study guidance</li>
+                <li>Help identifying weak subject areas</li>
+                <li>Practice question review support</li>
+                <li>Study plan recommendations</li>
+                <li>Reading, Math, Science, and English support</li>
+                <li>WhatsApp or scheduled support option</li>
+              </ul>
+
+              <div class="price-actions">
+                <a class="btn btn-primary" href="../contact-us/">Ask About Coaching</a>
+                <a class="btn btn-outline" href="https://wa.me/254700000000" target="_blank" rel="noopener">WhatsApp Us</a>
+              </div>
+            </article>
+
+            <aside class="side-card">
+              <h3>Good for guided prep</h3>
+              <p>
+                Choose coaching if you need help staying organized, understanding mistakes, or deciding what to study next.
+              </p>
+
+              <div class="side-list">
+                <div class="side-item">Best for students who need structure</div>
+                <div class="side-item">Helpful for weak area review</div>
+                <div class="side-item">Support across all TEAS subjects</div>
+                <div class="side-item">Useful close to test day</div>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <div class="compare-section" aria-label="Pricing comparison">
+          <div class="compare-row header">
+            <div class="compare-cell">Feature</div>
+            <div class="compare-cell">TEAS Questions</div>
+            <div class="compare-cell">TEAS Coaching</div>
+          </div>
+
+          <div class="compare-row">
+            <div class="compare-cell">Best for</div>
+            <div class="compare-cell">Self-study practice</div>
+            <div class="compare-cell">Guided preparation</div>
+          </div>
+
+          <div class="compare-row">
+            <div class="compare-cell">Includes questions</div>
+            <div class="compare-cell">Yes</div>
+            <div class="compare-cell">Yes, with review support</div>
+          </div>
+
+          <div class="compare-row">
+            <div class="compare-cell">Includes explanations</div>
+            <div class="compare-cell">Yes</div>
+            <div class="compare-cell">Yes, plus coaching guidance</div>
+          </div>
+
+          <div class="compare-row">
+            <div class="compare-cell">Support level</div>
+            <div class="compare-cell">Independent</div>
+            <div class="compare-cell">Personalized</div>
+          </div>
+        </div>
+
+        <div class="faq-grid">
+          <div class="faq-card">
+            <h3>Can I preview first?</h3>
+            <p>Yes. You can preview a practice set before choosing an option.</p>
+          </div>
+
+          <div class="faq-card">
+            <h3>Which option is better?</h3>
+            <p>Choose questions for self-study. Choose coaching if you need help planning or reviewing weak areas.</p>
+          </div>
+
+          <div class="faq-card">
+            <h3>Can I contact before paying?</h3>
+            <p>Yes. Use the contact page or WhatsApp button to ask questions before choosing a plan.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="../">Home</a>
+        <a href="../about-us/">About Us</a>
+        <a href="../contact-us/">Contact</a>
+        <a href="../pricing/">Pricing</a>
+      </nav>
+      <p class="footer-copy">&copy; 2026 Teas Gurus. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const pricingTabs = document.querySelectorAll(".pricing-tab");
+    const panels = document.querySelectorAll(".tab-panel");
+
+    mobileMenuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("show");
+    });
+
+    pricingTabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        const target = tab.dataset.tab;
+
+        pricingTabs.forEach((item) => {
+          item.classList.remove("active");
+          item.setAttribute("aria-selected", "false");
+        });
+
+        panels.forEach((panel) => {
+          panel.classList.remove("active");
+        });
+
+        tab.classList.add("active");
+        tab.setAttribute("aria-selected", "true");
+        document.getElementById(target).classList.add("active");
+      });
+    });
+  </script>
+  <script src="../assets/whatsapp-popup.js" defer></script>
+</body>
+</html>

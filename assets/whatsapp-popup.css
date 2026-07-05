@@ -1,0 +1,267 @@
+.tg-whatsapp-popup {
+  position: fixed;
+  left: 24px;
+  bottom: 24px;
+  z-index: 9999;
+}
+
+.tg-whatsapp-popup a {
+  width: 56px;
+  height: 56px;
+  padding: 16px;
+  border-radius: 9999px;
+  background: #22c55e;
+  color: #ffffff;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.tg-whatsapp-popup a:hover,
+.tg-whatsapp-popup a:focus-visible {
+  background: #16a34a;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  transform: scale(1.1);
+  outline: none;
+}
+
+.tg-whatsapp-popup svg {
+  width: 24px;
+  height: 24px;
+  display: block;
+  fill: currentColor;
+}
+
+.tg-whatsapp-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.tg-whatsapp-modal.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.tg-whatsapp-modal.closing {
+  opacity: 0;
+}
+
+.tg-whatsapp-modal-card {
+  width: 100%;
+  max-width: 448px;
+  overflow: hidden;
+  border-radius: 24px;
+  background: #ffffff;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
+  transform: scale(0.95);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.tg-whatsapp-modal.show .tg-whatsapp-modal-card {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.tg-whatsapp-modal.closing .tg-whatsapp-modal-card {
+  transform: scale(0.95);
+  opacity: 0;
+}
+
+.tg-whatsapp-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 2;
+  width: 32px;
+  height: 32px;
+  border: 0;
+  border-radius: 9999px;
+  background: #f3f4f6;
+  color: #4b5563;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.tg-whatsapp-modal-close:hover,
+.tg-whatsapp-modal-close:focus-visible {
+  background: #e5e7eb;
+  outline: none;
+}
+
+.tg-whatsapp-modal-close svg {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+}
+
+.tg-whatsapp-modal-header {
+  position: relative;
+  overflow: hidden;
+  padding: 24px;
+  color: #ffffff;
+  background: linear-gradient(90deg, #2563eb, #1d4ed8, #1e40af);
+}
+
+.tg-whatsapp-modal-header::before,
+.tg-whatsapp-modal-header::after {
+  content: "";
+  position: absolute;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.tg-whatsapp-modal-header::before {
+  top: -64px;
+  right: -64px;
+  width: 128px;
+  height: 128px;
+}
+
+.tg-whatsapp-modal-header::after {
+  left: -48px;
+  bottom: -48px;
+  width: 96px;
+  height: 96px;
+}
+
+.tg-whatsapp-modal-icon-wrap {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.tg-whatsapp-modal-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 9999px;
+  background: #22c55e;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tg-whatsapp-modal-icon svg {
+  width: 32px;
+  height: 32px;
+  fill: #ffffff;
+}
+
+.tg-whatsapp-modal-title {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: #ffffff;
+  font-size: 24px;
+  line-height: 1.25;
+  font-weight: 700;
+  text-align: center;
+}
+
+.tg-whatsapp-modal-body {
+  padding: 24px;
+}
+
+.tg-whatsapp-modal-body p {
+  margin: 0;
+}
+
+.tg-whatsapp-modal-copy {
+  color: #374151;
+  line-height: 1.625;
+}
+
+.tg-whatsapp-modal-note {
+  margin-top: 16px;
+  padding: 16px;
+  border: 1px solid #bbf7d0;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #f0fdf4, #eff6ff);
+}
+
+.tg-whatsapp-modal-note-inner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.tg-whatsapp-modal-check {
+  width: 32px;
+  height: 32px;
+  border-radius: 9999px;
+  background: #22c55e;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+}
+
+.tg-whatsapp-modal-check svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.tg-whatsapp-modal-note-text {
+  color: #166534;
+  font-weight: 700;
+}
+
+.tg-whatsapp-modal-button {
+  width: 100%;
+  margin-top: 16px;
+  border: 0;
+  border-radius: 12px;
+  background: #22c55e;
+  color: #ffffff;
+  padding: 16px 24px;
+  font: inherit;
+  font-weight: 700;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.tg-whatsapp-modal-button:hover,
+.tg-whatsapp-modal-button:focus-visible {
+  background: #16a34a;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.18);
+  transform: scale(1.05);
+  outline: none;
+}
+
+.tg-whatsapp-modal-button svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+.tg-whatsapp-modal-dismiss {
+  margin-top: 16px;
+  color: #6b7280;
+  font-size: 14px;
+  text-align: center;
+}

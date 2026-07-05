@@ -1,0 +1,34 @@
+services:
+  - type: web
+    name: leaked-teas
+    runtime: static
+    buildCommand: ""
+    staticPublishPath: public
+    routes:
+      - type: rewrite
+        source: /about-us
+        destination: /about-us/index.html
+      - type: rewrite
+        source: /contact-us
+        destination: /contact-us/index.html
+      - type: rewrite
+        source: /pricing
+        destination: /pricing/index.html
+      - type: rewrite
+        source: /teas-version-7-set-9
+        destination: /teas-version-7-set-9/index.html
+      - type: redirect
+        source: /index.html
+        destination: /
+      - type: redirect
+        source: /about-us.html
+        destination: /about-us
+      - type: redirect
+        source: /contact-us.html
+        destination: /contact-us
+      - type: redirect
+        source: /pricing.html
+        destination: /pricing
+      - type: redirect
+        source: /teas-version-7-set-9.html
+        destination: /teas-version-7-set-9
