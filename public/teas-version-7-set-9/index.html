@@ -1389,6 +1389,8 @@
       .exam-shell {
         padding: 14px 12px 28px;
         min-height: auto;
+        max-width: 100%;
+        overflow-x: hidden;
       }
 
       .topbar {
@@ -1452,11 +1454,16 @@
       .all-questions {
         gap: 26px;
         padding: 0;
+        min-width: 0;
+        max-width: 100%;
       }
 
       .question-block {
         scroll-margin-top: 96px;
         padding-bottom: 24px;
+        min-width: 0;
+        max-width: 100%;
+        overflow-x: hidden;
       }
 
       .top-question-row {
@@ -1469,7 +1476,9 @@
 
       .question-heading {
         font-size: 20px;
+        flex: 1 1 auto;
         min-width: 0;
+        overflow-wrap: anywhere;
       }
 
       .utility,
@@ -1490,17 +1499,43 @@
 
       .question-text {
         margin: 0 0 18px;
-        font-size: 15px;
+        font-size: 14px;
         line-height: 1.5;
+        max-width: 100%;
+        min-width: 0;
+        white-space: normal;
         overflow-wrap: anywhere;
+        word-break: normal;
+        color: #333;
+      }
+
+      .question-text *,
+      .question-text p,
+      .question-text div,
+      .question-text li,
+      .question-text h3 {
+        max-width: 100%;
+        overflow-wrap: anywhere;
+        word-break: normal;
       }
 
       .question-text table,
       .data-table {
         display: block;
         width: 100%;
+        max-width: 100%;
         overflow-x: auto;
-        font-size: 12px;
+        font-size: 11px;
+        white-space: normal;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .question-text th,
+      .question-text td,
+      .data-table th,
+      .data-table td {
+        padding: 6px 7px;
+        overflow-wrap: normal;
       }
 
       .dots {
@@ -1516,12 +1551,29 @@
 
       .options {
         gap: 10px;
+        min-width: 0;
+        max-width: 100%;
       }
 
       .option {
         min-height: 48px;
         gap: 11px;
         padding: 11px 10px;
+        max-width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+        color: #333;
+        background: #fff;
+        border-color: transparent;
+        -webkit-appearance: none;
+        appearance: none;
+      }
+
+      .option:hover,
+      .option:focus {
+        color: #333;
+        background: #fff;
+        border-color: transparent;
       }
 
       .radio {
@@ -1531,9 +1583,13 @@
       }
 
       .option-text {
-        font-size: 14px;
+        font-size: 13px;
         line-height: 1.35;
+        min-width: 0;
+        max-width: 100%;
+        color: #333;
         overflow-wrap: anywhere;
+        word-break: normal;
       }
 
       .question-nav {
@@ -1563,6 +1619,29 @@
         width: 100%;
         min-height: 44px;
         text-align: center;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .exam-brand {
+        font-size: 13px;
+      }
+
+      .timer,
+      .progress-line {
+        font-size: 10px;
+      }
+
+      .question-heading {
+        font-size: 18px;
+      }
+
+      .question-text {
+        font-size: 13px;
+      }
+
+      .option-text {
+        font-size: 12px;
       }
     }
 
