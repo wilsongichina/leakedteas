@@ -1864,7 +1864,7 @@
             <h2 class="question-heading">Question: ${currentNumber} of ${totalOriginal}</h2>
 
             <div class="utility question-tools">
-              ${qIndex === 0 ? "" : "<span class=\"calc\" aria-hidden=\"true\"></span>"}
+              ${qIndex === 0 ? "" : `<div class="timer-with-calc"><span>Time Remaining: <span class="question-timer-value">${formatTime(s.remaining)}</span></span><span class="calc" aria-hidden="true"></span></div>`}
               <button class="flag ${s.flagged[qIndex] ? "active" : ""}" type="button" data-flag="${qIndex}" ${isLocked ? "tabindex=\"-1\"" : ""}>
                 <span class="flag-icon"></span> FLAG
               </button>
@@ -1929,6 +1929,9 @@
       if (s.remaining > 0) {
         s.remaining--;
         timerEl.textContent = formatTime(s.remaining);
+        document.querySelectorAll(".question-timer-value").forEach((timer) => {
+          timer.textContent = formatTime(s.remaining);
+        });
       }
     }, 1000);
 
