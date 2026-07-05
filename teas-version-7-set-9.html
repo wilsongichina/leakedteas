@@ -1794,7 +1794,7 @@
       const total = data.questions.length;
       const totalOriginal = data.totalOriginal || total;
       const previewLimit = getPreviewLimit(total);
-      const firstLockedIndex = previewLimit;
+      const firstLockedIndex = previewLimit < total ? previewLimit : -1;
 
       brandTitle.textContent = `TEAS Version 7 Set 9 - ${data.title}`;
       progressLine.textContent = "";
