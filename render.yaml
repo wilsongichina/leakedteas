@@ -18,6 +18,9 @@ services:
         source: /sets/set-9/
         destination: /sets/set-9/index.html
       - type: rewrite
+        source: /sets/set-7/
+        destination: /sets/set-7/index.html
+      - type: rewrite
         source: /sets/set-10/
         destination: /sets/set-10/index.html
       - type: redirect

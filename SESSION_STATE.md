@@ -16,6 +16,7 @@ This file captures the current working state of the project so the work can be r
 
 - `build-set3-page.js`
 - `build-set6-page.js`
+- `build-set7-page.js`
 - `question-page-container.js`
 
 ## Current structure note
@@ -46,6 +47,15 @@ This file captures the current working state of the project so the work can be r
   - Science: 50
   - English: 37
 
+### Set 7
+
+- Generated pages exist at:
+  - `sets/set-7/index.html`
+  - `public/sets/set-7/index.html`
+- Set 7 was built from the `set 7/` source folder.
+- Extracted diagram assets were copied into `sets/set-7/assets/` and mirrored in `public/sets/set-7/assets/`.
+- English multi-select questions are preserved in the generated page.
+
 ## Home page links
 
 - `index.html` and `public/index.html` were updated so the visible Set 3, Set 6, and Set 7 cards no longer point to `set-9`.
@@ -73,4 +83,3 @@ When generating a new set from a template, rewrite all internal references from 
 - href targets
 - route paths
 - compatibility filenames
-

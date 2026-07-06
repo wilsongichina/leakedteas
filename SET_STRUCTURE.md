@@ -33,6 +33,7 @@ Rules:
 - Each set page must be named `index.html`.
 - Each set must keep its own images in its own `assets/` folder.
 - Public/deployed folders must mirror the local/source folder structure exactly.
+- Set 7 is now generated at `sets/set-7/` and `public/sets/set-7/`.
 
 Correct:
 
@@ -63,6 +64,9 @@ sets/
     index.html
     assets/
   set-2/
+    index.html
+    assets/
+  set-7/
     index.html
     assets/
   ...
