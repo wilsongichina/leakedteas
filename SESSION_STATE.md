@@ -11,6 +11,7 @@ This file captures the current working state of the project so the work can be r
 - Keep set-specific files inside each set's own `assets/` folder.
 - Do not leave source-set labels or links behind when cloning a page to a new set.
 - Set pages should keep folder URLs, not `.html`, on the deployed side.
+- New sets should reuse the shared set template; only inject question data, options, images, and per-question metadata.
 
 ## Current generator files
 
@@ -52,7 +53,7 @@ This file captures the current working state of the project so the work can be r
 - Generated pages exist at:
   - `sets/set-7/index.html`
   - `public/sets/set-7/index.html`
-- Set 7 was built from the `set 7/` source folder.
+- Set 7 was rebuilt on the shared set template and injects only the question data from the `set 7/` source folder.
 - Extracted diagram assets were copied into `sets/set-7/assets/` and mirrored in `public/sets/set-7/assets/`.
 - English multi-select questions are preserved in the generated page.
 

@@ -34,6 +34,7 @@ Rules:
 - Each set must keep its own images in its own `assets/` folder.
 - Public/deployed folders must mirror the local/source folder structure exactly.
 - Set 7 is now generated at `sets/set-7/` and `public/sets/set-7/`.
+- Use the shared set template for every new set and inject only the question data, options, images, and per-question metadata.
 
 Correct:
 
