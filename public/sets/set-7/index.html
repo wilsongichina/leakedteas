@@ -1974,6 +1974,7 @@
         button.addEventListener("click", () => {
           const qIndex = Number(button.dataset.question);
           const optionIndex = Number(button.dataset.option);
+          const item = quizContainer.data[activeSubject].questions[qIndex];
           if (item.multi || Array.isArray(item.correctIndexes)) {
             const current = Array.isArray(state[activeSubject].answers[qIndex]) ? state[activeSubject].answers[qIndex].slice() : [];
             const existing = current.indexOf(optionIndex);

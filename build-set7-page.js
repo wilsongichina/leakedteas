@@ -185,7 +185,8 @@ function patchTemplate(html, quizData) {
 
   html = html.replace(
     /state\[activeSubject\]\.answers\[qIndex\] = optionIndex;\n\s*render\(\);/,
-    `if (item.multi || Array.isArray(item.correctIndexes)) {
+    `const item = quizContainer.data[activeSubject].questions[qIndex];
+          if (item.multi || Array.isArray(item.correctIndexes)) {
             const current = Array.isArray(state[activeSubject].answers[qIndex]) ? state[activeSubject].answers[qIndex].slice() : [];
             const existing = current.indexOf(optionIndex);
             if (existing === -1) current.push(optionIndex);
