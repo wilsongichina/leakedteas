@@ -1,0 +1,1421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ATI TEAS Version 7 Reading Set 2 - ChatGPT Extracted Questions</title>
+  <style>
+    :root {
+      --text:#4a4a4a;
+      --heading:#333;
+      --blue:#caebfb;
+      --blue-strong:#b7dcff;
+      --btn:#b6e4e7;
+      --btn-text:#50646b;
+      --dot:#8b8f92;
+      --dot-light:#c1e5fb;
+      --dot-active:#89bce8;
+      --olive:#6b7300;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      color:var(--text);
+      background:#fff;
+    }
+    .exam-shell {
+      max-width: 1280px;
+      margin: 0 auto;
+      min-height: 100vh;
+      padding: 34px 32px 42px;
+      display:flex;
+      flex-direction:column;
+    }
+    .topbar {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding: 0 10px 16px;
+      margin-bottom: 10px;
+      border-bottom: 5px solid transparent;
+      border-image: repeating-linear-gradient(135deg, var(--blue) 0 3px, transparent 3px 8px) 12;
+    }
+    .brand {
+      font-size: 18px;
+      font-weight: 700;
+      color:#3a3a3a;
+    }
+    .close {
+      border:none;
+      background:#f8f8f8;
+      color:#444;
+      font-weight:700;
+      font-size:14px;
+      padding:10px 16px;
+      display:flex;
+      align-items:center;
+      gap:6px;
+      text-transform:uppercase;
+    }
+    .close .x {
+      width:16px;
+      height:16px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      background:#444;
+      color:#fff;
+      line-height:1;
+      font-size:12px;
+    }
+    .main {
+      flex:1;
+      display:grid;
+      grid-template-columns: minmax(0, 1fr) minmax(420px, 500px);
+      gap: 36px;
+      align-items:start;
+      padding: 6px 8px 0;
+    }
+    .left-col {
+      min-width:0;
+    }
+    .right-col {
+      min-width:0;
+      padding-top: 4px;
+    }
+    .top-question-row {
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:24px;
+      margin-bottom: 18px;
+      padding: 0 6px;
+    }
+    h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--heading);
+      font-size: 28px;
+      margin: 0;
+      line-height: 1.2;
+    }
+    .utility {
+      text-align:right;
+      flex:0 0 auto;
+      min-width: 195px;
+      display:flex;
+      flex-direction:column;
+      align-items:flex-end;
+      gap:10px;
+    }
+    .timer-row {
+      display:flex;
+      align-items:center;
+      justify-content:flex-end;
+      gap:14px;
+      width:100%;
+    }
+    .timer {
+      font-weight:700;
+      margin-bottom:0;
+      white-space:nowrap;
+    }
+    .timer span { font-weight:400; }
+    .flag-row {
+      display:flex;
+      justify-content:flex-end;
+      width:100%;
+    }
+    .calc {
+      width:33px;
+      height:43px;
+      border:4px solid var(--olive);
+      position:relative;
+      flex:0 0 auto;
+    }
+    .calc:before {
+      content:"";
+      position:absolute;
+      left:6px;
+      right:6px;
+      top:5px;
+      height:6px;
+      background:#fff;
+    }
+    .calc:after {
+      content:"";
+      position:absolute;
+      left:6px;
+      top:18px;
+      width:4px;
+      height:4px;
+      background:#fff;
+      box-shadow:9px 0 #fff,18px 0 #fff,0 9px #fff,9px 9px #fff,18px 9px #fff,0 18px #fff,9px 18px #fff,18px 18px #fff;
+    }
+    .flag {
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      border:1px solid #d6d6d6;
+      background:#fff;
+      padding:11px 16px;
+      color:#555;
+      font-weight:700;
+      box-shadow:0 1px 2px rgba(0,0,0,.05);
+    }
+    .flag-icon {
+      width:22px;
+      height:27px;
+      border:3px solid #555;
+      border-top:none;
+      position:relative;
+    }
+    .flag-icon:before {
+      content:"";
+      position:absolute;
+      left:5px;
+      top:-9px;
+      width:13px;
+      height:24px;
+      background:#555;
+      clip-path:polygon(0 0,100% 0,100% 78%,50% 58%,0 78%);
+    }
+    .passage-title {
+      font-weight:700;
+      font-size:18px;
+      color:#444;
+      margin: 0 0 14px;
+    }
+    .passage {
+      font-size:16px;
+      line-height:1.52;
+      color:#595959;
+      padding: 0 6px 8px;
+    }
+    .passage p {
+      margin: 0 0 14px;
+    }
+    .passage ul {
+      margin: 0 0 14px 24px;
+      padding:0;
+    }
+    .passage li {
+      margin: 0 0 7px;
+    }
+    .stimulus {
+      font-weight:700;
+      font-size:18px;
+      color:#444;
+      margin: 0 0 2px;
+    }
+    .diagram-stimulus {
+      margin: 14px 0 26px;
+      text-align:left;
+    }
+    .diagram-stimulus img {
+      display:block;
+      height:auto;
+      max-width:100%;
+      background:#fff;
+      border:0;
+    }
+    .question-text {
+      border-top:1px solid #dfdfdf;
+      padding-top:8px;
+      font-weight:700;
+      color:#3d3d3d;
+      font-size:17px;
+      line-height:1.35;
+      margin-bottom:16px;
+    }
+    .dots {
+      display:flex;
+      align-items:center;
+      gap:11px;
+      margin: 0 0 24px;
+      overflow:hidden;
+      flex-wrap:nowrap;
+    }
+    .dot {
+      width:6px;
+      height:6px;
+      border-radius:50%;
+      background:var(--dot);
+      flex:0 0 auto;
+    }
+    .dot:nth-child(7n) { background:var(--dot-light); }
+    .dot.active {
+      width:9px;
+      height:9px;
+      background:var(--dot-active);
+      box-shadow:0 0 0 2px rgba(139,187,230,.18);
+    }
+    .options {
+      display:flex;
+      flex-direction:column;
+      gap:7px;
+      padding-bottom: 10px;
+    }
+    .option {
+      min-height: 54px;
+      display:flex;
+      align-items:flex-start;
+      gap:16px;
+      padding:12px 14px;
+      border:2px solid transparent;
+      border-radius:2px;
+      cursor:pointer;
+      user-select:none;
+      background:#fff;
+    }
+    .option:hover,
+    .option.selected {
+      border-color:var(--blue-strong);
+      box-shadow:0 0 2px rgba(80,145,255,.45);
+    }
+    .option.correct {
+      border-color:#4caf50;
+      background:#f1fbf3;
+      box-shadow:0 0 2px rgba(76,175,80,.45);
+    }
+    .option.incorrect {
+      border-color:#e15757;
+      background:#fff4f4;
+      box-shadow:0 0 2px rgba(225,87,87,.45);
+    }
+    .option.correct .radio::after {
+      content:"";
+      width:9px;
+      height:9px;
+      border-radius:50%;
+      background:#3f9b45;
+      box-shadow:0 0 2px #2f7d35;
+    }
+    .option.incorrect .radio::after {
+      content:"";
+      width:9px;
+      height:9px;
+      border-radius:50%;
+      background:#c84242;
+      box-shadow:0 0 2px #8f2929;
+    }
+    .radio {
+      width:22px;
+      height:22px;
+      border-radius:50%;
+      border:2px solid #9d9d9d;
+      background:#e8e8e8;
+      display:inline-grid;
+      place-items:center;
+      flex:0 0 auto;
+      margin-top:1px;
+    }
+    .selected .radio::after {
+      content:"";
+      width:9px;
+      height:9px;
+      border-radius:50%;
+      background:#656565;
+      box-shadow:0 0 2px #333;
+    }
+    .option-text {
+      line-height:1.45;
+      color:#5a5a5a;
+      font-size:16px;
+    }
+    .answer-feedback {
+      margin-top:14px;
+      padding:12px 14px;
+      border-left:4px solid #4caf50;
+      background:#f1fbf3;
+      color:#315d34;
+      font-weight:700;
+      line-height:1.45;
+      display:none;
+    }
+    .answer-feedback.show {
+      display:block;
+    }
+    .answer-feedback.wrong {
+      border-left-color:#e15757;
+      background:#fff4f4;
+      color:#7a2d2d;
+    }
+    .bottom-controls {
+      margin-top: 28px;
+      padding: 0 10px;
+    }
+    .nav {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
+    }
+    .arrow-btn {
+      border:none;
+      background:var(--btn);
+      color:var(--btn-text);
+      font-weight:700;
+      min-width:126px;
+      height:45px;
+      cursor:pointer;
+      position:relative;
+      text-transform:uppercase;
+      letter-spacing:.2px;
+    }
+    .prev {
+      clip-path:polygon(22px 0,100% 0,100% 100%,22px 100%,0 50%);
+      padding-left:18px;
+    }
+    .next {
+      clip-path:polygon(0 0,calc(100% - 22px) 0,100% 50%,calc(100% - 22px) 100%,0 100%);
+      padding-right:18px;
+    }
+    .arrow-btn:disabled {
+      opacity:.45;
+      cursor:not-allowed;
+    }
+    .status {
+      margin-top:12px;
+      text-align:center;
+      color:#777;
+      font-size:13px;
+    }
+    @media (max-width: 980px) {
+      .exam-shell {
+        padding: 18px 14px 28px;
+      }
+      .topbar {
+        padding: 0 0 12px;
+      }
+      .brand {
+        font-size: 15px;
+      }
+      .close {
+        font-size:12px;
+        padding:8px 10px;
+      }
+      .top-question-row {
+        flex-direction:column;
+        gap:10px;
+        margin-bottom:14px;
+        padding:0;
+      }
+      .utility {
+        width:auto;
+        min-width:0;
+        text-align:right;
+        align-items:flex-end;
+        align-self:flex-end;
+        margin-left:auto;
+        gap:8px;
+      }
+      .timer-row {
+        justify-content:flex-end;
+        gap:10px;
+      }
+      .flag-row {
+        justify-content:flex-end;
+        width:100%;
+      }
+      .calc {
+        width:28px;
+        height:38px;
+        border-width:3px;
+      }
+      .calc:before {
+        left:5px;
+        right:5px;
+        top:5px;
+        height:5px;
+      }
+      .calc:after {
+        left:5px;
+        top:16px;
+        width:3px;
+        height:3px;
+        box-shadow:8px 0 #fff,16px 0 #fff,0 8px #fff,8px 8px #fff,16px 8px #fff,0 16px #fff,8px 16px #fff,16px 16px #fff;
+      }
+      .flag {
+        min-width:96px;
+        justify-content:center;
+        padding:9px 12px;
+        font-size:13px;
+      }
+      .flag-icon {
+        width:20px;
+        height:24px;
+      }
+      .main {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding:0;
+      }
+      h1 {
+        font-size:24px;
+      }
+      .passage-title, .stimulus {
+        font-size:17px;
+      }
+      .passage,
+      .option-text {
+        font-size:14px;
+      }
+      .question-text {
+        font-size:15px;
+      }
+      .diagram-stimulus {
+        margin: 12px 0 22px;
+      }
+      .diagram-stimulus img {
+        width:100% !important;
+        max-width:100% !important;
+      }
+      .dots {
+        gap:8px;
+        margin-bottom:18px;
+      }
+      .dot {
+        width:5px;
+        height:5px;
+      }
+      .dot.active {
+        width:8px;
+        height:8px;
+      }
+      .option {
+        gap:12px;
+        padding:10px 8px;
+        min-height:52px;
+      }
+      .radio {
+        width:21px;
+        height:21px;
+      }
+      .bottom-controls {
+        padding:0;
+        margin-top:20px;
+      }
+      .arrow-btn {
+        min-width:110px;
+        height:42px;
+        font-size:12px;
+      }
+      .status {
+        font-size:12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="exam-shell">
+    <header class="topbar">
+      <div class="brand" id="brandTitle">TEAS Version 7 - Reading</div>
+      <button class="close" type="button"><span class="x">×</span> Close</button>
+    </header>
+
+    <div class="top-question-row">
+      <h1 id="questionNumber">Question: 1 of 45</h1>
+      <div class="utility">
+        <div class="timer-row">
+          <div class="timer">Time Remaining: <span id="timer">00:55:00</span></div>
+          <div class="calc" aria-label="calculator icon"></div>
+        </div>
+        <div class="flag-row">
+          <button class="flag" type="button"><span class="flag-icon"></span> FLAG</button>
+        </div>
+      </div>
+    </div>
+
+    <main class="main">
+      <section class="left-col">
+        <div class="passage-title" id="passageTitle"></div>
+        <div class="passage" id="passage"></div>
+      </section>
+
+      <section class="right-col">
+        <div class="question-text" id="questionText"></div>
+        <div class="stimulus" id="stimulus"></div>
+        <div class="dots" id="dots" aria-hidden="true"></div>
+        <div class="options" id="options"></div>
+        <div class="answer-feedback" id="answerFeedback"></div>
+      </section>
+    </main>
+
+    <div class="bottom-controls">
+      <nav class="nav">
+        <button class="arrow-btn prev" id="prevBtn" type="button">Previous</button>
+        <button class="arrow-btn next" id="nextBtn" type="button">Continue</button>
+      </nav>
+      <div class="status" id="status"></div>
+    </div>
+  </div>
+
+<script>
+const questions = [
+  {
+    "number": 1,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>Bessie Coleman, the first civilian licensed Black pilot in the world, was born in 1892 to sharecroppers in Texas, where she attended a segregated school and worked with her family in the cotton fields. She dreamed of becoming a pilot but no flight schools in America would accept her, so she moved to France to earn her pilot&#39;s license.</p><p>When she returned to the U.S., she wanted to open a flight school for Black students. She became a stunt flier and performed for paying audiences, which she insisted be desegregated. Following her death in a plane crash in 1926, the Bessie Coleman Aero Club was established in Los Angeles in 1929. She was inducted into the National Aviation Hall of Fame in 2006.</p>",
+    "stimulus": "",
+    "sourceNumber": 1,
+    "question": "Which of the following statements correctly identifies the sequence of events in the reading?",
+    "options": [
+      "Born to sharecropper parents, Bessie Coleman moved to France to take flight training and then returned to the United States as a stunt pilot.",
+      "Bessie Coleman's parents were sharecroppers who sent her to France as a child to become a pilot, after which she returned and opened a flight school.",
+      "After life as a sharecropper, Bessie Coleman raised money as a stunt pilot to attend flight school in France.",
+      "Bessie Coleman was a pilot, then a sharecropper, who lived in France, where she was inducted into the National Aviation Hall of Fame."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 2,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>Bessie Coleman, the first civilian licensed Black pilot in the world, was born in 1892 to sharecroppers in Texas, where she attended a segregated school and worked with her family in the cotton fields. She dreamed of becoming a pilot but no flight schools in America would accept her, so she moved to France to earn her pilot&#39;s license.</p><p>When she returned to the U.S., she wanted to open a flight school for Black students. She became a stunt flier and performed for paying audiences, which she insisted be desegregated. Following her death in a plane crash in 1926, the Bessie Coleman Aero Club was established in Los Angeles in 1929. She was inducted into the National Aviation Hall of Fame in 2006.</p>",
+    "stimulus": "",
+    "sourceNumber": 2,
+    "question": "Which of the following sources would be useful for gathering more information about Bessie Coleman?",
+    "options": [
+      "The National Museum of African American History and Culture",
+      "A documentary film on female pilots in World War I",
+      "A biography of the Wright Brothers, Orville and Wilbur",
+      "A comprehensive history of sharecropping in eastern Texas"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 3,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>Hey there, kitchen utensil aficionados! It&#39;s Bob Thurman again, bringing you a brand-new piece of equipment for your home food station! Are you tired of your blocks of premium aged cheddar getting all crumbly when you try to slice them? Don&#39;t you hate leaving your fingerprints in that hard stick of butter? Well, worry no more! From the company that brought you the SmackDice comes the Dairy McGrabs! You no longer have to worry about your firm, sweaty grip destroying your cheeses or your butters. All you have to do is slip on our patented heat-deflecting mitten, complete with plastic-grip palm pad, and slice your smooth dairy products with no threat of them melting or crumbling from your body heat!</p>",
+    "stimulus": "",
+    "sourceNumber": 3,
+    "question": "Which of the following phrases from this infomercial contains instruction about how to use the advertised product?",
+    "options": [
+      "Bringing you a brand-new piece of equipment for your home food station",
+      "No longer worry about your firm, sweaty grip destroying your cheeses or your butters",
+      "Leaving your fingerprints in that hard stick of butter",
+      "Slip on our patented heat-deflecting mitten"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 4,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>Hey there, kitchen utensil aficionados! It&#39;s Bob Thurman again, bringing you a brand-new piece of equipment for your home food station! Are you tired of your blocks of premium aged cheddar getting all crumbly when you try to slice them? Don&#39;t you hate leaving your fingerprints in that hard stick of butter? Well, worry no more! From the company that brought you the SmackDice comes the Dairy McGrabs! You no longer have to worry about your firm, sweaty grip destroying your cheeses or your butters. All you have to do is slip on our patented heat-deflecting mitten, complete with plastic-grip palm pad, and slice your smooth dairy products with no threat of them melting or crumbling from your body heat!</p>",
+    "stimulus": "",
+    "sourceNumber": 4,
+    "question": "Which of the following options best describes the purpose of this infomercial?",
+    "options": [
+      "To explain how the Dairy McGrabs works",
+      "To persuade the audience to buy the Dairy McGrabs",
+      "To express frustration with common dairy food problems",
+      "To amuse the audience with enthusiastic rhetoric"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "number": 5,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>Hey there, kitchen utensil aficionados! It&#39;s Bob Thurman again, bringing you a brand-new piece of equipment for your home food station! Are you tired of your blocks of premium aged cheddar getting all crumbly when you try to slice them? Don&#39;t you hate leaving your fingerprints in that hard stick of butter? Well, worry no more! From the company that brought you the SmackDice comes the Dairy McGrabs! You no longer have to worry about your firm, sweaty grip destroying your cheeses or your butters. All you have to do is slip on our patented heat-deflecting mitten, complete with plastic-grip palm pad, and slice your smooth dairy products with no threat of them melting or crumbling from your body heat!</p>",
+    "stimulus": "",
+    "sourceNumber": 5,
+    "question": "Which of the following options best describes how Thurman supports his argument?",
+    "options": [
+      "By appealing to a shared sense of community and values",
+      "By assembling evidence and logical explanation",
+      "By addressing his audience at just the right moment",
+      "By evoking feelings of annoyance and relief"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 6,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>The Farallon Islands, or Devil&#39;s Teeth, as they are referred to by sailors, are a group of small islands with rocky, barren terrain and treacherous underwater currents, 48 km (30 miles) off the coast of San Francisco, California. Although the islands are small, with a combined total land area of 0.41 km2 (0.16 square miles), they are positioned in a major ocean current, which enables them to house dense populations of birds, rodents, seals, and other water mammals.</p><p>The abundance of wildlife first attracted Russian and American fur traders in the early 1800s, who then nearly eliminated the seal population in the area. The islands then became an agricultural resource for San Francisco during the Gold Rush era when egg companies began harvesting bird eggs on the islands. In 1863, violence between rival egg companies erupted on the islands (known as the &quot;Egg War&quot;), which inadvertently attracted national attention and provoked lawmakers to pass legislation to protect and rehabilitate the islands&#39; natural ecosystem.</p><p>In 1881, an executive order was passed that decreed egging illegal on the Farallons. This ended private enterprises on the islands and was reinforced in 1909 when President Theodore Roosevelt created the Farallon Reservation to restrict human access and preserve the northern islands. Protection was expanded in 1967 to include all the Farallon Islands, and over time many of the islands&#39; original inhabitants have returned.</p><p>The Farallons are now home to the world&#39;s largest population of western gulls. Seals have returned, as well as otters and sea lions, which in turn attracts great white sharks. The combination of sharks, underwater currents, and jagged coastline are probably what earned the Farallons their nickname &quot;Devil&#39;s Teeth,&quot; though it hasn&#39;t stopped a few adventurous people from swimming. Four people have completed the 30-mile swim from the islands to San Francisco; the fastest person completed the journey in 14 hours.</p>",
+    "stimulus": "",
+    "sourceNumber": 6,
+    "question": "Which of the following supports the detail that the Farallon Islands are a natural home to many animals?",
+    "options": [
+      "Ocean currents",
+      "Abundant land",
+      "Human presence",
+      "Lush landscape"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 7,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>The Farallon Islands, or Devil&#39;s Teeth, as they are referred to by sailors, are a group of small islands with rocky, barren terrain and treacherous underwater currents, 48 km (30 miles) off the coast of San Francisco, California. Although the islands are small, with a combined total land area of 0.41 km2 (0.16 square miles), they are positioned in a major ocean current, which enables them to house dense populations of birds, rodents, seals, and other water mammals.</p><p>The abundance of wildlife first attracted Russian and American fur traders in the early 1800s, who then nearly eliminated the seal population in the area. The islands then became an agricultural resource for San Francisco during the Gold Rush era when egg companies began harvesting bird eggs on the islands. In 1863, violence between rival egg companies erupted on the islands (known as the &quot;Egg War&quot;), which inadvertently attracted national attention and provoked lawmakers to pass legislation to protect and rehabilitate the islands&#39; natural ecosystem.</p><p>In 1881, an executive order was passed that decreed egging illegal on the Farallons. This ended private enterprises on the islands and was reinforced in 1909 when President Theodore Roosevelt created the Farallon Reservation to restrict human access and preserve the northern islands. Protection was expanded in 1967 to include all the Farallon Islands, and over time many of the islands&#39; original inhabitants have returned.</p><p>The Farallons are now home to the world&#39;s largest population of western gulls. Seals have returned, as well as otters and sea lions, which in turn attracts great white sharks. The combination of sharks, underwater currents, and jagged coastline are probably what earned the Farallons their nickname &quot;Devil&#39;s Teeth,&quot; though it hasn&#39;t stopped a few adventurous people from swimming. Four people have completed the 30-mile swim from the islands to San Francisco; the fastest person completed the journey in 14 hours.</p>",
+    "stimulus": "",
+    "sourceNumber": 7,
+    "question": "Which of the following is the main idea of the passage?",
+    "options": [
+      "The Farallon Islands are currently an agricultural resource for San Francisco.",
+      "The ecosystem of the Farallon Islands has always been unstable.",
+      "The Farallon Islands are a dedicated sanctuary for western gulls.",
+      "Humans disrupted the ecosystem of the Farallon Islands and helped to restore it."
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 8,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>The Farallon Islands, or Devil&#39;s Teeth, as they are referred to by sailors, are a group of small islands with rocky, barren terrain and treacherous underwater currents, 48 km (30 miles) off the coast of San Francisco, California. Although the islands are small, with a combined total land area of 0.41 km2 (0.16 square miles), they are positioned in a major ocean current, which enables them to house dense populations of birds, rodents, seals, and other water mammals.</p><p>The abundance of wildlife first attracted Russian and American fur traders in the early 1800s, who then nearly eliminated the seal population in the area. The islands then became an agricultural resource for San Francisco during the Gold Rush era when egg companies began harvesting bird eggs on the islands. In 1863, violence between rival egg companies erupted on the islands (known as the &quot;Egg War&quot;), which inadvertently attracted national attention and provoked lawmakers to pass legislation to protect and rehabilitate the islands&#39; natural ecosystem.</p><p>In 1881, an executive order was passed that decreed egging illegal on the Farallons. This ended private enterprises on the islands and was reinforced in 1909 when President Theodore Roosevelt created the Farallon Reservation to restrict human access and preserve the northern islands. Protection was expanded in 1967 to include all the Farallon Islands, and over time many of the islands&#39; original inhabitants have returned.</p><p>The Farallons are now home to the world&#39;s largest population of western gulls. Seals have returned, as well as otters and sea lions, which in turn attracts great white sharks. The combination of sharks, underwater currents, and jagged coastline are probably what earned the Farallons their nickname &quot;Devil&#39;s Teeth,&quot; though it hasn&#39;t stopped a few adventurous people from swimming. Four people have completed the 30-mile swim from the islands to San Francisco; the fastest person completed the journey in 14 hours.</p>",
+    "stimulus": "",
+    "sourceNumber": 8,
+    "question": "Which of the following organizations might the author of this article most closely associate?",
+    "options": [
+      "A group that supports first-time novelists",
+      "A group that studies marine mammal behavior",
+      "A nature conservancy group",
+      "An educational special interest group"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "number": 9,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>The Farallon Islands, or Devil&#39;s Teeth, as they are referred to by sailors, are a group of small islands with rocky, barren terrain and treacherous underwater currents, 48 km (30 miles) off the coast of San Francisco, California. Although the islands are small, with a combined total land area of 0.41 km2 (0.16 square miles), they are positioned in a major ocean current, which enables them to house dense populations of birds, rodents, seals, and other water mammals.</p><p>The abundance of wildlife first attracted Russian and American fur traders in the early 1800s, who then nearly eliminated the seal population in the area. The islands then became an agricultural resource for San Francisco during the Gold Rush era when egg companies began harvesting bird eggs on the islands. In 1863, violence between rival egg companies erupted on the islands (known as the &quot;Egg War&quot;), which inadvertently attracted national attention and provoked lawmakers to pass legislation to protect and rehabilitate the islands&#39; natural ecosystem.</p><p>In 1881, an executive order was passed that decreed egging illegal on the Farallons. This ended private enterprises on the islands and was reinforced in 1909 when President Theodore Roosevelt created the Farallon Reservation to restrict human access and preserve the northern islands. Protection was expanded in 1967 to include all the Farallon Islands, and over time many of the islands&#39; original inhabitants have returned.</p><p>The Farallons are now home to the world&#39;s largest population of western gulls. Seals have returned, as well as otters and sea lions, which in turn attracts great white sharks. The combination of sharks, underwater currents, and jagged coastline are probably what earned the Farallons their nickname &quot;Devil&#39;s Teeth,&quot; though it hasn&#39;t stopped a few adventurous people from swimming. Four people have completed the 30-mile swim from the islands to San Francisco; the fastest person completed the journey in 14 hours.</p>",
+    "stimulus": "",
+    "sourceNumber": 9,
+    "question": "Which of the following is a credible source that the author might have consulted to help write the article?",
+    "options": [
+      "A copy of a story published by the Fish and Wildlife Service, originally written by a former refuge manager",
+      "A biography of President Theodore Roosevelt, with an emphasis on his passion for hunting",
+      "An 1890 cartographer's notes on efforts to map Northern California's coastline",
+      "A nutritionist's scholarly journal article on Gold Rush miners' diets"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 10,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>The Farallon Islands, or Devil&#39;s Teeth, as they are referred to by sailors, are a group of small islands with rocky, barren terrain and treacherous underwater currents, 48 km (30 miles) off the coast of San Francisco, California. Although the islands are small, with a combined total land area of 0.41 km2 (0.16 square miles), they are positioned in a major ocean current, which enables them to house dense populations of birds, rodents, seals, and other water mammals.</p><p>The abundance of wildlife first attracted Russian and American fur traders in the early 1800s, who then nearly eliminated the seal population in the area. The islands then became an agricultural resource for San Francisco during the Gold Rush era when egg companies began harvesting bird eggs on the islands. In 1863, violence between rival egg companies erupted on the islands (known as the &quot;Egg War&quot;), which inadvertently attracted national attention and provoked lawmakers to pass legislation to protect and rehabilitate the islands&#39; natural ecosystem.</p><p>In 1881, an executive order was passed that decreed egging illegal on the Farallons. This ended private enterprises on the islands and was reinforced in 1909 when President Theodore Roosevelt created the Farallon Reservation to restrict human access and preserve the northern islands. Protection was expanded in 1967 to include all the Farallon Islands, and over time many of the islands&#39; original inhabitants have returned.</p><p>The Farallons are now home to the world&#39;s largest population of western gulls. Seals have returned, as well as otters and sea lions, which in turn attracts great white sharks. The combination of sharks, underwater currents, and jagged coastline are probably what earned the Farallons their nickname &quot;Devil&#39;s Teeth,&quot; though it hasn&#39;t stopped a few adventurous people from swimming. Four people have completed the 30-mile swim from the islands to San Francisco; the fastest person completed the journey in 14 hours.</p>",
+    "stimulus": "",
+    "sourceNumber": 10,
+    "question": "Which of the following best describes the meaning of the word \"inadvertently\" as used in the second paragraph?",
+    "options": [
+      "Accidentally",
+      "Intentionally",
+      "Quickly",
+      "Approximately"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 11,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>The Farallon Islands, or Devil&#39;s Teeth, as they are referred to by sailors, are a group of small islands with rocky, barren terrain and treacherous underwater currents, 48 km (30 miles) off the coast of San Francisco, California. Although the islands are small, with a combined total land area of 0.41 km2 (0.16 square miles), they are positioned in a major ocean current, which enables them to house dense populations of birds, rodents, seals, and other water mammals.</p><p>The abundance of wildlife first attracted Russian and American fur traders in the early 1800s, who then nearly eliminated the seal population in the area. The islands then became an agricultural resource for San Francisco during the Gold Rush era when egg companies began harvesting bird eggs on the islands. In 1863, violence between rival egg companies erupted on the islands (known as the &quot;Egg War&quot;), which inadvertently attracted national attention and provoked lawmakers to pass legislation to protect and rehabilitate the islands&#39; natural ecosystem.</p><p>In 1881, an executive order was passed that decreed egging illegal on the Farallons. This ended private enterprises on the islands and was reinforced in 1909 when President Theodore Roosevelt created the Farallon Reservation to restrict human access and preserve the northern islands. Protection was expanded in 1967 to include all the Farallon Islands, and over time many of the islands&#39; original inhabitants have returned.</p><p>The Farallons are now home to the world&#39;s largest population of western gulls. Seals have returned, as well as otters and sea lions, which in turn attracts great white sharks. The combination of sharks, underwater currents, and jagged coastline are probably what earned the Farallons their nickname &quot;Devil&#39;s Teeth,&quot; though it hasn&#39;t stopped a few adventurous people from swimming. Four people have completed the 30-mile swim from the islands to San Francisco; the fastest person completed the journey in 14 hours.</p>",
+    "stimulus": "",
+    "sourceNumber": 11,
+    "question": "Which of the following pieces of evidence does the author use to speculate why the Farallon Islands are called \"The Devil's Teeth\"?",
+    "options": [
+      "In 1863, violence broke out on the islands during the Egg War.",
+      "They have always been called that by sailors who travel those waters.",
+      "Swimming from San Francisco to the islands is very risky.",
+      "The islands have sharks, choppy currents, and irregular coastline."
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 12,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>Don&#39;t Look Back Now is the story of Keisha (Joy Taylor), a woman who has moved across country to escape her creepy ex-boyfriend stalker, Tom (Kevin Highsmith). However, mysterious things keep happening to the people in Keisha&#39;s life, and the authorities don&#39;t believe her. But there&#39;s one thing nobody knows - she&#39;s got a secret that will make anyone coming to harm her regret it - especially Tom. This thriller is an exciting roller coaster ride that constantly keeps the audience guessing.</p><p>Director Juliette Cho knows exactly how to manipulate the camera to capture every shadow and peripheral movement, keeping the viewer on edge. The close-up shots feel claustrophobic, like the perspective is skewed. For any other movie this might be annoying, but for this one, it helps put the viewer in Keisha&#39;s suspicious shoes very well. With a running time of 98 minutes, the pacing is quick and efficient, and Cho uses cinematography deftly to show the quick and jerky passage of time from Keisha&#39;s perspective.</p><p>The performances are rock solid all the way through. Joy Taylor is brittle and violent, simmering below the surface with rage. You can see the toll this stalking experience has had on her in every twitch of her eye and clench of her jaw. The strength she displays once the film shifts into the darker, triumphant second act is a wonder to behold. Kevin Highsmith gives off just the right vibe of charming and sinister as Tom, effortlessly shifting his entire performance between sweet and suddenly dangerous.</p><p>This is a tense thrill ride that will not disappoint fans of Joy Taylor or this genre in general. You can find Don&#39;t Look Back Now at the Main Street Metroplex 12 and the Movie Palace 20 starting Friday.</p>",
+    "stimulus": "",
+    "sourceNumber": 12,
+    "question": "Which of the following sentences best summarizes the second paragraph of the passage?",
+    "options": [
+      "The direction and cinematography are the key elements to creating the film's tense, suspenseful tone.",
+      "Joy Taylor's performance helps the audience feel more sympathetic toward her character, Keisha.",
+      "Close-up shots are an important way to showcase a character's state of mind.",
+      "The film takes place mostly in the dark, which makes lighting and camera angles very important."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 13,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>Don&#39;t Look Back Now is the story of Keisha (Joy Taylor), a woman who has moved across country to escape her creepy ex-boyfriend stalker, Tom (Kevin Highsmith). However, mysterious things keep happening to the people in Keisha&#39;s life, and the authorities don&#39;t believe her. But there&#39;s one thing nobody knows - she&#39;s got a secret that will make anyone coming to harm her regret it - especially Tom. This thriller is an exciting roller coaster ride that constantly keeps the audience guessing.</p><p>Director Juliette Cho knows exactly how to manipulate the camera to capture every shadow and peripheral movement, keeping the viewer on edge. The close-up shots feel claustrophobic, like the perspective is skewed. For any other movie this might be annoying, but for this one, it helps put the viewer in Keisha&#39;s suspicious shoes very well. With a running time of 98 minutes, the pacing is quick and efficient, and Cho uses cinematography deftly to show the quick and jerky passage of time from Keisha&#39;s perspective.</p><p>The performances are rock solid all the way through. Joy Taylor is brittle and violent, simmering below the surface with rage. You can see the toll this stalking experience has had on her in every twitch of her eye and clench of her jaw. The strength she displays once the film shifts into the darker, triumphant second act is a wonder to behold. Kevin Highsmith gives off just the right vibe of charming and sinister as Tom, effortlessly shifting his entire performance between sweet and suddenly dangerous.</p><p>This is a tense thrill ride that will not disappoint fans of Joy Taylor or this genre in general. You can find Don&#39;t Look Back Now at the Main Street Metroplex 12 and the Movie Palace 20 starting Friday.</p>",
+    "stimulus": "",
+    "sourceNumber": 13,
+    "question": "Which of the following conclusions could a reader make from this passage?",
+    "options": [
+      "Tom is able to protect Keisha from her stalker.",
+      "There is a big twist in the second half of the movie.",
+      "The film has a sad ending.",
+      "Juliette Cho is a first-time director."
+    ],
+    "correctIndex": 1
+  },
+  {
+    "number": 14,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>Don&#39;t Look Back Now is the story of Keisha (Joy Taylor), a woman who has moved across country to escape her creepy ex-boyfriend stalker, Tom (Kevin Highsmith). However, mysterious things keep happening to the people in Keisha&#39;s life, and the authorities don&#39;t believe her. But there&#39;s one thing nobody knows - she&#39;s got a secret that will make anyone coming to harm her regret it - especially Tom. This thriller is an exciting roller coaster ride that constantly keeps the audience guessing.</p><p>Director Juliette Cho knows exactly how to manipulate the camera to capture every shadow and peripheral movement, keeping the viewer on edge. The close-up shots feel claustrophobic, like the perspective is skewed. For any other movie this might be annoying, but for this one, it helps put the viewer in Keisha&#39;s suspicious shoes very well. With a running time of 98 minutes, the pacing is quick and efficient, and Cho uses cinematography deftly to show the quick and jerky passage of time from Keisha&#39;s perspective.</p><p>The performances are rock solid all the way through. Joy Taylor is brittle and violent, simmering below the surface with rage. You can see the toll this stalking experience has had on her in every twitch of her eye and clench of her jaw. The strength she displays once the film shifts into the darker, triumphant second act is a wonder to behold. Kevin Highsmith gives off just the right vibe of charming and sinister as Tom, effortlessly shifting his entire performance between sweet and suddenly dangerous.</p><p>This is a tense thrill ride that will not disappoint fans of Joy Taylor or this genre in general. You can find Don&#39;t Look Back Now at the Main Street Metroplex 12 and the Movie Palace 20 starting Friday.</p>",
+    "stimulus": "",
+    "sourceNumber": 14,
+    "question": "Which of the following information from the passage contains an opinion?",
+    "options": [
+      "The plot of the movie is about a woman who has moved across country to escape her boyfriend.",
+      "Starting Friday, the movie will be showing at the Main Street Metroplex 12 and the Movie Palace 20.",
+      "Juliette Cho's close-up shots make the viewer feel claustrophobic and frightened.",
+      "The movie, starring Joy Taylor and Kevin Highsmith, lasts a little longer than an hour and a half."
+    ],
+    "correctIndex": 2
+  },
+  {
+    "number": 15,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>Don&#39;t Look Back Now is the story of Keisha (Joy Taylor), a woman who has moved across country to escape her creepy ex-boyfriend stalker, Tom (Kevin Highsmith). However, mysterious things keep happening to the people in Keisha&#39;s life, and the authorities don&#39;t believe her. But there&#39;s one thing nobody knows - she&#39;s got a secret that will make anyone coming to harm her regret it - especially Tom. This thriller is an exciting roller coaster ride that constantly keeps the audience guessing.</p><p>Director Juliette Cho knows exactly how to manipulate the camera to capture every shadow and peripheral movement, keeping the viewer on edge. The close-up shots feel claustrophobic, like the perspective is skewed. For any other movie this might be annoying, but for this one, it helps put the viewer in Keisha&#39;s suspicious shoes very well. With a running time of 98 minutes, the pacing is quick and efficient, and Cho uses cinematography deftly to show the quick and jerky passage of time from Keisha&#39;s perspective.</p><p>The performances are rock solid all the way through. Joy Taylor is brittle and violent, simmering below the surface with rage. You can see the toll this stalking experience has had on her in every twitch of her eye and clench of her jaw. The strength she displays once the film shifts into the darker, triumphant second act is a wonder to behold. Kevin Highsmith gives off just the right vibe of charming and sinister as Tom, effortlessly shifting his entire performance between sweet and suddenly dangerous.</p><p>This is a tense thrill ride that will not disappoint fans of Joy Taylor or this genre in general. You can find Don&#39;t Look Back Now at the Main Street Metroplex 12 and the Movie Palace 20 starting Friday.</p>",
+    "stimulus": "",
+    "sourceNumber": 15,
+    "question": "Which of the following sentences from the passage includes a fact?",
+    "options": [
+      "\"With a running time of 98 minutes, the pacing is quick and efficient...\"",
+      "\"The close-up shots feel claustrophobic, like the perspective is skewed.\"",
+      "\"You can see the toll this stalking experience has had on her in every twitch of her eye and clench of her jaw.\"",
+      "\"This is a tense thrill ride that will not disappoint fans of Joy Taylor or this genre in general.\""
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 16,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>Don&#39;t Look Back Now is the story of Keisha (Joy Taylor), a woman who has moved across country to escape her creepy ex-boyfriend stalker, Tom (Kevin Highsmith). However, mysterious things keep happening to the people in Keisha&#39;s life, and the authorities don&#39;t believe her. But there&#39;s one thing nobody knows - she&#39;s got a secret that will make anyone coming to harm her regret it - especially Tom. This thriller is an exciting roller coaster ride that constantly keeps the audience guessing.</p><p>Director Juliette Cho knows exactly how to manipulate the camera to capture every shadow and peripheral movement, keeping the viewer on edge. The close-up shots feel claustrophobic, like the perspective is skewed. For any other movie this might be annoying, but for this one, it helps put the viewer in Keisha&#39;s suspicious shoes very well. With a running time of 98 minutes, the pacing is quick and efficient, and Cho uses cinematography deftly to show the quick and jerky passage of time from Keisha&#39;s perspective.</p><p>The performances are rock solid all the way through. Joy Taylor is brittle and violent, simmering below the surface with rage. You can see the toll this stalking experience has had on her in every twitch of her eye and clench of her jaw. The strength she displays once the film shifts into the darker, triumphant second act is a wonder to behold. Kevin Highsmith gives off just the right vibe of charming and sinister as Tom, effortlessly shifting his entire performance between sweet and suddenly dangerous.</p><p>This is a tense thrill ride that will not disappoint fans of Joy Taylor or this genre in general. You can find Don&#39;t Look Back Now at the Main Street Metroplex 12 and the Movie Palace 20 starting Friday.</p>",
+    "stimulus": "",
+    "sourceNumber": 16,
+    "question": "In which of the following genres would Don't Look Back Now most likely be classified?",
+    "options": [
+      "Drama",
+      "Action-adventure",
+      "Romance",
+      "Suspense"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 17,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>It can be difficult to write sometimes, especially if you are creating something brand new. It is even harder when you must write while following certain rules. Some writers thrive when there are limits, like poets. Many poetry forms follow very specific rules, like sonnets or elegies; you can&#39;t just throw some words on a page and call it a haiku. On the other hand, some successful poets really enjoy breaking the rules. They will refuse to use proper punctuation or follow any sort of structure. So then what good are the rules, if you can just break them and still succeed? That doesn&#39;t make any sense. I guess that is why I am not a poet.</p>",
+    "stimulus": "",
+    "sourceNumber": 17,
+    "question": "Which of the following is the most likely source for most of the author's statements in the passage?",
+    "options": [
+      "The Online Writing Lab at Purdue University",
+      "The Archive of Recorded Poetry and Literature",
+      "The writer's own knowledge about writing",
+      "The writer's local university library"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "number": 18,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>It can be difficult to write sometimes, especially if you are creating something brand new. It is even harder when you must write while following certain rules. Some writers thrive when there are limits, like poets. Many poetry forms follow very specific rules, like sonnets or elegies; you can&#39;t just throw some words on a page and call it a haiku. On the other hand, some successful poets really enjoy breaking the rules. They will refuse to use proper punctuation or follow any sort of structure. So then what good are the rules, if you can just break them and still succeed? That doesn&#39;t make any sense. I guess that is why I am not a poet.</p>",
+    "stimulus": "",
+    "sourceNumber": 18,
+    "question": "Based on the author's support and evidence, which of the following is a valid evaluation of the paragraph?",
+    "options": [
+      "It is a scholarly work about the business of being a good writer.",
+      "It is part of a student essay on how poets develop their craft.",
+      "It is a logical argument, proving that it is impossible to write well.",
+      "It is an entertaining piece based on personal bias and opinion."
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 19,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>Studies suggest that more than 9 billion metric tons of plastic have been produced since 1950, more than four times the volume of Mt. Everest, and about 75% of it remains in landfills or has entered the environment as pollution. As a material, plastic has many advantages. However, it is difficult to recycle because popular single-use and convenience items, such as packaging and water bottles, are low in quality and value when recycled.</p><p>Part of the magic of plastic is that it seemingly lasts forever. But when it cannot be re-used efficiently, it leads to stark realities like an island of plastic, twice the size of Texas, floating in the Pacific Ocean. Plastic is consumed by fish and birds and is seeping into the air, water, and our food.</p>",
+    "stimulus": "",
+    "sourceNumber": 19,
+    "question": "Based on evidence from the passage, which of the following is the most likely inference?",
+    "options": [
+      "If we increased production of single-use plastic packaging, more plastic would be recycled.",
+      "Most of the plastic that has been produced has been recycled.",
+      "Plastic makes life convenient, but its use has so many cons that its use should be reduced.",
+      "The best thing about plastic is that it is recyclable, a renewable resource."
+    ],
+    "correctIndex": 2
+  },
+  {
+    "number": 20,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>Studies suggest that more than 9 billion metric tons of plastic have been produced since 1950, more than four times the volume of Mt. Everest, and about 75% of it remains in landfills or has entered the environment as pollution. As a material, plastic has many advantages. However, it is difficult to recycle because popular single-use and convenience items, such as packaging and water bottles, are low in quality and value when recycled.</p><p>Part of the magic of plastic is that it seemingly lasts forever. But when it cannot be re-used efficiently, it leads to stark realities like an island of plastic, twice the size of Texas, floating in the Pacific Ocean. Plastic is consumed by fish and birds and is seeping into the air, water, and our food.</p>",
+    "stimulus": "",
+    "sourceNumber": 20,
+    "question": "Which of the following pairs of examples from the passage best demonstrates why the use of plastic is a divisive topic?",
+    "options": [
+      "1. Plastic is popular. 2. Plastic is used for packaging.",
+      "1. Plastic has advantages. 2. Plastic is difficult to recycle efficiently.",
+      "1. Plastic is in landfills. 2. Plastic is in the ocean.",
+      "1. Plastic is consumed by birds. 2. Plastic is entering our food."
+    ],
+    "correctIndex": 1
+  },
+  {
+    "number": 21,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>You might think the largest animal on Earth is the blue whale, and you would be correct. Blue whales can reach a length of 98 ft long and can weigh as much as 198 tons. However, in the Blue Mountains of eastern Oregon, there is an organism currently covering an area of 3 square miles and estimated to weigh at least 7,500 tons: the Armillaria ostoyae fungus, also known as the honey mushroom or shoestring fungus. Though A. ostoyae is found in other places, such as Michigan and Germany, only Oregon&#39;s fungus has grown to such an enormous size. The humongous fungus is estimated to be anywhere from 2,000 to 8,000 years old, and it continues to grow by 1 to 3 feet every year.</p>",
+    "stimulus": "",
+    "sourceNumber": 21,
+    "question": "Which of the following is the purpose of the passage?",
+    "options": [
+      "To persuade",
+      "To inform",
+      "To entertain",
+      "To describe"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "number": 22,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>You might think the largest animal on Earth is the blue whale, and you would be correct. Blue whales can reach a length of 98 ft long and can weigh as much as 198 tons. However, in the Blue Mountains of eastern Oregon, there is an organism currently covering an area of 3 square miles and estimated to weigh at least 7,500 tons: the Armillaria ostoyae fungus, also known as the honey mushroom or shoestring fungus. Though A. ostoyae is found in other places, such as Michigan and Germany, only Oregon&#39;s fungus has grown to such an enormous size. The humongous fungus is estimated to be anywhere from 2,000 to 8,000 years old, and it continues to grow by 1 to 3 feet every year.</p>",
+    "stimulus": "",
+    "sourceNumber": 22,
+    "question": "Which of the following best describes the theme of the report?",
+    "options": [
+      "Humankind versus nature",
+      "Extraordinary natural phenomena",
+      "Nature as beauty",
+      "Hierarchy in nature"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "number": 23,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 23,
+    "question": "Missing screenshot: 23.png was not present in the Reading Set 2 folder.",
+    "options": [
+      "Missing screenshot placeholder",
+      "Missing screenshot placeholder",
+      "Missing screenshot placeholder",
+      "Missing screenshot placeholder"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 24,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>In 1932, the Australian government lost a war against the native emu population. The operation that has since become known as the Great Emu War began as an initiative to combat overpopulation of the crop-destroying birds invading farmland around Chandler and Walgoolan. The initial assault on the flightless avians began on November 2 and lasted six days before the military personnel withdrew. Efforts resumed on November 12, but by early December, the feathered foes had adopted guerrilla tactics against the targeted wheat fields, rendering military involvement largely ineffective. The Australian government declined further involvement with the ongoing conflict in 1934, 1943, and 1948, despite the repeated pleas for assistance by the farmers in the area.</p>",
+    "stimulus": "",
+    "sourceNumber": 24,
+    "question": "During the Great Emu War, which of the following events happened immediately after the conflict resumed in mid-November?",
+    "options": [
+      "Military efforts became ineffective.",
+      "The Australian government launched the initial assault.",
+      "Emus resorted to guerrilla tactics.",
+      "The military withdrew."
+    ],
+    "correctIndex": 2
+  },
+  {
+    "number": 25,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>In 1932, the Australian government lost a war against the native emu population. The operation that has since become known as the Great Emu War began as an initiative to combat overpopulation of the crop-destroying birds invading farmland around Chandler and Walgoolan. The initial assault on the flightless avians began on November 2 and lasted six days before the military personnel withdrew. Efforts resumed on November 12, but by early December, the feathered foes had adopted guerrilla tactics against the targeted wheat fields, rendering military involvement largely ineffective. The Australian government declined further involvement with the ongoing conflict in 1934, 1943, and 1948, despite the repeated pleas for assistance by the farmers in the area.</p>",
+    "stimulus": "",
+    "sourceNumber": 25,
+    "question": "Which of the following words is a synonym for \"avian\" in this passage?",
+    "options": [
+      "Bird",
+      "Plane",
+      "Aerial",
+      "Flying"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 26,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>Alice was not scared. Not at all. Maybe a little bit. But she was determined to confront the ghost in her house. Alice lived in a farmhouse built in 1921. All of the floors and doors were original; the doors even had skeleton key locks. But by far the most terrifying part of the house was the basement. She kept that door locked and ignored the thumps, crashes, and cries that came from below the house. What made Alice determined to confront the ghost today was the especially loud crashes the previous night. She&#39;d gotten no sleep, convinced the ghost was going to break through the door and do something horrible. What, she wasn&#39;t sure, but the ghost would do something.</p><p>Alice hadn&#39;t seen the ghost, but what else could be making loud noises in an old house? The one time she had been down in the basement was after buying the house unseen. Once she saw the shelves with old glass jars, she was a little put off. But what made her keep the door shut and locked was the abrupt end of the concrete floor halfway across the room. Because nothing good ever happened in a basement with a dirt floor. Alice had seen enough horror movies to know that.</p><p>Alice stared at the basement door, trying to gather enough confidence to open it and march down the stairs like she owned the place. Because she did - or she would, once she finished paying her mortgage in 30 years. Alice took a deep breath and yanked the door open. She marched down the stairs, only to stop abruptly at the bottom. Because she was face to face with not a ghost at all. It was a calico cat, one who looked utterly unimpressed by her brave journey into the basement.</p>",
+    "stimulus": "",
+    "sourceNumber": 26,
+    "question": "Which of the following words from the passage indicates time sequence or the order of events?",
+    "options": [
+      "Once",
+      "Because",
+      "Maybe",
+      "But"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 27,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>Alice was not scared. Not at all. Maybe a little bit. But she was determined to confront the ghost in her house. Alice lived in a farmhouse built in 1921. All of the floors and doors were original; the doors even had skeleton key locks. But by far the most terrifying part of the house was the basement. She kept that door locked and ignored the thumps, crashes, and cries that came from below the house. What made Alice determined to confront the ghost today was the especially loud crashes the previous night. She&#39;d gotten no sleep, convinced the ghost was going to break through the door and do something horrible. What, she wasn&#39;t sure, but the ghost would do something.</p><p>Alice hadn&#39;t seen the ghost, but what else could be making loud noises in an old house? The one time she had been down in the basement was after buying the house unseen. Once she saw the shelves with old glass jars, she was a little put off. But what made her keep the door shut and locked was the abrupt end of the concrete floor halfway across the room. Because nothing good ever happened in a basement with a dirt floor. Alice had seen enough horror movies to know that.</p><p>Alice stared at the basement door, trying to gather enough confidence to open it and march down the stairs like she owned the place. Because she did - or she would, once she finished paying her mortgage in 30 years. Alice took a deep breath and yanked the door open. She marched down the stairs, only to stop abruptly at the bottom. Because she was face to face with not a ghost at all. It was a calico cat, one who looked utterly unimpressed by her brave journey into the basement.</p>",
+    "stimulus": "",
+    "sourceNumber": 27,
+    "question": "Which of the following sentences from the passage is evidence that supports the conclusion that Alice is afraid of the basement?",
+    "options": [
+      "All of the floors and doors were original; the doors even had skeleton key locks.",
+      "Alice stared at the basement door, trying to gather enough confidence to open it and march down the stairs like she owned the place.",
+      "The one time she had been down in the basement was after buying the house unseen.",
+      "It was a calico cat, one who looked utterly unimpressed by her brave journey into the basement."
+    ],
+    "correctIndex": 1
+  },
+  {
+    "number": 28,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>Alice was not scared. Not at all. Maybe a little bit. But she was determined to confront the ghost in her house. Alice lived in a farmhouse built in 1921. All of the floors and doors were original; the doors even had skeleton key locks. But by far the most terrifying part of the house was the basement. She kept that door locked and ignored the thumps, crashes, and cries that came from below the house. What made Alice determined to confront the ghost today was the especially loud crashes the previous night. She&#39;d gotten no sleep, convinced the ghost was going to break through the door and do something horrible. What, she wasn&#39;t sure, but the ghost would do something.</p><p>Alice hadn&#39;t seen the ghost, but what else could be making loud noises in an old house? The one time she had been down in the basement was after buying the house unseen. Once she saw the shelves with old glass jars, she was a little put off. But what made her keep the door shut and locked was the abrupt end of the concrete floor halfway across the room. Because nothing good ever happened in a basement with a dirt floor. Alice had seen enough horror movies to know that.</p><p>Alice stared at the basement door, trying to gather enough confidence to open it and march down the stairs like she owned the place. Because she did - or she would, once she finished paying her mortgage in 30 years. Alice took a deep breath and yanked the door open. She marched down the stairs, only to stop abruptly at the bottom. Because she was face to face with not a ghost at all. It was a calico cat, one who looked utterly unimpressed by her brave journey into the basement.</p>",
+    "stimulus": "",
+    "sourceNumber": 28,
+    "question": "Which of the following phrases from the passage added humor to an otherwise fearful mood?",
+    "options": [
+      "She'd gotten no sleep, convinced the ghost was going to break through the door and do something horrible.",
+      "All of the floors and doors were original; the doors even had skeleton key locks.",
+      "Because she did - or she would once she finished paying her mortgage in 30 years.",
+      "But what made her keep the door shut and locked was the abrupt end of the concrete floor halfway across the room."
+    ],
+    "correctIndex": 2
+  },
+  {
+    "number": 29,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>Alice was not scared. Not at all. Maybe a little bit. But she was determined to confront the ghost in her house. Alice lived in a farmhouse built in 1921. All of the floors and doors were original; the doors even had skeleton key locks. But by far the most terrifying part of the house was the basement. She kept that door locked and ignored the thumps, crashes, and cries that came from below the house. What made Alice determined to confront the ghost today was the especially loud crashes the previous night. She&#39;d gotten no sleep, convinced the ghost was going to break through the door and do something horrible. What, she wasn&#39;t sure, but the ghost would do something.</p><p>Alice hadn&#39;t seen the ghost, but what else could be making loud noises in an old house? The one time she had been down in the basement was after buying the house unseen. Once she saw the shelves with old glass jars, she was a little put off. But what made her keep the door shut and locked was the abrupt end of the concrete floor halfway across the room. Because nothing good ever happened in a basement with a dirt floor. Alice had seen enough horror movies to know that.</p><p>Alice stared at the basement door, trying to gather enough confidence to open it and march down the stairs like she owned the place. Because she did - or she would, once she finished paying her mortgage in 30 years. Alice took a deep breath and yanked the door open. She marched down the stairs, only to stop abruptly at the bottom. Because she was face to face with not a ghost at all. It was a calico cat, one who looked utterly unimpressed by her brave journey into the basement.</p>",
+    "stimulus": "",
+    "sourceNumber": 29,
+    "question": "Which of the following can the reader infer was the author's message?",
+    "options": [
+      "Buy a home for the location, not the square footage.",
+      "Sometimes things are not what they seem.",
+      "When the going gets tough, just work harder.",
+      "Make light of the most difficult situations in your life."
+    ],
+    "correctIndex": 1
+  },
+  {
+    "number": 30,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>Alice was not scared. Not at all. Maybe a little bit. But she was determined to confront the ghost in her house. Alice lived in a farmhouse built in 1921. All of the floors and doors were original; the doors even had skeleton key locks. But by far the most terrifying part of the house was the basement. She kept that door locked and ignored the thumps, crashes, and cries that came from below the house. What made Alice determined to confront the ghost today was the especially loud crashes the previous night. She&#39;d gotten no sleep, convinced the ghost was going to break through the door and do something horrible. What, she wasn&#39;t sure, but the ghost would do something.</p><p>Alice hadn&#39;t seen the ghost, but what else could be making loud noises in an old house? The one time she had been down in the basement was after buying the house unseen. Once she saw the shelves with old glass jars, she was a little put off. But what made her keep the door shut and locked was the abrupt end of the concrete floor halfway across the room. Because nothing good ever happened in a basement with a dirt floor. Alice had seen enough horror movies to know that.</p><p>Alice stared at the basement door, trying to gather enough confidence to open it and march down the stairs like she owned the place. Because she did - or she would, once she finished paying her mortgage in 30 years. Alice took a deep breath and yanked the door open. She marched down the stairs, only to stop abruptly at the bottom. Because she was face to face with not a ghost at all. It was a calico cat, one who looked utterly unimpressed by her brave journey into the basement.</p>",
+    "stimulus": "",
+    "sourceNumber": 30,
+    "question": "Which of the following pieces of evidence from the text supports the prediction that Alice finally entered the basement because she was frustrated?",
+    "options": [
+      "She'd gotten no sleep, convinced the ghost was going to break through the door and do something horrible.",
+      "The one time she had been down in the basement was after buying the house unseen.",
+      "Because nothing good ever happened in a basement with a dirt floor.",
+      "She kept that door locked and ignored the thumps, crashes, and cries that came from below the house."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 31,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>Alice was not scared. Not at all. Maybe a little bit. But she was determined to confront the ghost in her house. Alice lived in a farmhouse built in 1921. All of the floors and doors were original; the doors even had skeleton key locks. But by far the most terrifying part of the house was the basement. She kept that door locked and ignored the thumps, crashes, and cries that came from below the house. What made Alice determined to confront the ghost today was the especially loud crashes the previous night. She&#39;d gotten no sleep, convinced the ghost was going to break through the door and do something horrible. What, she wasn&#39;t sure, but the ghost would do something.</p><p>Alice hadn&#39;t seen the ghost, but what else could be making loud noises in an old house? The one time she had been down in the basement was after buying the house unseen. Once she saw the shelves with old glass jars, she was a little put off. But what made her keep the door shut and locked was the abrupt end of the concrete floor halfway across the room. Because nothing good ever happened in a basement with a dirt floor. Alice had seen enough horror movies to know that.</p><p>Alice stared at the basement door, trying to gather enough confidence to open it and march down the stairs like she owned the place. Because she did - or she would, once she finished paying her mortgage in 30 years. Alice took a deep breath and yanked the door open. She marched down the stairs, only to stop abruptly at the bottom. Because she was face to face with not a ghost at all. It was a calico cat, one who looked utterly unimpressed by her brave journey into the basement.</p>",
+    "stimulus": "",
+    "sourceNumber": 31,
+    "question": "Which of the following is misleading information that Alice uses to support her argument that the house is \"terrifying\"?",
+    "options": [
+      "There are glass jars on the shelves in the basement.",
+      "The doors have skeleton key locks.",
+      "The doors and floors are original to the home.",
+      "The basement has a dirt floor."
+    ],
+    "correctIndex": 1
+  },
+  {
+    "number": 32,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 32,
+    "question": "If a user of this phone system wants to find the most recently deleted message, listen to it, and then record a reply, which of the following sequences of numbers will the user select?",
+    "options": [
+      "1, 6, 7, 1",
+      "3, 2, 2",
+      "4, 7, 2",
+      "2, 4, 7, 2"
+    ],
+    "correctIndex": 2,
+    "stimulusHtml": "<div style=\"font-weight:700;margin-bottom:8px;\">Phone System Quick Reference Card</div><table style=\"border-collapse:collapse;font-size:16px;margin:0 0 24px;max-width:100%;\"><thead><tr><th style=\"border:1px solid #d9d9d9;padding:8px 12px;text-align:left;font-weight:700;\">Menu</th><th style=\"border:1px solid #d9d9d9;padding:8px 12px;text-align:left;font-weight:700;\">Relevant options</th></tr></thead><tbody><tr><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">Main Menu</td><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">Listen to new messages 1; Listen to saved messages 3; Listen to deleted messages 4; Record and send a message 2</td></tr><tr><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">Listening Options</td><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">Pause 1; Forward 2; Back up five seconds 3; Delete 4; Save 5; Skip to next message 6; Reply 7</td></tr><tr><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">Reply Options</td><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">Select mailbox 1; Record 2; Transfer to ext. 3; Transfer to # 4</td></tr></tbody></table>"
+  },
+  {
+    "number": 33,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 33,
+    "question": "Pharmacy Technician\n\nSt. Francis Hospital\n200 Hospital Drive, Mapleton, Vermont\n\nDuties include: Filling medication carts for each nursing station, filling TPNs, preparing surgical drips, maintaining anesthesia trays for 6 ORs. Five years of hospital experience and certification required. FT/rotating schedule.\n\nWhich of the following applicants best fits the advertised job position based on their qualifications?",
+    "options": [
+      "Dash has been the only pharmacy tech at Johnson Hospital for 6 years. He recently took continuing education credits to update his certification. He prefers to work days, but can work around a flexible schedule as needed.",
+      "Carole has been an ER nurse in the St. Francis hospital system for 7 years. She just passed her certification exam, but she has no pharmacy experience.",
+      "Ben is finishing up his 10th year as a certified pharmacy tech at PharmRite retail pharmacy. His availability is flexible, and he wants to move into a hospital setting.",
+      "Amal has 7 years of experience working as a pharmacy tech at Oakdale Hospital. She does not have national certification and can only work 8 a.m. to 5 p.m., Monday through Friday."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 34,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 34,
+    "question": "A student is researching women's roles in literature. To access a list of sources related to this topic, the student should consult which of the following?",
+    "options": [
+      "A biography",
+      "An atlas",
+      "A bibliography",
+      "A thesaurus"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "number": 35,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 35,
+    "question": "Which of the following areas of a textbook includes supplemental materials and additional information to the text?",
+    "options": [
+      "Glossary",
+      "Bibliography",
+      "Appendix",
+      "Index"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "number": 36,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 36,
+    "question": "ZIP codes were introduced by the U.S. Postal Service on July 1, 1963. The term ZIP, which stands for Zone Improvement Plan, suggests that the mail will \"zip along\" more efficiently if postal customers use the code. The basic code consists of five digits. In 1983 the ZIP+4 code was introduced to direct mail to a more specific location within a ZIP code. The ZIP+4 code added a hyphen and four digits to the basic code.\n\nA student reads the above passage in an encyclopedia and wants to learn more about the U.S. Postal Service. In which of the following magazine articles would the student most likely find relevant information about ZIP codes?",
+    "options": [
+      "\"Postal Code Zones of the U.S. Postal Service\"",
+      "\"The Pony Express: Postal Service of the American Frontier\"",
+      "\"Postmasters General of the U.S. Postal Service\"",
+      "\"Postal Service in the Age of Digital Communication\""
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 37,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 37,
+    "question": "Refer to the nutrition label below.\n\nWhich of the following phrases on the label is a subheading?",
+    "options": [
+      "Trans Fat",
+      "Nutrition Facts",
+      "Servings Per Container",
+      "Amount Per Serving"
+    ],
+    "correctIndex": 3,
+    "stimulusHtml": "<div style=\"font-weight:700;margin-bottom:8px;\">Nutrition Facts</div><table style=\"border-collapse:collapse;font-size:16px;margin:0 0 24px;max-width:100%;\"><thead><tr><th style=\"border:1px solid #d9d9d9;padding:8px 12px;text-align:left;font-weight:700;\">Item</th><th style=\"border:1px solid #d9d9d9;padding:8px 12px;text-align:left;font-weight:700;\">Amount</th></tr></thead><tbody><tr><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">Serving Size</td><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">0.5 Cups (12g)</td></tr><tr><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">Servings Per Container</td><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">8</td></tr><tr><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">Amount Per Serving</td><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">Calories 120; Calories from Fat 30</td></tr><tr><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">Total Fat</td><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">4g; 6%</td></tr><tr><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">Saturated Fat</td><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">0g; 0%</td></tr><tr><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">Trans Fat</td><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">0g</td></tr><tr><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">Cholesterol</td><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">3mg; 1%</td></tr><tr><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">Dietary Fiber</td><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">4g; 16%</td></tr><tr><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">Protein</td><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">5g; 10%</td></tr></tbody></table>"
+  },
+  {
+    "number": 38,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 38,
+    "question": "A parent is researching types of sunscreen for his child to wear to swim lessons. Which of the following resources would be the most reliable for the parent to consult?",
+    "options": [
+      "A review of sunscreens from a skin cancer research foundation",
+      "A published interview with a well-known heart surgeon",
+      "An advertisement for sunscreen in a parenting magazine",
+      "A recommendation from the child's swim instructor"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 39,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 39,
+    "question": "Basic Breadmaking Steps:\nFirst, the ingredients are mixed and kneaded to create a smooth, springy dough. Next comes the first rising stage, or bulk fermentation. The once-fermented dough is then cut and shaped before a second rising step, called proofing. This can take as little as an hour or as long as several hours. Finally, the proofed dough is baked until a crispy golden crust forms and the interior is cooked through.\n\nAs used in the passage, which of the following phrases clarifies the order of the steps in basic breadmaking?",
+    "options": [
+      "As little as an hour",
+      "Once-fermented dough is then cut",
+      "To create a smooth, springy dough",
+      "Until a crispy golden crust forms"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "number": 40,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 40,
+    "question": "A manager asks an employee at a local coffeehouse to clean the restrooms before clocking out for lunch, wipe the counters before cleaning the restrooms, and deliver used coffee grounds to the community garden for compost after lunch. Which of the following steps should the employee perform third?",
+    "options": [
+      "Clock out.",
+      "Deliver used coffee grounds.",
+      "Clean the restrooms.",
+      "Eat lunch."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 41,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 41,
+    "question": "Which of the following information sources contains copyright information for a given book?",
+    "options": [
+      "Table of contents",
+      "Publication page",
+      "Index",
+      "Title page"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "number": 42,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 42,
+    "question": "Editor wanted\nCopy editor needed for new corporate magazine. All applicants must have four years of editorial experience. A college degree in journalism or English is required. The job requires full-time hours with competitive benefits offered. The starting salary is $30,000 per year. Contact Human Resources at 555-5555 to apply.\n\nUsing the employment advertisement above, which of the following applicants could meet the requirements of this job?",
+    "options": [
+      "A newspaper reporter who has 2 years of editing experience",
+      "A college graduate who majored in layout design",
+      "A writer looking to work 40 hours a week",
+      "A teacher who has taught for 4 years"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 43,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 43,
+    "question": "A high school football team arrives to practice one day to find that all of their equipment is missing. The coach wants to make sure he has considered every possibility before he alerts the principal. Which of the following pieces of evidence would be relevant to help explain what happened to the equipment?",
+    "options": [
+      "The football team often exchanges pranks with their biggest rival, a high school team from the next town.",
+      "Many of the players' parents have raised concerns over the potential for head injuries in contact football.",
+      "The school board has instituted budget cuts to the football program.",
+      "The equipment has failed a recent safety inspection."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 44,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 44,
+    "question": "Which of the following sources would provide relevant information about the cost of property destruction following a natural disaster?",
+    "options": [
+      "A newspaper article about the natural disaster",
+      "A speech celebrating community first responders",
+      "A pamphlet about local food and shelter resources",
+      "A photograph of the damage taken by a bystander"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 45,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 45,
+    "question": "Which of the following is the best source to consult for information about the famous jazz saxophonist Charlie \"Yardbird\" Parker's childhood in Kansas City in the 1940s?",
+    "options": [
+      "Photographs of jazz clubs in Kansas City from 1941",
+      "The \"Arts\" section of a 1940 issue of a Kansas City newspaper",
+      "A greatest hits album of Charlie Parker's most popular songs",
+      "A published magazine interview with Charlie Parker"
+    ],
+    "correctIndex": 1
+  }
+];
+const totalQuestions = questions.length;
+const initialSeconds = 60 * 60;
+let current = 0;
+let answers = Array(questions.length).fill(null);
+let remaining = initialSeconds;
+
+const qNumber = document.getElementById('questionNumber');
+const brandTitle = document.getElementById('brandTitle');
+const passageTitle = document.getElementById('passageTitle');
+const passageEl = document.getElementById('passage');
+const stimulusEl = document.getElementById('stimulus');
+const questionText = document.getElementById('questionText');
+const dotsEl = document.getElementById('dots');
+const optionsEl = document.getElementById('options');
+const feedbackEl = document.getElementById('answerFeedback');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+const timerEl = document.getElementById('timer');
+const statusEl = document.getElementById('status');
+const mainEl = document.querySelector('.main');
+const leftColEl = document.querySelector('.left-col');
+const rightColEl = document.querySelector('.right-col');
+
+function buildDots(activeNumber) {
+  dotsEl.innerHTML = '';
+  for (let i = 1; i <= totalQuestions; i++) {
+    const d = document.createElement('span');
+    d.className = 'dot' + (i === activeNumber ? ' active' : '');
+    dotsEl.appendChild(d);
+  }
+}
+
+function setQuestionLayout(item) {
+  const hasLeftContent = Boolean((item.passageTitle || '').trim() || (item.passageHtml || '').trim());
+  if (hasLeftContent) {
+    mainEl.style.gridTemplateColumns = '';
+    leftColEl.style.display = '';
+    rightColEl.style.paddingTop = '';
+  } else {
+    mainEl.style.gridTemplateColumns = '1fr';
+    leftColEl.style.display = 'none';
+    rightColEl.style.paddingTop = '4px';
+  }
+}
+
+function render() {
+  const item = questions[current];
+  setQuestionLayout(item);
+
+  brandTitle.textContent = item.sectionTitle || 'ATI TEAS Version 7 - Science';
+  qNumber.textContent = `Question: ${item.number} of ${totalQuestions}`;
+  passageTitle.textContent = item.passageTitle || '';
+  passageEl.innerHTML = item.passageHtml || '';
+  stimulusEl.innerHTML = item.stimulusHtml || item.stimulus || '';
+  questionText.innerHTML = (item.question || '').replace(/\n/g, '<br>');
+
+  buildDots(item.number);
+
+  optionsEl.innerHTML = '';
+  item.options.forEach((opt, index) => {
+    const row = document.createElement('div');
+    const answered = answers[current] !== null;
+    let className = 'option';
+    if (answers[current] === index) className += ' selected';
+    if (answered && index === item.correctIndex) className += ' correct';
+    if (answered && answers[current] === index && index !== item.correctIndex) className += ' incorrect';
+    row.className = className;
+    row.tabIndex = 0;
+
+    const radio = document.createElement('span');
+    radio.className = 'radio';
+
+    const label = document.createElement('span');
+    label.className = 'option-text';
+    label.textContent = opt;
+
+    row.appendChild(radio);
+    row.appendChild(label);
+
+    row.addEventListener('click', () => selectOption(index));
+    row.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        selectOption(index);
+      }
+    });
+
+    optionsEl.appendChild(row);
+  });
+
+  if (answers[current] !== null) {
+    const correctText = item.options[item.correctIndex];
+    const isCorrect = answers[current] === item.correctIndex;
+    feedbackEl.className = 'answer-feedback show' + (isCorrect ? '' : ' wrong');
+    feedbackEl.textContent = isCorrect
+      ? `Correct. Answer: ${correctText}`
+      : `Incorrect. Correct answer: ${correctText}`;
+  } else {
+    feedbackEl.className = 'answer-feedback';
+    feedbackEl.textContent = '';
+  }
+
+  prevBtn.disabled = current === 0;
+  nextBtn.textContent = current === questions.length - 1 ? 'Finish' : 'Continue';
+  statusEl.textContent = `${answers.filter(a => a !== null).length} of ${questions.length} Set 2 Reading questions answered`;
+}
+
+function selectOption(index) {
+  answers[current] = index;
+  render();
+}
+
+prevBtn.addEventListener('click', () => {
+  if (current > 0) {
+    current--;
+    render();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+});
+
+nextBtn.addEventListener('click', () => {
+  if (current < questions.length - 1) {
+    current++;
+    render();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  } else {
+    alert('You have reached the end of the Set 2 Reading questions.');
+  }
+});
+
+function tick() {
+  if (remaining > 0) remaining--;
+  const h = String(Math.floor(remaining / 3600)).padStart(2, '0');
+  const m = String(Math.floor((remaining % 3600) / 60)).padStart(2, '0');
+  const s = String(remaining % 60).padStart(2, '0');
+  timerEl.textContent = `${h}:${m}:${s}`;
+}
+
+render();
+setInterval(tick, 1000);
+</script>
+</body>
+</html>

@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ATI TEAS Version 7 English Set 8 Practice Questions</title>
+  <meta name="description" content="ATI TEAS Version 7 English Set 8 practice questions extracted from uploaded screenshots with answers, stimulus text, and responsive quiz functionality." />
+  <style>
+    :root{--text:#4a4a4a;--heading:#333;--blue:#caebfb;--btn:#b6e4e7;--btn-text:#50646b;--dot:#8b8f92;--dot-light:#c1e5fb;--dot-active:#89bce8;--olive:#6b7300;--ok:#e7f7ec;--bad:#fff0f0}
+    *{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--text);background:#fff}.exam-shell{max-width:1280px;margin:0 auto;min-height:100vh;padding:34px 32px 42px;display:flex;flex-direction:column}.topbar{display:flex;justify-content:space-between;align-items:center;padding:0 10px 16px;margin-bottom:10px;border-bottom:5px solid transparent;border-image:repeating-linear-gradient(135deg,var(--blue) 0 3px,transparent 3px 8px) 12}.brand{font-size:18px;font-weight:700;color:#3a3a3a}.close{border:none;background:#f8f8f8;color:#444;font-weight:700;font-size:14px;padding:10px 16px;display:flex;align-items:center;gap:6px;text-transform:uppercase}.close .x{width:16px;height:16px;border-radius:50%;display:grid;place-items:center;background:#444;color:#fff;line-height:1;font-size:12px}.main{flex:1;display:grid;grid-template-columns:minmax(0,1fr);gap:36px;align-items:start;padding:6px 8px 0}.top-question-row{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;margin-bottom:18px;padding:0 6px}h1{font-family:Georgia,"Times New Roman",serif;color:var(--heading);font-size:28px;margin:0;line-height:1.2}.utility{text-align:right;flex:0 0 auto;min-width:195px;display:flex;flex-direction:column;align-items:flex-end;gap:10px}.timer-row{display:flex;align-items:center;justify-content:flex-end;gap:14px;width:100%}.timer{font-weight:700;white-space:nowrap}.timer span{font-weight:400}.flag{display:inline-flex;align-items:center;gap:8px;border:1px solid #d6d6d6;background:#fff;padding:11px 16px;color:#555;font-weight:700;box-shadow:0 1px 2px rgba(0,0,0,.05)}.flag-icon{width:22px;height:27px;border:3px solid #555;border-top:none;position:relative}.flag-icon:before{content:"";position:absolute;left:5px;top:-9px;width:13px;height:24px;background:#555;clip-path:polygon(0 0,100% 0,100% 78%,50% 58%,0 78%)}.calc{width:33px;height:43px;border:4px solid var(--olive);position:relative;flex:0 0 auto}.calc:before{content:"";position:absolute;left:6px;right:6px;top:5px;height:6px;background:#fff}.calc:after{content:"";position:absolute;left:6px;top:18px;width:4px;height:4px;background:#fff;box-shadow:9px 0 #fff,18px 0 #fff,0 9px #fff,9px 9px #fff,18px 9px #fff,0 18px #fff,9px 18px #fff,18px 18px #fff}.stimulus-area{max-width:1120px;margin:0 0 18px 6px}.stimulus-label{font-weight:700;font-size:16px;color:#3d3d3d;margin:0 0 10px}.memo,.stimulus-list{font-size:16px;line-height:1.45;color:#454545;font-weight:600;max-width:1080px}.memo p,.stimulus-list p{margin:0 0 14px}.question-text{font-size:17px;font-weight:700;color:#333;line-height:1.45;margin:0 6px 26px;max-width:1120px}.dots{display:flex;flex-wrap:nowrap;gap:14px;align-items:center;margin:0 6px 28px;overflow:hidden}.dot{width:7px;height:7px;border-radius:50%;background:var(--dot);box-shadow:21px 0 var(--dot-light)}.dot.active{background:var(--dot-active);transform:scale(1.35)}.options{display:grid;gap:14px;margin:0 0 22px}.option{min-height:56px;display:flex;align-items:center;gap:18px;padding:12px 16px;border:2px solid transparent;cursor:pointer;outline:none}.option:hover,.option:focus{border-color:#d7edf9}.option.selected{border-color:#b8e1f2;background:#fff}.option.correct{background:var(--ok);border-color:#87c99c}.option.incorrect{background:var(--bad);border-color:#e4a3a3}.control{width:23px;height:23px;border-radius:50%;border:2px solid #d6d6d6;background:#eee;box-shadow:inset 0 1px 3px rgba(0,0,0,.12);flex:0 0 auto}.checkbox .control{border-radius:3px}.option.selected .control{border:7px solid #6f7378;background:#fff}.checkbox.selected .control{border:2px solid #8e8e8e;background:#8e8e8e;position:relative}.checkbox.selected .control:after{content:"";position:absolute;left:5px;top:1px;width:7px;height:13px;border:solid white;border-width:0 3px 3px 0;transform:rotate(45deg)}.option-text{font-size:16px;line-height:1.35}.answer-feedback{display:none;margin:10px 6px 0;padding:12px 14px;border-left:4px solid #70b987;background:#f4fbf6;font-weight:700}.answer-feedback.wrong{border-left-color:#d27878;background:#fff7f7}.answer-feedback.show{display:block}.nav{margin-top:auto;display:flex;justify-content:space-between;align-items:center;padding:26px 0 0}.nav button{border:none;background:var(--btn);color:var(--btn-text);font-size:15px;font-weight:700;text-transform:uppercase;padding:13px 26px;min-width:120px;clip-path:polygon(15px 0,100% 0,calc(100% - 15px) 50%,100% 100%,15px 100%,0 50%)}.nav button:disabled{opacity:.45;cursor:not-allowed}.status{font-size:13px;color:#777;text-align:center;padding:0 16px}
+    @media(max-width:760px){.exam-shell{padding:22px 14px 30px}.topbar{padding-inline:0}.top-question-row{flex-direction:column}.utility{width:100%;align-items:flex-start;text-align:left}.timer-row{justify-content:flex-start}.question-text{font-size:16px}.dots{gap:9px}.option{padding:12px 10px}.nav{gap:12px}.status{font-size:12px}.nav button{min-width:104px;padding:12px 18px}}
+  </style>
+</head>
+<body>
+  <div class="exam-shell">
+    <header class="topbar"><div class="brand" id="brandTitle">ATI TEAS Version 7 - English Set 8</div><button class="close"><span class="x">x</span> Close</button></header>
+    <main class="main"><section class="right-col"><div class="top-question-row"><h1 id="questionNumber"></h1><div class="utility"><div class="timer-row"><div class="timer">Time Remaining: <span id="timer">01:00:00</span></div><div class="calc"></div></div><div><button class="flag"><span class="flag-icon"></span> FLAG</button></div></div></div><div class="stimulus-area" id="stimulus"></div><div class="question-text" id="questionText"></div><div class="dots" id="dots"></div><div class="options" id="options"></div><div class="answer-feedback" id="answerFeedback"></div></section></main>
+    <nav class="nav"><button id="prevBtn">Previous</button><div class="status" id="status"></div><button id="nextBtn">Continue</button></nav>
+  </div>
+  <script>
+const questions = [
+  {
+    "number": 1,
+    "sectionTitle": "ATI TEAS Version 7 - English Set 8",
+    "sourceNumber": 1,
+    "sourceFile": "QUESTION 1 OF 37.png",
+    "question": "Which of the following prefixes can be added to the root \"vent\" to mean \"go around\"?",
+    "options": [
+      "con-",
+      "in-",
+      "pre-",
+      "circum-"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 2,
+    "sectionTitle": "ATI TEAS Version 7 - English Set 8",
+    "sourceNumber": 2,
+    "sourceFile": "QUESTION 2 OF 37.png",
+    "question": "Which of the following sentences is correctly punctuated?",
+    "options": [
+      "It's a small world.",
+      "Its time for us to go home.",
+      "The dog brought us it's bone.",
+      "I think its cold outside."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 3,
+    "sectionTitle": "ATI TEAS Version 7 - English Set 8",
+    "sourceNumber": 3,
+    "sourceFile": "QUESTION 3 OF 37.png",
+    "question": "The above is an internal memo from the head of a web development team. Which of the following words or phrases are informal within a business context? (Select all that apply.)",
+    "stimulusHtml": "<div class=\"stimulus-label\">Stimulus: 1 of 1</div><div class=\"memo\"><p><strong>Hey, gang!</strong></p><p>Lately there have been a whole bunch of small but avoidable errors in the formatting and styling for our website. Although I'm happy to review your work, I cannot continue to spend this many hours per day playing firefighter. Please take a sec to refamiliarize yourselves with our style manual and be sure to follow it closely going forward.</p><p>Thanks,<br>Morgan</p></div>",
+    "options": [
+      "Hey, gang!",
+      "website",
+      "playing firefighter",
+      "a whole bunch",
+      "going forward",
+      "take a sec"
+    ],
+    "correctIndexes": [
+      0,
+      2,
+      3,
+      5
+    ],
+    "multi": true
+  },
+  {
+    "number": 4,
+    "sectionTitle": "ATI TEAS Version 7 - English Set 8",
+    "sourceNumber": 4,
+    "sourceFile": "QUESTION 4 OF 37.png",
+    "question": "Which of the following sentences is punctuated correctly?",
+    "options": [
+      "I was at the mall yesterday when I met some friends. \"Hey,\" what are you doing here I asked?",
+      "I was at the mall yesterday when I met some friends. \"Hey, what are you doing here,\" I asked?",
+      "I was at the mall yesterday when I met some friends, \"Hey, what are you doing here,\" I asked.",
+      "I was at the mall yesterday when I met some friends. \"Hey, what are you doing here?\" I asked."
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 5,
+    "sectionTitle": "ATI TEAS Version 7 - English Set 8",
+    "sourceNumber": 5,
+    "sourceFile": "QUESTION 5 OF 37.png",
+    "question": "Which of the following sentences correctly follows the rules of punctuation?",
+    "options": [
+      "Francis Scott Key was an American lawyer; author; and amateur poet from Georgetown, who wrote the lyrics to the United States' national anthem.",
+      "Francis Scott Key was an American lawyer, author, and amateur poet from Georgetown, who wrote the lyrics to the United States' national anthem.",
+      "Francis Scott Key was an American lawyer author and amateur poet from Georgetown, who wrote the lyrics to the United States' national anthem.",
+      "Francis Scott Key was an American lawyer, author, and amateur poet from Georgetown; who wrote the lyrics to the United States' national anthem."
+    ],
+    "correctIndex": 1
+  },
+  {
+    "number": 6,
+    "sectionTitle": "ATI TEAS Version 7 - English Set 8",
+    "sourceNumber": 6,
+    "sourceFile": "QUESTION 6 OF 37.png",
+    "question": "Which of the following statements requires a citation?",
+    "options": [
+      "Jupiter is the largest planet in our solar system.",
+      "The sun rises in the east and sets in the west.",
+      "A nickname often used for Mars is the red planet.",
+      "The surface temperature of Mars is increasing every year."
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 7,
+    "sectionTitle": "ATI TEAS Version 7 - English Set 8",
+    "sourceNumber": 7,
+    "sourceFile": "QUESTION 7 OF 37.png",
+    "question": "The students stood before the principle, who was known for her strict views on plagiarism, and hoped that their promise to retake the course would earn them a break.\n\nWhich of the following homophones should be used to correct the error in the sentence above?",
+    "options": [
+      "Brake",
+      "Principal",
+      "There",
+      "Coarse"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "number": 8,
+    "sectionTitle": "ATI TEAS Version 7 - English Set 8",
+    "sourceNumber": 8,
+    "sourceFile": "QUESTION 8 OF 37.png",
+    "question": "Which of the following options contains formal, rather than informal language?",
+    "options": [
+      "What's it all about?",
+      "Where'd this thing come from?",
+      "Where are we meeting?",
+      "What's this stuff for?"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "number": 9,
+    "sectionTitle": "ATI TEAS Version 7 - English Set 8",
+    "sourceNumber": 9,
+    "sourceFile": "QUESTION 9 OF 37.png",
+    "question": "In the word \"circumnavigation,\" the Latin prefix \"circum\" means to move in which of the following directions?",
+    "options": [
+      "Forward",
+      "Up",
+      "Sideways",
+      "Around"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 10,
+    "sectionTitle": "ATI TEAS Version 7 - English Set 8",
+    "sourceNumber": 10,
+    "sourceFile": "QUESTION 10 OF 37.png",
+    "question": "Which of the following is the final step of the writing process?",
+    "options": [
+      "Editing",
+      "Researching",
+      "Interviewing",
+      "Drafting"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 11,
+    "sectionTitle": "ATI TEAS Version 7 - English Set 8",
+    "sourceNumber": 12,
+    "sourceFile": "QUESTION 12 OF 37.png",
+    "question": "After studying the disease for years scientists have identified the agents that cause it but they haven't found a cure for it.\n\nWhich of the following options punctuates this sentence correctly?",
+    "options": [
+      "After studying the disease for years; scientists have identified the agents that cause it, but they haven't found a cure for it.",
+      "After studying the disease for years scientists have identified the agents that cause it, but they haven't found a cure for it.",
+      "After studying the disease for years, scientists have identified the agents that cause it, but they haven't found a cure for it.",
+      "After, studying the disease for years, scientists have identified the agents, that cause it, but they haven't found a cure for it."
+    ],
+    "correctIndex": 2
+  },
+  {
+    "number": 12,
+    "sectionTitle": "ATI TEAS Version 7 - English Set 8",
+    "sourceNumber": 13,
+    "sourceFile": "QUESTION 13 OF 37.png",
+    "question": "According to our instructor, the book that I found was her's. She told me, however, that she didn't want it back.\n\nWhich of the following is an error in the sentences above?",
+    "options": [
+      "Improper use of a comma after the word \"instructor\"",
+      "Improper use of an apostrophe in the contraction \"didn't\"",
+      "Improper use of commas around the word \"however\"",
+      "Improper use of an apostrophe in the word \"her's\""
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 13,
+    "sectionTitle": "ATI TEAS Version 7 - English Set 8",
+    "sourceNumber": 14,
+    "sourceFile": "QUESTION 14 OF 37.png",
+    "stimulusHtml": "<div class=\"stimulus-list\"><p><strong>1.</strong> It has never been more true to say that a dog is a man's best friend.</p><p><strong>2.</strong> In response, the dog bit the intruder who was attacking his owner.</p><p><strong>3.</strong> Last Tuesday night, a dog and his owner were asleep in their home.</p><p><strong>4.</strong> An intruder broke into the house in the early hours of the morning.</p></div>",
+    "question": "Using the sentences above, which of the following sentence orders best forms an organized, logical paragraph?",
+    "options": [
+      "3, 1, 2, 4",
+      "1, 2, 4, 3",
+      "1, 3, 2, 4",
+      "3, 4, 2, 1"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 14,
+    "sectionTitle": "ATI TEAS Version 7 - English Set 8",
+    "sourceNumber": 15,
+    "sourceFile": "QUESTION 15 OF 37.png",
+    "question": "Which of the following would be an introductory sentence for a paragraph about autism spectrum disorder?",
+    "options": [
+      "A dramatic rise in autism awareness since 1990 has led to increased recognition and understanding of the neurodevelopment disorder within society.",
+      "Increased understanding has fostered more inclusive environments in schools, workplaces, and communities.",
+      "Now, more individuals across a wide range of disciplines recognize and incorporate simple, yet effective, accommodations for people with ASD.",
+      "Over time, early diagnosis and intervention has ensured individuals on the autism spectrum can access appropriate support."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 15,
+    "sectionTitle": "ATI TEAS Version 7 - English Set 8",
+    "sourceNumber": 16,
+    "sourceFile": "QUESTION 16 OF 37.png",
+    "question": "Which of the following would not need a citation?",
+    "options": [
+      "The thesis of the paper placed at the end of the introductory paragraph.",
+      "A summary of other research completed within the past 20 years on the topic.",
+      "The mention of a theory that contradicts your view within the research section.",
+      "A chart with statistical data that correlates to your research placed in the appendix."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 16,
+    "sectionTitle": "ATI TEAS Version 7 - English Set 8",
+    "sourceNumber": 17,
+    "sourceFile": "QUESTION 17 OF 37.png",
+    "question": "A professor requires at least two qualified peer reviews of a research paper from students within the field. Which of the following methods is best to find peer reviewers who meet the criteria?",
+    "options": [
+      "Approach students outside the building where most of the general education courses are completed.",
+      "Wait for the thesis review conference at the end of the semester.",
+      "Contact the campus writing center to inquire about student reviewers in the field.",
+      "Enter the criteria in a social media search field to determine who is nearby."
+    ],
+    "correctIndex": 2
+  },
+  {
+    "number": 17,
+    "sectionTitle": "ATI TEAS Version 7 - English Set 8",
+    "sourceNumber": 18,
+    "sourceFile": "QUESTION 18 OF 37.png",
+    "question": "The root \"lit\" means letter, root, or word. Based on an analysis of affixes, which of the following means \"unable to read or write\"?",
+    "options": [
+      "Illiterate",
+      "Obliterate",
+      "Alliteration",
+      "Preliterate"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 18,
+    "sectionTitle": "ATI TEAS Version 7 - English Set 8",
+    "sourceNumber": 19,
+    "sourceFile": "QUESTION 19 OF 37.png",
+    "question": "When it is too hot to work outside, I like to sit inside and read a book, but sometimes I play with the cat.\n\nWhich of the following is the coordinating conjunction in this sentence?",
+    "options": [
+      "When",
+      "But",
+      "With",
+      "And"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "number": 19,
+    "sectionTitle": "ATI TEAS Version 7 - English Set 8",
+    "sourceNumber": 20,
+    "sourceFile": "QUESTION 20 OF 37.png",
+    "question": "Irresistible\n\nFor the given word, which of the following pairs represent the closest meanings for the prefix and suffix?",
+    "options": [
+      "Again, able to be",
+      "Not, a form of",
+      "Not, able to be",
+      "Again, a form of"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "number": 20,
+    "sectionTitle": "ATI TEAS Version 7 - English Set 8",
+    "sourceNumber": 21,
+    "sourceFile": "QUESTION 21 OF 37.png",
+    "question": "Which sentence correctly follows the rules of spelling?",
+    "options": [
+      "\"Its only a matter of time before our competitor makes gains in the market,\" said the sales director.",
+      "Italy is known for it's delicious pastries, cheese, and cured meats.",
+      "When the emergency room reaches capacity, its' stressful for both staff and patients.",
+      "\"It's a new day for America,\" declared the newly elected senator."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 21,
+    "sectionTitle": "ATI TEAS Version 7 - English Set 8",
+    "sourceNumber": 22,
+    "sourceFile": "QUESTION 22 OF 37.png",
+    "question": "Based on an analysis of word parts, which of the following affixes, if added to the nonsense root word \"amell\", would make the word have an opposite meaning?",
+    "options": [
+      "Monoamell",
+      "Interamell",
+      "Disamell",
+      "Extramell"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "number": 22,
+    "sectionTitle": "ATI TEAS Version 7 - English Set 8",
+    "sourceNumber": 23,
+    "sourceFile": "QUESTION 23 OF 37.png",
+    "question": "Which of the following is a simple sentence?",
+    "options": [
+      "Not only does Antonio know American Sign Language, he can also read lips.",
+      "Marissa refuses to apologize; however, she knows she was unfair to her sister.",
+      "The entire senior class went to the football game; therefore, the stadium was packed.",
+      "Quantum physics is Juan's best subject."
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 23,
+    "sectionTitle": "ATI TEAS Version 7 - English Set 8",
+    "sourceNumber": 24,
+    "sourceFile": "QUESTION 24 OF 37.png",
+    "question": "Which of the following sentences is written in informal language?",
+    "options": [
+      "Correct business attire includes clothing that is mended, laundered, and pressed.",
+      "This is a reminder that the dress code is intended to ensure harmony and professionalism.",
+      "Employees have, in recent months, begun ignoring important parts of the dress code.",
+      "Let's all agree from now on to dress for success, not a middle school sleepover."
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 24,
+    "sectionTitle": "ATI TEAS Version 7 - English Set 8",
+    "sourceNumber": 25,
+    "sourceFile": "QUESTION 25 OF 37.png",
+    "question": "She was a big baseball fan, and her prized possession was her __________.\n\nWhich of the following completes this sentence with correct capitalization?",
+    "options": [
+      "Kansas City royals jersey",
+      "Kansas City Royals Jersey",
+      "Kansas city Royals jersey",
+      "Kansas City Royals jersey"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 25,
+    "sectionTitle": "ATI TEAS Version 7 - English Set 8",
+    "sourceNumber": 26,
+    "sourceFile": "QUESTION 26 OF 37.png",
+    "question": "Which of the following statements would a teacher provide as personalized feedback to an elementary school student?",
+    "options": [
+      "Matthew rides the local bus to school.",
+      "Matthew is zoned for East Elementary School.",
+      "Matthew is in the third grade.",
+      "Matthew accepts redirection well."
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 26,
+    "sectionTitle": "ATI TEAS Version 7 - English Set 8",
+    "sourceNumber": 27,
+    "sourceFile": "QUESTION 27 OF 37.png",
+    "question": "Which of the following choices is free from slang?",
+    "options": [
+      "Sorry I ghosted you last night and left you on read! I fell asleep.",
+      "Why are you always late to your third hour class?",
+      "Do you want to grab some grub at the new restaurant downtown?",
+      "The concert is next Friday. It's going to be lit!"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "number": 27,
+    "sectionTitle": "ATI TEAS Version 7 - English Set 8",
+    "sourceNumber": 28,
+    "sourceFile": "QUESTION 28 OF 37.png",
+    "question": "Which of the following sentences correctly follows the rules of capitalization?",
+    "options": [
+      "I plan to enroll in College next year.",
+      "The A1 Plumbing Board of Directors gave every employee a raise.",
+      "The Geography students took a class trip to the Rocky Mountains.",
+      "Even though he moved to New York, he was born in a Western town."
+    ],
+    "correctIndex": 1
+  },
+  {
+    "number": 28,
+    "sectionTitle": "ATI TEAS Version 7 - English Set 8",
+    "sourceNumber": 29,
+    "sourceFile": "QUESTION 29 OF 37.png",
+    "question": "Which of the following sentences is correctly punctuated?",
+    "options": [
+      "Sally and Emma both bought their dress design's from a fashion magazine.",
+      "Sallys' and Emmas' dresses were flattering.",
+      "Sallys' dresses were blue and red.",
+      "Sally's dress was made of beautiful satin."
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 29,
+    "sectionTitle": "ATI TEAS Version 7 - English Set 8",
+    "sourceNumber": 30,
+    "sourceFile": "QUESTION 30 OF 37.png",
+    "question": "Which of the following is a complete sentence?",
+    "options": [
+      "Walking with a limp as a result of the thorn.",
+      "Running through the park before breakfast.",
+      "When I was young and loved going for runs in the park.",
+      "I walked all three dogs around the park this morning."
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 30,
+    "sectionTitle": "ATI TEAS Version 7 - English Set 8",
+    "sourceNumber": 31,
+    "sourceFile": "QUESTION 31 OF 37.png",
+    "question": "Which one of the following sentences contains a dangling modifier?",
+    "options": [
+      "My brother had an old truck that sat by the garage that needed paint.",
+      "The contented puppy sat by the sleeping young child.",
+      "Drivers in our state are confused by the outdated driving law.",
+      "Adequate lighting is important for anyone who is studying or reading."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 31,
+    "sectionTitle": "ATI TEAS Version 7 - English Set 8",
+    "sourceNumber": 32,
+    "sourceFile": "QUESTION 32 OF 37.png",
+    "question": "Which of the following best describes the first step a company should take in writing a lawn mowing proposal for a local pharmacy when they have access to the square footage of the area to be mowed, the grass type, last year's winning bid, and a list of other licensed lawn mowing companies?",
+    "options": [
+      "Writing the proposal",
+      "Submitting the document",
+      "Analyzing the information",
+      "Revising the draft"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "number": 32,
+    "sectionTitle": "ATI TEAS Version 7 - English Set 8",
+    "sourceNumber": 33,
+    "sourceFile": "QUESTION 33 OF 37.png",
+    "question": "Which part of a paragraph best describes the sentence below?\n\n\"In summation, there should be an equal rights amendment because women are most likely to experience workplace discrimination and lower wages.\"",
+    "options": [
+      "Supporting detail",
+      "Concluding statement",
+      "Opening statement",
+      "Source citation"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "number": 33,
+    "sectionTitle": "ATI TEAS Version 7 - English Set 8",
+    "sourceNumber": 34,
+    "sourceFile": "QUESTION 34 OF 37.png",
+    "question": "Which of the following steps in the writing process must happen first?",
+    "options": [
+      "Researching for credible and relevant sources",
+      "Revising and editing focusing on the clarity of the writing",
+      "Planning and brainstorming for the writing's structure and topics",
+      "Understanding the prompt or writing assignment"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 34,
+    "sectionTitle": "ATI TEAS Version 7 - English Set 8",
+    "sourceNumber": 35,
+    "sourceFile": "QUESTION 35 OF 37.png",
+    "question": "Which of the following sentences correctly uses apostrophes?",
+    "options": [
+      "My grandparents's families are coming to town for the holidays.",
+      "There are many parks' located across the country.",
+      "All of the womens thing's were lost at sea.",
+      "Our home's roof needs repairing."
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 35,
+    "sectionTitle": "ATI TEAS Version 7 - English Set 8",
+    "sourceNumber": 36,
+    "sourceFile": "QUESTION 36 OF 37.png",
+    "question": "Taken from a book review, which of the following sentences is written in formal language?",
+    "options": [
+      "This book is not recommended for readers who have the desire to be entertained.",
+      "Is this plot sophomoric and predictable? Well, duh!",
+      "You can't tell the difference between characters because they're so dang identical.",
+      "The author takes the unsuspecting reader on some kind of unfunny joy ride."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 36,
+    "sectionTitle": "ATI TEAS Version 7 - English Set 8",
+    "sourceNumber": 37,
+    "sourceFile": "QUESTION 37 OF 37.png",
+    "question": "Which of the following is a complete sentence?",
+    "options": [
+      "He quickly jogs to his car.",
+      "Running until you finish.",
+      "Walks slowly around her neighbor's house.",
+      "Jumping over the sidewalk cracks."
+    ],
+    "correctIndex": 0
+  }
+];
+const totalQuestions = questions.length;
+let current = 0;
+let answers = questions.map(q => q.multi ? [] : null);
+let remaining = 60 * 60;
+const qNumber=document.getElementById('questionNumber'),brandTitle=document.getElementById('brandTitle'),stimulusEl=document.getElementById('stimulus'),questionText=document.getElementById('questionText'),dotsEl=document.getElementById('dots'),optionsEl=document.getElementById('options'),feedbackEl=document.getElementById('answerFeedback'),prevBtn=document.getElementById('prevBtn'),nextBtn=document.getElementById('nextBtn'),timerEl=document.getElementById('timer'),statusEl=document.getElementById('status');
+function buildDots(active){dotsEl.innerHTML='';for(let i=1;i<=totalQuestions;i++){const d=document.createElement('span');d.className='dot'+(i===active?' active':'');dotsEl.appendChild(d);}}
+function sameArray(a,b){return a.length===b.length&&a.every(v=>b.includes(v));}
+function hasAnswer(q,ans){return q.multi ? ans.length>0 : ans!==null;}
+function answerText(q){const idxs=q.multi?q.correctIndexes:[q.correctIndex];return idxs.map(i=>q.options[i]).join('; ');}
+function render(){const item=questions[current];const ans=answers[current];brandTitle.textContent=item.sectionTitle;qNumber.textContent=`Question: ${item.sourceNumber} of 37`;stimulusEl.innerHTML=item.stimulusHtml||'';questionText.innerHTML=(item.question||'').replace(/\n/g,'<br>');buildDots(item.number);optionsEl.innerHTML='';item.options.forEach((opt,index)=>{const selected=item.multi?ans.includes(index):ans===index;const answered=hasAnswer(item,ans);const correct=item.multi?item.correctIndexes.includes(index):index===item.correctIndex;let cls='option'+(item.multi?' checkbox':'')+(selected?' selected':'');if(answered&&correct)cls+=' correct';if(answered&&selected&&!correct)cls+=' incorrect';const row=document.createElement('div');row.className=cls;row.tabIndex=0;const radio=document.createElement('span');radio.className='control';const label=document.createElement('span');label.className='option-text';label.textContent=opt;row.appendChild(radio);row.appendChild(label);row.addEventListener('click',()=>selectOption(index));row.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();selectOption(index);}});optionsEl.appendChild(row);});if(hasAnswer(item,ans)){const ok=item.multi?sameArray(ans,item.correctIndexes):ans===item.correctIndex;feedbackEl.className='answer-feedback show'+(ok?'':' wrong');feedbackEl.textContent=ok?`Correct. Answer: ${answerText(item)}`:`Incorrect. Correct answer: ${answerText(item)}`;}else{feedbackEl.className='answer-feedback';feedbackEl.textContent='';}prevBtn.disabled=current===0;nextBtn.textContent=current===totalQuestions-1?'Finish':'Continue';statusEl.textContent=`${answers.filter((a,i)=>hasAnswer(questions[i],a)).length} of ${totalQuestions} uploaded English questions answered | Source: ${item.sourceFile}`;}
+function selectOption(index){const item=questions[current];if(item.multi){const cur=answers[current];answers[current]=cur.includes(index)?cur.filter(i=>i!==index):cur.concat(index).sort((a,b)=>a-b);}else{answers[current]=index;}render();}
+prevBtn.addEventListener('click',()=>{if(current>0){current--;render();window.scrollTo({top:0,behavior:'smooth'});}});
+nextBtn.addEventListener('click',()=>{if(current<totalQuestions-1){current++;render();window.scrollTo({top:0,behavior:'smooth'});}else{alert('You have reached the end of the uploaded English Set 8 questions.');}});
+function tick(){if(remaining>0)remaining--;const h=String(Math.floor(remaining/3600)).padStart(2,'0');const m=String(Math.floor((remaining%3600)/60)).padStart(2,'0');const s=String(remaining%60).padStart(2,'0');timerEl.textContent=`${h}:${m}:${s}`;}
+render();setInterval(tick,1000);
+  </script>
+</body>
+</html>

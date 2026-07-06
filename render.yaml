@@ -15,8 +15,11 @@ services:
         source: /pricing
         destination: /pricing/index.html
       - type: rewrite
-        source: /teas-version-7-set-9
-        destination: /teas-version-7-set-9/index.html
+        source: /sets/set-9/
+        destination: /sets/set-9/index.html
+      - type: rewrite
+        source: /sets/set-10/
+        destination: /sets/set-10/index.html
       - type: redirect
         source: /index.html
         destination: /
@@ -30,5 +33,5 @@ services:
         source: /pricing.html
         destination: /pricing
       - type: redirect
-        source: /teas-version-7-set-9.html
-        destination: /teas-version-7-set-9
+        source: /teas-version-7-set-9
+        destination: /sets/set-9/

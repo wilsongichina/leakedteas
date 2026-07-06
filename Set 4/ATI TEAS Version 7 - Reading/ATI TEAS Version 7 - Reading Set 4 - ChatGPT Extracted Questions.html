@@ -1,0 +1,1100 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ATI TEAS Version 7 Reading Practice Questions</title>
+  <style>
+    :root {
+      --text:#4a4a4a;
+      --heading:#333;
+      --blue:#caebfb;
+      --blue-strong:#b7dcff;
+      --btn:#b6e4e7;
+      --btn-text:#50646b;
+      --dot:#8b8f92;
+      --dot-light:#c1e5fb;
+      --dot-active:#89bce8;
+      --olive:#6b7300;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      color:var(--text);
+      background:#fff;
+    }
+    .exam-shell {
+      max-width: 1280px;
+      margin: 0 auto;
+      min-height: 100vh;
+      padding: 34px 32px 42px;
+      display:flex;
+      flex-direction:column;
+    }
+    .topbar {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding: 0 10px 16px;
+      margin-bottom: 10px;
+      border-bottom: 5px solid transparent;
+      border-image: repeating-linear-gradient(135deg, var(--blue) 0 3px, transparent 3px 8px) 12;
+    }
+    .brand {
+      font-size: 18px;
+      font-weight: 700;
+      color:#3a3a3a;
+    }
+    .close {
+      border:none;
+      background:#f8f8f8;
+      color:#444;
+      font-weight:700;
+      font-size:14px;
+      padding:10px 16px;
+      display:flex;
+      align-items:center;
+      gap:6px;
+      text-transform:uppercase;
+    }
+    .close .x {
+      width:16px;
+      height:16px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      background:#444;
+      color:#fff;
+      line-height:1;
+      font-size:12px;
+    }
+    .main {
+      flex:1;
+      display:grid;
+      grid-template-columns: minmax(0, 1fr) minmax(420px, 500px);
+      gap: 36px;
+      align-items:start;
+      padding: 6px 8px 0;
+    }
+    .left-col {
+      min-width:0;
+    }
+    .right-col {
+      min-width:0;
+      padding-top: 4px;
+    }
+    .top-question-row {
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:24px;
+      margin-bottom: 18px;
+      padding: 0 6px;
+    }
+    h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--heading);
+      font-size: 28px;
+      margin: 0;
+      line-height: 1.2;
+    }
+    .utility {
+      text-align:right;
+      flex:0 0 auto;
+      min-width: 195px;
+      display:flex;
+      flex-direction:column;
+      align-items:flex-end;
+      gap:10px;
+    }
+    .timer-row {
+      display:flex;
+      align-items:center;
+      justify-content:flex-end;
+      gap:14px;
+      width:100%;
+    }
+    .timer {
+      font-weight:700;
+      margin-bottom:0;
+      white-space:nowrap;
+    }
+    .timer span { font-weight:400; }
+    .flag-row {
+      display:flex;
+      justify-content:flex-end;
+      width:100%;
+    }
+    .calc {
+      width:33px;
+      height:43px;
+      border:4px solid var(--olive);
+      position:relative;
+      flex:0 0 auto;
+    }
+    .calc:before {
+      content:"";
+      position:absolute;
+      left:6px;
+      right:6px;
+      top:5px;
+      height:6px;
+      background:#fff;
+    }
+    .calc:after {
+      content:"";
+      position:absolute;
+      left:6px;
+      top:18px;
+      width:4px;
+      height:4px;
+      background:#fff;
+      box-shadow:9px 0 #fff,18px 0 #fff,0 9px #fff,9px 9px #fff,18px 9px #fff,0 18px #fff,9px 18px #fff,18px 18px #fff;
+    }
+    .flag {
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      border:1px solid #d6d6d6;
+      background:#fff;
+      padding:11px 16px;
+      color:#555;
+      font-weight:700;
+      box-shadow:0 1px 2px rgba(0,0,0,.05);
+    }
+    .flag-icon {
+      width:22px;
+      height:27px;
+      border:3px solid #555;
+      border-top:none;
+      position:relative;
+    }
+    .flag-icon:before {
+      content:"";
+      position:absolute;
+      left:5px;
+      top:-9px;
+      width:13px;
+      height:24px;
+      background:#555;
+      clip-path:polygon(0 0,100% 0,100% 78%,50% 58%,0 78%);
+    }
+    .passage-title {
+      font-weight:700;
+      font-size:18px;
+      color:#444;
+      margin: 0 0 14px;
+    }
+    .passage {
+      font-size:16px;
+      line-height:1.52;
+      color:#595959;
+      padding: 0 6px 8px;
+    }
+    .passage p {
+      margin: 0 0 14px;
+    }
+    .passage ul {
+      margin: 0 0 14px 24px;
+      padding:0;
+    }
+    .passage li {
+      margin: 0 0 7px;
+    }
+    .stimulus {
+      font-weight:700;
+      font-size:18px;
+      color:#444;
+      margin: 0 0 2px;
+    }
+    .diagram-stimulus {
+      margin: 14px 0 26px;
+      text-align:left;
+    }
+    .diagram-stimulus img {
+      display:block;
+      height:auto;
+      max-width:100%;
+      background:#fff;
+      border:0;
+    }
+    .question-text {
+      border-top:1px solid #dfdfdf;
+      padding-top:8px;
+      font-weight:700;
+      color:#3d3d3d;
+      font-size:17px;
+      line-height:1.35;
+      margin-bottom:16px;
+    }
+    .dots {
+      display:flex;
+      align-items:center;
+      gap:11px;
+      margin: 0 0 24px;
+      overflow:hidden;
+      flex-wrap:nowrap;
+    }
+    .dot {
+      width:6px;
+      height:6px;
+      border-radius:50%;
+      background:var(--dot);
+      flex:0 0 auto;
+    }
+    .dot:nth-child(7n) { background:var(--dot-light); }
+    .dot.active {
+      width:9px;
+      height:9px;
+      background:var(--dot-active);
+      box-shadow:0 0 0 2px rgba(139,187,230,.18);
+    }
+    .options {
+      display:flex;
+      flex-direction:column;
+      gap:7px;
+      padding-bottom: 10px;
+    }
+    .option {
+      min-height: 54px;
+      display:flex;
+      align-items:flex-start;
+      gap:16px;
+      padding:12px 14px;
+      border:2px solid transparent;
+      border-radius:2px;
+      cursor:pointer;
+      user-select:none;
+      background:#fff;
+    }
+    .option:hover,
+    .option.selected {
+      border-color:var(--blue-strong);
+      box-shadow:0 0 2px rgba(80,145,255,.45);
+    }
+    .option.correct {
+      border-color:#4caf50;
+      background:#f1fbf3;
+      box-shadow:0 0 2px rgba(76,175,80,.45);
+    }
+    .option.incorrect {
+      border-color:#e15757;
+      background:#fff4f4;
+      box-shadow:0 0 2px rgba(225,87,87,.45);
+    }
+    .option.correct .radio::after {
+      content:"";
+      width:9px;
+      height:9px;
+      border-radius:50%;
+      background:#3f9b45;
+      box-shadow:0 0 2px #2f7d35;
+    }
+    .option.incorrect .radio::after {
+      content:"";
+      width:9px;
+      height:9px;
+      border-radius:50%;
+      background:#c84242;
+      box-shadow:0 0 2px #8f2929;
+    }
+    .radio {
+      width:22px;
+      height:22px;
+      border-radius:50%;
+      border:2px solid #9d9d9d;
+      background:#e8e8e8;
+      display:inline-grid;
+      place-items:center;
+      flex:0 0 auto;
+      margin-top:1px;
+    }
+    .selected .radio::after {
+      content:"";
+      width:9px;
+      height:9px;
+      border-radius:50%;
+      background:#656565;
+      box-shadow:0 0 2px #333;
+    }
+    .option-text {
+      line-height:1.45;
+      color:#5a5a5a;
+      font-size:16px;
+    }
+    .answer-feedback {
+      margin-top:14px;
+      padding:12px 14px;
+      border-left:4px solid #4caf50;
+      background:#f1fbf3;
+      color:#315d34;
+      font-weight:700;
+      line-height:1.45;
+      display:none;
+    }
+    .answer-feedback.show {
+      display:block;
+    }
+    .answer-feedback.wrong {
+      border-left-color:#e15757;
+      background:#fff4f4;
+      color:#7a2d2d;
+    }
+    .bottom-controls {
+      margin-top: 28px;
+      padding: 0 10px;
+    }
+    .nav {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
+    }
+    .arrow-btn {
+      border:none;
+      background:var(--btn);
+      color:var(--btn-text);
+      font-weight:700;
+      min-width:126px;
+      height:45px;
+      cursor:pointer;
+      position:relative;
+      text-transform:uppercase;
+      letter-spacing:.2px;
+    }
+    .prev {
+      clip-path:polygon(22px 0,100% 0,100% 100%,22px 100%,0 50%);
+      padding-left:18px;
+    }
+    .next {
+      clip-path:polygon(0 0,calc(100% - 22px) 0,100% 50%,calc(100% - 22px) 100%,0 100%);
+      padding-right:18px;
+    }
+    .arrow-btn:disabled {
+      opacity:.45;
+      cursor:not-allowed;
+    }
+    .status {
+      margin-top:12px;
+      text-align:center;
+      color:#777;
+      font-size:13px;
+    }
+    @media (max-width: 980px) {
+      .exam-shell {
+        padding: 18px 14px 28px;
+      }
+      .topbar {
+        padding: 0 0 12px;
+      }
+      .brand {
+        font-size: 15px;
+      }
+      .close {
+        font-size:12px;
+        padding:8px 10px;
+      }
+      .top-question-row {
+        flex-direction:column;
+        gap:10px;
+        margin-bottom:14px;
+        padding:0;
+      }
+      .utility {
+        width:auto;
+        min-width:0;
+        text-align:right;
+        align-items:flex-end;
+        align-self:flex-end;
+        margin-left:auto;
+        gap:8px;
+      }
+      .timer-row {
+        justify-content:flex-end;
+        gap:10px;
+      }
+      .flag-row {
+        justify-content:flex-end;
+        width:100%;
+      }
+      .calc {
+        width:28px;
+        height:38px;
+        border-width:3px;
+      }
+      .calc:before {
+        left:5px;
+        right:5px;
+        top:5px;
+        height:5px;
+      }
+      .calc:after {
+        left:5px;
+        top:16px;
+        width:3px;
+        height:3px;
+        box-shadow:8px 0 #fff,16px 0 #fff,0 8px #fff,8px 8px #fff,16px 8px #fff,0 16px #fff,8px 16px #fff,16px 16px #fff;
+      }
+      .flag {
+        min-width:96px;
+        justify-content:center;
+        padding:9px 12px;
+        font-size:13px;
+      }
+      .flag-icon {
+        width:20px;
+        height:24px;
+      }
+      .main {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding:0;
+      }
+      h1 {
+        font-size:24px;
+      }
+      .passage-title, .stimulus {
+        font-size:17px;
+      }
+      .passage,
+      .option-text {
+        font-size:14px;
+      }
+      .question-text {
+        font-size:15px;
+      }
+      .diagram-stimulus {
+        margin: 12px 0 22px;
+      }
+      .diagram-stimulus img {
+        width:100% !important;
+        max-width:100% !important;
+      }
+      .dots {
+        gap:8px;
+        margin-bottom:18px;
+      }
+      .dot {
+        width:5px;
+        height:5px;
+      }
+      .dot.active {
+        width:8px;
+        height:8px;
+      }
+      .option {
+        gap:12px;
+        padding:10px 8px;
+        min-height:52px;
+      }
+      .radio {
+        width:21px;
+        height:21px;
+      }
+      .bottom-controls {
+        padding:0;
+        margin-top:20px;
+      }
+      .arrow-btn {
+        min-width:110px;
+        height:42px;
+        font-size:12px;
+      }
+      .status {
+        font-size:12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="exam-shell">
+    <header class="topbar">
+      <div class="brand" id="brandTitle">TEAS Version 7 - Reading</div>
+      <button class="close" type="button"><span class="x">Ã—</span> Close</button>
+    </header>
+
+    <div class="top-question-row">
+      <h1 id="questionNumber">Question: 1 of 45</h1>
+      <div class="utility">
+        <div class="timer-row">
+          <div class="timer">Time Remaining: <span id="timer">00:55:00</span></div>
+          <div class="calc" aria-label="calculator icon"></div>
+        </div>
+        <div class="flag-row">
+          <button class="flag" type="button"><span class="flag-icon"></span> FLAG</button>
+        </div>
+      </div>
+    </div>
+
+    <main class="main">
+      <section class="left-col">
+        <div class="passage-title" id="passageTitle"></div>
+        <div class="passage" id="passage"></div>
+      </section>
+
+      <section class="right-col">
+        <div class="question-text" id="questionText"></div>
+        <div class="stimulus" id="stimulus"></div>
+        <div class="dots" id="dots" aria-hidden="true"></div>
+        <div class="options" id="options"></div>
+        <div class="answer-feedback" id="answerFeedback"></div>
+      </section>
+    </main>
+
+    <div class="bottom-controls">
+      <nav class="nav">
+        <button class="arrow-btn prev" id="prevBtn" type="button">Previous</button>
+        <button class="arrow-btn next" id="nextBtn" type="button">Continue</button>
+      </nav>
+      <div class="status" id="status"></div>
+    </div>
+  </div>
+
+<script>
+const questions = [
+    {
+        "number":  1,
+        "sectionTitle":  "ATI TEAS Version 7 - Reading",
+        "passageTitle":  "Playful Pooch",
+        "passageHtml":  "\u003cp\u003eSometimes, your playful pooch might give a little nip to your hand or something else that shouldn\u0026apos;t be bitten. To stop had biting behaviors, you should attempt to redirect your dog\u0026apos;s attention to an appropriate chew toy. You can do thus by placing the toy in their mouth and praising them, causing your canine companion to associate chewing on the chew toy with positive emotions Another step you can take to redirect biting behavior is to use biting deterrent spray. The spray can be homemade or store bought Just make sure that the ingredients won\u0026apos;t make your puppy\u0026apos;s tummy sick\u003c/p\u003e",
+        "stimulus":  "",
+        "sourceNumber":  1,
+        "question":  "Which of the following terms identifies the author\u0027s tone in the passage?",
+        "options":  [
+                        "Scientific",
+                        "Sarcastic",
+                        "Formal",
+                        "Informal"
+                    ],
+        "correctIndex":  3
+    },
+    {
+        "number":  2,
+        "sectionTitle":  "ATI TEAS Version 7 - Reading",
+        "passageTitle":  "",
+        "passageHtml":  "",
+        "stimulus":  "",
+        "sourceNumber":  2,
+        "question":  "Which of the following best identifies the author\u0027s purpose in the passage?",
+        "options":  [
+                        "To describe how to train a puppy",
+                        "To argue that dogs shouldn\u0027t bite",
+                        "To narrate what it\u0027s like to have a new puppy",
+                        "To inform the reader about illness in dogs"
+                    ],
+        "correctIndex":  0
+    },
+    {
+        "number":  3,
+        "sectionTitle":  "ATI TEAS Version 7 - Reading",
+        "passageTitle":  "Research shows that tipping in a restaurant has little to no effect on service. What tipping does do is enable restaurateurs to pay less than the federal minimum wage to servers and defend on customers to make up the difference between servers salaries and the minimum wage. The",
+        "passageHtml":  "\u003cp\u003eU.S. federal minimum wage for servers is $2.13 per hour. Although minimum wage varies from state to state, it is safe to say that customers are paying the lion\u0026apos;s share of servers\u0026apos; salaries.\u003c/p\u003e\u003cp\u003eThis practice leads to resentment on the part of customers, and it devalues servers. It\u0026apos;s time to abolish tipping and pay employees a living wage. The result may well be happy servers who provide excellent service to grateful customers.\u003c/p\u003e",
+        "stimulus":  "",
+        "sourceNumber":  3,
+        "question":  "Which of the following is the writer\u0027s main argument?",
+        "options":  [
+                        "Customers are resentful of having to help pay the salaries of servers.",
+                        "The federal rate for servers is too Low.",
+                        "Servers should provide excellent service no matter how much they make.",
+                        "The custom of tipping should be abolished, and servers should be paid a living wage."
+                    ],
+        "correctIndex":  3
+    },
+    {
+        "number":  4,
+        "sectionTitle":  "ATI TEAS Version 7 - Reading",
+        "passageTitle":  "Research shows that tipping in a restaurant has little to no effect on service. What tipping does do is enable restaurateurs to pay less than the federal minimum wage to servers and defend on customers to make up the difference between servers salaries and the minimum wage. The",
+        "passageHtml":  "\u003cp\u003eU.S. federal minimum wage for servers is $2.13 per hour. Although minimum wage varies from state to state, it is safe to say that customers are paying the lion\u0026apos;s share of servers\u0026apos; salaries.\u003c/p\u003e\u003cp\u003eThis practice leads to resentment on the part of customers, and it devalues servers. It\u0026apos;s time to abolish tipping and pay employees a living wage. The result may well be happy servers who provide excellent service to grateful customers.\u003c/p\u003e",
+        "stimulus":  "",
+        "sourceNumber":  4,
+        "question":  "Which of the following is evidence the writer provides to support the main argument?\nCustomers are grateful for excellent service.\nMinimum wage varies from state to state.\nServers do not provide good service because of their low pay.\nCustomers pay a large percentage of servers’ salaries.\nExcerpt from a suspense novel\nShia looked up from his monitor, rubbed his eyes, and stared down the dark hallway toward the\nCFO\u0027s office. He was certain a sound had come from behind the closed door. It was a heavy thump, like someone had dropped a bowling ball.",
+        "options":  [
+                        "There shouldn\u0027t be anyone else here at this hour, Shia thought to himself as he looked at his watch. The only illumination came from Shia\u0027s computer monitor. His office was on the thirtieth floor, far too high to get much more than a faint glow from the street lights below. Shia slowly stood up before reaching down to turn off the computer screen, hoping to hide in the darkness.",
+                        "He considered turning on his phone\u0027s flashlight, but his thoughts were cut short by a loud crash followed by the unmistakable tinkling of shattered glass",
+                        "Shia froze, as if he were caught by the gaze of Medusa. The initial doubt that he would actually find someone snooping around the CFO\u0027s office had turned to an icy fear that gripped his lungs and would not let him breathe. His heart was pounding loudly in his ears, he knew whoever was in his boss\u0027s office must be able to hear it.",
+                        "Another crash, followed by a loud how! that he was sure couldn\u0027t be human, shocked Shia into motion. He broke into a run... in the opposite direction. He sprinted for the emergency stairwell and rushed downward, jumping over the last few steps of each flight. Shia didn\u0027t stop running until he had burst through the ground floor exit to the parking garage and found his car. His heart continued racing until he was at home in bed. He sent his boss a single text message before turning over and trying to force himself to sleep: \"I don\u0027t think | can work late anymore.\""
+                    ],
+        "correctIndex":  0
+    },
+    {
+        "number":  5,
+        "sectionTitle":  "ATI TEAS Version 7 - Reading",
+        "passageTitle":  "Research shows that tipping in a restaurant has little to no effect on service. What tipping does do is enable restaurateurs to pay less than the federal minimum wage to servers and defend on customers to make up the difference between servers salaries and the minimum wage. The",
+        "passageHtml":  "\u003cp\u003eU.S. federal minimum wage for servers is $2.13 per hour. Although minimum wage varies from state to state, it is safe to say that customers are paying the lion\u0026apos;s share of servers\u0026apos; salaries.\u003c/p\u003e\u003cp\u003eThis practice leads to resentment on the part of customers, and it devalues servers. It\u0026apos;s time to abolish tipping and pay employees a living wage. The result may well be happy servers who provide excellent service to grateful customers.\u003c/p\u003e",
+        "stimulus":  "",
+        "sourceNumber":  5,
+        "question":  "Which of the following contains only key points of the passage?",
+        "options":  [
+                        "There is a thump like a dropped bowling ball, a loud crash, and the tinkling of shattered glass.",
+                        "Shia is working at his computer, there is little light, and no one else should be in the building.",
+                        "Shia is working late, he hears mysterious noises, and he is frightened enough to leave work.",
+                        "There are frightening noises in the office, Shia goes home, Shia sends his boss a text."
+                    ],
+        "correctIndex":  3
+    },
+    {
+        "number":  6,
+        "sectionTitle":  "ATI TEAS Version 7 - Reading",
+        "passageTitle":  "Research shows that tipping in a restaurant has little to no effect on service. What tipping does do is enable restaurateurs to pay less than the federal minimum wage to servers and defend on customers to make up the difference between servers salaries and the minimum wage. The",
+        "passageHtml":  "\u003cp\u003eU.S. federal minimum wage for servers is $2.13 per hour. Although minimum wage varies from state to state, it is safe to say that customers are paying the lion\u0026apos;s share of servers\u0026apos; salaries.\u003c/p\u003e\u003cp\u003eThis practice leads to resentment on the part of customers, and it devalues servers. It\u0026apos;s time to abolish tipping and pay employees a living wage. The result may well be happy servers who provide excellent service to grateful customers.\u003c/p\u003e",
+        "stimulus":  "",
+        "sourceNumber":  6,
+        "question":  "Which of the following is the topic of the excerpt?",
+        "options":  [
+                        "A building with poor lighting and security",
+                        "A boss\u0027s expectations of an employee",
+                        "A mysterious experience at work",
+                        "An employee who is easily scared"
+                    ],
+        "correctIndex":  2
+    },
+    {
+        "number":  7,
+        "sectionTitle":  "ATI TEAS Version 7 - Reading",
+        "passageTitle":  "Research shows that tipping in a restaurant has little to no effect on service. What tipping does do is enable restaurateurs to pay less than the federal minimum wage to servers and defend on customers to make up the difference between servers salaries and the minimum wage. The",
+        "passageHtml":  "\u003cp\u003eU.S. federal minimum wage for servers is $2.13 per hour. Although minimum wage varies from state to state, it is safe to say that customers are paying the lion\u0026apos;s share of servers\u0026apos; salaries.\u003c/p\u003e\u003cp\u003eThis practice leads to resentment on the part of customers, and it devalues servers. It\u0026apos;s time to abolish tipping and pay employees a living wage. The result may well be happy servers who provide excellent service to grateful customers.\u003c/p\u003e",
+        "stimulus":  "",
+        "sourceNumber":  7,
+        "question":  "Which of the following is the tone of the passage?",
+        "options":  [
+                        "Tense",
+                        "Aggressive",
+                        "Incredulous",
+                        "Witty"
+                    ],
+        "correctIndex":  0
+    },
+    {
+        "number":  8,
+        "sectionTitle":  "ATI TEAS Version 7 - Reading",
+        "passageTitle":  "Research shows that tipping in a restaurant has little to no effect on service. What tipping does do is enable restaurateurs to pay less than the federal minimum wage to servers and defend on customers to make up the difference between servers salaries and the minimum wage. The",
+        "passageHtml":  "\u003cp\u003eU.S. federal minimum wage for servers is $2.13 per hour. Although minimum wage varies from state to state, it is safe to say that customers are paying the lion\u0026apos;s share of servers\u0026apos; salaries.\u003c/p\u003e\u003cp\u003eThis practice leads to resentment on the part of customers, and it devalues servers. It\u0026apos;s time to abolish tipping and pay employees a living wage. The result may well be happy servers who provide excellent service to grateful customers.\u003c/p\u003e",
+        "stimulus":  "",
+        "sourceNumber":  8,
+        "question":  "Which of the following sentences from the passage supports the conclusion that the passage takes place in the 21st century?",
+        "options":  [
+                        "\"His office was on the thirtieth floor, far too high to get much more than a faint glow from the street lights below.\"",
+                        "\"He sent his boss a single text message before turning over and trying to force himself to sleep: ‘I don\u0027t think I can work late anymore.",
+                        "\"Shia didn\u0027t stop running until he had burst through the ground floor exit to the parking garage and found his car.\"",
+                        "\"Shia froze, as if he were caught by the gaze of Medusa.\""
+                    ],
+        "correctIndex":  1
+    },
+    {
+        "number":  9,
+        "sectionTitle":  "ATI TEAS Version 7 - Reading",
+        "passageTitle":  "Research shows that tipping in a restaurant has little to no effect on service. What tipping does do is enable restaurateurs to pay less than the federal minimum wage to servers and defend on customers to make up the difference between servers salaries and the minimum wage. The",
+        "passageHtml":  "\u003cp\u003eU.S. federal minimum wage for servers is $2.13 per hour. Although minimum wage varies from state to state, it is safe to say that customers are paying the lion\u0026apos;s share of servers\u0026apos; salaries.\u003c/p\u003e\u003cp\u003eThis practice leads to resentment on the part of customers, and it devalues servers. It\u0026apos;s time to abolish tipping and pay employees a living wage. The result may well be happy servers who provide excellent service to grateful customers.\u003c/p\u003e",
+        "stimulus":  "",
+        "sourceNumber":  9,
+        "question":  "Which of the following sources would be the best resource to find a list of other suspense novels?\nAn encyclopedia entry about the suspense genre\nA public library\u0027s digital catalog",
+        "options":  [
+                        "A New York Times bestseller list",
+                        "The online reviews of the novel",
+                        "An Interesting Birthday Party",
+                        "On Saturday afternoon, local eccentric Dr. Oliver Creekstone held a remarkable 90th birthday party at his countryside estate. Present were 3,000 guests, four zebras, two monster trucks, and a famous bagpipe player from Scotland. Though pleased with the entertainment, attendees reportedly were shocked that the complimentary buffet contained only boiled asparagus and pickled carrots. At nightfall, the party was treated to a stunning and seemingly endless fireworks display. According to our sources, Dr. Creekstone felt that next year\u0027s birthday party would have to be even bigger and more interesting. \"We\u0027ll need at least seven more zebras,\" he said."
+                    ],
+        "correctIndex":  0
+    },
+    {
+        "number":  10,
+        "sectionTitle":  "ATI TEAS Version 7 - Reading",
+        "passageTitle":  "Research shows that tipping in a restaurant has little to no effect on service. What tipping does do is enable restaurateurs to pay less than the federal minimum wage to servers and defend on customers to make up the difference between servers salaries and the minimum wage. The",
+        "passageHtml":  "\u003cp\u003eU.S. federal minimum wage for servers is $2.13 per hour. Although minimum wage varies from state to state, it is safe to say that customers are paying the lion\u0026apos;s share of servers\u0026apos; salaries.\u003c/p\u003e\u003cp\u003eThis practice leads to resentment on the part of customers, and it devalues servers. It\u0026apos;s time to abolish tipping and pay employees a living wage. The result may well be happy servers who provide excellent service to grateful customers.\u003c/p\u003e",
+        "stimulus":  "",
+        "sourceNumber":  10,
+        "question":  "Which of the following conclusions is supported by all of provided about the birthday party?",
+        "options":  [
+                        "Dr. Oliver Creekstone is a carnivorous eater.",
+                        "The Creekstone estate is a half-acre lot lined with tree",
+                        "The Creekstone estate cannot hold seven more zebra",
+                        "Dr. Oliver Creekstone is an unconventional fellow"
+                    ],
+        "correctIndex":  3
+    },
+    {
+        "number":  11,
+        "sectionTitle":  "ATI TEAS Version 7 - Reading",
+        "passageTitle":  "Research shows that tipping in a restaurant has little to no effect on service. What tipping does do is enable restaurateurs to pay less than the federal minimum wage to servers and defend on customers to make up the difference between servers salaries and the minimum wage. The",
+        "passageHtml":  "\u003cp\u003eU.S. federal minimum wage for servers is $2.13 per hour. Although minimum wage varies from state to state, it is safe to say that customers are paying the lion\u0026apos;s share of servers\u0026apos; salaries.\u003c/p\u003e\u003cp\u003eThis practice leads to resentment on the part of customers, and it devalues servers. It\u0026apos;s time to abolish tipping and pay employees a living wage. The result may well be happy servers who provide excellent service to grateful customers.\u003c/p\u003e",
+        "stimulus":  "",
+        "sourceNumber":  11,
+        "question":  "Which of the following quotes from a guest at the birthday party contains a stereotype?",
+        "options":  [
+                        "“I once thought Dr. Creekstone to be irresponsible, but this party was well-planned and executed.\"",
+                        "\"The food provided was inedible; nevertheless, this party turned my sour mood around.\"",
+                        "\"I would never want my own birthday party to have smelly zebras and loud fireworks.\"",
+                        "“Considering the elderly age of Dr. Creekstone, he was surprisingly articulate and intelligent.\""
+                    ],
+        "correctIndex":  3
+    },
+    {
+        "number":  12,
+        "sectionTitle":  "ATI TEAS Version 7 - Reading",
+        "passageTitle":  "Research shows that tipping in a restaurant has little to no effect on service. What tipping does do is enable restaurateurs to pay less than the federal minimum wage to servers and defend on customers to make up the difference between servers salaries and the minimum wage. The",
+        "passageHtml":  "\u003cp\u003eU.S. federal minimum wage for servers is $2.13 per hour. Although minimum wage varies from state to state, it is safe to say that customers are paying the lion\u0026apos;s share of servers\u0026apos; salaries.\u003c/p\u003e\u003cp\u003eThis practice leads to resentment on the part of customers, and it devalues servers. It\u0026apos;s time to abolish tipping and pay employees a living wage. The result may well be happy servers who provide excellent service to grateful customers.\u003c/p\u003e",
+        "stimulus":  "",
+        "sourceNumber":  12,
+        "question":  "“Though pleased with the entertainment, attendees reportedly were shocked that the complimentary buffet contained only boiled asparagus and pickled carrots.\"\nWhich of the following words from the sentence above has a negative connotation?\nComplimentary\nShocked\nReportedly\nContained\nClara Barton Timeline\n1821: Clara Barton is born in North Oxford, Massachusetts.\n1831: Barton cares for her brother David after he falls from a roof and is severely injured.\nD.C. to work as the first female\n1855: Barton moves to Washington federal patent clerk\n1861: Barton begins gathering and distributing food, clothing, and medical supplies to wounded soldiers dunng the Civil\n1862: Barton works on the front lines as a self-taught nurse.",
+        "options":  [
+                        "1865. After the war, Barton begins identifying anonymous soldiers to be properly buried through the Office of Missing Soldiers.",
+                        "1869. Barton travels to Europe, assisting with preparing military hospitals and supplying aid to the poor.",
+                        "1881: Barton petitions President Chester A. Arthur to open an American branch of the",
+                        "International Red Cross organization."
+                    ],
+        "correctIndex":  0
+    },
+    {
+        "number":  13,
+        "sectionTitle":  "ATI TEAS Version 7 - Reading",
+        "passageTitle":  "Research shows that tipping in a restaurant has little to no effect on service. What tipping does do is enable restaurateurs to pay less than the federal minimum wage to servers and defend on customers to make up the difference between servers salaries and the minimum wage. The",
+        "passageHtml":  "\u003cp\u003eU.S. federal minimum wage for servers is $2.13 per hour. Although minimum wage varies from state to state, it is safe to say that customers are paying the lion\u0026apos;s share of servers\u0026apos; salaries.\u003c/p\u003e\u003cp\u003eThis practice leads to resentment on the part of customers, and it devalues servers. It\u0026apos;s time to abolish tipping and pay employees a living wage. The result may well be happy servers who provide excellent service to grateful customers.\u003c/p\u003e",
+        "stimulus":  "",
+        "sourceNumber":  13,
+        "question":  "According to the timeline, which of the following events happens second?",
+        "options":  [
+                        "Barton works as a federal patent clerk.",
+                        "Barton works on the frontlines of the Civil War.",
+                        "Barton travels to Europe.",
+                        "Barton identifies anonymous soldiers."
+                    ],
+        "correctIndex":  1
+    },
+    {
+        "number":  14,
+        "sectionTitle":  "ATI TEAS Version 7 - Reading",
+        "passageTitle":  "Research shows that tipping in a restaurant has little to no effect on service. What tipping does do is enable restaurateurs to pay less than the federal minimum wage to servers and defend on customers to make up the difference between servers salaries and the minimum wage. The",
+        "passageHtml":  "\u003cp\u003eU.S. federal minimum wage for servers is $2.13 per hour. Although minimum wage varies from state to state, it is safe to say that customers are paying the lion\u0026apos;s share of servers\u0026apos; salaries.\u003c/p\u003e\u003cp\u003eThis practice leads to resentment on the part of customers, and it devalues servers. It\u0026apos;s time to abolish tipping and pay employees a living wage. The result may well be happy servers who provide excellent service to grateful customers.\u003c/p\u003e",
+        "stimulus":  "",
+        "sourceNumber":  14,
+        "question":  "Which of the following words as used in the timeline indicates the chronology of events in\nBarton\u0027s life?",
+        "options":  [
+                        "Through",
+                        "After",
+                        "Front",
+                        "First"
+                    ],
+        "correctIndex":  1
+    },
+    {
+        "number":  15,
+        "sectionTitle":  "ATI TEAS Version 7 - Reading",
+        "passageTitle":  "",
+        "passageHtml":  "",
+        "stimulus":  "",
+        "sourceNumber":  15,
+        "question":  "Which of the following information indicates Clara Barton has international influence?\n1865: After the war, Barton begins identifying anonymous soldier to be properly buried through the Office of Missing Soldiers",
+        "options":  [
+                        "1881: Barton petitions President Chester A. Arthur to open an American branch of the",
+                        "International Red Cross organization.",
+                        "1861: Barton begins gathering and distributing food, clothing, and medical supplies to unded soldiers during the Civil War",
+                        "1869. Barton travels to Europe, assisting with preparing military hospitals and supplying aid to the poor."
+                    ],
+        "correctIndex":  0
+    },
+    {
+        "number":  16,
+        "sectionTitle":  "ATI TEAS Version 7 - Reading",
+        "passageTitle":  "Office Memo",
+        "passageHtml":  "\u003cp\u003eTo: Staff\u003c/p\u003e\u003cp\u003eFrom: CEO\u003c/p\u003e\u003cp\u003eDate: June 18, 2021\u003c/p\u003e\u003cp\u003eSubject: Naps\u003c/p\u003e\u003cp\u003eEmployees,\u003c/p\u003e\u003cp\u003eIn recent company-wide audits, many employees have reported fatigue at work. Combined with our acquistion of 10 major projects. this year, I\u0026apos;m concerned about our employees\u0026apos; productivity and health.\u003c/p\u003e\u003cp\u003eAccording to a 2008 study, napping for 60 minutes helped improve verbal memory, moter skills, and perceptual learning better than caffeine. Many successful companies have adopted the practice of work naps, in industries like tech, manufacturing even NASA!\u003c/p\u003e\u003cp\u003eStarting today, we will be providing a designated nap roam in each office building near the gym and cafeteria to help employees take care of their bodies and minds, so they can be happier, healthier, and more productive\u003c/p\u003e\u003cp\u003eThank you,\u003c/p\u003e",
+        "stimulus":  "",
+        "sourceNumber":  16,
+        "question":  "Which of the following first prompted the CEO to consider implementing nap rooms?",
+        "options":  [
+                        "Reading the 2008 study about napping in the workplace",
+                        "Having extra rooms available near the gym and cafeteria",
+                        "Learning that NASA allows napping during the workday",
+                        "Company-wide audits that reported employee fatigue"
+                    ],
+        "correctIndex":  3
+    },
+    {
+        "number":  17,
+        "sectionTitle":  "ATI TEAS Version 7 - Reading",
+        "passageTitle":  "",
+        "passageHtml":  "",
+        "stimulus":  "",
+        "sourceNumber":  17,
+        "question":  "Which of the following additional pieces of information supports the claim that napping during the workday will help employees \"be happier, healthier, and more productive\"?",
+        "options":  [
+                        "A study showing that the best time of day for a nap is between 2 and 3 p.m.",
+                        "Rested people have better impulse control, so they are more likely to choose nutrius food over junk food,",
+                        "In 1999, National Napping Day was founded in response to Daylight Saving Time.",
+                        "Multiple companies have designed special seats or pods specifically for getting the optimal workplace nap."
+                    ],
+        "correctIndex":  1
+    },
+    {
+        "number":  18,
+        "sectionTitle":  "ATI TEAS Version 7 - Reading",
+        "passageTitle":  "Lexington and Concord",
+        "passageHtml":  "\u003cp\u003eThe majority of history scholars agree that the open warfare portion of the American War for\u003c/p\u003e\u003cp\u003eIndependence began in two small Massachusetts towns. Lexington and Concord. To stop the\u003c/p\u003e\u003cp\u003eBritish from discovering military supplies hidden in Concord, the American Minutemen attempted to stall or halt the British Regulars in Lexington Common\u003c/p\u003e\u003cp\u003eWhile the opposing factions were facing off against one another, a shot was fired from an unknown source, causing hostilities to berak into violence. After the skirmish at Lexington settled, multiple people from both sides lay dead and the British continued their way toward\u003c/p\u003e\u003cp\u003eConcord\u003c/p\u003e",
+        "stimulus":  "",
+        "sourceNumber":  18,
+        "question":  "Which of the following could accurately subtitle this passage, following \"Lexington and\nConcord\"?\nA",
+        "options":  [
+                        "The Full Armies Face Off",
+                        "In the State of Massachusetts",
+                        "The Start of the Revolution",
+                        "American March from the Sea"
+                    ],
+        "correctIndex":  2
+    },
+    {
+        "number":  19,
+        "sectionTitle":  "ATI TEAS Version 7 - Reading",
+        "passageTitle":  "Lexington and Concord",
+        "passageHtml":  "\u003cp\u003eThe majority of history scholars agree that the open warfare portion of the American War for\u003c/p\u003e\u003cp\u003eIndependence began in two small Massachusetts towns. Lexington and Concord. To stop the\u003c/p\u003e\u003cp\u003eBritish from discovering military supplies hidden in Concord, the American Minutemen attempted to stall or halt the British Regulars in Lexington Common\u003c/p\u003e\u003cp\u003eWhile the opposing factions were facing off against one another, a shot was fired from an unknown source, causing hostilities to berak into violence. After the skirmish at Lexington settled, multiple people from both sides lay dead and the British continued their way toward\u003c/p\u003e\u003cp\u003eConcord\u003c/p\u003e",
+        "stimulus":  "",
+        "sourceNumber":  19,
+        "question":  "Which of the following best describes the tone of the passage?\nObjective\nSkeptical\nPatronizing",
+        "options":  [
+                        "Nostalgic",
+                        "The best part about going to the theater is the feeling of being transported into a story. As soon as the curtain rises, you can forget about the chairs that make you feel like you\u0027ve been squished into a sardine can and embrace wherever the story takes you, if only for a short while.",
+                        "The emotions in the play become your emotions. The lives of the characters become your life.",
+                        "From a drama about a family in financial crisis to a comedy about a play gone wrong, there is no limit to where the theater can take you."
+                    ],
+        "correctIndex":  0
+    },
+    {
+        "number":  20,
+        "sectionTitle":  "ATI TEAS Version 7 - Reading",
+        "passageTitle":  "Lexington and Concord",
+        "passageHtml":  "\u003cp\u003eThe majority of history scholars agree that the open warfare portion of the American War for\u003c/p\u003e\u003cp\u003eIndependence began in two small Massachusetts towns. Lexington and Concord. To stop the\u003c/p\u003e\u003cp\u003eBritish from discovering military supplies hidden in Concord, the American Minutemen attempted to stall or halt the British Regulars in Lexington Common\u003c/p\u003e\u003cp\u003eWhile the opposing factions were facing off against one another, a shot was fired from an unknown source, causing hostilities to berak into violence. After the skirmish at Lexington settled, multiple people from both sides lay dead and the British continued their way toward\u003c/p\u003e\u003cp\u003eConcord\u003c/p\u003e",
+        "stimulus":  "",
+        "sourceNumber":  20,
+        "question":  "From the passage, which of the following statements represents a logical conclusion about the author",
+        "options":  [
+                        "The author also enjoys concerts and movies.",
+                        "The author loves to attend theatrical productions",
+                        "The author finds theatre seating comfortable.",
+                        "The author prefers musical comedies,"
+                    ],
+        "correctIndex":  1
+    },
+    {
+        "number":  21,
+        "sectionTitle":  "ATI TEAS Version 7 - Reading",
+        "passageTitle":  "Lexington and Concord",
+        "passageHtml":  "\u003cp\u003eThe majority of history scholars agree that the open warfare portion of the American War for\u003c/p\u003e\u003cp\u003eIndependence began in two small Massachusetts towns. Lexington and Concord. To stop the\u003c/p\u003e\u003cp\u003eBritish from discovering military supplies hidden in Concord, the American Minutemen attempted to stall or halt the British Regulars in Lexington Common\u003c/p\u003e\u003cp\u003eWhile the opposing factions were facing off against one another, a shot was fired from an unknown source, causing hostilities to berak into violence. After the skirmish at Lexington settled, multiple people from both sides lay dead and the British continued their way toward\u003c/p\u003e\u003cp\u003eConcord\u003c/p\u003e",
+        "stimulus":  "",
+        "sourceNumber":  21,
+        "question":  "Which of the following phrases best describes the author\u0027s experience in the theater?",
+        "options":  [
+                        "“The theater can transport you onto the stage”",
+                        "\"Like you\u0027re in an emotionless state\"",
+                        "\"Like you\u0027ve been squished into a sardine can’",
+                        "\"No limit to where the theater can take you\""
+                    ],
+        "correctIndex":  0
+    },
+    {
+        "number":  22,
+        "sectionTitle":  "ATI TEAS Version 7 - Reading",
+        "passageTitle":  "Lexington and Concord",
+        "passageHtml":  "\u003cp\u003eThe majority of history scholars agree that the open warfare portion of the American War for\u003c/p\u003e\u003cp\u003eIndependence began in two small Massachusetts towns. Lexington and Concord. To stop the\u003c/p\u003e\u003cp\u003eBritish from discovering military supplies hidden in Concord, the American Minutemen attempted to stall or halt the British Regulars in Lexington Common\u003c/p\u003e\u003cp\u003eWhile the opposing factions were facing off against one another, a shot was fired from an unknown source, causing hostilities to berak into violence. After the skirmish at Lexington settled, multiple people from both sides lay dead and the British continued their way toward\u003c/p\u003e\u003cp\u003eConcord\u003c/p\u003e",
+        "stimulus":  "",
+        "sourceNumber":  22,
+        "question":  "Using evidence from the passage, which of the following conclusions about the author can the reader infer?\nThey enjoy the décor of most theaters.\nThey are overly emotional and dramatic.\nThey go to the theater as often as possible.\nThey would rather be at a concert.\nHedy Lamarr, the Inventor\nHedy Lamarr was a woman of many talents. She was first known as a European film actress in the 1930s. She began starring in American films with MGM Studios in the late 1930s and early\n1940s. Some of her more popular films included Boom Town (1940) and White Cargo (1942), however, her roles generally did not include very many spoken fines and she became bored. To relieve this boredom, Lamarr took up inventing.\nHedy Lamarr did not have any formal training, but she did not allow that to stop her from teaching herself in her spare time. Although she had a mumber of failed inventions, such as an improved traffic light and a carbonated drink, Lamarr did not stop coming up with ideas. She even spent time working with the science engineering team employed by Howard Hughes, the aviation tycoon.\nDuring World War II, Lamarr learned that one of the military\u0027s new technologies, radio-controlled torpedoes, were too cauly jammed and redirected. She came up with a type of radio signal that changed, or \"hopped,\" frequencies and was unable to be tracked or disrupted. With the assistance of her friend George Antheil, she was able to design the system and patentit in",
+        "options":  [
+                        "August 1947",
+                        "Unfortunately, the United States Navy was not interested. The technology of the era wasn\u0027t quite good enough to easily implement Lamarr\u0027s system, and the Navy was not particularly interested in etvilian inventions at the time. It wasn\u0027t until 20 years later, during the Cuban",
+                        "Minule Crisis, that a version of Lamarr\u0027s system began appearing on Navy ships",
+                        "The work Lamarr and Antheil did creating this frequency-hopping system led to many technologies that are often taken for granted today. Their work led to the development of cell phones, Bluetooth, and Wi-Fi. Just think, we might not have any of those things if Hedy Lamarr had been given more interesting roles!"
+                    ],
+        "correctIndex":  0
+    },
+    {
+        "number":  23,
+        "sectionTitle":  "ATI TEAS Version 7 - Reading",
+        "passageTitle":  "Lexington and Concord",
+        "passageHtml":  "\u003cp\u003eThe majority of history scholars agree that the open warfare portion of the American War for\u003c/p\u003e\u003cp\u003eIndependence began in two small Massachusetts towns. Lexington and Concord. To stop the\u003c/p\u003e\u003cp\u003eBritish from discovering military supplies hidden in Concord, the American Minutemen attempted to stall or halt the British Regulars in Lexington Common\u003c/p\u003e\u003cp\u003eWhile the opposing factions were facing off against one another, a shot was fired from an unknown source, causing hostilities to berak into violence. After the skirmish at Lexington settled, multiple people from both sides lay dead and the British continued their way toward\u003c/p\u003e\u003cp\u003eConcord\u003c/p\u003e",
+        "stimulus":  "",
+        "sourceNumber":  23,
+        "question":  "Which of the following sentences contains information that is important enough to be included in a summary of the passage?",
+        "options":  [
+                        "She came up with a type of radio signal that changed, or \"hopped,\" frequencies",
+                        "She even spent time working with the science engineering team employed by Howard Hughes.",
+                        "Some of her more popular films included Boom Town (1940) and White Cargo (1942)",
+                        "Unfortunately, the US Navy was not interested"
+                    ],
+        "correctIndex":  0
+    },
+    {
+        "number":  24,
+        "sectionTitle":  "ATI TEAS Version 7 - Reading",
+        "passageTitle":  "Lexington and Concord",
+        "passageHtml":  "\u003cp\u003eThe majority of history scholars agree that the open warfare portion of the American War for\u003c/p\u003e\u003cp\u003eIndependence began in two small Massachusetts towns. Lexington and Concord. To stop the\u003c/p\u003e\u003cp\u003eBritish from discovering military supplies hidden in Concord, the American Minutemen attempted to stall or halt the British Regulars in Lexington Common\u003c/p\u003e\u003cp\u003eWhile the opposing factions were facing off against one another, a shot was fired from an unknown source, causing hostilities to berak into violence. After the skirmish at Lexington settled, multiple people from both sides lay dead and the British continued their way toward\u003c/p\u003e\u003cp\u003eConcord\u003c/p\u003e",
+        "stimulus":  "",
+        "sourceNumber":  24,
+        "question":  "Which of the following conclusions can be drawn about Hedy Lamarr\u0027s acting career?",
+        "options":  [
+                        "Hedy Lamarr wanted more opportunities to speak while acting",
+                        "Hedy Lamarr was content with her contribution to film.",
+                        "Hedy Lamarr worked in America films with MGM Studios.",
+                        "Hedy Lamarr was the first European actress of the 1930s."
+                    ],
+        "correctIndex":  0
+    },
+    {
+        "number":  25,
+        "sectionTitle":  "ATI TEAS Version 7 - Reading",
+        "passageTitle":  "Lexington and Concord",
+        "passageHtml":  "\u003cp\u003eThe majority of history scholars agree that the open warfare portion of the American War for\u003c/p\u003e\u003cp\u003eIndependence began in two small Massachusetts towns. Lexington and Concord. To stop the\u003c/p\u003e\u003cp\u003eBritish from discovering military supplies hidden in Concord, the American Minutemen attempted to stall or halt the British Regulars in Lexington Common\u003c/p\u003e\u003cp\u003eWhile the opposing factions were facing off against one another, a shot was fired from an unknown source, causing hostilities to berak into violence. After the skirmish at Lexington settled, multiple people from both sides lay dead and the British continued their way toward\u003c/p\u003e\u003cp\u003eConcord\u003c/p\u003e",
+        "stimulus":  "",
+        "sourceNumber":  25,
+        "question":  "Which of the following can the reader infer about the author\u0027s point of view when they state:\n“The work Lamarr and Antheil did creating this frequency-hopping system led to many technologies that are often taken for granted today.\"?\nThe author believes that the frequency-hopping system has damaged the potential of modern electronics.\nThe author believes we spend too much time using technologies derived from Lamarr\u0027s work\nThe author believes that we have underestimated the value of the contributions of lesser- known inventors\nThe author believes that the work of Lamarr and Antheil was instrumental to the victory in World War Il.\nWhich of the following sentences uses italics correctly?\nThe scientific name for the domestic dog is Canis lupus familiaris\nThe orchestra will perform Beethoven\u0027s Ninth Symphony.\nWilliam Carlos Williams was the United States Poet Laureate in 1952\nWe read Lincoln\u0027s Gettysburg Address in my American history class.\nMartin and Sons: Job Injuries, Medical Malpractice, and Persenal Injury. Free Initial\nConsultation.\nSmith and Jones: No Fee Unless You Win Your Case, Specializes in Worker\u0027s Compensation\nLegal Issues.\nThorn and Thomas: Employment Law, Contract Negotiations, and Employment Safety Issues.\nWilliams Attorneys: State and Federal Employment Fairness, Medical Malpractice Lawsuits.\nReasonable Hourly Rates Plus Percentage of Settlement.\nAn employee believes she was injured on the job due to an unsafe situation. Based on the advertisements above, which of the following attorneys provides the necessary experience to pursue her claim and would ensure the employee the lowest overall cost?\nThorn and Thomas\nMartin and Sons\nWilliams Attorney\nSmith and Jones\nWhich of the following can be used to find journal articles on a given topic?",
+        "options":  [
+                        "An encyclopedia",
+                        "A periodical index",
+                        "A handbook",
+                        "Astyle guide"
+                    ],
+        "correctIndex":  1
+    }
+];
+const totalQuestions = questions.length;
+const initialSeconds = 60 * 60;
+let current = 0;
+let answers = Array(questions.length).fill(null);
+let remaining = initialSeconds;
+
+const qNumber = document.getElementById('questionNumber');
+const brandTitle = document.getElementById('brandTitle');
+const passageTitle = document.getElementById('passageTitle');
+const passageEl = document.getElementById('passage');
+const stimulusEl = document.getElementById('stimulus');
+const questionText = document.getElementById('questionText');
+const dotsEl = document.getElementById('dots');
+const optionsEl = document.getElementById('options');
+const feedbackEl = document.getElementById('answerFeedback');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+const timerEl = document.getElementById('timer');
+const statusEl = document.getElementById('status');
+const mainEl = document.querySelector('.main');
+const leftColEl = document.querySelector('.left-col');
+const rightColEl = document.querySelector('.right-col');
+
+function buildDots(activeNumber) {
+  dotsEl.innerHTML = '';
+  for (let i = 1; i <= totalQuestions; i++) {
+    const d = document.createElement('span');
+    d.className = 'dot' + (i === activeNumber ? ' active' : '');
+    dotsEl.appendChild(d);
+  }
+}
+
+function setQuestionLayout(item) {
+  const hasLeftContent = Boolean((item.passageTitle || '').trim() || (item.passageHtml || '').trim());
+  if (hasLeftContent) {
+    mainEl.style.gridTemplateColumns = '';
+    leftColEl.style.display = '';
+    rightColEl.style.paddingTop = '';
+  } else {
+    mainEl.style.gridTemplateColumns = '1fr';
+    leftColEl.style.display = 'none';
+    rightColEl.style.paddingTop = '4px';
+  }
+}
+
+function render() {
+  const item = questions[current];
+  setQuestionLayout(item);
+
+  brandTitle.textContent = item.sectionTitle || 'ATI TEAS Version 7 - Science';
+  qNumber.textContent = `Question: ${item.number} of ${totalQuestions}`;
+  passageTitle.textContent = item.passageTitle || '';
+  passageEl.innerHTML = item.passageHtml || '';
+  stimulusEl.innerHTML = item.stimulusHtml || item.stimulus || '';
+  questionText.innerHTML = (item.question || '').replace(/\n/g, '<br>');
+
+  buildDots(item.number);
+
+  optionsEl.innerHTML = '';
+  item.options.forEach((opt, index) => {
+    const row = document.createElement('div');
+    const answered = answers[current] !== null;
+    let className = 'option';
+    if (answers[current] === index) className += ' selected';
+    if (answered && index === item.correctIndex) className += ' correct';
+    if (answered && answers[current] === index && index !== item.correctIndex) className += ' incorrect';
+    row.className = className;
+    row.tabIndex = 0;
+
+    const radio = document.createElement('span');
+    radio.className = 'radio';
+
+    const label = document.createElement('span');
+    label.className = 'option-text';
+    label.textContent = opt;
+
+    row.appendChild(radio);
+    row.appendChild(label);
+
+    row.addEventListener('click', () => selectOption(index));
+    row.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        selectOption(index);
+      }
+    });
+
+    optionsEl.appendChild(row);
+  });
+
+  if (answers[current] !== null) {
+    const correctText = item.options[item.correctIndex];
+    const isCorrect = answers[current] === item.correctIndex;
+    feedbackEl.className = 'answer-feedback show' + (isCorrect ? '' : ' wrong');
+    feedbackEl.textContent = isCorrect
+      ? `Correct. Answer: ${correctText}`
+      : `Incorrect. Correct answer: ${correctText}`;
+  } else {
+    feedbackEl.className = 'answer-feedback';
+    feedbackEl.textContent = '';
+  }
+
+  prevBtn.disabled = current === 0;
+  nextBtn.textContent = current === questions.length - 1 ? 'Finish' : 'Continue';
+  statusEl.textContent = `${answers.filter(a => a !== null).length} of ${questions.length} uploaded science questions answered`;
+}
+
+function selectOption(index) {
+  answers[current] = index;
+  render();
+}
+
+prevBtn.addEventListener('click', () => {
+  if (current > 0) {
+    current--;
+    render();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+});
+
+nextBtn.addEventListener('click', () => {
+  if (current < questions.length - 1) {
+    current++;
+    render();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  } else {
+    alert('You have reached the end of the uploaded science questions.');
+  }
+});
+
+function tick() {
+  if (remaining > 0) remaining--;
+  const h = String(Math.floor(remaining / 3600)).padStart(2, '0');
+  const m = String(Math.floor((remaining % 3600) / 60)).padStart(2, '0');
+  const s = String(remaining % 60).padStart(2, '0');
+  timerEl.textContent = `${h}:${m}:${s}`;
+}
+
+render();
+setInterval(tick, 1000);
+</script>
+</body>
+</html>
+

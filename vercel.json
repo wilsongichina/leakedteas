@@ -1,0 +1,46 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": true,
+  "rewrites": [
+    {
+      "source": "/sets/set-1/",
+      "destination": "/sets/set-1/index.html"
+    },
+    {
+      "source": "/sets/set-2/",
+      "destination": "/sets/set-2/index.html"
+    },
+    {
+      "source": "/sets/set-4/",
+      "destination": "/sets/set-4/index.html"
+    },
+    {
+      "source": "/sets/set-5/",
+      "destination": "/sets/set-5/index.html"
+    },
+    {
+      "source": "/sets/set-8/",
+      "destination": "/sets/set-8/index.html"
+    },
+    {
+      "source": "/sets/set-9/",
+      "destination": "/sets/set-9/index.html"
+    },
+    {
+      "source": "/sets/set-10/",
+      "destination": "/sets/set-10/index.html"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/teas-version-7-set-9",
+      "destination": "/sets/set-9/",
+      "permanent": true
+    },
+    {
+      "source": "/teas-version-7-set-9.html",
+      "destination": "/sets/set-9/",
+      "permanent": true
+    }
+  ]
+}

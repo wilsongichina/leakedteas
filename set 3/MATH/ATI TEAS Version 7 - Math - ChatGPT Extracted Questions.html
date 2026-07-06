@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ATI TEAS Version 7 Math Practice Questions</title>
+  <meta name="description" content="ATI TEAS Version 7 Math practice questions extracted from uploaded screenshots with answers, stimulus tables, charts, and responsive quiz functionality." />
+  <style>
+    :root{--text:#4a4a4a;--heading:#333;--blue:#caebfb;--btn:#b6e4e7;--btn-text:#50646b;--dot:#8b8f92;--dot-light:#c1e5fb;--dot-active:#89bce8;--olive:#6b7300;--ok:#e7f7ec;--bad:#fff0f0}
+    *{box-sizing:border-box} body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--text);background:#fff}.exam-shell{max-width:1280px;margin:0 auto;min-height:100vh;padding:34px 32px 42px;display:flex;flex-direction:column}.topbar{display:flex;justify-content:space-between;align-items:center;padding:0 10px 16px;margin-bottom:10px;border-bottom:5px solid transparent;border-image:repeating-linear-gradient(135deg,var(--blue) 0 3px,transparent 3px 8px) 12}.brand{font-size:18px;font-weight:700;color:#3a3a3a}.close{border:none;background:#f8f8f8;color:#444;font-weight:700;font-size:14px;padding:10px 16px;display:flex;align-items:center;gap:6px;text-transform:uppercase}.close .x{width:16px;height:16px;border-radius:50%;display:grid;place-items:center;background:#444;color:#fff;line-height:1;font-size:12px}.main{flex:1;display:grid;grid-template-columns:minmax(0,1fr);gap:36px;align-items:start;padding:6px 8px 0}.top-question-row{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;margin-bottom:18px;padding:0 6px}h1{font-family:Georgia,"Times New Roman",serif;color:var(--heading);font-size:28px;margin:0;line-height:1.2}.utility{text-align:right;flex:0 0 auto;min-width:195px;display:flex;flex-direction:column;align-items:flex-end;gap:10px}.timer-row{display:flex;align-items:center;justify-content:flex-end;gap:14px;width:100%}.timer{font-weight:700;white-space:nowrap}.timer span{font-weight:400}.flag{display:inline-flex;align-items:center;gap:8px;border:1px solid #d6d6d6;background:#fff;padding:11px 16px;color:#555;font-weight:700;box-shadow:0 1px 2px rgba(0,0,0,.05)}.flag-icon{width:22px;height:27px;border:3px solid #555;border-top:none;position:relative}.flag-icon:before{content:"";position:absolute;left:5px;top:-9px;width:13px;height:24px;background:#555;clip-path:polygon(0 0,100% 0,100% 78%,50% 58%,0 78%)}.calc{width:33px;height:43px;border:4px solid var(--olive);position:relative;flex:0 0 auto}.calc:before{content:"";position:absolute;left:6px;right:6px;top:5px;height:6px;background:#fff}.calc:after{content:"";position:absolute;left:6px;top:18px;width:4px;height:4px;background:#fff;box-shadow:9px 0 #fff,18px 0 #fff,0 9px #fff,9px 9px #fff,18px 9px #fff,0 18px #fff,9px 18px #fff,18px 18px #fff}.stimulus-area{max-width:760px;margin:0 0 18px 6px}.stimulus-label{font-weight:700;font-size:16px;color:#3d3d3d;margin:0 0 10px}.question-text{font-size:17px;font-weight:700;color:#333;line-height:1.45;margin:0 6px 26px;max-width:1100px}.dots{display:flex;flex-wrap:nowrap;gap:14px;align-items:center;margin:0 6px 28px;overflow:hidden}.dot{width:7px;height:7px;border-radius:50%;background:var(--dot);box-shadow:21px 0 var(--dot-light)}.dot.active{background:var(--dot-active);transform:scale(1.35)}.options{display:grid;gap:14px;margin:0 0 22px}.option{min-height:56px;display:flex;align-items:center;gap:18px;padding:12px 16px;border:2px solid transparent;cursor:pointer;outline:none}.option:hover,.option:focus{border-color:#d7edf9}.option.selected{border-color:#b8e1f2;background:#fff}.option.correct{background:var(--ok);border-color:#87c99c}.option.incorrect{background:var(--bad);border-color:#e4a3a3}.radio{width:23px;height:23px;border-radius:50%;border:2px solid #d6d6d6;background:#eee;box-shadow:inset 0 1px 3px rgba(0,0,0,.12);flex:0 0 auto}.option.selected .radio{border:7px solid #6f7378;background:#fff}.option-text{font-size:16px;line-height:1.35}.answer-feedback{display:none;margin:10px 6px 0;padding:12px 14px;border-left:4px solid #70b987;background:#f4fbf6;font-weight:700}.answer-feedback.wrong{border-left-color:#d27878;background:#fff7f7}.answer-feedback.show{display:block}.nav{margin-top:auto;display:flex;justify-content:space-between;align-items:center;padding:26px 0 0}.nav button{border:none;background:var(--btn);color:var(--btn-text);font-size:15px;font-weight:700;text-transform:uppercase;padding:13px 26px;min-width:120px;clip-path:polygon(15px 0,100% 0,calc(100% - 15px) 50%,100% 100%,15px 100%,0 50%)}.nav button:disabled{opacity:.45;cursor:not-allowed}.status{font-size:13px;color:#777;text-align:center;padding:0 16px}.table-wrap{overflow-x:auto}.stim-table{border-collapse:collapse;min-width:310px;background:#fff;color:#444;font-size:15px}.stim-table caption{caption-side:top;text-align:left;font-weight:700;padding:8px 0}.stim-table th,.stim-table td{border:1px solid #e2e2e2;padding:10px 14px;text-align:center}.stim-table th:first-child,.stim-table td:first-child{text-align:left;font-weight:700}.chart-card{width:min(640px,100%);border:0;background:#fff;margin:4px 0 20px;color:#444}.bar-chart{display:grid;grid-template-columns:42px 1fr;grid-template-rows:220px auto;gap:8px}.y-axis{display:flex;flex-direction:column;justify-content:space-between;text-align:right;font-size:13px;padding-right:6px}.bars{display:grid;grid-template-columns:repeat(12,1fr);gap:4px;align-items:end;border-left:2px solid #aaa;border-bottom:2px solid #aaa;padding:0 8px}.bar-col{height:100%;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:6px}.bar{width:82%;border:2px solid #777;background:#f9f9f9}.bar-col span{font-size:13px}.chart-caption{grid-column:2;text-align:center;font-weight:700;font-size:14px}.chart-card svg{width:100%;height:auto;display:block}.axis{stroke:#9b9b9b;stroke-width:3}.grid{stroke:#d8d8d8;stroke-width:2;stroke-dasharray:6 8}.tick{font-size:15px;fill:#666}.axis-label{font-size:20px;fill:#555;text-anchor:middle;font-weight:700}.rotate{transform-box:fill-box;transform-origin:center;transform:rotate(-90deg)}.point{fill:#222}.chart-title{font-size:30px;font-weight:700;text-anchor:middle;fill:#222}.chart-subtitle{font-size:17px;font-weight:700;text-anchor:middle;fill:#444}.line{fill:none;stroke:#585858;stroke-width:4}.season{font-size:13px;fill:#555;text-anchor:end}
+    @media (max-width:760px){.exam-shell{padding:22px 14px 30px}.topbar{padding-inline:0}.top-question-row{flex-direction:column}.utility{width:100%;align-items:flex-start;text-align:left}.timer-row{justify-content:flex-start}.question-text{font-size:16px}.dots{gap:9px}.option{padding:12px 10px}.nav{gap:12px}.status{font-size:12px}.nav button{min-width:104px;padding:12px 18px}.bar-chart{grid-template-rows:170px auto}.chart-title{font-size:24px}.chart-subtitle{font-size:14px}.axis-label{font-size:16px}.season{font-size:10px}}
+  </style>
+</head>
+<body>
+  <div class="exam-shell">
+    <header class="topbar"><div class="brand" id="brandTitle">ATI TEAS Version 7 - Math</div><button class="close"><span class="x">x</span> Close</button></header>
+    <main class="main">
+      <section class="right-col">
+        <div class="top-question-row"><h1 id="questionNumber"></h1><div class="utility"><div class="timer-row"><div class="timer">Time Remaining: <span id="timer">01:00:00</span></div><div class="calc"></div></div><div><button class="flag"><span class="flag-icon"></span> FLAG</button></div></div></div>
+        <div class="stimulus-area" id="stimulus"></div>
+        <div class="question-text" id="questionText"></div>
+        <div class="dots" id="dots"></div>
+        <div class="options" id="options"></div>
+        <div class="answer-feedback" id="answerFeedback"></div>
+      </section>
+    </main>
+    <nav class="nav"><button id="prevBtn">Previous</button><div class="status" id="status"></div><button id="nextBtn">Continue</button></nav>
+  </div>
+  <script>
+const questions = [
+  {
+    "number": 1,
+    "sectionTitle": "ATI TEAS Version 7 - Math",
+    "sourceNumber": 2,
+    "sourceFile": "1.png",
+    "question": "Which of the following percentages is equivalent to the fraction below?\n\n5/8",
+    "options": [
+      "6.25%",
+      "62.5%",
+      "160%",
+      "1.6%"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "number": 2,
+    "sectionTitle": "ATI TEAS Version 7 - Math",
+    "sourceNumber": 3,
+    "sourceFile": "3.png",
+    "question": "Lana has $60. She spends 80% of the money. She then invests the remaining amount and earns a profit of 80%. How much money does she now have?",
+    "options": [
+      "$21.60",
+      "$86.40",
+      "$9.60",
+      "$60"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 3,
+    "sectionTitle": "ATI TEAS Version 7 - Math",
+    "sourceNumber": 4,
+    "sourceFile": "4.png",
+    "question": "A student performs the following estimations.\n\n24 + 190 = 210\n151 + 319 = 470\n974 + 1,022 = 1,990\n\nBased on these estimations, which of the following is the student's estimate of 452 + 5,017?",
+    "options": [
+      "5,500",
+      "5,450",
+      "5,470",
+      "5,400"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "number": 4,
+    "sectionTitle": "ATI TEAS Version 7 - Math",
+    "sourceNumber": 6,
+    "sourceFile": "6.png",
+    "question": "Which of the following is the greatest value?",
+    "options": [
+      "3/8",
+      "34 ÷ 96",
+      "37%",
+      "0.372"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 5,
+    "sectionTitle": "ATI TEAS Version 7 - Math",
+    "sourceNumber": 7,
+    "sourceFile": "7.png",
+    "question": "The data below represents students' test scores. Which of the following is the median of the set of data?\n\n11, 12, 18, 14, 22, 17, 17, 12, 26, 12, 13",
+    "options": [
+      "12",
+      "14",
+      "15.8",
+      "15"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "number": 6,
+    "sectionTitle": "ATI TEAS Version 7 - Math",
+    "sourceNumber": 8,
+    "sourceFile": "8.png",
+    "question": "Which of the following relationships represents a positive correlation between two variables?",
+    "options": [
+      "As the amount of water a plant receives increases, the growth rate of the plant increases.",
+      "As a student's class attendance decreases, the student's overall grade remains the same.",
+      "As the number of hours a person exercises decreases, the weight of that person increases.",
+      "As the number of miles driven increases, the amount of gasoline in the tank decreases."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 7,
+    "sectionTitle": "ATI TEAS Version 7 - Math",
+    "sourceNumber": 9,
+    "sourceFile": "9.png",
+    "question": "A soccer field is rectangular in shape and is 100 meters long and 75 meters wide. The hectare is a metric unit of area often used to measure larger areas. Given that 1 hectare = 10,000 meters², which of the following represents the soccer field's area in hectares?",
+    "options": [
+      "0.75 hectares",
+      "75,000,000 hectares",
+      "7,500 hectares",
+      "7.5 hectares"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 8,
+    "sectionTitle": "ATI TEAS Version 7 - Math",
+    "sourceNumber": 10,
+    "sourceFile": "10.png",
+    "question": "2.50 x 0.25\n\nSimplify the expression above. Which of the following is correct?",
+    "options": [
+      "0.0625",
+      "0.625",
+      "6.25",
+      "6.025"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "number": 9,
+    "sectionTitle": "ATI TEAS Version 7 - Math",
+    "sourceNumber": 11,
+    "sourceFile": "11.png",
+    "question": "Which of the following is the equivalence in pounds for 50 kg? (2.2 lb = 1 kg)",
+    "options": [
+      "110 lb",
+      "52.2 lb",
+      "22.7 lb",
+      "220 lb"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 10,
+    "sectionTitle": "ATI TEAS Version 7 - Math",
+    "sourceNumber": 12,
+    "sourceFile": "12.png",
+    "stimulusHtml": "<div class=\"stimulus-label\">Stimulus: 1 of 1</div><div class=\"table-wrap\"><table class=\"stim-table\"><thead><tr><th>Tree type</th><th>Apple</th><th>Orange</th><th>Lemon</th><th>Banana</th><th>Pear</th></tr></thead><tbody><tr><td>Number of trees</td><td>20</td><td>10</td><td>12</td><td>25</td><td>21</td></tr></tbody></table></div>",
+    "question": "A farmer grows apple, orange, lemon, banana, and pear trees. The number of trees planted this year is shown in the table above. Which of the following would best display the data?",
+    "options": [
+      "Line graph",
+      "Stem and leaf plot",
+      "Scatter plot",
+      "Bar graph"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 11,
+    "sectionTitle": "ATI TEAS Version 7 - Math",
+    "sourceNumber": 13,
+    "sourceFile": "13.png",
+    "question": "If x represents the width of a rectangle and the length is four less than three times the width, which of the following expressions represents the length of the rectangle in terms of x?",
+    "options": [
+      "4x - 3",
+      "3x - 4",
+      "3 - 4x",
+      "4 - 3x"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "number": 12,
+    "sectionTitle": "ATI TEAS Version 7 - Math",
+    "sourceNumber": 14,
+    "sourceFile": "14.png",
+    "question": "When the weights of newborn babies are graphed, the distribution of weights is symmetric with the majority of weights centered around a single peak. Which of the following describes the shape of this distribution?",
+    "options": [
+      "Uniform",
+      "Bell-shaped",
+      "Bimodal",
+      "Skewed right"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "number": 13,
+    "sectionTitle": "ATI TEAS Version 7 - Math",
+    "sourceNumber": 15,
+    "sourceFile": "15.png",
+    "question": "A sweater that normally sells for $87 is marked 25% off. Which of the following estimates the sale price of the sweater?",
+    "options": [
+      "$51",
+      "$65",
+      "$22",
+      "$36"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "number": 14,
+    "sectionTitle": "ATI TEAS Version 7 - Math",
+    "sourceNumber": 16,
+    "sourceFile": "16.png",
+    "question": "A large pizza has a diameter of 16 inches. Which of the following is the area of the pizza in terms of pi (π)?",
+    "options": [
+      "16π in²",
+      "256π in²",
+      "64π in²",
+      "32π in²"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "number": 15,
+    "sectionTitle": "ATI TEAS Version 7 - Math",
+    "sourceNumber": 17,
+    "sourceFile": "17.png",
+    "question": "A nurse earns $800.00 per week before any tax deductions. The following taxes are deducted each week: $83.00 federal income tax, $38.00 state income tax, and $79.00 Social Security tax. How much will the nurse make in 4 weeks after taxes are deducted?",
+    "options": [
+      "$2,800.00",
+      "$2,400.00",
+      "$2,600.00",
+      "$3,000.00"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "number": 16,
+    "sectionTitle": "ATI TEAS Version 7 - Math",
+    "sourceNumber": 18,
+    "sourceFile": "18.png",
+    "question": "An athlete runs 4 miles in 28 minutes and then changes their pace to run the next 4 miles in 32 minutes. Overall, what is the average time in minutes it takes the athlete to run 1 mile?",
+    "options": [
+      "7.5 minutes",
+      "8 minutes",
+      "7 minutes",
+      "8.5 minutes"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 17,
+    "sectionTitle": "ATI TEAS Version 7 - Math",
+    "sourceNumber": 19,
+    "sourceFile": "19.png",
+    "stimulusHtml": "<div class=\"stimulus-label\">Stimulus: 1 of 1</div><div class=\"table-wrap\"><table class=\"stim-table\"><caption>Health Care Spending Per Capita</caption><thead><tr><th>Country</th><th>2013</th><th>2015</th></tr></thead><tbody><tr><td>Sudan</td><td>$17</td><td>$24</td></tr><tr><td>Eritrea</td><td>$56</td><td>$42</td></tr><tr><td>Nigeria</td><td>$16</td><td>$21</td></tr><tr><td>Tanzania</td><td>$68</td><td>$81</td></tr><tr><td>Rwanda</td><td>$27</td><td>$24</td></tr><tr><td>Kenya</td><td>$81</td><td>$88</td></tr></tbody></table></div>",
+    "question": "The table shows health care spending per capita in a group of African nations. Based on this information, which of the following countries had the greatest change in dollars spent per capita from 2013 to 2015?",
+    "options": [
+      "Eritrea",
+      "Kenya",
+      "Sudan",
+      "Tanzania"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 18,
+    "sectionTitle": "ATI TEAS Version 7 - Math",
+    "sourceNumber": 20,
+    "sourceFile": "20.png",
+    "question": "As a person cycling increases speed, the rate of calories burned, distance traveled, and energy expended also increase. Which of the following is the independent variable?",
+    "options": [
+      "Speed",
+      "Energy",
+      "Distance",
+      "Calories"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 19,
+    "sectionTitle": "ATI TEAS Version 7 - Math",
+    "sourceNumber": 21,
+    "sourceFile": "21.png",
+    "question": "One gallon of cleaning solution requires 6 oz of ammonia. If the maintenance department needs 120 gallons of solution to clean all of the floors, how much ammonia is needed?",
+    "options": [
+      "720 oz",
+      "20 gallons",
+      "720 gallons",
+      "20 oz"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 20,
+    "sectionTitle": "ATI TEAS Version 7 - Math",
+    "sourceNumber": 22,
+    "sourceFile": "22.png",
+    "question": "If a box of 35 syringes costs $560.00, which of the following is the cost for two syringes?",
+    "options": [
+      "$15.00",
+      "$8.00",
+      "$16.00",
+      "$32.00"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 21,
+    "sectionTitle": "ATI TEAS Version 7 - Math",
+    "sourceNumber": 23,
+    "sourceFile": "23.png",
+    "question": "Which of the following is the correct decimal placement for the product of 1.3 x 0.47?",
+    "options": [
+      "0.0611",
+      "6.11",
+      "0.00611",
+      "0.611"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 22,
+    "sectionTitle": "ATI TEAS Version 7 - Math",
+    "sourceNumber": 24,
+    "sourceFile": "24.png",
+    "question": "Which of the following is the weight of the cargo in a truck if 1/3 of the cargo weighs 516 pounds (lb)?",
+    "options": [
+      "1,548 lb",
+      "688 lb",
+      "1,032 lb",
+      "172 lb"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 23,
+    "sectionTitle": "ATI TEAS Version 7 - Math",
+    "sourceNumber": 26,
+    "sourceFile": "26.png",
+    "question": "A bucket can hold 3 L. How many mL can the bucket hold?",
+    "options": [
+      "300 mL",
+      "3,000 mL",
+      "0.003 mL",
+      "30 mL"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "number": 24,
+    "sectionTitle": "ATI TEAS Version 7 - Math",
+    "sourceNumber": 27,
+    "sourceFile": "27.png",
+    "question": "How many feet are there in 6 yards?",
+    "options": [
+      "9 ft",
+      "36 ft",
+      "2 ft",
+      "18 ft"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 25,
+    "sectionTitle": "ATI TEAS Version 7 - Math",
+    "sourceNumber": 28,
+    "sourceFile": "28.png",
+    "stimulusHtml": "<div class=\"stimulus-label\">Stimulus: 1 of 1</div><div class=\"table-wrap\"><table class=\"stim-table\"><caption>County Hospital Staff Distribution</caption><thead><tr><th></th><th>PN</th><th>RN</th></tr></thead><tbody><tr><td>Male</td><td>30</td><td>50</td></tr><tr><td>Female</td><td>50</td><td>70</td></tr></tbody></table></div>",
+    "question": "Which of the following represents the probability that a PN or an RN is a female?",
+    "options": [
+      "2/5",
+      "7/12",
+      "5/8",
+      "3/5"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 26,
+    "sectionTitle": "ATI TEAS Version 7 - Math",
+    "sourceNumber": 29,
+    "sourceFile": "29.png",
+    "question": "4(x - 5) = 8\n\nSolve the equation above for x. Which of the following is the correct answer?",
+    "options": [
+      "3/4",
+      "7",
+      "-3",
+      "3 1/4"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "number": 27,
+    "sectionTitle": "ATI TEAS Version 7 - Math",
+    "sourceNumber": 30,
+    "sourceFile": "30.png",
+    "question": "Which of the following is the length of the unknown leg of a right triangle that has one leg length of 8 feet and a hypotenuse of 12 feet? (Round to the nearest tenth.)",
+    "options": [
+      "40 feet",
+      "4 feet",
+      "14.4 feet",
+      "8.9 feet"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 28,
+    "sectionTitle": "ATI TEAS Version 7 - Math",
+    "sourceNumber": 31,
+    "sourceFile": "31.png",
+    "stimulusHtml": "<div class=\"stimulus-label\">Stimulus: 1 of 1</div><div class=\"chart-card bar-chart\" aria-label=\"Monthly rainfall bar graph\"><div class=\"y-axis\"><span>6</span><span>5</span><span>4</span><span>3</span><span>2</span><span>1</span><span>0</span></div><div class=\"bars\"><div class=\"bar-col\"><div class=\"bar\" style=\"height:8.333333333333332%\"></div><span>J</span></div><div class=\"bar-col\"><div class=\"bar\" style=\"height:16.666666666666664%\"></div><span>F</span></div><div class=\"bar-col\"><div class=\"bar\" style=\"height:33.33333333333333%\"></div><span>M</span></div><div class=\"bar-col\"><div class=\"bar\" style=\"height:66.66666666666666%\"></div><span>A</span></div><div class=\"bar-col\"><div class=\"bar\" style=\"height:58.333333333333336%\"></div><span>M</span></div><div class=\"bar-col\"><div class=\"bar\" style=\"height:50%\"></div><span>J</span></div><div class=\"bar-col\"><div class=\"bar\" style=\"height:41.66666666666667%\"></div><span>J</span></div><div class=\"bar-col\"><div class=\"bar\" style=\"height:45.83333333333333%\"></div><span>A</span></div><div class=\"bar-col\"><div class=\"bar\" style=\"height:41.66666666666667%\"></div><span>S</span></div><div class=\"bar-col\"><div class=\"bar\" style=\"height:54.166666666666664%\"></div><span>O</span></div><div class=\"bar-col\"><div class=\"bar\" style=\"height:73.33333333333334%\"></div><span>N</span></div><div class=\"bar-col\"><div class=\"bar\" style=\"height:40%\"></div><span>D</span></div></div><div class=\"chart-caption\">Months</div></div>",
+    "question": "The graph above represents the amount of rainfall in a particular state by month. Which of the following is the total rainfall for the first 3 months of the year?",
+    "options": [
+      "1 1/2 inches",
+      "2 inches",
+      "3 1/2 inches",
+      "4 inches"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "number": 29,
+    "sectionTitle": "ATI TEAS Version 7 - Math",
+    "sourceNumber": 32,
+    "sourceFile": "32.png",
+    "question": "A class of 28 students has 13 boys and 15 girls. What is the ratio of girls to boys in the class?",
+    "options": [
+      "13:28",
+      "15:28",
+      "15:13",
+      "13:15"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "number": 30,
+    "sectionTitle": "ATI TEAS Version 7 - Math",
+    "sourceNumber": 33,
+    "sourceFile": "33.png",
+    "stimulusHtml": "<div class=\"stimulus-label\">Stimulus: 1 of 1</div><div class=\"chart-card scatter-card\" aria-label=\"Scatter plot for hours listening to music and grade of test\"><svg viewBox=\"0 0 560 300\" role=\"img\"><line x1=\"72\" y1=\"30\" x2=\"72\" y2=\"246\" class=\"axis\"/><line x1=\"72\" y1=\"246\" x2=\"525\" y2=\"246\" class=\"axis\"/><text x=\"260\" y=\"288\" class=\"axis-label\">Hours listening to music</text><text x=\"24\" y=\"158\" class=\"axis-label rotate\">Grade of test</text><text x=\"72\" y=\"265\" class=\"tick\">0</text><text x=\"147\" y=\"265\" class=\"tick\">1</text><text x=\"222\" y=\"265\" class=\"tick\">2</text><text x=\"297\" y=\"265\" class=\"tick\">3</text><text x=\"372\" y=\"265\" class=\"tick\">4</text><text x=\"447\" y=\"265\" class=\"tick\">5</text><text x=\"522\" y=\"265\" class=\"tick\">6</text><line x1=\"72\" y1=\"46\" x2=\"525\" y2=\"46\" class=\"grid\"/><text x=\"12\" y=\"51\" class=\"tick\">100 - 90</text><line x1=\"72\" y1=\"81\" x2=\"525\" y2=\"81\" class=\"grid\"/><text x=\"12\" y=\"86\" class=\"tick\">89 - 80</text><line x1=\"72\" y1=\"116\" x2=\"525\" y2=\"116\" class=\"grid\"/><text x=\"12\" y=\"121\" class=\"tick\">79 - 70</text><line x1=\"72\" y1=\"151\" x2=\"525\" y2=\"151\" class=\"grid\"/><text x=\"12\" y=\"156\" class=\"tick\">69 - 60</text><line x1=\"72\" y1=\"186\" x2=\"525\" y2=\"186\" class=\"grid\"/><text x=\"12\" y=\"191\" class=\"tick\">59 - 50</text><line x1=\"72\" y1=\"221\" x2=\"525\" y2=\"221\" class=\"grid\"/><text x=\"12\" y=\"226\" class=\"tick\">49 - 0</text><circle cx=\"102\" cy=\"106.6\" r=\"7\" class=\"point\"/><circle cx=\"139.5\" cy=\"69.69999999999999\" r=\"7\" class=\"point\"/><circle cx=\"169.5\" cy=\"86.1\" r=\"7\" class=\"point\"/><circle cx=\"199.5\" cy=\"43.05000000000001\" r=\"7\" class=\"point\"/><circle cx=\"207\" cy=\"137.35\" r=\"7\" class=\"point\"/><circle cx=\"252\" cy=\"96.35\" r=\"7\" class=\"point\"/><circle cx=\"259.5\" cy=\"65.6\" r=\"7\" class=\"point\"/><circle cx=\"297\" cy=\"106.6\" r=\"7\" class=\"point\"/><circle cx=\"334.5\" cy=\"69.69999999999999\" r=\"7\" class=\"point\"/><circle cx=\"372\" cy=\"86.1\" r=\"7\" class=\"point\"/><circle cx=\"394.5\" cy=\"55.349999999999994\" r=\"7\" class=\"point\"/><circle cx=\"424.5\" cy=\"147.60000000000002\" r=\"7\" class=\"point\"/><circle cx=\"454.5\" cy=\"65.6\" r=\"7\" class=\"point\"/><circle cx=\"477\" cy=\"94.30000000000001\" r=\"7\" class=\"point\"/><circle cx=\"499.5\" cy=\"45.099999999999994\" r=\"7\" class=\"point\"/><circle cx=\"514.5\" cy=\"71.75\" r=\"7\" class=\"point\"/><circle cx=\"529.5\" cy=\"200.9\" r=\"7\" class=\"point\"/></svg></div>",
+    "question": "The scatter plot below shows the relationship between the number of hours a student listens to music and the student's test scores. Which of the following types of correlation is shown on the scatter plot?",
+    "options": [
+      "Positive",
+      "Positive and negative",
+      "Negative",
+      "No correlation"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 31,
+    "sectionTitle": "ATI TEAS Version 7 - Math",
+    "sourceNumber": 34,
+    "sourceFile": "34.png",
+    "question": "2(4x + 3) = 7x + 5\n\nSolve the equation above for x. Which of the following is correct?",
+    "options": [
+      "2",
+      "11",
+      "-1",
+      "1"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "number": 32,
+    "sectionTitle": "ATI TEAS Version 7 - Math",
+    "sourceNumber": 35,
+    "sourceFile": "35.png",
+    "question": "Five less than twice a number\n\nWhich of the following translates the phrase above into a mathematical expression?",
+    "options": [
+      "5 - 2x",
+      "2 - 5x",
+      "5x - 2",
+      "2x - 5"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 33,
+    "sectionTitle": "ATI TEAS Version 7 - Math",
+    "sourceNumber": 36,
+    "sourceFile": "36.png",
+    "stimulusHtml": "<div class=\"stimulus-label\">Stimulus: 1 of 1</div><div class=\"table-wrap\"><table class=\"stim-table\"><thead><tr><th>Day</th><th>Temperature (°C)</th></tr></thead><tbody><tr><td>Monday</td><td>3</td></tr><tr><td>Tuesday</td><td>4</td></tr><tr><td>Wednesday</td><td>-5</td></tr><tr><td>Thursday</td><td>-2</td></tr><tr><td>Friday</td><td>5</td></tr></tbody></table></div>",
+    "question": "Students recorded the temperature each day at school for a week. Which of the following is the mean and range of temperatures?",
+    "options": [
+      "Mean 3° and range 7°",
+      "Mean 1° and range 10°",
+      "Mean 0° and range 10°",
+      "Mean 1° and range 3°"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "number": 34,
+    "sectionTitle": "ATI TEAS Version 7 - Math",
+    "sourceNumber": 37,
+    "sourceFile": "37.png",
+    "stimulusHtml": "<div class=\"stimulus-label\">Stimulus: 1 of 1</div><div class=\"chart-card line-card\" aria-label=\"Capital City Chargers points per game, 1996-2015\"><svg viewBox=\"0 0 760 360\" role=\"img\"><text x=\"380\" y=\"32\" class=\"chart-title\">Capital City Chargers</text><text x=\"380\" y=\"55\" class=\"chart-subtitle\">POINTS PER GAME, 1996-2015</text><line x1=\"78\" y1=\"74\" x2=\"78\" y2=\"282\" class=\"axis\"/><line x1=\"78\" y1=\"282\" x2=\"720\" y2=\"282\" class=\"axis\"/><line x1=\"78\" y1=\"282\" x2=\"720\" y2=\"282\" class=\"grid\"/><text x=\"44\" y=\"287\" class=\"tick\">0</text><line x1=\"78\" y1=\"247.33333333333334\" x2=\"720\" y2=\"247.33333333333334\" class=\"grid\"/><text x=\"44\" y=\"252.33333333333334\" class=\"tick\">5</text><line x1=\"78\" y1=\"212.66666666666669\" x2=\"720\" y2=\"212.66666666666669\" class=\"grid\"/><text x=\"44\" y=\"217.66666666666669\" class=\"tick\">10</text><line x1=\"78\" y1=\"178\" x2=\"720\" y2=\"178\" class=\"grid\"/><text x=\"44\" y=\"183\" class=\"tick\">15</text><line x1=\"78\" y1=\"143.33333333333334\" x2=\"720\" y2=\"143.33333333333334\" class=\"grid\"/><text x=\"44\" y=\"148.33333333333334\" class=\"tick\">20</text><line x1=\"78\" y1=\"108.66666666666666\" x2=\"720\" y2=\"108.66666666666666\" class=\"grid\"/><text x=\"44\" y=\"113.66666666666666\" class=\"tick\">25</text><line x1=\"78\" y1=\"74\" x2=\"720\" y2=\"74\" class=\"grid\"/><text x=\"44\" y=\"79\" class=\"tick\">30</text><text x=\"24\" y=\"185\" class=\"axis-label rotate\">Points</text><text x=\"395\" y=\"340\" class=\"axis-label\">Season</text><polyline class=\"line\" points=\"78,87.86666666666667 113.66666666666666,122.53333333333333 149.33333333333331,233.46666666666667 185,212.66666666666669 220.66666666666666,191.86666666666667 256.3333333333333,178 292,143.33333333333334 327.66666666666663,178 363.3333333333333,150.26666666666668 399,122.53333333333333 434.66666666666663,115.6 470.3333333333333,136.4 506,94.79999999999998 541.6666666666666,129.46666666666667 577.3333333333333,115.6 613,129.46666666666667 648.6666666666666,157.2 684.3333333333333,157.2 720,94.79999999999998\"/><text x=\"78\" y=\"306\" class=\"season\" transform=\"rotate(45 78 306)\">96-97</text><text x=\"113.66666666666666\" y=\"306\" class=\"season\" transform=\"rotate(45 113.66666666666666 306)\">97-98</text><text x=\"149.33333333333331\" y=\"306\" class=\"season\" transform=\"rotate(45 149.33333333333331 306)\">98-99</text><text x=\"185\" y=\"306\" class=\"season\" transform=\"rotate(45 185 306)\">99-00</text><text x=\"220.66666666666666\" y=\"306\" class=\"season\" transform=\"rotate(45 220.66666666666666 306)\">00-01</text><text x=\"256.3333333333333\" y=\"306\" class=\"season\" transform=\"rotate(45 256.3333333333333 306)\">01-02</text><text x=\"292\" y=\"306\" class=\"season\" transform=\"rotate(45 292 306)\">02-03</text><text x=\"327.66666666666663\" y=\"306\" class=\"season\" transform=\"rotate(45 327.66666666666663 306)\">03-04</text><text x=\"363.3333333333333\" y=\"306\" class=\"season\" transform=\"rotate(45 363.3333333333333 306)\">04-05</text><text x=\"399\" y=\"306\" class=\"season\" transform=\"rotate(45 399 306)\">05-06</text><text x=\"434.66666666666663\" y=\"306\" class=\"season\" transform=\"rotate(45 434.66666666666663 306)\">06-07</text><text x=\"470.3333333333333\" y=\"306\" class=\"season\" transform=\"rotate(45 470.3333333333333 306)\">07-08</text><text x=\"506\" y=\"306\" class=\"season\" transform=\"rotate(45 506 306)\">08-09</text><text x=\"541.6666666666666\" y=\"306\" class=\"season\" transform=\"rotate(45 541.6666666666666 306)\">09-10</text><text x=\"577.3333333333333\" y=\"306\" class=\"season\" transform=\"rotate(45 577.3333333333333 306)\">10-11</text><text x=\"613\" y=\"306\" class=\"season\" transform=\"rotate(45 613 306)\">11-12</text><text x=\"648.6666666666666\" y=\"306\" class=\"season\" transform=\"rotate(45 648.6666666666666 306)\">12-13</text><text x=\"684.3333333333333\" y=\"306\" class=\"season\" transform=\"rotate(45 684.3333333333333 306)\">13-14</text><text x=\"720\" y=\"306\" class=\"season\" transform=\"rotate(45 720 306)\">14-15</text></svg></div>",
+    "question": "Which of the following statements is true about the graph above?",
+    "options": [
+      "The Chargers points per game decreased between seasons eight times between 1996 and 2015.",
+      "The Chargers scored their greatest number of points per game in the 2008-09 season.",
+      "The Chargers scored their lowest number of points per game in the 1999-2000 season.",
+      "The Chargers had the greatest increase of points per game between their 2013-14 and 2014-15 seasons."
+    ],
+    "correctIndex": 1
+  },
+  {
+    "number": 35,
+    "sectionTitle": "ATI TEAS Version 7 - Math",
+    "sourceNumber": 38,
+    "sourceFile": "38.png",
+    "question": "A couple dining at a restaurant receives a bill for $38.40. They wish to leave a 15% gratuity. Which of the following is the estimated gratuity?",
+    "options": [
+      "$5.00",
+      "$6.00",
+      "$4.00",
+      "$7.00"
+    ],
+    "correctIndex": 1
+  }
+];
+const totalQuestions = questions.length;
+let current = 0;
+let answers = Array(totalQuestions).fill(null);
+let remaining = 60 * 60;
+const qNumber = document.getElementById('questionNumber');
+const brandTitle = document.getElementById('brandTitle');
+const stimulusEl = document.getElementById('stimulus');
+const questionText = document.getElementById('questionText');
+const dotsEl = document.getElementById('dots');
+const optionsEl = document.getElementById('options');
+const feedbackEl = document.getElementById('answerFeedback');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+const timerEl = document.getElementById('timer');
+const statusEl = document.getElementById('status');
+function buildDots(active){dotsEl.innerHTML='';for(let i=1;i<=totalQuestions;i++){const d=document.createElement('span');d.className='dot'+(i===active?' active':'');dotsEl.appendChild(d);}}
+function render(){const item=questions[current];brandTitle.textContent=item.sectionTitle;qNumber.textContent=`Question: ${item.sourceNumber} of 38`;stimulusEl.innerHTML=item.stimulusHtml||'';questionText.innerHTML=(item.question||'').replace(/\n/g,'<br>');buildDots(item.number);optionsEl.innerHTML='';item.options.forEach((opt,index)=>{const row=document.createElement('div');const answered=answers[current]!==null;let cls='option';if(answers[current]===index)cls+=' selected';if(answered&&index===item.correctIndex)cls+=' correct';if(answered&&answers[current]===index&&index!==item.correctIndex)cls+=' incorrect';row.className=cls;row.tabIndex=0;const radio=document.createElement('span');radio.className='radio';const label=document.createElement('span');label.className='option-text';label.textContent=opt;row.appendChild(radio);row.appendChild(label);row.addEventListener('click',()=>selectOption(index));row.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();selectOption(index);}});optionsEl.appendChild(row);});if(answers[current]!==null){const correctText=item.options[item.correctIndex];const isCorrect=answers[current]===item.correctIndex;feedbackEl.className='answer-feedback show'+(isCorrect?'':' wrong');feedbackEl.textContent=isCorrect?`Correct. Answer: ${correctText}`:`Incorrect. Correct answer: ${correctText}`;}else{feedbackEl.className='answer-feedback';feedbackEl.textContent='';}prevBtn.disabled=current===0;nextBtn.textContent=current===totalQuestions-1?'Finish':'Continue';statusEl.textContent=`${answers.filter(a=>a!==null).length} of ${totalQuestions} uploaded math questions answered | Source: ${item.sourceFile}`;window.scrollTo({top:0,behavior:'smooth'});}
+function selectOption(index){answers[current]=index;render();}
+prevBtn.addEventListener('click',()=>{if(current>0){current--;render();}});
+nextBtn.addEventListener('click',()=>{if(current<totalQuestions-1){current++;render();}else{alert('You have reached the end of the uploaded math questions.');}});
+function tick(){if(remaining>0)remaining--;const h=String(Math.floor(remaining/3600)).padStart(2,'0');const m=String(Math.floor((remaining%3600)/60)).padStart(2,'0');const s=String(remaining%60).padStart(2,'0');timerEl.textContent=`${h}:${m}:${s}`;}
+render();setInterval(tick,1000);
+  </script>
+</body>
+</html>

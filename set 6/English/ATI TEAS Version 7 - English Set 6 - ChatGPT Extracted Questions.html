@@ -1,0 +1,1319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ATI TEAS Version 7 English Practice Questions</title>
+  <style>
+    :root {
+      --text:#4a4a4a;
+      --heading:#333;
+      --blue:#caebfb;
+      --blue-strong:#b7dcff;
+      --btn:#b6e4e7;
+      --btn-text:#50646b;
+      --dot:#8b8f92;
+      --dot-light:#c1e5fb;
+      --dot-active:#89bce8;
+      --olive:#6b7300;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      color:var(--text);
+      background:#fff;
+    }
+    .exam-shell {
+      max-width: 1280px;
+      margin: 0 auto;
+      min-height: 100vh;
+      padding: 34px 32px 42px;
+      display:flex;
+      flex-direction:column;
+    }
+    .topbar {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding: 0 10px 16px;
+      margin-bottom: 10px;
+      border-bottom: 5px solid transparent;
+      border-image: repeating-linear-gradient(135deg, var(--blue) 0 3px, transparent 3px 8px) 12;
+    }
+    .brand {
+      font-size: 18px;
+      font-weight: 700;
+      color:#3a3a3a;
+    }
+    .close {
+      border:none;
+      background:#f8f8f8;
+      color:#444;
+      font-weight:700;
+      font-size:14px;
+      padding:10px 16px;
+      display:flex;
+      align-items:center;
+      gap:6px;
+      text-transform:uppercase;
+    }
+    .close .x {
+      width:16px;
+      height:16px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      background:#444;
+      color:#fff;
+      line-height:1;
+      font-size:12px;
+    }
+    .main {
+      flex:1;
+      display:grid;
+      grid-template-columns: minmax(0, 1fr) minmax(420px, 500px);
+      gap: 36px;
+      align-items:start;
+      padding: 6px 8px 0;
+    }
+    .left-col {
+      min-width:0;
+    }
+    .right-col {
+      min-width:0;
+      padding-top: 4px;
+    }
+    .top-question-row {
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:24px;
+      margin-bottom: 18px;
+      padding: 0 6px;
+    }
+    h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--heading);
+      font-size: 28px;
+      margin: 0;
+      line-height: 1.2;
+    }
+    .utility {
+      text-align:right;
+      flex:0 0 auto;
+      min-width: 195px;
+      display:flex;
+      flex-direction:column;
+      align-items:flex-end;
+      gap:10px;
+    }
+    .timer-row {
+      display:flex;
+      align-items:center;
+      justify-content:flex-end;
+      gap:14px;
+      width:100%;
+    }
+    .timer {
+      font-weight:700;
+      margin-bottom:0;
+      white-space:nowrap;
+    }
+    .timer span { font-weight:400; }
+    .flag-row {
+      display:flex;
+      justify-content:flex-end;
+      width:100%;
+    }
+    .calc {
+      width:33px;
+      height:43px;
+      border:4px solid var(--olive);
+      position:relative;
+      flex:0 0 auto;
+    }
+    .calc:before {
+      content:"";
+      position:absolute;
+      left:6px;
+      right:6px;
+      top:5px;
+      height:6px;
+      background:#fff;
+    }
+    .calc:after {
+      content:"";
+      position:absolute;
+      left:6px;
+      top:18px;
+      width:4px;
+      height:4px;
+      background:#fff;
+      box-shadow:9px 0 #fff,18px 0 #fff,0 9px #fff,9px 9px #fff,18px 9px #fff,0 18px #fff,9px 18px #fff,18px 18px #fff;
+    }
+    .flag {
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      border:1px solid #d6d6d6;
+      background:#fff;
+      padding:11px 16px;
+      color:#555;
+      font-weight:700;
+      box-shadow:0 1px 2px rgba(0,0,0,.05);
+    }
+    .flag-icon {
+      width:22px;
+      height:27px;
+      border:3px solid #555;
+      border-top:none;
+      position:relative;
+    }
+    .flag-icon:before {
+      content:"";
+      position:absolute;
+      left:5px;
+      top:-9px;
+      width:13px;
+      height:24px;
+      background:#555;
+      clip-path:polygon(0 0,100% 0,100% 78%,50% 58%,0 78%);
+    }
+    .passage-title {
+      font-weight:700;
+      font-size:18px;
+      color:#444;
+      margin: 0 0 14px;
+    }
+    .passage {
+      font-size:16px;
+      line-height:1.52;
+      color:#595959;
+      padding: 0 6px 8px;
+    }
+    .passage p {
+      margin: 0 0 14px;
+    }
+    .passage ul {
+      margin: 0 0 14px 24px;
+      padding:0;
+    }
+    .passage li {
+      margin: 0 0 7px;
+    }
+    .stimulus {
+      font-weight:700;
+      font-size:18px;
+      color:#444;
+      margin: 0 0 2px;
+    }
+    .diagram-stimulus {
+      margin: 14px 0 26px;
+      text-align:left;
+    }
+    .diagram-stimulus img {
+      display:block;
+      height:auto;
+      max-width:100%;
+      background:#fff;
+      border:0;
+    }
+    .question-text {
+      border-top:1px solid #dfdfdf;
+      padding-top:8px;
+      font-weight:700;
+      color:#3d3d3d;
+      font-size:17px;
+      line-height:1.35;
+      margin-bottom:16px;
+    }
+    .dots {
+      display:flex;
+      align-items:center;
+      gap:11px;
+      margin: 0 0 24px;
+      overflow:hidden;
+      flex-wrap:nowrap;
+    }
+    .dot {
+      width:6px;
+      height:6px;
+      border-radius:50%;
+      background:var(--dot);
+      flex:0 0 auto;
+    }
+    .dot:nth-child(7n) { background:var(--dot-light); }
+    .dot.active {
+      width:9px;
+      height:9px;
+      background:var(--dot-active);
+      box-shadow:0 0 0 2px rgba(139,187,230,.18);
+    }
+    .options {
+      display:flex;
+      flex-direction:column;
+      gap:7px;
+      padding-bottom: 10px;
+    }
+    .option {
+      min-height: 54px;
+      display:flex;
+      align-items:flex-start;
+      gap:16px;
+      padding:12px 14px;
+      border:2px solid transparent;
+      border-radius:2px;
+      cursor:pointer;
+      user-select:none;
+      background:#fff;
+    }
+    .option:hover,
+    .option.selected {
+      border-color:var(--blue-strong);
+      box-shadow:0 0 2px rgba(80,145,255,.45);
+    }
+    .option.correct {
+      border-color:#4caf50;
+      background:#f1fbf3;
+      box-shadow:0 0 2px rgba(76,175,80,.45);
+    }
+    .option.incorrect {
+      border-color:#e15757;
+      background:#fff4f4;
+      box-shadow:0 0 2px rgba(225,87,87,.45);
+    }
+    .option.correct .radio::after {
+      content:"";
+      width:9px;
+      height:9px;
+      border-radius:50%;
+      background:#3f9b45;
+      box-shadow:0 0 2px #2f7d35;
+    }
+    .option.incorrect .radio::after {
+      content:"";
+      width:9px;
+      height:9px;
+      border-radius:50%;
+      background:#c84242;
+      box-shadow:0 0 2px #8f2929;
+    }
+    .radio {
+      width:22px;
+      height:22px;
+      border-radius:50%;
+      border:2px solid #9d9d9d;
+      background:#e8e8e8;
+      display:inline-grid;
+      place-items:center;
+      flex:0 0 auto;
+      margin-top:1px;
+    }
+    .selected .radio::after {
+      content:"";
+      width:9px;
+      height:9px;
+      border-radius:50%;
+      background:#656565;
+      box-shadow:0 0 2px #333;
+    }
+    .option-text {
+      line-height:1.45;
+      color:#5a5a5a;
+      font-size:16px;
+    }
+    .answer-feedback {
+      margin-top:14px;
+      padding:12px 14px;
+      border-left:4px solid #4caf50;
+      background:#f1fbf3;
+      color:#315d34;
+      font-weight:700;
+      line-height:1.45;
+      display:none;
+    }
+    .answer-feedback.show {
+      display:block;
+    }
+    .answer-feedback.wrong {
+      border-left-color:#e15757;
+      background:#fff4f4;
+      color:#7a2d2d;
+    }
+    .bottom-controls {
+      margin-top: 28px;
+      padding: 0 10px;
+    }
+    .nav {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
+    }
+    .arrow-btn {
+      border:none;
+      background:var(--btn);
+      color:var(--btn-text);
+      font-weight:700;
+      min-width:126px;
+      height:45px;
+      cursor:pointer;
+      position:relative;
+      text-transform:uppercase;
+      letter-spacing:.2px;
+    }
+    .prev {
+      clip-path:polygon(22px 0,100% 0,100% 100%,22px 100%,0 50%);
+      padding-left:18px;
+    }
+    .next {
+      clip-path:polygon(0 0,calc(100% - 22px) 0,100% 50%,calc(100% - 22px) 100%,0 100%);
+      padding-right:18px;
+    }
+    .arrow-btn:disabled {
+      opacity:.45;
+      cursor:not-allowed;
+    }
+    .status {
+      margin-top:12px;
+      text-align:center;
+      color:#777;
+      font-size:13px;
+    }
+    @media (max-width: 980px) {
+      .exam-shell {
+        padding: 18px 14px 28px;
+      }
+      .topbar {
+        padding: 0 0 12px;
+      }
+      .brand {
+        font-size: 15px;
+      }
+      .close {
+        font-size:12px;
+        padding:8px 10px;
+      }
+      .top-question-row {
+        flex-direction:column;
+        gap:10px;
+        margin-bottom:14px;
+        padding:0;
+      }
+      .utility {
+        width:auto;
+        min-width:0;
+        text-align:right;
+        align-items:flex-end;
+        align-self:flex-end;
+        margin-left:auto;
+        gap:8px;
+      }
+      .timer-row {
+        justify-content:flex-end;
+        gap:10px;
+      }
+      .flag-row {
+        justify-content:flex-end;
+        width:100%;
+      }
+      .calc {
+        width:28px;
+        height:38px;
+        border-width:3px;
+      }
+      .calc:before {
+        left:5px;
+        right:5px;
+        top:5px;
+        height:5px;
+      }
+      .calc:after {
+        left:5px;
+        top:16px;
+        width:3px;
+        height:3px;
+        box-shadow:8px 0 #fff,16px 0 #fff,0 8px #fff,8px 8px #fff,16px 8px #fff,0 16px #fff,8px 16px #fff,16px 16px #fff;
+      }
+      .flag {
+        min-width:96px;
+        justify-content:center;
+        padding:9px 12px;
+        font-size:13px;
+      }
+      .flag-icon {
+        width:20px;
+        height:24px;
+      }
+      .main {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding:0;
+      }
+      h1 {
+        font-size:24px;
+      }
+      .passage-title, .stimulus {
+        font-size:17px;
+      }
+      .passage,
+      .option-text {
+        font-size:14px;
+      }
+      .question-text {
+        font-size:15px;
+      }
+      .diagram-stimulus {
+        margin: 12px 0 22px;
+      }
+      .diagram-stimulus img {
+        width:100% !important;
+        max-width:100% !important;
+      }
+      .dots {
+        gap:8px;
+        margin-bottom:18px;
+      }
+      .dot {
+        width:5px;
+        height:5px;
+      }
+      .dot.active {
+        width:8px;
+        height:8px;
+      }
+      .option {
+        gap:12px;
+        padding:10px 8px;
+        min-height:52px;
+      }
+      .radio {
+        width:21px;
+        height:21px;
+      }
+      .bottom-controls {
+        padding:0;
+        margin-top:20px;
+      }
+      .arrow-btn {
+        min-width:110px;
+        height:42px;
+        font-size:12px;
+      }
+      .status {
+        font-size:12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="exam-shell">
+    <header class="topbar">
+      <div class="brand" id="brandTitle">TEAS Version 7 - Reading</div>
+      <button class="close" type="button"><span class="x">×</span> Close</button>
+    </header>
+
+    <div class="top-question-row">
+      <h1 id="questionNumber">Question: 1 of 45</h1>
+      <div class="utility">
+        <div class="timer-row">
+          <div class="timer">Time Remaining: <span id="timer">00:55:00</span></div>
+          <div class="calc" aria-label="calculator icon"></div>
+        </div>
+        <div class="flag-row">
+          <button class="flag" type="button"><span class="flag-icon"></span> FLAG</button>
+        </div>
+      </div>
+    </div>
+
+    <main class="main">
+      <section class="left-col">
+        <div class="passage-title" id="passageTitle"></div>
+        <div class="passage" id="passage"></div>
+      </section>
+
+      <section class="right-col">
+        <div class="question-text" id="questionText"></div>
+        <div class="stimulus" id="stimulus"></div>
+        <div class="dots" id="dots" aria-hidden="true"></div>
+        <div class="options" id="options"></div>
+        <div class="answer-feedback" id="answerFeedback"></div>
+      </section>
+    </main>
+
+    <div class="bottom-controls">
+      <nav class="nav">
+        <button class="arrow-btn prev" id="prevBtn" type="button">Previous</button>
+        <button class="arrow-btn next" id="nextBtn" type="button">Continue</button>
+      </nav>
+      <div class="status" id="status"></div>
+    </div>
+  </div>
+
+<script>
+const questions = [
+  {
+    "number": 1,
+    "sectionTitle": "ATI TEAS Version 7 - English and Language Usage",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 1,
+    "stimulusHtml": "",
+    "question": "Which of the following getting-to-know-you questions is appropriate for a culturally diverse classroom?",
+    "options": [
+      "What kind of barbecue sauce do you use on your pork chop?",
+      "What do you like to eat on Christmas Day?",
+      "What is your favorite dish to eat on special occasions?",
+      "How do you like your eggs cooked?"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "number": 2,
+    "sectionTitle": "ATI TEAS Version 7 - English and Language Usage",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 2,
+    "stimulusHtml": "",
+    "question": "Which of the following statements requires a source citation?",
+    "options": [
+      "We have more than 10 types of pumpkin pie on our Thanksgiving menu each year.",
+      "In 2020, we slowly cooked our turkey over 200-degree heat in a hickory smoker.",
+      "In 2011, 736 million pounds of turkey were consumed in the United States.",
+      "It is common knowledge that millions of Americans eat turkey on Thanksgiving."
+    ],
+    "correctIndex": 2
+  },
+  {
+    "number": 3,
+    "sectionTitle": "ATI TEAS Version 7 - English and Language Usage",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 3,
+    "stimulusHtml": "",
+    "question": "When first creating a presence on the internet, you must name your ____ so your customers can remember it easily.",
+    "options": [
+      "sight",
+      "cite",
+      "site",
+      "cight"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "number": 4,
+    "sectionTitle": "ATI TEAS Version 7 - English and Language Usage",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 4,
+    "stimulusHtml": "",
+    "question": "Which of the following is a complete sentence?",
+    "options": [
+      "I walked all three dogs around the park this morning.",
+      "When I was young and loved going for runs in the park.",
+      "Running through the park before breakfast.",
+      "Walking with a limp as a result of the thorn."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 5,
+    "sectionTitle": "ATI TEAS Version 7 - English and Language Usage",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 5,
+    "stimulusHtml": "",
+    "question": "Which of the following options uses parentheses correctly?",
+    "options": [
+      "As the horses broke from the gate, the betting favorite stumbled slightly, eliciting gasps (and likely some curse words) from the crowd.",
+      "When the leaders reached the midway point, the horse (that several experts tagged) as a good long-shot bet began to pull away from the pack.",
+      "The announcer (cleared his throat and) prepared to call the race from the historic press box at Churchill Downs.",
+      "The betting favorite made a strong push down the stretch, but the lead was too much to overcome (even for such a strong horse.)"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 6,
+    "sectionTitle": "ATI TEAS Version 7 - English and Language Usage",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 6,
+    "stimulusHtml": "",
+    "question": "Which one of the following sentences contains a dangling modifier?",
+    "options": [
+      "Drivers in our state are confused by the outdated driving law.",
+      "The contented puppy sat by the sleeping young child.",
+      "My brother had an old truck that sat by the garage that needed paint.",
+      "Adequate lighting is important for anyone who is studying or reading."
+    ],
+    "correctIndex": 2
+  },
+  {
+    "number": 7,
+    "sectionTitle": "ATI TEAS Version 7 - English and Language Usage",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 7,
+    "stimulusHtml": "",
+    "question": "Which of the following is true of informal language?",
+    "options": [
+      "It is less intimate.",
+      "It includes slang.",
+      "It is only used in the workplace.",
+      "It is appropriate in a resume."
+    ],
+    "correctIndex": 1
+  },
+  {
+    "number": 8,
+    "sectionTitle": "ATI TEAS Version 7 - English and Language Usage",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 8,
+    "stimulusHtml": "",
+    "question": "Consider the sentence, \"The company's performance was good last quarter; we made a lot of money.\"<br><br>Which of the following words should be replaced because they do not adequately convey the nuance of meaning?",
+    "options": [
+      "\"good\" and \"a lot\"",
+      "\"quarter\" and \"made\"",
+      "\"company\" and \"we\"",
+      "\"performance\" and \"money\""
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 9,
+    "sectionTitle": "ATI TEAS Version 7 - English and Language Usage",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 9,
+    "stimulusHtml": "",
+    "question": "He gained ________ to a good nursing school.",
+    "options": [
+      "acceptense",
+      "acceptance",
+      "acceptence",
+      "aceptance"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "number": 10,
+    "sectionTitle": "ATI TEAS Version 7 - English and Language Usage",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 10,
+    "stimulusHtml": "",
+    "question": "Using the sentences below, which of the following orders best forms an organized, logical paragraph?<br><br>1. A hurricane was bearing down on the coast.<br>2. The government ordered residents to evacuate.<br>3. A special weather alert interrupted my favorite television show.<br>4. I packed a bag and left the city.",
+    "options": [
+      "3, 1, 2, 4",
+      "2, 3, 4, 1",
+      "1, 3, 2, 4",
+      "3, 2, 4, 1"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 11,
+    "sectionTitle": "ATI TEAS Version 7 - English and Language Usage",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 11,
+    "stimulusHtml": "",
+    "question": "Which of the following sentences correctly follows the rules of grammar?",
+    "options": [
+      "Her boyfriend and her will attend the holiday banquet.",
+      "Any discussion between my attorney and I are confidential.",
+      "Me and my friends are working together on this project.",
+      "Each member of the committee will make their own decision."
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 12,
+    "sectionTitle": "ATI TEAS Version 7 - English and Language Usage",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 12,
+    "stimulusHtml": "",
+    "question": "Identify the correct order of steps for the writing process. (Move the options into the box on the right, placing them in the selected order. Use all the options.)",
+    "options": [
+      "Correct order: Prewriting, which includes thinking, researching, brainstorming, and outlining -> Drafting, which includes putting words into sentences and paragraphs -> Revising, which involves adding, rearranging, removing, and replacing parts of the writing -> Editing, which involves checking for grammar, spelling, and punctuation errors -> Publishing, which can include sharing online, sending an e-mail, or turning in an essay"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 13,
+    "sectionTitle": "ATI TEAS Version 7 - English and Language Usage",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 13,
+    "stimulusHtml": "",
+    "question": "In which of the following sources would a writer most likely use informal language?",
+    "options": [
+      "A magazine article about infant formula nutrition",
+      "A blog post about how health care workers can manage stress",
+      "An article in a medical association journal",
+      "A textbook for a psychiatric nursing practitioner course"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "number": 14,
+    "sectionTitle": "ATI TEAS Version 7 - English and Language Usage",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 14,
+    "stimulusHtml": "",
+    "question": "Which of the following requires a citation?",
+    "options": [
+      "Mentioning a basic scientific principle that is a supporting detail",
+      "The opinion of an art historian that supports the writer's thesis",
+      "An anecdote from the writer's childhood that introduces the topic",
+      "A reference to a well-known historical date in a counterclaim"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "number": 15,
+    "sectionTitle": "ATI TEAS Version 7 - English and Language Usage",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 15,
+    "stimulusHtml": "",
+    "question": "Which of the following options is correctly spelled?",
+    "options": [
+      "Legitamacy",
+      "Lagitimacy",
+      "Legitimacy",
+      "Lagitamacy"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "number": 16,
+    "sectionTitle": "ATI TEAS Version 7 - English and Language Usage",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 16,
+    "stimulusHtml": "",
+    "question": "Which of the following words is created by combining the root words for \"power\" and \"people\"?",
+    "options": [
+      "Democracy",
+      "Stadium",
+      "Republic",
+      "Dictator"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 17,
+    "sectionTitle": "ATI TEAS Version 7 - English and Language Usage",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 17,
+    "stimulusHtml": "",
+    "question": "Which of the following sentences best demonstrates formal language?",
+    "options": [
+      "A lot of stuff we do has been revamped here over the last several months.",
+      "In order to verify eligibility prior to enrollment, an online screening tool has been created.",
+      "This gig definitely has its problems, but what are you going to do?",
+      "If you're pumped about making our company better, please fill out this comprehensive survey."
+    ],
+    "correctIndex": 1
+  },
+  {
+    "number": 18,
+    "sectionTitle": "ATI TEAS Version 7 - English and Language Usage",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 18,
+    "stimulusHtml": "",
+    "question": "The teacher announced to the class, ____________________<br><br>Which of the following correctly completes the sentence above?",
+    "options": [
+      "\"The English test is scheduled for Wednesday.\"",
+      "\"the english test is scheduled for Wednesday.\"",
+      "\"the English test is scheduled for wednesday.\"",
+      "\"the English Test is scheduled for wednesday.\""
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 19,
+    "sectionTitle": "ATI TEAS Version 7 - English and Language Usage",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 19,
+    "stimulusHtml": "",
+    "question": "In the word \"circumnavigation,\" the Latin prefix \"circum\" means to move in which of the following directions?",
+    "options": [
+      "Up",
+      "Around",
+      "Sideways",
+      "Forward"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "number": 20,
+    "sectionTitle": "ATI TEAS Version 7 - English and Language Usage",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 20,
+    "stimulusHtml": "",
+    "question": "Which of the following options correctly punctuates the sentence below?<br><br>Jimmy leave the room shut the door and be quiet.",
+    "options": [
+      "Jimmy leave the room; shut the door, and be quiet.",
+      "Jimmy leave the room, shut the door and be quiet.",
+      "Jimmy; leave the room, shut the door and be quiet.",
+      "Jimmy, leave the room, shut the door, and be quiet."
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 21,
+    "sectionTitle": "ATI TEAS Version 7 - English and Language Usage",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 21,
+    "stimulusHtml": "",
+    "question": "\"I grew up in a utopia, I did. California when I was a child was a child's paradise, I was healthy, well fed, well clothed, well housed. I went to school and there were libraries with all the world in them and after school I played in orange groves and in Little League and in the band and down at the beach and every day was an adventure. . . . I grew up in utopia.\" -- Kim Stanley Robinson, Pacific Edge<br><br>Removing the \"u,\" which of the following prefixes would change the word \"topia\" to an accepted word with the opposite meaning?",
+    "options": [
+      "mis-",
+      "dys-",
+      "anti-",
+      "fore-"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "number": 22,
+    "sectionTitle": "ATI TEAS Version 7 - English and Language Usage",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 22,
+    "stimulusHtml": "",
+    "question": "\"As the frost melts away, budding flowers are finally revealed. I remain impatient for the dull hues of winter to be fully replaced by spring's rainbow of colors.\"<br><br>Which of the following sentences joins these two in a grammatically correct and clear way?",
+    "options": [
+      "As the frost melts away, budding flowers are finally revealed; however, I remain impatient for the browns and grays of winter to be fully replaced by spring's rainbow of colors.",
+      "As the frost melts away, budding flowers are finally revealed because I remain impatient for the dull hues of winter to be fully replaced by spring's rainbow of colors.",
+      "As the frost melts away, budding flowers are finally revealed; therefore I remain impatient for the dull hues of winter to be fully replaced by spring's rainbow of colors.",
+      "As the frost melts away, budding flowers are finally revealed, unless I remain impatient for the browns and grays of winter to be fully replaced by spring's rainbow of colors."
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 23,
+    "sectionTitle": "ATI TEAS Version 7 - English and Language Usage",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 23,
+    "stimulusHtml": "",
+    "question": "Which of the following should be the topic sentence for a paragraph about Neptune?",
+    "options": [
+      "Also, when people think of a planet with rings, they usually think of Saturn; however, Neptune also has a ring system composed of about 20% dust and about 80% small rocks.",
+      "Of all the planets in our solar system, it has the strongest winds in the solar system.",
+      "Both men did not actually see the planet, but they predicted its location in a specific region of the sky and called it Planet X.",
+      "The planet Neptune is a fascinating planet worthy of further study."
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 24,
+    "sectionTitle": "ATI TEAS Version 7 - English and Language Usage",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 24,
+    "stimulusHtml": "",
+    "question": "Which of the following sentences would most likely be found in a college newsletter?",
+    "options": [
+      "We have been unable to find an acceptable candidate to fill the job opening in the admissions department.",
+      "The results of the survey showed that 27% of high school students reported using caffeine more than once per day.",
+      "The textbooks will be delivered to the classroom on Friday morning.",
+      "The north entrance of the student union will be closed for construction during spring break."
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 25,
+    "sectionTitle": "ATI TEAS Version 7 - English and Language Usage",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 25,
+    "stimulusHtml": "",
+    "question": "Which of the following requires a citation?",
+    "options": [
+      "When the writer paraphrases",
+      "When the writer shares common sayings or proverbs",
+      "When the writer states a passionate and heartfelt belief",
+      "When the writer asserts an opinion"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 26,
+    "sectionTitle": "ATI TEAS Version 7 - English and Language Usage",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 26,
+    "stimulusHtml": "",
+    "question": "Which of the following sentences correctly employs standard English spelling?",
+    "options": [
+      "The students worried that changes to the student counsel would affect there relationship with school administrators.",
+      "The students worried that changes to the student counsel would effect their relationship with school administrators.",
+      "The students worried that changes to the student council would effect there relationship with school administrators.",
+      "The students worried that changes to the student council would affect their relationship with school administrators."
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 27,
+    "sectionTitle": "ATI TEAS Version 7 - English and Language Usage",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 27,
+    "stimulusHtml": "",
+    "question": "The secretary of the library board is preparing a report on a recent meeting at which three major topics were discussed: first, the library's finances; next, its new acquisitions; and finally, its community programs. As the board secretary begins to write the report, they realize that each topic includes at least two subtopics that should be addressed separately.<br><br>Using the items below, prepare an outline that could reasonably result from the board secretary's prewriting process. (Move the options into the box on the right, placing them in the selected order. Use all the options.)",
+    "options": [
+      "Selected outline: Finances: A. Operating expenses, B. Capital expenses, C. Revenue -> Acquisitions: A. Print media, B. Electronic media -> Community programs: A. Children's outreach, B. Adult learning and literacy"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 28,
+    "sectionTitle": "ATI TEAS Version 7 - English and Language Usage",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 28,
+    "stimulusHtml": "",
+    "question": "Which of the following sentences requires citation?",
+    "options": [
+      "There were buffalo in every western territory of the United States as of 1860.",
+      "At our school, we only learned about a fraction of the political and economic complexities of the American Civil War.",
+      "I would wager that most students in the United States will be able to tell you that the Battle of Fort Sumter in 1861 started the American Civil War.",
+      "They say that history is written by the victors."
+    ],
+    "correctIndex": 2
+  },
+  {
+    "number": 29,
+    "sectionTitle": "ATI TEAS Version 7 - English and Language Usage",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 29,
+    "stimulusHtml": "",
+    "question": "Unfortunately, the car that was vandalized was their's, and they weren't able to pay for the repairs.<br><br>Which of the following is an error in the sentence above?",
+    "options": [
+      "Improper use of a comma before the conjunction \"and\"",
+      "Improper use of an apostrophe in the contraction \"weren't\"",
+      "Improper use of an apostrophe in the word \"their's\"",
+      "Improper use of a comma after the word \"Unfortunately\""
+    ],
+    "correctIndex": 2
+  },
+  {
+    "number": 30,
+    "sectionTitle": "ATI TEAS Version 7 - English and Language Usage",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 30,
+    "stimulusHtml": "",
+    "question": "Which of the following sentences is written in formal language?",
+    "options": [
+      "According to my econ teacher, it can actually be cheaper to buy a car instead of renting one.",
+      "Modern mathematics encompasses many scholarly disciplines; however, discrete mathematics is often overlooked.",
+      "There is a bunch of branches within social science like anthropology, sociology, and psychology.",
+      "In culinary arts, the teacher made us taste a delicacy, fish eggs!"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "number": 31,
+    "sectionTitle": "ATI TEAS Version 7 - English and Language Usage",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 31,
+    "stimulusHtml": "",
+    "question": "Considering words such as \"predict\", \"dictate\", \"edict\", and \"dictionary\", what does the Latin root \"dict\" mean?",
+    "options": [
+      "To guess",
+      "To make",
+      "To say",
+      "To pretend"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "number": 32,
+    "sectionTitle": "ATI TEAS Version 7 - English and Language Usage",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 32,
+    "stimulusHtml": "",
+    "question": "Which of the following sentences is punctuated correctly?",
+    "options": [
+      "While some people love cats others prefer dogs.",
+      "While some people love cats: others prefer dogs.",
+      "While some people love cats. Others prefer dogs.",
+      "While some people love cats, others prefer dogs."
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 33,
+    "sectionTitle": "ATI TEAS Version 7 - English and Language Usage",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 33,
+    "stimulusHtml": "",
+    "question": "A student is writing a research paper. Which of the following situations requires a citation?",
+    "options": [
+      "When summarizing the outcome of a research study",
+      "When stating the thesis in the introductory paragraph",
+      "When including a personal anecdote in the conclusion",
+      "When writing a generality, such as, \"Most American high schoolers want a cell phone\""
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 34,
+    "sectionTitle": "ATI TEAS Version 7 - English and Language Usage",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 34,
+    "stimulusHtml": "",
+    "question": "Which of the following sentences is punctuated correctly?",
+    "options": [
+      "The fireplace which casts a warm glow on the man and his dog paints a cozy picture of domestic life.",
+      "The fireplace which casts a warm glow on the man, and his dog paints a cozy picture of domestic life.",
+      "The fireplace which casts a warm glow on the man and his dog, paints a cozy picture of domestic life.",
+      "The fireplace, which casts a warm glow on the man and his dog, paints a cozy picture of domestic life."
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 35,
+    "sectionTitle": "ATI TEAS Version 7 - English and Language Usage",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 35,
+    "stimulusHtml": "",
+    "question": "Which of the following sentences correctly follows the rules of capitalization?",
+    "options": [
+      "Even though he moved to New York, he was born in a Western town.",
+      "I plan to enroll in College next year.",
+      "The A1 Plumbing Board of Directors gave every employee a raise.",
+      "The Geography students took a class trip to the Rocky Mountains."
+    ],
+    "correctIndex": 2
+  },
+  {
+    "number": 36,
+    "sectionTitle": "ATI TEAS Version 7 - English and Language Usage",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 36,
+    "stimulusHtml": "",
+    "question": "Hard work and ________ are required to achieve one's academic goals.",
+    "options": [
+      "diciplin",
+      "discipline",
+      "disciplin",
+      "disipline"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "number": 37,
+    "sectionTitle": "ATI TEAS Version 7 - English and Language Usage",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 37,
+    "stimulusHtml": "Stimulus: 1 of 1",
+    "question": "The 1960s musical style known as baroque pop reintroduced classical -- and as the name implies -- baroque instrumentation to Western popular music; the genre's breakthrough moment is often ascribed to The Beatles' 1965 single, \"In My Life,\" which uses a sped-up piano sample to achieve a \"harpsichord\" sound. Despite a few hits, the baroque pop phenomenon was short-lived, vanishing virtually overnight with the rise of soul music in the early 1970s. <u>Because of this</u>, it has been rediscovered by 21st-century audiences and is now considered an iconic part of the \"sound of the '60s.\"<br><br>Which of the following words or phrases, if substituted for the underlined portion, would improve the coherence of the paragraph? (Select all that apply.)",
+    "options": [
+      "Selected answers: In spite of this; Nevertheless,"
+    ],
+    "correctIndex": 0
+  }
+];
+const totalQuestions = questions.length;
+const initialSeconds = 60 * 60;
+let current = 0;
+let answers = Array(questions.length).fill(null);
+let remaining = initialSeconds;
+
+const qNumber = document.getElementById('questionNumber');
+const brandTitle = document.getElementById('brandTitle');
+const passageTitle = document.getElementById('passageTitle');
+const passageEl = document.getElementById('passage');
+const stimulusEl = document.getElementById('stimulus');
+const questionText = document.getElementById('questionText');
+const dotsEl = document.getElementById('dots');
+const optionsEl = document.getElementById('options');
+const feedbackEl = document.getElementById('answerFeedback');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+const timerEl = document.getElementById('timer');
+const statusEl = document.getElementById('status');
+const mainEl = document.querySelector('.main');
+const leftColEl = document.querySelector('.left-col');
+const rightColEl = document.querySelector('.right-col');
+
+function buildDots(activeNumber) {
+  dotsEl.innerHTML = '';
+  for (let i = 1; i <= totalQuestions; i++) {
+    const d = document.createElement('span');
+    d.className = 'dot' + (i === activeNumber ? ' active' : '');
+    dotsEl.appendChild(d);
+  }
+}
+
+function setQuestionLayout(item) {
+  const hasLeftContent = Boolean((item.passageTitle || '').trim() || (item.passageHtml || '').trim());
+  if (hasLeftContent) {
+    mainEl.style.gridTemplateColumns = '';
+    leftColEl.style.display = '';
+    rightColEl.style.paddingTop = '';
+  } else {
+    mainEl.style.gridTemplateColumns = '1fr';
+    leftColEl.style.display = 'none';
+    rightColEl.style.paddingTop = '4px';
+  }
+}
+
+function render() {
+  const item = questions[current];
+  setQuestionLayout(item);
+
+  brandTitle.textContent = item.sectionTitle || 'ATI TEAS Version 7 - English and Language Usage';
+  qNumber.textContent = `Question: ${item.number} of ${totalQuestions}`;
+  passageTitle.textContent = item.passageTitle || '';
+  passageEl.innerHTML = item.passageHtml || '';
+  stimulusEl.innerHTML = item.stimulusHtml || item.stimulus || '';
+  questionText.innerHTML = (item.question || '').replace(/\n/g, '<br>');
+
+  buildDots(item.number);
+
+  optionsEl.innerHTML = '';
+  item.options.forEach((opt, index) => {
+    const row = document.createElement('div');
+    const answered = answers[current] !== null;
+    let className = 'option';
+    if (answers[current] === index) className += ' selected';
+    if (answered && index === item.correctIndex) className += ' correct';
+    if (answered && answers[current] === index && index !== item.correctIndex) className += ' incorrect';
+    row.className = className;
+    row.tabIndex = 0;
+
+    const radio = document.createElement('span');
+    radio.className = 'radio';
+
+    const label = document.createElement('span');
+    label.className = 'option-text';
+    label.textContent = opt;
+
+    row.appendChild(radio);
+    row.appendChild(label);
+
+    row.addEventListener('click', () => selectOption(index));
+    row.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        selectOption(index);
+      }
+    });
+
+    optionsEl.appendChild(row);
+  });
+
+  if (answers[current] !== null) {
+    const correctText = item.options[item.correctIndex];
+    const isCorrect = answers[current] === item.correctIndex;
+    feedbackEl.className = 'answer-feedback show' + (isCorrect ? '' : ' wrong');
+    feedbackEl.textContent = isCorrect
+      ? `Correct. Answer: ${correctText}`
+      : `Incorrect. Correct answer: ${correctText}`;
+  } else {
+    feedbackEl.className = 'answer-feedback';
+    feedbackEl.textContent = '';
+  }
+
+  prevBtn.disabled = current === 0;
+  nextBtn.textContent = current === questions.length - 1 ? 'Finish' : 'Continue';
+  statusEl.textContent = `${answers.filter(a => a !== null).length} of ${questions.length} uploaded English questions answered`;
+}
+
+function selectOption(index) {
+  answers[current] = index;
+  render();
+}
+
+prevBtn.addEventListener('click', () => {
+  if (current > 0) {
+    current--;
+    render();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+});
+
+nextBtn.addEventListener('click', () => {
+  if (current < questions.length - 1) {
+    current++;
+    render();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  } else {
+    alert('You have reached the end of the uploaded English questions.');
+  }
+});
+
+function tick() {
+  if (remaining > 0) remaining--;
+  const h = String(Math.floor(remaining / 3600)).padStart(2, '0');
+  const m = String(Math.floor((remaining % 3600) / 60)).padStart(2, '0');
+  const s = String(remaining % 60).padStart(2, '0');
+  timerEl.textContent = `${h}:${m}:${s}`;
+}
+
+render();
+setInterval(tick, 1000);
+</script>
+</body>
+</html>

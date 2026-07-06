@@ -1,0 +1,1549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ATI TEAS Version 7 Science Practice Questions</title>
+  <style>
+    :root {
+      --text:#4a4a4a;
+      --heading:#333;
+      --blue:#caebfb;
+      --blue-strong:#b7dcff;
+      --btn:#b6e4e7;
+      --btn-text:#50646b;
+      --dot:#8b8f92;
+      --dot-light:#c1e5fb;
+      --dot-active:#89bce8;
+      --olive:#6b7300;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      color:var(--text);
+      background:#fff;
+    }
+    .exam-shell {
+      max-width: 1280px;
+      margin: 0 auto;
+      min-height: 100vh;
+      padding: 34px 32px 42px;
+      display:flex;
+      flex-direction:column;
+    }
+    .topbar {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding: 0 10px 16px;
+      margin-bottom: 10px;
+      border-bottom: 5px solid transparent;
+      border-image: repeating-linear-gradient(135deg, var(--blue) 0 3px, transparent 3px 8px) 12;
+    }
+    .brand {
+      font-size: 18px;
+      font-weight: 700;
+      color:#3a3a3a;
+    }
+    .close {
+      border:none;
+      background:#f8f8f8;
+      color:#444;
+      font-weight:700;
+      font-size:14px;
+      padding:10px 16px;
+      display:flex;
+      align-items:center;
+      gap:6px;
+      text-transform:uppercase;
+    }
+    .close .x {
+      width:16px;
+      height:16px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      background:#444;
+      color:#fff;
+      line-height:1;
+      font-size:12px;
+    }
+    .main {
+      flex:1;
+      display:grid;
+      grid-template-columns: minmax(0, 1fr) minmax(420px, 500px);
+      gap: 36px;
+      align-items:start;
+      padding: 6px 8px 0;
+    }
+    .left-col {
+      min-width:0;
+    }
+    .right-col {
+      min-width:0;
+      padding-top: 4px;
+    }
+    .top-question-row {
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:24px;
+      margin-bottom: 18px;
+      padding: 0 6px;
+    }
+    h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--heading);
+      font-size: 28px;
+      margin: 0;
+      line-height: 1.2;
+    }
+    .utility {
+      text-align:right;
+      flex:0 0 auto;
+      min-width: 195px;
+      display:flex;
+      flex-direction:column;
+      align-items:flex-end;
+      gap:10px;
+    }
+    .timer-row {
+      display:flex;
+      align-items:center;
+      justify-content:flex-end;
+      gap:14px;
+      width:100%;
+    }
+    .timer {
+      font-weight:700;
+      margin-bottom:0;
+      white-space:nowrap;
+    }
+    .timer span { font-weight:400; }
+    .flag-row {
+      display:flex;
+      justify-content:flex-end;
+      width:100%;
+    }
+    .calc {
+      width:33px;
+      height:43px;
+      border:4px solid var(--olive);
+      position:relative;
+      flex:0 0 auto;
+    }
+    .calc:before {
+      content:"";
+      position:absolute;
+      left:6px;
+      right:6px;
+      top:5px;
+      height:6px;
+      background:#fff;
+    }
+    .calc:after {
+      content:"";
+      position:absolute;
+      left:6px;
+      top:18px;
+      width:4px;
+      height:4px;
+      background:#fff;
+      box-shadow:9px 0 #fff,18px 0 #fff,0 9px #fff,9px 9px #fff,18px 9px #fff,0 18px #fff,9px 18px #fff,18px 18px #fff;
+    }
+    .flag {
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      border:1px solid #d6d6d6;
+      background:#fff;
+      padding:11px 16px;
+      color:#555;
+      font-weight:700;
+      box-shadow:0 1px 2px rgba(0,0,0,.05);
+    }
+    .flag-icon {
+      width:22px;
+      height:27px;
+      border:3px solid #555;
+      border-top:none;
+      position:relative;
+    }
+    .flag-icon:before {
+      content:"";
+      position:absolute;
+      left:5px;
+      top:-9px;
+      width:13px;
+      height:24px;
+      background:#555;
+      clip-path:polygon(0 0,100% 0,100% 78%,50% 58%,0 78%);
+    }
+    .passage-title {
+      font-weight:700;
+      font-size:18px;
+      color:#444;
+      margin: 0 0 14px;
+    }
+    .passage {
+      font-size:16px;
+      line-height:1.52;
+      color:#595959;
+      padding: 0 6px 8px;
+    }
+    .passage p {
+      margin: 0 0 14px;
+    }
+    .passage ul {
+      margin: 0 0 14px 24px;
+      padding:0;
+    }
+    .passage li {
+      margin: 0 0 7px;
+    }
+    .stimulus {
+      font-weight:700;
+      font-size:18px;
+      color:#444;
+      margin: 0 0 2px;
+    }
+    .diagram-stimulus {
+      margin: 14px 0 26px;
+      text-align:left;
+    }
+    .diagram-stimulus img {
+      display:block;
+      height:auto;
+      max-width:100%;
+      background:#fff;
+      border:0;
+    }
+    .question-text {
+      border-top:1px solid #dfdfdf;
+      padding-top:8px;
+      font-weight:700;
+      color:#3d3d3d;
+      font-size:17px;
+      line-height:1.35;
+      margin-bottom:16px;
+    }
+    .dots {
+      display:flex;
+      align-items:center;
+      gap:11px;
+      margin: 0 0 24px;
+      overflow:hidden;
+      flex-wrap:nowrap;
+    }
+    .dot {
+      width:6px;
+      height:6px;
+      border-radius:50%;
+      background:var(--dot);
+      flex:0 0 auto;
+    }
+    .dot:nth-child(7n) { background:var(--dot-light); }
+    .dot.active {
+      width:9px;
+      height:9px;
+      background:var(--dot-active);
+      box-shadow:0 0 0 2px rgba(139,187,230,.18);
+    }
+    .options {
+      display:flex;
+      flex-direction:column;
+      gap:7px;
+      padding-bottom: 10px;
+    }
+    .option {
+      min-height: 54px;
+      display:flex;
+      align-items:flex-start;
+      gap:16px;
+      padding:12px 14px;
+      border:2px solid transparent;
+      border-radius:2px;
+      cursor:pointer;
+      user-select:none;
+      background:#fff;
+    }
+    .option:hover,
+    .option.selected {
+      border-color:var(--blue-strong);
+      box-shadow:0 0 2px rgba(80,145,255,.45);
+    }
+    .option.correct {
+      border-color:#4caf50;
+      background:#f1fbf3;
+      box-shadow:0 0 2px rgba(76,175,80,.45);
+    }
+    .option.incorrect {
+      border-color:#e15757;
+      background:#fff4f4;
+      box-shadow:0 0 2px rgba(225,87,87,.45);
+    }
+    .option.correct .radio::after {
+      content:"";
+      width:9px;
+      height:9px;
+      border-radius:50%;
+      background:#3f9b45;
+      box-shadow:0 0 2px #2f7d35;
+    }
+    .option.incorrect .radio::after {
+      content:"";
+      width:9px;
+      height:9px;
+      border-radius:50%;
+      background:#c84242;
+      box-shadow:0 0 2px #8f2929;
+    }
+    .radio {
+      width:22px;
+      height:22px;
+      border-radius:50%;
+      border:2px solid #9d9d9d;
+      background:#e8e8e8;
+      display:inline-grid;
+      place-items:center;
+      flex:0 0 auto;
+      margin-top:1px;
+    }
+    .selected .radio::after {
+      content:"";
+      width:9px;
+      height:9px;
+      border-radius:50%;
+      background:#656565;
+      box-shadow:0 0 2px #333;
+    }
+    .option-text {
+      line-height:1.45;
+      color:#5a5a5a;
+      font-size:16px;
+    }
+    .answer-feedback {
+      margin-top:14px;
+      padding:12px 14px;
+      border-left:4px solid #4caf50;
+      background:#f1fbf3;
+      color:#315d34;
+      font-weight:700;
+      line-height:1.45;
+      display:none;
+    }
+    .answer-feedback.show {
+      display:block;
+    }
+    .answer-feedback.wrong {
+      border-left-color:#e15757;
+      background:#fff4f4;
+      color:#7a2d2d;
+    }
+    .bottom-controls {
+      margin-top: 28px;
+      padding: 0 10px;
+    }
+    .nav {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
+    }
+    .arrow-btn {
+      border:none;
+      background:var(--btn);
+      color:var(--btn-text);
+      font-weight:700;
+      min-width:126px;
+      height:45px;
+      cursor:pointer;
+      position:relative;
+      text-transform:uppercase;
+      letter-spacing:.2px;
+    }
+    .prev {
+      clip-path:polygon(22px 0,100% 0,100% 100%,22px 100%,0 50%);
+      padding-left:18px;
+    }
+    .next {
+      clip-path:polygon(0 0,calc(100% - 22px) 0,100% 50%,calc(100% - 22px) 100%,0 100%);
+      padding-right:18px;
+    }
+    .arrow-btn:disabled {
+      opacity:.45;
+      cursor:not-allowed;
+    }
+    .status {
+      margin-top:12px;
+      text-align:center;
+      color:#777;
+      font-size:13px;
+    }
+    @media (max-width: 980px) {
+      .exam-shell {
+        padding: 18px 14px 28px;
+      }
+      .topbar {
+        padding: 0 0 12px;
+      }
+      .brand {
+        font-size: 15px;
+      }
+      .close {
+        font-size:12px;
+        padding:8px 10px;
+      }
+      .top-question-row {
+        flex-direction:column;
+        gap:10px;
+        margin-bottom:14px;
+        padding:0;
+      }
+      .utility {
+        width:auto;
+        min-width:0;
+        text-align:right;
+        align-items:flex-end;
+        align-self:flex-end;
+        margin-left:auto;
+        gap:8px;
+      }
+      .timer-row {
+        justify-content:flex-end;
+        gap:10px;
+      }
+      .flag-row {
+        justify-content:flex-end;
+        width:100%;
+      }
+      .calc {
+        width:28px;
+        height:38px;
+        border-width:3px;
+      }
+      .calc:before {
+        left:5px;
+        right:5px;
+        top:5px;
+        height:5px;
+      }
+      .calc:after {
+        left:5px;
+        top:16px;
+        width:3px;
+        height:3px;
+        box-shadow:8px 0 #fff,16px 0 #fff,0 8px #fff,8px 8px #fff,16px 8px #fff,0 16px #fff,8px 16px #fff,16px 16px #fff;
+      }
+      .flag {
+        min-width:96px;
+        justify-content:center;
+        padding:9px 12px;
+        font-size:13px;
+      }
+      .flag-icon {
+        width:20px;
+        height:24px;
+      }
+      .main {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding:0;
+      }
+      h1 {
+        font-size:24px;
+      }
+      .passage-title, .stimulus {
+        font-size:17px;
+      }
+      .passage,
+      .option-text {
+        font-size:14px;
+      }
+      .question-text {
+        font-size:15px;
+      }
+      .diagram-stimulus {
+        margin: 12px 0 22px;
+      }
+      .diagram-stimulus img {
+        width:100% !important;
+        max-width:100% !important;
+      }
+      .dots {
+        gap:8px;
+        margin-bottom:18px;
+      }
+      .dot {
+        width:5px;
+        height:5px;
+      }
+      .dot.active {
+        width:8px;
+        height:8px;
+      }
+      .option {
+        gap:12px;
+        padding:10px 8px;
+        min-height:52px;
+      }
+      .radio {
+        width:21px;
+        height:21px;
+      }
+      .bottom-controls {
+        padding:0;
+        margin-top:20px;
+      }
+      .arrow-btn {
+        min-width:110px;
+        height:42px;
+        font-size:12px;
+      }
+      .status {
+        font-size:12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="exam-shell">
+    <header class="topbar">
+      <div class="brand" id="brandTitle">TEAS Version 7 - Reading</div>
+      <button class="close" type="button"><span class="x">×</span> Close</button>
+    </header>
+
+    <div class="top-question-row">
+      <h1 id="questionNumber">Question: 1 of 45</h1>
+      <div class="utility">
+        <div class="timer-row">
+          <div class="timer">Time Remaining: <span id="timer">00:55:00</span></div>
+          <div class="calc" aria-label="calculator icon"></div>
+        </div>
+        <div class="flag-row">
+          <button class="flag" type="button"><span class="flag-icon"></span> FLAG</button>
+        </div>
+      </div>
+    </div>
+
+    <main class="main">
+      <section class="left-col">
+        <div class="passage-title" id="passageTitle"></div>
+        <div class="passage" id="passage"></div>
+      </section>
+
+      <section class="right-col">
+        <div class="question-text" id="questionText"></div>
+        <div class="stimulus" id="stimulus"></div>
+        <div class="dots" id="dots" aria-hidden="true"></div>
+        <div class="options" id="options"></div>
+        <div class="answer-feedback" id="answerFeedback"></div>
+      </section>
+    </main>
+
+    <div class="bottom-controls">
+      <nav class="nav">
+        <button class="arrow-btn prev" id="prevBtn" type="button">Previous</button>
+        <button class="arrow-btn next" id="nextBtn" type="button">Continue</button>
+      </nav>
+      <div class="status" id="status"></div>
+    </div>
+  </div>
+
+<script>
+const questions = [
+  {
+    "number": 1,
+    "sectionTitle": "ATI TEAS Version 7 - Science",
+    "passageTitle": "",
+    "passageHtml": "<table style=\"border-collapse:collapse;font-size:16px;margin:0 0 24px;max-width:100%;\"><thead><tr><th style=\"border:1px solid #d9d9d9;padding:8px 12px;text-align:left;font-weight:700;\">Time Administered (min)</th><th style=\"border:1px solid #d9d9d9;padding:8px 12px;text-align:left;font-weight:700;\">Control Oxygen Saturation (%)</th><th style=\"border:1px solid #d9d9d9;padding:8px 12px;text-align:left;font-weight:700;\">Experimental Oxygen Saturation (%)</th></tr></thead><tbody><tr><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">0</td><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">95</td><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">95</td></tr><tr><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">5</td><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">95</td><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">94</td></tr><tr><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">10</td><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">95</td><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">89</td></tr><tr><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">15</td><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">95</td><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">84</td></tr></tbody></table>",
+    "stimulus": "",
+    "sourceNumber": 1,
+    "stimulusHtml": "Stimulus: 1 of 1",
+    "question": "A scientist studies the effects of a new respiratory drug on oxygen levels in the blood. Which of the following conclusions is supported by the data in the table?",
+    "options": [
+      "The experimental group showed no difference from the control group.",
+      "The experimental group showed the drug was effective at lowering blood oxygen saturation.",
+      "The control group showed a spontaneous increase in blood oxygen saturation.",
+      "The control group was not given enough time to show a response to the drug."
+    ],
+    "correctIndex": 1
+  },
+  {
+    "number": 2,
+    "sectionTitle": "ATI TEAS Version 7 - Science",
+    "passageTitle": "",
+    "passageHtml": "<table style=\"border-collapse:collapse;font-size:16px;margin:0 0 24px;max-width:100%;\"><thead><tr><th style=\"border:1px solid #d9d9d9;padding:8px 12px;text-align:left;font-weight:700;\">Diet Version</th><th style=\"border:1px solid #d9d9d9;padding:8px 12px;text-align:left;font-weight:700;\">Average Protein Content of Egg (grams)</th></tr></thead><tbody><tr><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">A</td><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">6</td></tr><tr><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">B</td><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">9</td></tr></tbody></table>",
+    "stimulus": "",
+    "sourceNumber": 2,
+    "stimulusHtml": "Stimulus: 1 of 1",
+    "question": "A scientist collects the data from samples taken from the eggs of chickens that were fed different diets. Which of the following can be inferred from the data if the eggs are the same size?",
+    "options": [
+      "Diet A contained lower amounts of monosaccharides than Diet B.",
+      "Diet B contained higher amounts of fatty acids than Diet A.",
+      "Diet A contained lower amounts of nucleotides than Diet B.",
+      "Diet B contained higher amounts of amino acids than Diet A."
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 3,
+    "sectionTitle": "ATI TEAS Version 7 - Science",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 3,
+    "stimulusHtml": "",
+    "question": "Which of the following cells has the ability to engulf other cells?",
+    "options": [
+      "Red blood cells",
+      "Macrophages",
+      "Mast cells",
+      "Epithelium"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "number": 4,
+    "sectionTitle": "ATI TEAS Version 7 - Science",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 4,
+    "stimulusHtml": "",
+    "question": "Which of the following types of mutations will result in the codon reading frame being maintained?",
+    "options": [
+      "One nucleotide deletion",
+      "Frameshift mutation",
+      "Two nucleotide insertion",
+      "Substitution mutation"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 5,
+    "sectionTitle": "ATI TEAS Version 7 - Science",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 5,
+    "stimulusHtml": "",
+    "question": "Which of the following is a balanced chemical equation?",
+    "options": [
+      "H2O -> H2 + 2 O2",
+      "H2O -> 2H2 + O2",
+      "2H2O -> H2 + 2O2",
+      "2 H2O -> 2 H2 + O2"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 6,
+    "sectionTitle": "ATI TEAS Version 7 - Science",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 6,
+    "stimulusHtml": "",
+    "question": "Which of the following structures is present in both prokaryotic and eukaryotic cells?",
+    "options": [
+      "Golgi apparatus",
+      "Endoplasmic reticulum",
+      "Chloroplast",
+      "Cell membrane"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 7,
+    "sectionTitle": "ATI TEAS Version 7 - Science",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 7,
+    "stimulusHtml": "",
+    "question": "Which of the following is equivalent to 2.5 kilometers (km)?",
+    "options": [
+      "250,000 centimeters (cm)",
+      "250,000 millimeters (mm)",
+      "250 decimeters (dm)",
+      "25,000 millimeters (mm)"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 8,
+    "sectionTitle": "ATI TEAS Version 7 - Science",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 8,
+    "stimulusHtml": "",
+    "question": "Which of the following is the primary reason smoking can lead to high blood pressure?",
+    "options": [
+      "Carbon monoxide decreases oxygen-carrying capacity.",
+      "Nicotine causes arterial vasoconstriction.",
+      "Cigarette smoke irritates nasal passages.",
+      "Smoking increases lung capacity, straining the heart."
+    ],
+    "correctIndex": 1
+  },
+  {
+    "number": 9,
+    "sectionTitle": "ATI TEAS Version 7 - Science",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 9,
+    "stimulusHtml": "",
+    "question": "Which of the following describes what happens when blood pH decreases below normal range?",
+    "options": [
+      "H2PO4- releases H+ ions which increases blood pH back into normal range.",
+      "Carbonic acid in the blood stream releases H+ ions which increases pH back into normal range.",
+      "Bicarbonate ions in the blood stream bind excess H+ ions which increases blood pH back into normal range.",
+      "HPO42- binds H+ ions which raises pH into normal range."
+    ],
+    "correctIndex": 2
+  },
+  {
+    "number": 10,
+    "sectionTitle": "ATI TEAS Version 7 - Science",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 10,
+    "stimulusHtml": "",
+    "question": "A study investigating the effects of light exposure on the growth of algae exposed three groups of algae to different light intensities: low, medium, and high. Over four weeks, the growth of the algae was measured in terms of biomass. The medium-light group showed a 30% increase in biomass, the low-light group showed a 10% increase, and the high-light group showed a 12% increase. Which of the following conclusions is best supported by the results of the study?",
+    "options": [
+      "High light intensity causes a nutritional deficit so the algae cannot survive.",
+      "Algae growth is inversely proportional to light intensity.",
+      "The biomass of algae is unaffected by light intensity.",
+      "The medium light intensity promotes the highest growth in the algae."
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 11,
+    "sectionTitle": "ATI TEAS Version 7 - Science",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 11,
+    "stimulusHtml": "",
+    "question": "Which of the following is a hinge joint?",
+    "options": [
+      "Thumb",
+      "Jaw",
+      "Shoulder",
+      "Wrist"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 12,
+    "sectionTitle": "ATI TEAS Version 7 - Science",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 12,
+    "stimulusHtml": "",
+    "question": "Which of the following codon changes represents a silent mutation?<br><br><img src=\"set10-assets/science-q12-codon-table.png\" alt=\"RNA codon table\" style=\"max-width:420px;width:100%;height:auto;display:block;margin:14px 0 24px;\">",
+    "options": [
+      "AGA to AGU",
+      "CUC to CUG",
+      "UUA to UUU",
+      "GAA to GGU"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "number": 13,
+    "sectionTitle": "ATI TEAS Version 7 - Science",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 13,
+    "stimulusHtml": "",
+    "question": "Which of the following is the term for the gap between two nerve cells?",
+    "options": [
+      "An axon",
+      "A dendrite",
+      "A myelin sheath",
+      "A synapse"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 14,
+    "sectionTitle": "ATI TEAS Version 7 - Science",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 14,
+    "stimulusHtml": "",
+    "question": "If a portion of a strand of DNA bases reads 5' AGCTAGCGT 3', what would the sequence of bases on the complementary strand read?",
+    "options": [
+      "5' UCGAUCGCA 3'",
+      "3' AGCTAGCGT 5'",
+      "3' TCGATCGCA 5'",
+      "5' TCGUTCGCU 3'"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "number": 15,
+    "sectionTitle": "ATI TEAS Version 7 - Science",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 15,
+    "stimulusHtml": "",
+    "question": "Which of the following options describes the pattern of atomic radii within a group (column) moving from top to bottom in the periodic table?",
+    "options": [
+      "Changes unpredictably",
+      "Remains unchanged",
+      "Increases",
+      "Decreases"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "number": 16,
+    "sectionTitle": "ATI TEAS Version 7 - Science",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 16,
+    "stimulusHtml": "",
+    "question": "In the unbalanced equation below, which of the following is the number of moles of NaOH required to neutralize 1 mole of H2SO4?<br><br>NaOH + H2SO4 -> H2O + Na2SO4",
+    "options": [
+      "0.5 moles",
+      "1.5 moles",
+      "2 moles",
+      "1 mole"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "number": 17,
+    "sectionTitle": "ATI TEAS Version 7 - Science",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 17,
+    "stimulusHtml": "",
+    "question": "Which of the following is a characteristic of a good hypothesis?",
+    "options": [
+      "Contains more than two variables",
+      "Original idea not based on observations",
+      "Should be testable",
+      "Raises further questions"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "number": 18,
+    "sectionTitle": "ATI TEAS Version 7 - Science",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 18,
+    "stimulusHtml": "",
+    "question": "Which of the following conditions results in a faster heartbeat?",
+    "options": [
+      "Increased sympathetic nerve output",
+      "Decreased sympathetic nerve output",
+      "Increased blood volume",
+      "Decreased pacemaker stimulus"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 19,
+    "sectionTitle": "ATI TEAS Version 7 - Science",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 19,
+    "stimulusHtml": "",
+    "question": "Which of the following inner ear structures is a fluid-filled chamber that is connected to the auditory nerve?",
+    "options": [
+      "Stapes",
+      "Cochlea",
+      "Malleus",
+      "Incus"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "number": 20,
+    "sectionTitle": "ATI TEAS Version 7 - Science",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 20,
+    "stimulusHtml": "",
+    "question": "According to Le Chatelier's principle, which of the following is the effect of increasing the concentration of reactants on a system at equilibrium?",
+    "options": [
+      "The rate of the forward reaction will decrease, while the reverse rate increases.",
+      "The forward reaction will be favored, producing more products.",
+      "A new catalyst will be needed to reach a new equilibrium.",
+      "The reverse reaction will be favored, producing more reactants."
+    ],
+    "correctIndex": 1
+  },
+  {
+    "number": 21,
+    "sectionTitle": "ATI TEAS Version 7 - Science",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 21,
+    "stimulusHtml": "<img src=\"set10-assets/science-q21-pancreas-diagram-visible.png\" alt=\"Visible portion of pancreas, stomach, liver, and muscle diagram\" style=\"max-width:460px;width:100%;height:auto;display:block;margin:0 0 24px;\">",
+    "question": "[Question text is not visible in the uploaded screenshot for QUESTION 21 OF 50.png.]",
+    "options": [
+      "Norepinephrine",
+      "Glucagon",
+      "Calcitonin",
+      "Insulin"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 22,
+    "sectionTitle": "ATI TEAS Version 7 - Science",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 22,
+    "stimulusHtml": "",
+    "question": "A cube of metal has a mass of 24 grams and occupies a volume of 3 centimeters^3. Which of the following is the density of the metal cube?",
+    "options": [
+      "0.125 grams per centimeters^3",
+      "8 grams per centimeters^3",
+      "6 grams per centimeters^3",
+      "72 grams per centimeters^3"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "number": 23,
+    "sectionTitle": "ATI TEAS Version 7 - Science",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 23,
+    "stimulusHtml": "",
+    "question": "Which of the following terms refers to the thickest layer of the heart?",
+    "options": [
+      "Pericardium",
+      "Epicardium",
+      "Myocardium",
+      "Endocardium"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "number": 24,
+    "sectionTitle": "ATI TEAS Version 7 - Science",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 24,
+    "stimulusHtml": "",
+    "question": "One parent has dark brown eyes (homozygous dominant), and the other parent has green eyes (homozygous recessive). What is the probability that their offspring will have brown eyes?",
+    "options": [
+      "50%",
+      "100%",
+      "75%",
+      "25%"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "number": 25,
+    "sectionTitle": "ATI TEAS Version 7 - Science",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 25,
+    "stimulusHtml": "",
+    "question": "Which of the following parts of the body typically has the thickest epidermis layer?",
+    "options": [
+      "Palm",
+      "Armpit",
+      "Scalp",
+      "Forearm"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 26,
+    "sectionTitle": "ATI TEAS Version 7 - Science",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 26,
+    "stimulusHtml": "",
+    "question": "Which of the following enzyme classes is primarily responsible for adding deoxyribonucleotides to a pre-existing DNA strand?",
+    "options": [
+      "Polymerase",
+      "Topoisomerase",
+      "Nuclease",
+      "Primase"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 27,
+    "sectionTitle": "ATI TEAS Version 7 - Science",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 27,
+    "stimulusHtml": "",
+    "question": "Which of the following is the slit in the medial surface of the kidney that admits nerves, blood vessels, lymphatics, and the ureter?",
+    "options": [
+      "Plexus",
+      "Sulcus",
+      "Hilum",
+      "Sinus"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "number": 28,
+    "sectionTitle": "ATI TEAS Version 7 - Science",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 28,
+    "stimulusHtml": "",
+    "question": "Which of the following types of pathogens is the causative agent of the skin condition known as tinea?",
+    "options": [
+      "Bacteria",
+      "Viruses",
+      "Fungi",
+      "Protists"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "number": 29,
+    "sectionTitle": "ATI TEAS Version 7 - Science",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 29,
+    "stimulusHtml": "",
+    "question": "If a fertilized egg does not implant, which of the following happens to the uterine tissue?",
+    "options": [
+      "The functional layer of the endometrium degenerates.",
+      "The myometrium is reabsorbed.",
+      "The myometrium undergoes meiosis.",
+      "The endometrium persists until the next ovulation."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 30,
+    "sectionTitle": "ATI TEAS Version 7 - Science",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 30,
+    "stimulusHtml": "",
+    "question": "Which of the following describes the order of events in which bone fractures heal?",
+    "options": [
+      "A fibrocartilage callus forms -> a hematoma forms -> bone remodeling occurs -> a bony callus forms",
+      "A hematoma forms -> a bony callus forms -> a fibrocartilage callus forms -> bone remodeling occurs",
+      "A hematoma forms -> a fibrocartilage callus forms -> a bony callus forms -> bone remodeling occurs",
+      "A bony callus forms -> a hematoma forms -> a fibrocartilage callus forms -> bone remodeling occurs"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "number": 31,
+    "sectionTitle": "ATI TEAS Version 7 - Science",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 31,
+    "stimulusHtml": "",
+    "question": "A bursa is which of the following?",
+    "options": [
+      "The layer of flexible connective tissue that encloses organs such as the heart",
+      "A fluid-filled sac that cushions bones from friction against other structures",
+      "A pus-filled sac that has collected in a pocket under the skin",
+      "The scapular cavity where the head of the humerus fits"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "number": 32,
+    "sectionTitle": "ATI TEAS Version 7 - Science",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 32,
+    "stimulusHtml": "",
+    "question": "Which of the following substances is excreted by sweat glands in response to the breakdown of proteins and the formation of ammonia?",
+    "options": [
+      "Sebum",
+      "Urea",
+      "Water",
+      "Lysozymes"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "number": 33,
+    "sectionTitle": "ATI TEAS Version 7 - Science",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 33,
+    "stimulusHtml": "",
+    "question": "Which of the following is another term for a muscle cell?",
+    "options": [
+      "Sarcolemma",
+      "Muscle fiber",
+      "Myofilament",
+      "Sarcoplasmic reticulum"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "number": 34,
+    "sectionTitle": "ATI TEAS Version 7 - Science",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 34,
+    "stimulusHtml": "",
+    "question": "A solution is made by dissolving 10 grams of salt in 1 liter of water, forming a saltwater solution. Additional water is added to increase the total volume to 2 liters. Which of the following statements describes the effect of the added water on the concentration of the salt solution?",
+    "options": [
+      "The concentration of the solution doubles.",
+      "The concentration of the solution remains the same.",
+      "The concentration of the solution decreases by half.",
+      "The concentration of the solution decreases by one-fifth."
+    ],
+    "correctIndex": 2
+  },
+  {
+    "number": 35,
+    "sectionTitle": "ATI TEAS Version 7 - Science",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 35,
+    "stimulusHtml": "",
+    "question": "Which of the following glands regulates the function of other glands in the endocrine system?",
+    "options": [
+      "Pituitary gland",
+      "Pineal gland",
+      "Parathyroid gland",
+      "Thyroid gland"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 36,
+    "sectionTitle": "ATI TEAS Version 7 - Science",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 36,
+    "stimulusHtml": "",
+    "question": "The pharynx is largely made of which of the following types of tissues?",
+    "options": [
+      "Muscle",
+      "Bone",
+      "Skin",
+      "Nervous"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 37,
+    "sectionTitle": "ATI TEAS Version 7 - Science",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 37,
+    "stimulusHtml": "",
+    "question": "A study measures the growth rates of different plant species in various light conditions. The results show: Plant X grows rapidly in blue light, Plant Y grows rapidly in red light, and Plant Z has similar growth rates in both blue and red light but grows more in white light. Which of the following is a logical conclusion about Plant Z's response to light based on the study results?",
+    "options": [
+      "Plant Z requires artificial light for optimal growth.",
+      "Plant Z's growth receives a more effective spectrum from white light than individual colors.",
+      "Plant Z has pigments that absorb red light but not blue light.",
+      "Plant Z contains pigments that make it grow poorly in all light conditions."
+    ],
+    "correctIndex": 1
+  },
+  {
+    "number": 38,
+    "sectionTitle": "ATI TEAS Version 7 - Science",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 38,
+    "stimulusHtml": "",
+    "question": "Which of the following actions during the process of swallowing is a voluntary muscular action?",
+    "options": [
+      "Buccal phase",
+      "Epiglottis closure",
+      "Pharyngoesophageal phase",
+      "Peristaltic contraction"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 39,
+    "sectionTitle": "ATI TEAS Version 7 - Science",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 39,
+    "stimulusHtml": "",
+    "question": "Parasitic worm infestation is hypothesized to be damaging to the host. However, scientists have recently discovered that worm infestation can relieve the effects of certain autoimmune disorders. In which of the following ways should the hypothesis be modified, given the new findings?",
+    "options": [
+      "Worm infestation prevents the body from immune malfunction.",
+      "Lack of worm infestations is the cause of some autoimmune disorders.",
+      "Worm infestations exacerbate the body's immune reactions.",
+      "Worm infestation reduces the severity of certain autoimmune disorders."
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 40,
+    "sectionTitle": "ATI TEAS Version 7 - Science",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 40,
+    "stimulusHtml": "",
+    "question": "A true-breeding blue-flowered plant (BB) is crossed with a true-breeding white-flowered plant (bb). Which of the following genotypic ratios (BB:Bb:bb) would result?",
+    "options": [
+      "0:100:0",
+      "100:0:0",
+      "25:50:25",
+      "50:0:50"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "number": 41,
+    "sectionTitle": "ATI TEAS Version 7 - Science",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 41,
+    "stimulusHtml": "",
+    "question": "A researcher set up an investigation to find out if fertilizer increased the height of basil plants grown in a greenhouse. She set up an experiment where she measured the initial height of each plant and then gave one group of 12 basil plants Fertilizer A and another group of 12 basil plants Fertilizer B. She kept all other conditions the same. After 8 weeks, she measured the height of the plants.<br><br>When she analyzed her data, she found the group of plants given Fertilizer A grew slightly taller than those given Fertilizer B. Which of the following is an error in her experimental design?",
+    "options": [
+      "She is missing a control group that was given neither fertilizer.",
+      "She measured all the plants at the same time to collect her data.",
+      "The amount of light, temperature, and water was the same for both groups of plants.",
+      "She used the same number of plants in both groups."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 42,
+    "sectionTitle": "ATI TEAS Version 7 - Science",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 42,
+    "stimulusHtml": "",
+    "question": "Which of the following is a bone found in the knee joint?",
+    "options": [
+      "Patella",
+      "Malleus",
+      "Sphenoid",
+      "Zygomatic"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 43,
+    "sectionTitle": "ATI TEAS Version 7 - Science",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 43,
+    "stimulusHtml": "",
+    "question": "The purpose of microvilli is to",
+    "options": [
+      "assist in osmoregulation in the kidneys.",
+      "assist in the transport of oxygen in the blood.",
+      "receive a light stimulus in the retina of the eye.",
+      "increase surface area for absorption in the intestines."
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 44,
+    "sectionTitle": "ATI TEAS Version 7 - Science",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 44,
+    "stimulusHtml": "",
+    "question": "A study investigated the effect of a high-sugar diet on insulin resistance in mice. Mice were fed a diet containing 50% sugar (high-sugar diet) for six months. At the end of the study, these mice exhibited a significantly higher level of insulin resistance compared to the control group that was fed a standard diet. Researchers concluded that a high-sugar diet causes increased insulin resistance. Which of the following explanations best identifies the effect of a high-sugar diet?",
+    "options": [
+      "Increased insulin sensitivity",
+      "Decreased weight",
+      "Increased lifespan",
+      "Increased insulin resistance"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 45,
+    "sectionTitle": "ATI TEAS Version 7 - Science",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 45,
+    "stimulusHtml": "",
+    "question": "When converting a person's height from centimeters to meters, which of the following calculations would be necessary?",
+    "options": [
+      "Multiply by 10",
+      "Divide by 10",
+      "Multiply by 100",
+      "Divide by 100"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "number": 46,
+    "sectionTitle": "ATI TEAS Version 7 - Science",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 46,
+    "stimulusHtml": "",
+    "question": "A bag made of semipermeable membrane is permeable to water but not to sugar. The bag is filled with a sugar solution and then placed in pure water. Which of the following observations is expected after a few hours?",
+    "options": [
+      "The number of sugar molecules inside the bag will decrease.",
+      "The bag will expand as water enters the bag.",
+      "There will be no change in the bag's size or weight.",
+      "Sugar molecules will diffuse into the water."
+    ],
+    "correctIndex": 1
+  },
+  {
+    "number": 47,
+    "sectionTitle": "ATI TEAS Version 7 - Science",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 47,
+    "stimulusHtml": "",
+    "question": "Which of the following is correct regarding the pH scale?",
+    "options": [
+      "A substance with a pH of 3 is 10 times more acidic than a substance with a pH of 4.",
+      "A substance with a pH of 3 is two times more acidic than a substance with a pH of 4.",
+      "A substance with a pH of 3 is 10 times more alkaline than a substance with a pH of 4.",
+      "A substance with a pH of 3 is two times more alkaline than a substance with a pH of 4."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 48,
+    "sectionTitle": "ATI TEAS Version 7 - Science",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 48,
+    "stimulusHtml": "",
+    "question": "Which of the following processes causes most of the carbon dioxide from the blood to move into the alveoli?",
+    "options": [
+      "Passive transport using carrier proteins",
+      "Active transport using energy",
+      "Conversion to carbon monoxide",
+      "Diffusion down a concentration gradient"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 49,
+    "sectionTitle": "ATI TEAS Version 7 - Science",
+    "passageTitle": "",
+    "passageHtml": "<div style=\"font-weight:700;margin-bottom:8px;\">Percentage of Nucleotides Present in a Molecule of DNA</div><table style=\"border-collapse:collapse;font-size:16px;margin:0 0 24px;max-width:100%;\"><thead><tr><th style=\"border:1px solid #d9d9d9;padding:8px 12px;text-align:left;font-weight:700;\">Organism</th><th style=\"border:1px solid #d9d9d9;padding:8px 12px;text-align:left;font-weight:700;\">Adenine</th><th style=\"border:1px solid #d9d9d9;padding:8px 12px;text-align:left;font-weight:700;\">Cytosine</th><th style=\"border:1px solid #d9d9d9;padding:8px 12px;text-align:left;font-weight:700;\">Thymine</th><th style=\"border:1px solid #d9d9d9;padding:8px 12px;text-align:left;font-weight:700;\">Guanine</th></tr></thead><tbody><tr><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">Toad</td><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">?</td><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">41</td><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">9</td><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">?</td></tr></tbody></table>",
+    "stimulus": "",
+    "sourceNumber": 49,
+    "stimulusHtml": "Stimulus: 1 of 1",
+    "question": "Based on the table, which of the following is the percentage of adenine nucleotides in this molecule of toad DNA?",
+    "options": [
+      "9",
+      "41",
+      "32",
+      "50"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 50,
+    "sectionTitle": "ATI TEAS Version 7 - Science",
+    "passageTitle": "",
+    "passageHtml": "<table style=\"border-collapse:collapse;font-size:16px;margin:0 0 24px;max-width:100%;\"><thead><tr><th style=\"border:1px solid #d9d9d9;padding:8px 12px;text-align:left;font-weight:700;\">Solute Phase</th><th style=\"border:1px solid #d9d9d9;padding:8px 12px;text-align:left;font-weight:700;\">Solvent Phase</th></tr></thead><tbody><tr><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">Solid</td><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">Solid</td></tr><tr><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">Liquid</td><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">Liquid</td></tr><tr><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">Liquid</td><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">Solid</td></tr><tr><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">Solid</td><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">Liquid</td></tr></tbody></table>",
+    "stimulus": "",
+    "sourceNumber": 50,
+    "stimulusHtml": "Stimulus: 1 of 1",
+    "question": "Which of the following rows on the table indicates the correct phases of the solute and solvent when saltwater is made at room temperature using water and NaCl?",
+    "options": [
+      "Row 1",
+      "Row 2",
+      "Row 3",
+      "Row 4"
+    ],
+    "correctIndex": 0
+  }
+];
+const totalQuestions = questions.length;
+const initialSeconds = 60 * 60;
+let current = 0;
+let answers = Array(questions.length).fill(null);
+let remaining = initialSeconds;
+
+const qNumber = document.getElementById('questionNumber');
+const brandTitle = document.getElementById('brandTitle');
+const passageTitle = document.getElementById('passageTitle');
+const passageEl = document.getElementById('passage');
+const stimulusEl = document.getElementById('stimulus');
+const questionText = document.getElementById('questionText');
+const dotsEl = document.getElementById('dots');
+const optionsEl = document.getElementById('options');
+const feedbackEl = document.getElementById('answerFeedback');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+const timerEl = document.getElementById('timer');
+const statusEl = document.getElementById('status');
+const mainEl = document.querySelector('.main');
+const leftColEl = document.querySelector('.left-col');
+const rightColEl = document.querySelector('.right-col');
+
+function buildDots(activeNumber) {
+  dotsEl.innerHTML = '';
+  for (let i = 1; i <= totalQuestions; i++) {
+    const d = document.createElement('span');
+    d.className = 'dot' + (i === activeNumber ? ' active' : '');
+    dotsEl.appendChild(d);
+  }
+}
+
+function setQuestionLayout(item) {
+  const hasLeftContent = Boolean((item.passageTitle || '').trim() || (item.passageHtml || '').trim());
+  if (hasLeftContent) {
+    mainEl.style.gridTemplateColumns = '';
+    leftColEl.style.display = '';
+    rightColEl.style.paddingTop = '';
+  } else {
+    mainEl.style.gridTemplateColumns = '1fr';
+    leftColEl.style.display = 'none';
+    rightColEl.style.paddingTop = '4px';
+  }
+}
+
+function render() {
+  const item = questions[current];
+  setQuestionLayout(item);
+
+  brandTitle.textContent = item.sectionTitle || 'ATI TEAS Version 7 - Science';
+  qNumber.textContent = `Question: ${item.number} of ${totalQuestions}`;
+  passageTitle.textContent = item.passageTitle || '';
+  passageEl.innerHTML = item.passageHtml || '';
+  stimulusEl.innerHTML = item.stimulusHtml || item.stimulus || '';
+  questionText.innerHTML = (item.question || '').replace(/\n/g, '<br>');
+
+  buildDots(item.number);
+
+  optionsEl.innerHTML = '';
+  item.options.forEach((opt, index) => {
+    const row = document.createElement('div');
+    const answered = answers[current] !== null;
+    let className = 'option';
+    if (answers[current] === index) className += ' selected';
+    if (answered && index === item.correctIndex) className += ' correct';
+    if (answered && answers[current] === index && index !== item.correctIndex) className += ' incorrect';
+    row.className = className;
+    row.tabIndex = 0;
+
+    const radio = document.createElement('span');
+    radio.className = 'radio';
+
+    const label = document.createElement('span');
+    label.className = 'option-text';
+    label.textContent = opt;
+
+    row.appendChild(radio);
+    row.appendChild(label);
+
+    row.addEventListener('click', () => selectOption(index));
+    row.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        selectOption(index);
+      }
+    });
+
+    optionsEl.appendChild(row);
+  });
+
+  if (answers[current] !== null) {
+    const correctText = item.options[item.correctIndex];
+    const isCorrect = answers[current] === item.correctIndex;
+    feedbackEl.className = 'answer-feedback show' + (isCorrect ? '' : ' wrong');
+    feedbackEl.textContent = isCorrect
+      ? `Correct. Answer: ${correctText}`
+      : `Incorrect. Correct answer: ${correctText}`;
+  } else {
+    feedbackEl.className = 'answer-feedback';
+    feedbackEl.textContent = '';
+  }
+
+  prevBtn.disabled = current === 0;
+  nextBtn.textContent = current === questions.length - 1 ? 'Finish' : 'Continue';
+  statusEl.textContent = `${answers.filter(a => a !== null).length} of ${questions.length} uploaded science questions answered`;
+}
+
+function selectOption(index) {
+  answers[current] = index;
+  render();
+}
+
+prevBtn.addEventListener('click', () => {
+  if (current > 0) {
+    current--;
+    render();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+});
+
+nextBtn.addEventListener('click', () => {
+  if (current < questions.length - 1) {
+    current++;
+    render();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  } else {
+    alert('You have reached the end of the uploaded science questions.');
+  }
+});
+
+function tick() {
+  if (remaining > 0) remaining--;
+  const h = String(Math.floor(remaining / 3600)).padStart(2, '0');
+  const m = String(Math.floor((remaining % 3600) / 60)).padStart(2, '0');
+  const s = String(remaining % 60).padStart(2, '0');
+  timerEl.textContent = `${h}:${m}:${s}`;
+}
+
+render();
+setInterval(tick, 1000);
+</script>
+</body>
+</html>

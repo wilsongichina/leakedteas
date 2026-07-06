@@ -1,0 +1,1461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ATI TEAS Version 7 Reading Practice Questions</title>
+  <style>
+    :root {
+      --text:#4a4a4a;
+      --heading:#333;
+      --blue:#caebfb;
+      --blue-strong:#b7dcff;
+      --btn:#b6e4e7;
+      --btn-text:#50646b;
+      --dot:#8b8f92;
+      --dot-light:#c1e5fb;
+      --dot-active:#89bce8;
+      --olive:#6b7300;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      color:var(--text);
+      background:#fff;
+    }
+    .exam-shell {
+      max-width: 1280px;
+      margin: 0 auto;
+      min-height: 100vh;
+      padding: 34px 32px 42px;
+      display:flex;
+      flex-direction:column;
+    }
+    .topbar {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding: 0 10px 16px;
+      margin-bottom: 10px;
+      border-bottom: 5px solid transparent;
+      border-image: repeating-linear-gradient(135deg, var(--blue) 0 3px, transparent 3px 8px) 12;
+    }
+    .brand {
+      font-size: 18px;
+      font-weight: 700;
+      color:#3a3a3a;
+    }
+    .close {
+      border:none;
+      background:#f8f8f8;
+      color:#444;
+      font-weight:700;
+      font-size:14px;
+      padding:10px 16px;
+      display:flex;
+      align-items:center;
+      gap:6px;
+      text-transform:uppercase;
+    }
+    .close .x {
+      width:16px;
+      height:16px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      background:#444;
+      color:#fff;
+      line-height:1;
+      font-size:12px;
+    }
+    .main {
+      flex:1;
+      display:grid;
+      grid-template-columns: minmax(0, 1fr) minmax(420px, 500px);
+      gap: 36px;
+      align-items:start;
+      padding: 6px 8px 0;
+    }
+    .left-col {
+      min-width:0;
+    }
+    .right-col {
+      min-width:0;
+      padding-top: 4px;
+    }
+    .top-question-row {
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:24px;
+      margin-bottom: 18px;
+      padding: 0 6px;
+    }
+    h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--heading);
+      font-size: 28px;
+      margin: 0;
+      line-height: 1.2;
+    }
+    .utility {
+      text-align:right;
+      flex:0 0 auto;
+      min-width: 195px;
+      display:flex;
+      flex-direction:column;
+      align-items:flex-end;
+      gap:10px;
+    }
+    .timer-row {
+      display:flex;
+      align-items:center;
+      justify-content:flex-end;
+      gap:14px;
+      width:100%;
+    }
+    .timer {
+      font-weight:700;
+      margin-bottom:0;
+      white-space:nowrap;
+    }
+    .timer span { font-weight:400; }
+    .flag-row {
+      display:flex;
+      justify-content:flex-end;
+      width:100%;
+    }
+    .calc {
+      width:33px;
+      height:43px;
+      border:4px solid var(--olive);
+      position:relative;
+      flex:0 0 auto;
+    }
+    .calc:before {
+      content:"";
+      position:absolute;
+      left:6px;
+      right:6px;
+      top:5px;
+      height:6px;
+      background:#fff;
+    }
+    .calc:after {
+      content:"";
+      position:absolute;
+      left:6px;
+      top:18px;
+      width:4px;
+      height:4px;
+      background:#fff;
+      box-shadow:9px 0 #fff,18px 0 #fff,0 9px #fff,9px 9px #fff,18px 9px #fff,0 18px #fff,9px 18px #fff,18px 18px #fff;
+    }
+    .flag {
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      border:1px solid #d6d6d6;
+      background:#fff;
+      padding:11px 16px;
+      color:#555;
+      font-weight:700;
+      box-shadow:0 1px 2px rgba(0,0,0,.05);
+    }
+    .flag-icon {
+      width:22px;
+      height:27px;
+      border:3px solid #555;
+      border-top:none;
+      position:relative;
+    }
+    .flag-icon:before {
+      content:"";
+      position:absolute;
+      left:5px;
+      top:-9px;
+      width:13px;
+      height:24px;
+      background:#555;
+      clip-path:polygon(0 0,100% 0,100% 78%,50% 58%,0 78%);
+    }
+    .passage-title {
+      font-weight:700;
+      font-size:18px;
+      color:#444;
+      margin: 0 0 14px;
+    }
+    .passage {
+      font-size:16px;
+      line-height:1.52;
+      color:#595959;
+      padding: 0 6px 8px;
+    }
+    .passage p {
+      margin: 0 0 14px;
+    }
+    .passage ul {
+      margin: 0 0 14px 24px;
+      padding:0;
+    }
+    .passage li {
+      margin: 0 0 7px;
+    }
+    .stimulus {
+      font-weight:700;
+      font-size:18px;
+      color:#444;
+      margin: 0 0 2px;
+    }
+    .diagram-stimulus {
+      margin: 14px 0 26px;
+      text-align:left;
+    }
+    .diagram-stimulus img {
+      display:block;
+      height:auto;
+      max-width:100%;
+      background:#fff;
+      border:0;
+    }
+    .question-text {
+      border-top:1px solid #dfdfdf;
+      padding-top:8px;
+      font-weight:700;
+      color:#3d3d3d;
+      font-size:17px;
+      line-height:1.35;
+      margin-bottom:16px;
+    }
+    .dots {
+      display:flex;
+      align-items:center;
+      gap:11px;
+      margin: 0 0 24px;
+      overflow:hidden;
+      flex-wrap:nowrap;
+    }
+    .dot {
+      width:6px;
+      height:6px;
+      border-radius:50%;
+      background:var(--dot);
+      flex:0 0 auto;
+    }
+    .dot:nth-child(7n) { background:var(--dot-light); }
+    .dot.active {
+      width:9px;
+      height:9px;
+      background:var(--dot-active);
+      box-shadow:0 0 0 2px rgba(139,187,230,.18);
+    }
+    .options {
+      display:flex;
+      flex-direction:column;
+      gap:7px;
+      padding-bottom: 10px;
+    }
+    .option {
+      min-height: 54px;
+      display:flex;
+      align-items:flex-start;
+      gap:16px;
+      padding:12px 14px;
+      border:2px solid transparent;
+      border-radius:2px;
+      cursor:pointer;
+      user-select:none;
+      background:#fff;
+    }
+    .option:hover,
+    .option.selected {
+      border-color:var(--blue-strong);
+      box-shadow:0 0 2px rgba(80,145,255,.45);
+    }
+    .option.correct {
+      border-color:#4caf50;
+      background:#f1fbf3;
+      box-shadow:0 0 2px rgba(76,175,80,.45);
+    }
+    .option.incorrect {
+      border-color:#e15757;
+      background:#fff4f4;
+      box-shadow:0 0 2px rgba(225,87,87,.45);
+    }
+    .option.correct .radio::after {
+      content:"";
+      width:9px;
+      height:9px;
+      border-radius:50%;
+      background:#3f9b45;
+      box-shadow:0 0 2px #2f7d35;
+    }
+    .option.incorrect .radio::after {
+      content:"";
+      width:9px;
+      height:9px;
+      border-radius:50%;
+      background:#c84242;
+      box-shadow:0 0 2px #8f2929;
+    }
+    .radio {
+      width:22px;
+      height:22px;
+      border-radius:50%;
+      border:2px solid #9d9d9d;
+      background:#e8e8e8;
+      display:inline-grid;
+      place-items:center;
+      flex:0 0 auto;
+      margin-top:1px;
+    }
+    .selected .radio::after {
+      content:"";
+      width:9px;
+      height:9px;
+      border-radius:50%;
+      background:#656565;
+      box-shadow:0 0 2px #333;
+    }
+    .option-text {
+      line-height:1.45;
+      color:#5a5a5a;
+      font-size:16px;
+    }
+    .answer-feedback {
+      margin-top:14px;
+      padding:12px 14px;
+      border-left:4px solid #4caf50;
+      background:#f1fbf3;
+      color:#315d34;
+      font-weight:700;
+      line-height:1.45;
+      display:none;
+    }
+    .answer-feedback.show {
+      display:block;
+    }
+    .answer-feedback.wrong {
+      border-left-color:#e15757;
+      background:#fff4f4;
+      color:#7a2d2d;
+    }
+    .bottom-controls {
+      margin-top: 28px;
+      padding: 0 10px;
+    }
+    .nav {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
+    }
+    .arrow-btn {
+      border:none;
+      background:var(--btn);
+      color:var(--btn-text);
+      font-weight:700;
+      min-width:126px;
+      height:45px;
+      cursor:pointer;
+      position:relative;
+      text-transform:uppercase;
+      letter-spacing:.2px;
+    }
+    .prev {
+      clip-path:polygon(22px 0,100% 0,100% 100%,22px 100%,0 50%);
+      padding-left:18px;
+    }
+    .next {
+      clip-path:polygon(0 0,calc(100% - 22px) 0,100% 50%,calc(100% - 22px) 100%,0 100%);
+      padding-right:18px;
+    }
+    .arrow-btn:disabled {
+      opacity:.45;
+      cursor:not-allowed;
+    }
+    .status {
+      margin-top:12px;
+      text-align:center;
+      color:#777;
+      font-size:13px;
+    }
+    @media (max-width: 980px) {
+      .exam-shell {
+        padding: 18px 14px 28px;
+      }
+      .topbar {
+        padding: 0 0 12px;
+      }
+      .brand {
+        font-size: 15px;
+      }
+      .close {
+        font-size:12px;
+        padding:8px 10px;
+      }
+      .top-question-row {
+        flex-direction:column;
+        gap:10px;
+        margin-bottom:14px;
+        padding:0;
+      }
+      .utility {
+        width:auto;
+        min-width:0;
+        text-align:right;
+        align-items:flex-end;
+        align-self:flex-end;
+        margin-left:auto;
+        gap:8px;
+      }
+      .timer-row {
+        justify-content:flex-end;
+        gap:10px;
+      }
+      .flag-row {
+        justify-content:flex-end;
+        width:100%;
+      }
+      .calc {
+        width:28px;
+        height:38px;
+        border-width:3px;
+      }
+      .calc:before {
+        left:5px;
+        right:5px;
+        top:5px;
+        height:5px;
+      }
+      .calc:after {
+        left:5px;
+        top:16px;
+        width:3px;
+        height:3px;
+        box-shadow:8px 0 #fff,16px 0 #fff,0 8px #fff,8px 8px #fff,16px 8px #fff,0 16px #fff,8px 16px #fff,16px 16px #fff;
+      }
+      .flag {
+        min-width:96px;
+        justify-content:center;
+        padding:9px 12px;
+        font-size:13px;
+      }
+      .flag-icon {
+        width:20px;
+        height:24px;
+      }
+      .main {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding:0;
+      }
+      h1 {
+        font-size:24px;
+      }
+      .passage-title, .stimulus {
+        font-size:17px;
+      }
+      .passage,
+      .option-text {
+        font-size:14px;
+      }
+      .question-text {
+        font-size:15px;
+      }
+      .diagram-stimulus {
+        margin: 12px 0 22px;
+      }
+      .diagram-stimulus img {
+        width:100% !important;
+        max-width:100% !important;
+      }
+      .dots {
+        gap:8px;
+        margin-bottom:18px;
+      }
+      .dot {
+        width:5px;
+        height:5px;
+      }
+      .dot.active {
+        width:8px;
+        height:8px;
+      }
+      .option {
+        gap:12px;
+        padding:10px 8px;
+        min-height:52px;
+      }
+      .radio {
+        width:21px;
+        height:21px;
+      }
+      .bottom-controls {
+        padding:0;
+        margin-top:20px;
+      }
+      .arrow-btn {
+        min-width:110px;
+        height:42px;
+        font-size:12px;
+      }
+      .status {
+        font-size:12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="exam-shell">
+    <header class="topbar">
+      <div class="brand" id="brandTitle">TEAS Version 7 - Reading</div>
+      <button class="close" type="button"><span class="x">×</span> Close</button>
+    </header>
+
+    <div class="top-question-row">
+      <h1 id="questionNumber">Question: 1 of 45</h1>
+      <div class="utility">
+        <div class="timer-row">
+          <div class="timer">Time Remaining: <span id="timer">00:55:00</span></div>
+          <div class="calc" aria-label="calculator icon"></div>
+        </div>
+        <div class="flag-row">
+          <button class="flag" type="button"><span class="flag-icon"></span> FLAG</button>
+        </div>
+      </div>
+    </div>
+
+    <main class="main">
+      <section class="left-col">
+        <div class="passage-title" id="passageTitle"></div>
+        <div class="passage" id="passage"></div>
+      </section>
+
+      <section class="right-col">
+        <div class="question-text" id="questionText"></div>
+        <div class="stimulus" id="stimulus"></div>
+        <div class="dots" id="dots" aria-hidden="true"></div>
+        <div class="options" id="options"></div>
+        <div class="answer-feedback" id="answerFeedback"></div>
+      </section>
+    </main>
+
+    <div class="bottom-controls">
+      <nav class="nav">
+        <button class="arrow-btn prev" id="prevBtn" type="button">Previous</button>
+        <button class="arrow-btn next" id="nextBtn" type="button">Continue</button>
+      </nav>
+      <div class="status" id="status"></div>
+    </div>
+  </div>
+
+<script>
+const questions = [
+  {
+    "number": 1,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>The rise of food trucks has revolutionized the street dining experience, offering a novel approach to urban dining. Imagine walking down a bustling city street, hungry and in search of a quick, yet delicious, meal. You stumble upon a brightly painted food truck surrounded by an enthusiastic crowd and the smell of fresh cooking wafting through the air. This is your introduction to the urban food truck experience.</p><p>Ordering from a food truck is straightforward but requires a bit of strategy due to their popularity and sometimes limited serving windows. First, it is advisable to check out the menu posted on the side of the truck or on a chalkboard. The menus are often creative, focusing on a specific type of cuisine or on fusion foods that blend various culinary traditions. After choosing your meal, you will typically find yourself in a queue, where you can watch chefs at work in the tight, yet efficiently organized, space of the truck.</p><p>Upon reaching the front, you will place your order with the chef or server, who is usually ready with a friendly greeting and a quick explanation of the dishes, if needed. Payment is generally expected at the time of ordering, with many trucks now accepting both cash and electronic payments for convenience.</p><p>After placing your order, you may need to step aside to wait for your food to be prepared. This waiting time is a great opportunity to soak in the ambiance and perhaps strike up a conversation with fellow diners. Food truck dining is not just about eating; it is about experiencing a piece of local culture and community.</p>",
+    "stimulus": "",
+    "sourceNumber": 1,
+    "stimulusHtml": "Stimulus: 1 of 6",
+    "question": "Which of the following illustrates the logical relationship between the steps of placing an order and waiting for food at a food truck?",
+    "options": [
+      "First check the menu and order, then wait for the food.",
+      "Choose a meal based on the surrounding ambiance and culture.",
+      "Order your food and then decide what to eat.",
+      "Start a conversation with fellow diners before ordering food."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 2,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>The rise of food trucks has revolutionized the street dining experience, offering a novel approach to urban dining. Imagine walking down a bustling city street, hungry and in search of a quick, yet delicious, meal. You stumble upon a brightly painted food truck surrounded by an enthusiastic crowd and the smell of fresh cooking wafting through the air. This is your introduction to the urban food truck experience.</p><p>Ordering from a food truck is straightforward but requires a bit of strategy due to their popularity and sometimes limited serving windows. First, it is advisable to check out the menu posted on the side of the truck or on a chalkboard. The menus are often creative, focusing on a specific type of cuisine or on fusion foods that blend various culinary traditions. After choosing your meal, you will typically find yourself in a queue, where you can watch chefs at work in the tight, yet efficiently organized, space of the truck.</p><p>Upon reaching the front, you will place your order with the chef or server, who is usually ready with a friendly greeting and a quick explanation of the dishes, if needed. Payment is generally expected at the time of ordering, with many trucks now accepting both cash and electronic payments for convenience.</p><p>After placing your order, you may need to step aside to wait for your food to be prepared. This waiting time is a great opportunity to soak in the ambiance and perhaps strike up a conversation with fellow diners. Food truck dining is not just about eating; it is about experiencing a piece of local culture and community.</p>",
+    "stimulus": "",
+    "sourceNumber": 2,
+    "stimulusHtml": "Stimulus: 2 of 6",
+    "question": "Based on the passage, which of the following can be inferred about the interaction between the server and the customer at the food truck?",
+    "options": [
+      "The server may offer a quick explanation of the dishes if the customer seems uncertain.",
+      "The server discourages conversation between customers while waiting.",
+      "The server's friendly greeting inhibits the dining experience.",
+      "The server typically provides a detailed explanation of each dish on the menu."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 3,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>The rise of food trucks has revolutionized the street dining experience, offering a novel approach to urban dining. Imagine walking down a bustling city street, hungry and in search of a quick, yet delicious, meal. You stumble upon a brightly painted food truck surrounded by an enthusiastic crowd and the smell of fresh cooking wafting through the air. This is your introduction to the urban food truck experience.</p><p>Ordering from a food truck is straightforward but requires a bit of strategy due to their popularity and sometimes limited serving windows. First, it is advisable to check out the menu posted on the side of the truck or on a chalkboard. The menus are often creative, focusing on a specific type of cuisine or on fusion foods that blend various culinary traditions. After choosing your meal, you will typically find yourself in a queue, where you can watch chefs at work in the tight, yet efficiently organized, space of the truck.</p><p>Upon reaching the front, you will place your order with the chef or server, who is usually ready with a friendly greeting and a quick explanation of the dishes, if needed. Payment is generally expected at the time of ordering, with many trucks now accepting both cash and electronic payments for convenience.</p><p>After placing your order, you may need to step aside to wait for your food to be prepared. This waiting time is a great opportunity to soak in the ambiance and perhaps strike up a conversation with fellow diners. Food truck dining is not just about eating; it is about experiencing a piece of local culture and community.</p>",
+    "stimulus": "",
+    "sourceNumber": 3,
+    "stimulusHtml": "Stimulus: 3 of 6",
+    "question": "Which of the following statements from the passage reflects an author's opinion rather than a fact?",
+    "options": [
+      "\"Many trucks now accept both cash and electronic payments for convenience.\"",
+      "\"The rise of food trucks has revolutionized the street dining experience.\"",
+      "\"Payment is generally expected at the time of ordering.\"",
+      "\"After placing your order, you may need to step aside to wait for your food to be prepared.\""
+    ],
+    "correctIndex": 1
+  },
+  {
+    "number": 4,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>The rise of food trucks has revolutionized the street dining experience, offering a novel approach to urban dining. Imagine walking down a bustling city street, hungry and in search of a quick, yet delicious, meal. You stumble upon a brightly painted food truck surrounded by an enthusiastic crowd and the smell of fresh cooking wafting through the air. This is your introduction to the urban food truck experience.</p><p>Ordering from a food truck is straightforward but requires a bit of strategy due to their popularity and sometimes limited serving windows. First, it is advisable to check out the menu posted on the side of the truck or on a chalkboard. The menus are often creative, focusing on a specific type of cuisine or on fusion foods that blend various culinary traditions. After choosing your meal, you will typically find yourself in a queue, where you can watch chefs at work in the tight, yet efficiently organized, space of the truck.</p><p>Upon reaching the front, you will place your order with the chef or server, who is usually ready with a friendly greeting and a quick explanation of the dishes, if needed. Payment is generally expected at the time of ordering, with many trucks now accepting both cash and electronic payments for convenience.</p><p>After placing your order, you may need to step aside to wait for your food to be prepared. This waiting time is a great opportunity to soak in the ambiance and perhaps strike up a conversation with fellow diners. Food truck dining is not just about eating; it is about experiencing a piece of local culture and community.</p>",
+    "stimulus": "",
+    "sourceNumber": 4,
+    "stimulusHtml": "Stimulus: 4 of 6",
+    "question": "Based on the passage, which of the following predictions about a person's experience with food trucks is supported by the description provided?",
+    "options": [
+      "Guests are likely to enjoy observing the food preparation process while waiting in line.",
+      "Diners will struggle to understand the menu due to its creative and diverse offerings.",
+      "People will generally enjoy a quiet and secluded dining experience with food trucks.",
+      "Consumers may find the electronic payment options inconvenient and difficult to use."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 5,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>The rise of food trucks has revolutionized the street dining experience, offering a novel approach to urban dining. Imagine walking down a bustling city street, hungry and in search of a quick, yet delicious, meal. You stumble upon a brightly painted food truck surrounded by an enthusiastic crowd and the smell of fresh cooking wafting through the air. This is your introduction to the urban food truck experience.</p><p>Ordering from a food truck is straightforward but requires a bit of strategy due to their popularity and sometimes limited serving windows. First, it is advisable to check out the menu posted on the side of the truck or on a chalkboard. The menus are often creative, focusing on a specific type of cuisine or on fusion foods that blend various culinary traditions. After choosing your meal, you will typically find yourself in a queue, where you can watch chefs at work in the tight, yet efficiently organized, space of the truck.</p><p>Upon reaching the front, you will place your order with the chef or server, who is usually ready with a friendly greeting and a quick explanation of the dishes, if needed. Payment is generally expected at the time of ordering, with many trucks now accepting both cash and electronic payments for convenience.</p><p>After placing your order, you may need to step aside to wait for your food to be prepared. This waiting time is a great opportunity to soak in the ambiance and perhaps strike up a conversation with fellow diners. Food truck dining is not just about eating; it is about experiencing a piece of local culture and community.</p>",
+    "stimulus": "",
+    "sourceNumber": 5,
+    "stimulusHtml": "Stimulus: 5 of 6",
+    "question": "How does the theme of community engagement in the food truck dining experience compare to traditional restaurant dining based on the passage?",
+    "options": [
+      "Traditional restaurants typically provide a more vibrant local cultural experience than food trucks.",
+      "Food trucks inherently offer a more isolated dining experience compared to restaurants.",
+      "Both food trucks and traditional restaurants emphasize the importance of quick service.",
+      "Restaurants usually focus more on formal dining and less on local culture compared to food trucks."
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 6,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>The rise of food trucks has revolutionized the street dining experience, offering a novel approach to urban dining. Imagine walking down a bustling city street, hungry and in search of a quick, yet delicious, meal. You stumble upon a brightly painted food truck surrounded by an enthusiastic crowd and the smell of fresh cooking wafting through the air. This is your introduction to the urban food truck experience.</p><p>Ordering from a food truck is straightforward but requires a bit of strategy due to their popularity and sometimes limited serving windows. First, it is advisable to check out the menu posted on the side of the truck or on a chalkboard. The menus are often creative, focusing on a specific type of cuisine or on fusion foods that blend various culinary traditions. After choosing your meal, you will typically find yourself in a queue, where you can watch chefs at work in the tight, yet efficiently organized, space of the truck.</p><p>Upon reaching the front, you will place your order with the chef or server, who is usually ready with a friendly greeting and a quick explanation of the dishes, if needed. Payment is generally expected at the time of ordering, with many trucks now accepting both cash and electronic payments for convenience.</p><p>After placing your order, you may need to step aside to wait for your food to be prepared. This waiting time is a great opportunity to soak in the ambiance and perhaps strike up a conversation with fellow diners. Food truck dining is not just about eating; it is about experiencing a piece of local culture and community.</p>",
+    "stimulus": "",
+    "sourceNumber": 6,
+    "stimulusHtml": "Stimulus: 6 of 6",
+    "question": "Which of the following rhetorical devices does the author effectively use to persuade the reader about the value of the food truck dining experience?",
+    "options": [
+      "Description of the vibrant, colorful setting to appeal to the senses.",
+      "Statistical data about the popularity of food trucks",
+      "Testimonials from frequent food truck diners",
+      "Detailed explanation of payment methods to show modernity"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 7,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>Kate:</p><p>I hear you are thinking of taking a photography course. If so, I can recommend James Whitaker's class at Tech. Whitaker is a wildlife photographer, and his photos have appeared in a number of well-known nature magazines. I took his \"Through the Lens\" class last year. It was expensive, but it was a good value. All of the shots in the calendar I gave you for Christmas were shots I took as part of his class. You'll learn about choosing the right camera and lenses, setting up for a shot, processing and handling of both film and digital shots, and printing techniques.</p><p>Jenna</p>",
+    "stimulus": "",
+    "sourceNumber": 7,
+    "stimulusHtml": "Stimulus: 1 of 2",
+    "question": "For which of the following reasons did Jenna mention her gift to Kate?",
+    "options": [
+      "To elicit gratitude for giving Kate the calendar",
+      "To attract attention for Jenna's calendar from James Whitaker",
+      "To illustrate the quality of photographs Jenna took in the class",
+      "To get Kate interested in photography"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "number": 8,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>Kate:</p><p>I hear you are thinking of taking a photography course. If so, I can recommend James Whitaker's class at Tech. Whitaker is a wildlife photographer, and his photos have appeared in a number of well-known nature magazines. I took his \"Through the Lens\" class last year. It was expensive, but it was a good value. All of the shots in the calendar I gave you for Christmas were shots I took as part of his class. You'll learn about choosing the right camera and lenses, setting up for a shot, processing and handling of both film and digital shots, and printing techniques.</p><p>Jenna</p>",
+    "stimulus": "",
+    "sourceNumber": 8,
+    "stimulusHtml": "Stimulus: 2 of 2",
+    "question": "Which of the following is the author's main argument?",
+    "options": [
+      "James Whitaker offers a comprehensive photography class worth taking.",
+      "The class is too expensive, although it is useful.",
+      "There is a lot to learn when you take a photography class.",
+      "James Whitaker has professional photography experience."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 9,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>The best part about going to the theater is the feeling of being transported into a story. As soon as the curtain rises, you can forget about the chairs that make you feel like you've been squished into a sardine can and embrace wherever the story takes you, if only for a short while. The emotions in the play become your emotions. The lives of the characters become your life. From a drama about a family in financial crisis to a comedy about a play gone wrong, there is no limit to where the theater can take you.</p>",
+    "stimulus": "",
+    "sourceNumber": 9,
+    "stimulusHtml": "Stimulus: 1 of 2",
+    "question": "According to the passage, which of the following statements could best be construed as fact?",
+    "options": [
+      "You will live a similar life to the characters in most plays.",
+      "Everyone loves everything about the theater.",
+      "Greek dramas are the most popular form of theater.",
+      "Enjoyment can be found by immersing yourself in a play."
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 10,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>The best part about going to the theater is the feeling of being transported into a story. As soon as the curtain rises, you can forget about the chairs that make you feel like you've been squished into a sardine can and embrace wherever the story takes you, if only for a short while. The emotions in the play become your emotions. The lives of the characters become your life. From a drama about a family in financial crisis to a comedy about a play gone wrong, there is no limit to where the theater can take you.</p>",
+    "stimulus": "",
+    "sourceNumber": 10,
+    "stimulusHtml": "Stimulus: 2 of 2",
+    "question": "Which of the following could have strengthened the author's argument?",
+    "options": [
+      "A cited source",
+      "An incredulous tone",
+      "A theater's attendance record",
+      "A funnier perspective"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 11,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>Embroidery is an ancient artform involving a simple needle, thread and fabric. In addition to embellishing plain material, it offers the artist a serene escape from the chaos of everyday life. With each delicate stitch, a tapestry of creativity unfurls, weaving tales of patience and precision. In its basic repetition, one finds solace, as patterns develop right before your eyes.</p><p>Every project shows dedication and imagination, and allows the artist to tell a personal story. In the quiet moments spent with fabric and needle, the world fades away, leaving only the joy of creation and the beauty of the finished work.</p>",
+    "stimulus": "",
+    "sourceNumber": 11,
+    "stimulusHtml": "Stimulus: 1 of 2",
+    "question": "Which of the following statements identifies the main idea of this passage?",
+    "options": [
+      "Embroidery is an artistic escape.",
+      "Embroidery embellishes plain material.",
+      "Embroidery is a practice of repetition.",
+      "Embroidery involves using simple tools."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 12,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>Embroidery is an ancient artform involving a simple needle, thread and fabric. In addition to embellishing plain material, it offers the artist a serene escape from the chaos of everyday life. With each delicate stitch, a tapestry of creativity unfurls, weaving tales of patience and precision. In its basic repetition, one finds solace, as patterns develop right before your eyes.</p><p>Every project shows dedication and imagination, and allows the artist to tell a personal story. In the quiet moments spent with fabric and needle, the world fades away, leaving only the joy of creation and the beauty of the finished work.</p>",
+    "stimulus": "",
+    "sourceNumber": 12,
+    "stimulusHtml": "Stimulus: 2 of 2",
+    "question": "Which of the following statements summarizes this passage?",
+    "options": [
+      "Choosing the right colors is key to starting a quality embroidery project.",
+      "Stories can be eloquently told through the art of embroidery.",
+      "Life is chaotic and unpredictable, so finding a hobby is important.",
+      "Practicing embroidery promotes tranquility through repetition and beauty."
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 13,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>Taxidermy is the art of preserving animals. This craft blends art, science, and craftsmanship to create lifelike representations of animals in naturalistic settings for display, education, or research. Taxidermists often work for museums, creating or restoring exhibits, but they also serve hunters and fishermen who wish to preserve their trophies.</p><p>The process of taxidermy involves careful skinning and tanning of the hide, molding and sculpting an accurate form of the animal's body, and then meticulously attaching the prepared skin onto the form. The final step requires detailed painting and grooming to enhance the realism of the animal. This meticulous process allows for the natural beauty and majesty of wildlife to be preserved and appreciated.</p><p>This profession requires not only technical skills but also a respect for nature and wildlife ethics, ensuring that the practice promotes conservation and appreciation of biodiversity. Ethical practices are ensured through strict regulation. Laws differ by country, but they share common elements designed to protect wildlife. In the United States, for example, the U.S. Fish and Wildlife Service (USFWS) enforces laws that regulate which species can be taxidermized. Endangered species and migratory birds, for instance, are protected under specific acts. To work with these animals, taxidermists must obtain special permits.</p><p>Moreover, taxidermists are often required to keep detailed records of their work, including the origins of each specimen and its treatment process. This documentation helps wildlife officials track the use of animal parts, prevent illegal trade, and manage animal populations, ensuring that local ecosystems remain balanced and illegal hunting is discouraged.</p>",
+    "stimulus": "",
+    "sourceNumber": 13,
+    "stimulusHtml": "Stimulus: 1 of 6",
+    "question": "Which of the following sentences is an example of explicit evidence used in the passage to support the conclusion that taxidermy promotes conservation?",
+    "options": [
+      "Taxidermy blends art, science, and craftsmanship.",
+      "The practice of taxidermy requires detailed painting and grooming.",
+      "Taxidermists obtain special permits to work with protected species.",
+      "Taxidermists are artists who create lifelike representations of animals."
+    ],
+    "correctIndex": 2
+  },
+  {
+    "number": 14,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>Taxidermy is the art of preserving animals. This craft blends art, science, and craftsmanship to create lifelike representations of animals in naturalistic settings for display, education, or research. Taxidermists often work for museums, creating or restoring exhibits, but they also serve hunters and fishermen who wish to preserve their trophies.</p><p>The process of taxidermy involves careful skinning and tanning of the hide, molding and sculpting an accurate form of the animal's body, and then meticulously attaching the prepared skin onto the form. The final step requires detailed painting and grooming to enhance the realism of the animal. This meticulous process allows for the natural beauty and majesty of wildlife to be preserved and appreciated.</p><p>This profession requires not only technical skills but also a respect for nature and wildlife ethics, ensuring that the practice promotes conservation and appreciation of biodiversity. Ethical practices are ensured through strict regulation. Laws differ by country, but they share common elements designed to protect wildlife. In the United States, for example, the U.S. Fish and Wildlife Service (USFWS) enforces laws that regulate which species can be taxidermized. Endangered species and migratory birds, for instance, are protected under specific acts. To work with these animals, taxidermists must obtain special permits.</p><p>Moreover, taxidermists are often required to keep detailed records of their work, including the origins of each specimen and its treatment process. This documentation helps wildlife officials track the use of animal parts, prevent illegal trade, and manage animal populations, ensuring that local ecosystems remain balanced and illegal hunting is discouraged.</p>",
+    "stimulus": "",
+    "sourceNumber": 14,
+    "stimulusHtml": "Stimulus: 2 of 6",
+    "question": "Based on the passage, which of the following best describes the primary purpose of keeping detailed records by taxidermists?",
+    "options": [
+      "To promote ethical practices among taxidermists",
+      "To ensure the artistic quality of the taxidermy is maintained over time",
+      "To comply with local tax regulations",
+      "To assist wildlife officials in tracking down poachers"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 15,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>Taxidermy is the art of preserving animals. This craft blends art, science, and craftsmanship to create lifelike representations of animals in naturalistic settings for display, education, or research. Taxidermists often work for museums, creating or restoring exhibits, but they also serve hunters and fishermen who wish to preserve their trophies.</p><p>The process of taxidermy involves careful skinning and tanning of the hide, molding and sculpting an accurate form of the animal's body, and then meticulously attaching the prepared skin onto the form. The final step requires detailed painting and grooming to enhance the realism of the animal. This meticulous process allows for the natural beauty and majesty of wildlife to be preserved and appreciated.</p><p>This profession requires not only technical skills but also a respect for nature and wildlife ethics, ensuring that the practice promotes conservation and appreciation of biodiversity. Ethical practices are ensured through strict regulation. Laws differ by country, but they share common elements designed to protect wildlife. In the United States, for example, the U.S. Fish and Wildlife Service (USFWS) enforces laws that regulate which species can be taxidermized. Endangered species and migratory birds, for instance, are protected under specific acts. To work with these animals, taxidermists must obtain special permits.</p><p>Moreover, taxidermists are often required to keep detailed records of their work, including the origins of each specimen and its treatment process. This documentation helps wildlife officials track the use of animal parts, prevent illegal trade, and manage animal populations, ensuring that local ecosystems remain balanced and illegal hunting is discouraged.</p>",
+    "stimulus": "",
+    "sourceNumber": 15,
+    "stimulusHtml": "Stimulus: 3 of 6",
+    "question": "Based on the passage, which of the following best describes the author's perspective on taxidermy?",
+    "options": [
+      "The author appreciates taxidermy as a form of art that also contributes to wildlife conservation.",
+      "The author believes taxidermy should be used exclusively for educational purposes.",
+      "The author is neutral, simply presenting facts without a clear perspective.",
+      "The author views taxidermy as an outdated practice that should be discontinued."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 16,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>Taxidermy is the art of preserving animals. This craft blends art, science, and craftsmanship to create lifelike representations of animals in naturalistic settings for display, education, or research. Taxidermists often work for museums, creating or restoring exhibits, but they also serve hunters and fishermen who wish to preserve their trophies.</p><p>The process of taxidermy involves careful skinning and tanning of the hide, molding and sculpting an accurate form of the animal's body, and then meticulously attaching the prepared skin onto the form. The final step requires detailed painting and grooming to enhance the realism of the animal. This meticulous process allows for the natural beauty and majesty of wildlife to be preserved and appreciated.</p><p>This profession requires not only technical skills but also a respect for nature and wildlife ethics, ensuring that the practice promotes conservation and appreciation of biodiversity. Ethical practices are ensured through strict regulation. Laws differ by country, but they share common elements designed to protect wildlife. In the United States, for example, the U.S. Fish and Wildlife Service (USFWS) enforces laws that regulate which species can be taxidermized. Endangered species and migratory birds, for instance, are protected under specific acts. To work with these animals, taxidermists must obtain special permits.</p><p>Moreover, taxidermists are often required to keep detailed records of their work, including the origins of each specimen and its treatment process. This documentation helps wildlife officials track the use of animal parts, prevent illegal trade, and manage animal populations, ensuring that local ecosystems remain balanced and illegal hunting is discouraged.</p>",
+    "stimulus": "",
+    "sourceNumber": 16,
+    "stimulusHtml": "Stimulus: 4 of 6",
+    "question": "Which of the following defines \"meticulous\" as used in the passage?",
+    "options": [
+      "Precise",
+      "Complex",
+      "Time-consuming",
+      "Haphazard"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 17,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>Taxidermy is the art of preserving animals. This craft blends art, science, and craftsmanship to create lifelike representations of animals in naturalistic settings for display, education, or research. Taxidermists often work for museums, creating or restoring exhibits, but they also serve hunters and fishermen who wish to preserve their trophies.</p><p>The process of taxidermy involves careful skinning and tanning of the hide, molding and sculpting an accurate form of the animal's body, and then meticulously attaching the prepared skin onto the form. The final step requires detailed painting and grooming to enhance the realism of the animal. This meticulous process allows for the natural beauty and majesty of wildlife to be preserved and appreciated.</p><p>This profession requires not only technical skills but also a respect for nature and wildlife ethics, ensuring that the practice promotes conservation and appreciation of biodiversity. Ethical practices are ensured through strict regulation. Laws differ by country, but they share common elements designed to protect wildlife. In the United States, for example, the U.S. Fish and Wildlife Service (USFWS) enforces laws that regulate which species can be taxidermized. Endangered species and migratory birds, for instance, are protected under specific acts. To work with these animals, taxidermists must obtain special permits.</p><p>Moreover, taxidermists are often required to keep detailed records of their work, including the origins of each specimen and its treatment process. This documentation helps wildlife officials track the use of animal parts, prevent illegal trade, and manage animal populations, ensuring that local ecosystems remain balanced and illegal hunting is discouraged.</p>",
+    "stimulus": "",
+    "sourceNumber": 17,
+    "stimulusHtml": "Stimulus: 5 of 6",
+    "question": "Which of the following statements is a claim made in the passage about taxidermy?",
+    "options": [
+      "Taxidermy is a highly regulated profession.",
+      "All taxidermists are artists who capture the essence of wildlife.",
+      "Taxidermists often work independently with no oversight.",
+      "Taxidermy does not require any artistic skills."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 18,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>Taxidermy is the art of preserving animals. This craft blends art, science, and craftsmanship to create lifelike representations of animals in naturalistic settings for display, education, or research. Taxidermists often work for museums, creating or restoring exhibits, but they also serve hunters and fishermen who wish to preserve their trophies.</p><p>The process of taxidermy involves careful skinning and tanning of the hide, molding and sculpting an accurate form of the animal's body, and then meticulously attaching the prepared skin onto the form. The final step requires detailed painting and grooming to enhance the realism of the animal. This meticulous process allows for the natural beauty and majesty of wildlife to be preserved and appreciated.</p><p>This profession requires not only technical skills but also a respect for nature and wildlife ethics, ensuring that the practice promotes conservation and appreciation of biodiversity. Ethical practices are ensured through strict regulation. Laws differ by country, but they share common elements designed to protect wildlife. In the United States, for example, the U.S. Fish and Wildlife Service (USFWS) enforces laws that regulate which species can be taxidermized. Endangered species and migratory birds, for instance, are protected under specific acts. To work with these animals, taxidermists must obtain special permits.</p><p>Moreover, taxidermists are often required to keep detailed records of their work, including the origins of each specimen and its treatment process. This documentation helps wildlife officials track the use of animal parts, prevent illegal trade, and manage animal populations, ensuring that local ecosystems remain balanced and illegal hunting is discouraged.</p>",
+    "stimulus": "",
+    "sourceNumber": 18,
+    "stimulusHtml": "Stimulus: 6 of 6",
+    "question": "Which of the following would be an effective addition to strengthen the argument about the importance of ethical practices in taxidermy?",
+    "options": [
+      "An article from a scientific journal on how unethical taxidermy practices can lead to negative ecological impacts",
+      "Information from a blog on how modern taxidermy supports scientific research and education",
+      "A case study of a taxidermist who faced legal consequences for violating wildlife laws",
+      "Testimonials from museum visitors who appreciate the educational value of taxidermy exhibits"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 19,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "Beard Superiority",
+    "passageHtml": "<p>Unlike most others who follow along with popular trends, I am able to truly see that the beard is superior to the mustache. First, you have so much more hair and space to work with when styling a beard than you do with a mustache. You can trim and cut a beard into so many styles: the Muttonchop, the Goatee, the Stubble, the Chin Strap. You can even add things to your beard: braids, beads, glitter, and color -- the possibilities of what you can add to a beard are endless! There are even professional competitions that surround the stylish nature of beards.</p>",
+    "stimulus": "",
+    "sourceNumber": 19,
+    "stimulusHtml": "Stimulus: 1 of 2",
+    "question": "The definition of mustache can be found in which of the following?",
+    "options": [
+      "Index",
+      "Glossary",
+      "Table of Contents",
+      "Legend"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "number": 20,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "Beard Superiority",
+    "passageHtml": "<p>Unlike most others who follow along with popular trends, I am able to truly see that the beard is superior to the mustache. First, you have so much more hair and space to work with when styling a beard than you do with a mustache. You can trim and cut a beard into so many styles: the Muttonchop, the Goatee, the Stubble, the Chin Strap. You can even add things to your beard: braids, beads, glitter, and color -- the possibilities of what you can add to a beard are endless! There are even professional competitions that surround the stylish nature of beards.</p>",
+    "stimulus": "",
+    "sourceNumber": 20,
+    "stimulusHtml": "Stimulus: 2 of 2",
+    "question": "Which of the following would be a reliable source for a new hire to determine if a beard is acceptable under company policy?",
+    "options": [
+      "A textbook related to this profession",
+      "The company's mission statement",
+      "The company's employee manual",
+      "The company's human resource directory"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "number": 21,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>The Loch Ness Monster, or \"Nessie,\" is a mythical creature said to inhabit Loch Ness in the Scottish Highlands. The legend of Nessie is one of the most famous examples of cryptozoology -- the study of animals that are rumored or suspected to exist, but for which conclusive proof is still missing.</p><p>Reports of a monster inhabiting Loch Ness date back to ancient times. Notably, an Irish monk was said to have encountered a \"water beast\" in the river Ness in 565 AD. However, widespread interest in the monster was not sparked until 1933 when a local couple reported seeing an enormous animal \"rolling and plunging on the surface.\" The publication of this account later that year in the <em>Inverness Courier</em> ignited a media frenzy.</p>",
+    "stimulus": "",
+    "sourceNumber": 21,
+    "stimulusHtml": "Stimulus: 1 of 3",
+    "question": "Based on the sequence of events in the passage about the Loch Ness Monster, which of the following options accurately places these events in chronological order?",
+    "options": [
+      "A media frenzy occurs, a local couple reports seeing an enormous animal, an Irish monk encounters a water beast.",
+      "An Irish monk encounters a water beast, a local couple reports seeing an enormous animal, a media frenzy occurs.",
+      "Reports of Nessie begin, a media frenzy occurs, an Irish monk encounters a water beast.",
+      "A local couple sees an enormous animal, an Irish monk encounters a water beast, a media frenzy occurs."
+    ],
+    "correctIndex": 1
+  },
+  {
+    "number": 22,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>The Loch Ness Monster, or \"Nessie,\" is a mythical creature said to inhabit Loch Ness in the Scottish Highlands. The legend of Nessie is one of the most famous examples of cryptozoology -- the study of animals that are rumored or suspected to exist, but for which conclusive proof is still missing.</p><p>Reports of a monster inhabiting Loch Ness date back to ancient times. Notably, an Irish monk was said to have encountered a \"water beast\" in the river Ness in 565 AD. However, widespread interest in the monster was not sparked until 1933 when a local couple reported seeing an enormous animal \"rolling and plunging on the surface.\" The publication of this account later that year in the <em>Inverness Courier</em> ignited a media frenzy.</p>",
+    "stimulus": "",
+    "sourceNumber": 22,
+    "stimulusHtml": "Stimulus: 2 of 3",
+    "question": "Which of the following options best identifies the author's purpose in writing about the Loch Ness Monster?",
+    "options": [
+      "To provide a scientific analysis proving the existence of mythical creatures",
+      "To analyze the impact of media on public perception of mythical figures",
+      "To entertain readers with historical tales and mysteries of the Loch Ness Monster",
+      "To critique the methods used in studying mythical creatures such as the Loch Ness Monster"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "number": 23,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>The Loch Ness Monster, or \"Nessie,\" is a mythical creature said to inhabit Loch Ness in the Scottish Highlands. The legend of Nessie is one of the most famous examples of cryptozoology -- the study of animals that are rumored or suspected to exist, but for which conclusive proof is still missing.</p><p>Reports of a monster inhabiting Loch Ness date back to ancient times. Notably, an Irish monk was said to have encountered a \"water beast\" in the river Ness in 565 AD. However, widespread interest in the monster was not sparked until 1933 when a local couple reported seeing an enormous animal \"rolling and plunging on the surface.\" The publication of this account later that year in the <em>Inverness Courier</em> ignited a media frenzy.</p>",
+    "stimulus": "",
+    "sourceNumber": 23,
+    "stimulusHtml": "Stimulus: 3 of 3",
+    "question": "Which of the following best evaluates the credibility of the evidence provided in the passage about the Loch Ness Monster?",
+    "options": [
+      "The 1933 report by a local couple is factual and reliable evidence because it was published in a newspaper.",
+      "The evidence lacks credibility as it is based mainly on anecdotal accounts and there is no physical proof presented.",
+      "The mention of an ancient sighting by an Irish monk in 565 AD supports the existence of Nessie due to its historical context.",
+      "Since the legend of Nessie has been persistent for centuries, it must be based on some factual observations."
+    ],
+    "correctIndex": 1
+  },
+  {
+    "number": 24,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>Ellie was the coolest girl you'd ever met.<br>She changed the color of her hair the way you'd change a pair of jeans.</p><p>Ellie always wore combat boots and a leather jacket;<br>the image of London streets.</p><p>When Ellie spoke people listened, not because she was loud,<br>but because what she said was important.<br>She could talk anyone into something.<br>Though she never pushed<br>just waited for you to come to her.</p><p>Ellie was a hairdresser,<br>turning people into more colorful versions of themselves.</p>",
+    "stimulus": "",
+    "sourceNumber": 24,
+    "stimulusHtml": "Stimulus: 1 of 3",
+    "question": "Which of the following details supports the idea that Ellie is someone to whom people should listen?",
+    "options": [
+      "She dressed in leather, like cool people in London do.",
+      "She could be very loud, especially in a large group.",
+      "She only spoke when she had something important to say.",
+      "She was a talented hairdresser, especially with color."
+    ],
+    "correctIndex": 2
+  },
+  {
+    "number": 25,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>Ellie was the coolest girl you'd ever met.<br>She changed the color of her hair the way you'd change a pair of jeans.</p><p>Ellie always wore combat boots and a leather jacket;<br>the image of London streets.</p><p>When Ellie spoke people listened, not because she was loud,<br>but because what she said was important.<br>She could talk anyone into something.<br>Though she never pushed<br>just waited for you to come to her.</p><p>Ellie was a hairdresser,<br>turning people into more colorful versions of themselves.</p>",
+    "stimulus": "",
+    "sourceNumber": 25,
+    "stimulusHtml": "Stimulus: 2 of 3",
+    "question": "Which of the following describes the tone of the passage?",
+    "options": [
+      "Humorous",
+      "Detached",
+      "Derisive",
+      "Reflective"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 26,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>Ellie was the coolest girl you'd ever met.<br>She changed the color of her hair the way you'd change a pair of jeans.</p><p>Ellie always wore combat boots and a leather jacket;<br>the image of London streets.</p><p>When Ellie spoke people listened, not because she was loud,<br>but because what she said was important.<br>She could talk anyone into something.<br>Though she never pushed<br>just waited for you to come to her.</p><p>Ellie was a hairdresser,<br>turning people into more colorful versions of themselves.</p>",
+    "stimulus": "",
+    "sourceNumber": 26,
+    "stimulusHtml": "Stimulus: 3 of 3",
+    "question": "Which the following pieces of evidence indicates that the author and Ellie are no longer in touch?",
+    "options": [
+      "The author clearly wants to be more like Ellie.",
+      "The author begins and ends the passage with \"color\".",
+      "The author's words read like a poem or a song.",
+      "The author exclusively uses past tense verbs."
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 27,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>On February 2 of each year, the United States observes the unusual holiday of Groundhog Day, as a day of hope that winter is over and spring is beginning. This tradition has been officially observed in the U.S. since the 1800s, and is believed to have developed from European folk traditions in which a bear, fox, badger, or even hedgehog would serve as the symbolic meteorologist. Although other cultures and towns observe Groundhog Day (or something similar), the town of Punxsutawney, Pennsylvania takes special pride in being home to the one true forecasting groundhog, Punxsutawney Phil. At the turn of the twentieth century, townspeople formed the Punxsutawney Groundhog Club to perpetuate the joyful rituals and events surrounding Groundhog Day. Over the years, these events have come to include a scavenger hunt, a talent show, and a ball.</p><p>Legend has it that on Groundhog Day the official weather forecasting groundhog awakens from hibernation and comes out of his burrow to look for his shadow. If he sees his shadow, six more weeks of winter are to come, and Punxsutawney Phil goes back to bed. However, if he does not see his shadow, Punxsutawney Phil takes this as a sign that spring has arrived, and he remains above ground. Of course, common sense tells us that February 2 is too early for spring to begin, and that while animals may be attuned to various elements of nature from which humans might learn, they are unlikely to act on their instincts based on a schedule set by a Gregorian calendar. Nevertheless, a visit to Pennsylvania to see Punxsutawney Phil and all of the fun he inspires each year might just provide the touch of hope needed to reach the end of winter.</p>",
+    "stimulus": "",
+    "sourceNumber": 27,
+    "stimulusHtml": "Stimulus: 1 of 3",
+    "question": "Which of the following pairs of search terms entered into a search engine with the phrase \"Groundhog Day\" is likely to produce information about the origin of Groundhog Day?",
+    "options": [
+      "History and folklore",
+      "Habitat and diet",
+      "Weather and farming",
+      "Holiday and festivities"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 28,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>On February 2 of each year, the United States observes the unusual holiday of Groundhog Day, as a day of hope that winter is over and spring is beginning. This tradition has been officially observed in the U.S. since the 1800s, and is believed to have developed from European folk traditions in which a bear, fox, badger, or even hedgehog would serve as the symbolic meteorologist. Although other cultures and towns observe Groundhog Day (or something similar), the town of Punxsutawney, Pennsylvania takes special pride in being home to the one true forecasting groundhog, Punxsutawney Phil. At the turn of the twentieth century, townspeople formed the Punxsutawney Groundhog Club to perpetuate the joyful rituals and events surrounding Groundhog Day. Over the years, these events have come to include a scavenger hunt, a talent show, and a ball.</p><p>Legend has it that on Groundhog Day the official weather forecasting groundhog awakens from hibernation and comes out of his burrow to look for his shadow. If he sees his shadow, six more weeks of winter are to come, and Punxsutawney Phil goes back to bed. However, if he does not see his shadow, Punxsutawney Phil takes this as a sign that spring has arrived, and he remains above ground. Of course, common sense tells us that February 2 is too early for spring to begin, and that while animals may be attuned to various elements of nature from which humans might learn, they are unlikely to act on their instincts based on a schedule set by a Gregorian calendar. Nevertheless, a visit to Pennsylvania to see Punxsutawney Phil and all of the fun he inspires each year might just provide the touch of hope needed to reach the end of winter.</p>",
+    "stimulus": "",
+    "sourceNumber": 28,
+    "stimulusHtml": "Stimulus: 2 of 3",
+    "question": "Which of the following evidence from the passage supports the inference that Groundhog Day is an entertaining tradition?",
+    "options": [
+      "This tradition has been officially observed in the U.S. since the 1800s and is believed to have developed from European folk traditions.",
+      "On February 2 of each year, the United States observes the unusual holiday of Groundhog Day, a day of hope that winter is over and spring is beginning.",
+      "Over the years, these events have come to include a scavenger hunt, a talent show, and a ball.",
+      "Legend has it that on Groundhog Day, the official weather forecasting groundhog awakens from hibernation and comes out of his burrow."
+    ],
+    "correctIndex": 2
+  },
+  {
+    "number": 29,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>On February 2 of each year, the United States observes the unusual holiday of Groundhog Day, as a day of hope that winter is over and spring is beginning. This tradition has been officially observed in the U.S. since the 1800s, and is believed to have developed from European folk traditions in which a bear, fox, badger, or even hedgehog would serve as the symbolic meteorologist. Although other cultures and towns observe Groundhog Day (or something similar), the town of Punxsutawney, Pennsylvania takes special pride in being home to the one true forecasting groundhog, Punxsutawney Phil. At the turn of the twentieth century, townspeople formed the Punxsutawney Groundhog Club to perpetuate the joyful rituals and events surrounding Groundhog Day. Over the years, these events have come to include a scavenger hunt, a talent show, and a ball.</p><p>Legend has it that on Groundhog Day the official weather forecasting groundhog awakens from hibernation and comes out of his burrow to look for his shadow. If he sees his shadow, six more weeks of winter are to come, and Punxsutawney Phil goes back to bed. However, if he does not see his shadow, Punxsutawney Phil takes this as a sign that spring has arrived, and he remains above ground. Of course, common sense tells us that February 2 is too early for spring to begin, and that while animals may be attuned to various elements of nature from which humans might learn, they are unlikely to act on their instincts based on a schedule set by a Gregorian calendar. Nevertheless, a visit to Pennsylvania to see Punxsutawney Phil and all of the fun he inspires each year might just provide the touch of hope needed to reach the end of winter.</p>",
+    "stimulus": "",
+    "sourceNumber": 29,
+    "stimulusHtml": "Stimulus: 3 of 3",
+    "question": "What source would be most useful in determining the reliability of Punxsutawney Phil's predictions over a number of years?",
+    "options": [
+      "A memoir from a member of The Groundhog Club",
+      "An encyclopedia entry on mammals in the northeast U.S.",
+      "A historical survey of customs in Pennsylvania",
+      "A record of weather patterns in the last decade"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "number": 30,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>Peanut Butter Cookies</p><p>Grandma Harry &nbsp;&nbsp;&nbsp; 30 minutes &nbsp;&nbsp;&nbsp; Cookies/Desserts &nbsp;&nbsp;&nbsp; Makes 1 dozen</p><p>1 egg white<br>3/4 cup sugar<br>1 cup peanut butter<br>1 teaspoon vanilla<br>1/2 cup flour</p><p>Beat egg white until foamy. Stir in sugar, beat again until stiff peaks form. Gently fold in peanut butter and vanilla. Add flour in small increments until dough forms. Chill dough for at least 2 hours. Roll into balls, roll in sugar, press down with a fork, and bake at 350&deg; F for 10 to 12 minutes. Let cool on cookie sheet. These are very fragile.</p>",
+    "stimulus": "",
+    "sourceNumber": 30,
+    "stimulusHtml": "Stimulus: 1 of 2",
+    "question": "Which of the following conclusions can be taken from the passage?",
+    "options": [
+      "The cookies made with this recipe may have been handed down in a family.",
+      "The cookies made with this recipe would be good to send to college students.",
+      "The cookies made from this recipe would be good to serve at a large party.",
+      "The cookies made with this recipe are especially good for midnight snacks."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 31,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>Peanut Butter Cookies</p><p>Grandma Harry &nbsp;&nbsp;&nbsp; 30 minutes &nbsp;&nbsp;&nbsp; Cookies/Desserts &nbsp;&nbsp;&nbsp; Makes 1 dozen</p><p>1 egg white<br>3/4 cup sugar<br>1 cup peanut butter<br>1 teaspoon vanilla<br>1/2 cup flour</p><p>Beat egg white until foamy. Stir in sugar, beat again until stiff peaks form. Gently fold in peanut butter and vanilla. Add flour in small increments until dough forms. Chill dough for at least 2 hours. Roll into balls, roll in sugar, press down with a fork, and bake at 350&deg; F for 10 to 12 minutes. Let cool on cookie sheet. These are very fragile.</p>",
+    "stimulus": "",
+    "sourceNumber": 31,
+    "stimulusHtml": "Stimulus: 2 of 2",
+    "question": "Which of the following statements about the passage is true?",
+    "options": [
+      "These cookies should be cooled on a baking rack.",
+      "Folding in peanut butter must be done with an electric appliance.",
+      "These cookies can be cooked in a microwave oven.",
+      "Beating egg whites means stirring them vigorously."
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 32,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 32,
+    "stimulusHtml": "",
+    "question": "The jurors for the trial were randomly selected from a pool.<br><br>In which of the following sentences does the word \"pool\" have the same meaning as the sentence above?",
+    "options": [
+      "The pool of available workers diminished during the summer.",
+      "They looked nervously at the pool of oil under the car.",
+      "The group planned to meet at nine o'clock at the pool hall.",
+      "The children had to pool their money to buy ice cream."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 33,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 33,
+    "stimulusHtml": "",
+    "question": "The process of preparing a big turkey dinner involves multiple steps. First, the turkey is selected and purchased days ahead. Early in the morning, the turkey is prepared and placed in the oven to roast for several hours. Simultaneously, side dishes such as mashed potatoes, stuffing, and cranberry sauce are readied and set aside. Once the turkey is done, all the dishes are reheated and served hot.<br><br>Which of the following is an implied but missing part of the sequence in preparing the meal described?",
+    "options": [
+      "Dessert is served.",
+      "The turkey is carved.",
+      "Side dishes are plated while the turkey roasts.",
+      "Everyone helps clean up after the meal."
+    ],
+    "correctIndex": 1
+  },
+  {
+    "number": 34,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 34,
+    "stimulusHtml": "",
+    "question": "Which of the following criteria would best determine the credibility of a source when evaluating an argument about environmental policy?",
+    "options": [
+      "The author's educational background in environmental science",
+      "The popularity of the source among the general public",
+      "The use of persuasive language in the source's presentation",
+      "The source's affiliation with an environmental advocacy group"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 35,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 35,
+    "stimulusHtml": "",
+    "question": "\"Money is not the only commodity that is fun to give. We can give time, we can give our expertise, we can give our love or simply give a smile. What does that cost? The point is none of us can ever run out of something worthwhile to give.\" -Steve Goodier<br><br>Based on the quote, which of the following additions would best strengthen the argument that giving encompasses more than just monetary contributions?",
+    "options": [
+      "An analysis of the economic impact of charitable donations on a local community",
+      "A graphic showing someone smiling as they help another person",
+      "A table comparing time spent volunteering versus time spent shopping for gifts",
+      "A personal anecdote about how a smile from a stranger improved someone's day"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 36,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 36,
+    "stimulusHtml": "",
+    "question": "Which of the following topics could provide a theme shared by a news article and a documentary both about urban transportation issues?",
+    "options": [
+      "Musical trends in metro stations",
+      "Transformation of communication technology",
+      "Impact of biking infrastructure on city traffic",
+      "Evolution of suburban architecture"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "number": 37,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 37,
+    "stimulusHtml": "<img src=\"set10-assets/reading-q37-nitroglycerin-label.png\" alt=\"Nitroglycerin sublingual tablets prescription label\" style=\"max-width:520px;width:100%;height:auto;display:block;margin:0 0 24px;\">",
+    "question": "Based on the information on the label, which of the following options is most likely the meaning of sublingual?",
+    "options": [
+      "Below the upper lip",
+      "Below the eyelid",
+      "Below the skin",
+      "Below the tongue"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 38,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 38,
+    "stimulusHtml": "",
+    "question": "A first text is a Renaissance era ode poem celebrating human potential and progress through the Dark Ages, and the second text is a contemporary science fiction short story exploring the dangers of artificial intelligence surpassing human intelligence.<br><br>Which of the following best contrasts the central themes of the two texts?",
+    "options": [
+      "The poem and the story both suggest a return to more traditional methods as a means of solving current problems.",
+      "The poem extols virtues from future civilizations, while the story discusses potential moral decay due to past behavior.",
+      "The Renaissance poem highlights nature's beauty, whereas the science fiction story promotes technological aesthetics.",
+      "The Renaissance poem underscores human growth, while the science fiction story warns against overreliance on technology."
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 39,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 39,
+    "stimulusHtml": "",
+    "question": "In a village meeting, three issues were addressed. First, a rapidly expanding pothole near the local school caused concern among guardians and educators. Second, there was a debate over installing new streetlights along several dark and poorly-illuminated roads. Third, discussions around rising costs of community sports facilities sparked interest in finding sponsorship from local businesses. Summaries from the meeting highlighted the differing views on priorities among the attendees, with mentions of safety, cost efficiency, and community engagement.<br><br>Which of the following provides the best evidence to support the conclusion that safety is a priority for the community members?",
+    "options": [
+      "The need for better illumination on several roads was discussed.",
+      "Guardians and educators attended the meeting.",
+      "Community members have differing views on priorities.",
+      "Attendees showed interest in engaging with local businesses."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 40,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 40,
+    "stimulusHtml": "",
+    "question": "Which of the following options offers the author's opinion?",
+    "options": [
+      "According to the IUCN (International Union for Conservation of Nature), there were 41,415 endangered species on the IUCN Red List.",
+      "Casa Alberto's serves up Mexican specialties based on recipes from Alberto's grandparents. Alberto's chicken mole is seasoned with authentic Mexican chocolate and dried guajillo and ancho chilies, grown in Tule, Mexico.",
+      "To make fudgy brownies from scratch, you need unsweetened chocolate, butter, sugar, eggs, vanilla and a pinch of salt. Melt, mix, bake and enjoy.",
+      "Eldon Campbell should never have been elected mayor of our city four years ago. They have a history of failed businesses and have twice lost their driver's license for reckless driving. Elmdale needs a mayor with a history of success."
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 41,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 41,
+    "stimulusHtml": "",
+    "question": "On Saturday, Alex decided to organize her home workspace. Initially, she sifted through all her paperwork, categorizing it into \"keep\" and \"discard\" piles. Subsequently, she purchased new file folders and storage boxes. Next, Alex labeled each folder according to the document type. Finally, she neatly arranged all her papers into the labeled sections.<br><br>Which of the following words from the passage does not indicate sequence?",
+    "options": [
+      "Finally",
+      "Subsequently",
+      "Initially",
+      "Decided"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 42,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 42,
+    "stimulusHtml": "",
+    "question": "During a local community meeting, Mr. Thompson first informed the attendees about the new park opening next month. He then discussed the upcoming community clean-up day set for the following week. Mrs. Lee followed by thanking those who volunteered last time. Finally, Mr. Thompson reminded everyone to try to bring their own tools to the clean-up event.<br><br>Based on the sequence of announcements made during the meeting, which of the following conclusions can be drawn about the community clean-up day?",
+    "options": [
+      "It is a routine part of community activities.",
+      "The community is inexperienced in organizing such events.",
+      "Mrs. Lee organized the community clean-up day.",
+      "It is a new initiative that has not been discussed before."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 43,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>1/2 cup cornstarch<br>1/2 tablespoon salt<br>1 tablespoon paprika<br>1/4 tablespoon onion powder<br>1/2 tablespoon garlic powder<br>1 teaspoon pepper<br>1 quart canola oil</p><p><strong><u>Directions</u></strong><br>Soak chicken pieces in buttermilk overnight. Once chicken is marinated, heat oil to 350&deg; F. Combine flour, cornstarch, and spices in bowl. Coat chicken pieces in breading. Next, fry in batches for about 15 minutes.</p>",
+    "stimulus": "",
+    "sourceNumber": 43,
+    "stimulusHtml": "",
+    "question": "A chef is making fried chicken. Identify the sequence the chef should follow. (Move the options into the box on the right, placing them in the order of performance. Use all the options.)",
+    "options": [
+      "Correct order: Marinate the chicken. → Make the breading. → Heat the oil. → Bread the individual pieces. → Fry the chicken in the oil."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 44,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 44,
+    "stimulusHtml": "",
+    "question": "Xenia's morning started with a rush. First, she received a text message about a change in the meeting schedule. Shortly afterward, she hurriedly dressed and skipped breakfast to catch the early bus. Once on the bus, she reviewed her presentation one last time. Unfortunately, the bus was delayed due to traffic, causing her to worry about arriving late.<br><br>Which of the following phrases best indicates that events are being described in chronological order?",
+    "options": [
+      "\"Shortly afterward,\"",
+      "\"started with a rush\"",
+      "\"reviewed her presentation\"",
+      "\"was delayed due to traffic.\""
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 45,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "sourceNumber": 45,
+    "stimulusHtml": "",
+    "question": "After three days of heavy rainfall, a small community notices a rising water level in the nearby river. Local news reporters forecast more rain over the next week. Emergency services start to organize sandbag distributions and designate evacuation routes.<br><br>Based on the information provided, which of the following conclusions can be most reliably drawn about the community's immediate future?",
+    "options": [
+      "There will be immediate and severe flooding requiring evacuations.",
+      "The rising water levels will stabilize without further intervention.",
+      "More community members will volunteer for emergency preparations.",
+      "The community will face water shortages due to contamination."
+    ],
+    "correctIndex": 2
+  }
+];
+const totalQuestions = questions.length;
+const initialSeconds = 60 * 60;
+let current = 0;
+let answers = Array(questions.length).fill(null);
+let remaining = initialSeconds;
+
+const qNumber = document.getElementById('questionNumber');
+const brandTitle = document.getElementById('brandTitle');
+const passageTitle = document.getElementById('passageTitle');
+const passageEl = document.getElementById('passage');
+const stimulusEl = document.getElementById('stimulus');
+const questionText = document.getElementById('questionText');
+const dotsEl = document.getElementById('dots');
+const optionsEl = document.getElementById('options');
+const feedbackEl = document.getElementById('answerFeedback');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+const timerEl = document.getElementById('timer');
+const statusEl = document.getElementById('status');
+const mainEl = document.querySelector('.main');
+const leftColEl = document.querySelector('.left-col');
+const rightColEl = document.querySelector('.right-col');
+
+function buildDots(activeNumber) {
+  dotsEl.innerHTML = '';
+  for (let i = 1; i <= totalQuestions; i++) {
+    const d = document.createElement('span');
+    d.className = 'dot' + (i === activeNumber ? ' active' : '');
+    dotsEl.appendChild(d);
+  }
+}
+
+function setQuestionLayout(item) {
+  const hasLeftContent = Boolean((item.passageTitle || '').trim() || (item.passageHtml || '').trim());
+  if (hasLeftContent) {
+    mainEl.style.gridTemplateColumns = '';
+    leftColEl.style.display = '';
+    rightColEl.style.paddingTop = '';
+  } else {
+    mainEl.style.gridTemplateColumns = '1fr';
+    leftColEl.style.display = 'none';
+    rightColEl.style.paddingTop = '4px';
+  }
+}
+
+function render() {
+  const item = questions[current];
+  setQuestionLayout(item);
+
+  brandTitle.textContent = item.sectionTitle || 'ATI TEAS Version 7 - Reading';
+  qNumber.textContent = `Question: ${item.number} of ${totalQuestions}`;
+  passageTitle.textContent = item.passageTitle || '';
+  passageEl.innerHTML = item.passageHtml || '';
+  stimulusEl.innerHTML = item.stimulusHtml || item.stimulus || '';
+  questionText.innerHTML = (item.question || '').replace(/\n/g, '<br>');
+
+  buildDots(item.number);
+
+  optionsEl.innerHTML = '';
+  item.options.forEach((opt, index) => {
+    const row = document.createElement('div');
+    const answered = answers[current] !== null;
+    let className = 'option';
+    if (answers[current] === index) className += ' selected';
+    if (answered && index === item.correctIndex) className += ' correct';
+    if (answered && answers[current] === index && index !== item.correctIndex) className += ' incorrect';
+    row.className = className;
+    row.tabIndex = 0;
+
+    const radio = document.createElement('span');
+    radio.className = 'radio';
+
+    const label = document.createElement('span');
+    label.className = 'option-text';
+    label.textContent = opt;
+
+    row.appendChild(radio);
+    row.appendChild(label);
+
+    row.addEventListener('click', () => selectOption(index));
+    row.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        selectOption(index);
+      }
+    });
+
+    optionsEl.appendChild(row);
+  });
+
+  if (answers[current] !== null) {
+    const correctText = item.options[item.correctIndex];
+    const isCorrect = answers[current] === item.correctIndex;
+    feedbackEl.className = 'answer-feedback show' + (isCorrect ? '' : ' wrong');
+    feedbackEl.textContent = isCorrect
+      ? `Correct. Answer: ${correctText}`
+      : `Incorrect. Correct answer: ${correctText}`;
+  } else {
+    feedbackEl.className = 'answer-feedback';
+    feedbackEl.textContent = '';
+  }
+
+  prevBtn.disabled = current === 0;
+  nextBtn.textContent = current === questions.length - 1 ? 'Finish' : 'Continue';
+  statusEl.textContent = `${answers.filter(a => a !== null).length} of ${questions.length} uploaded reading questions answered`;
+}
+
+function selectOption(index) {
+  answers[current] = index;
+  render();
+}
+
+prevBtn.addEventListener('click', () => {
+  if (current > 0) {
+    current--;
+    render();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+});
+
+nextBtn.addEventListener('click', () => {
+  if (current < questions.length - 1) {
+    current++;
+    render();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  } else {
+    alert('You have reached the end of the uploaded reading questions.');
+  }
+});
+
+function tick() {
+  if (remaining > 0) remaining--;
+  const h = String(Math.floor(remaining / 3600)).padStart(2, '0');
+  const m = String(Math.floor((remaining % 3600) / 60)).padStart(2, '0');
+  const s = String(remaining % 60).padStart(2, '0');
+  timerEl.textContent = `${h}:${m}:${s}`;
+}
+
+render();
+setInterval(tick, 1000);
+</script>
+</body>
+</html>

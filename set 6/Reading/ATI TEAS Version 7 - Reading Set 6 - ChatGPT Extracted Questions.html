@@ -1,0 +1,1464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ATI TEAS Version 7 Reading Practice Questions - Set 6</title>
+  <style>
+    :root {
+      --text:#4a4a4a;
+      --heading:#333;
+      --blue:#caebfb;
+      --blue-strong:#b7dcff;
+      --btn:#b6e4e7;
+      --btn-text:#50646b;
+      --dot:#8b8f92;
+      --dot-light:#c1e5fb;
+      --dot-active:#89bce8;
+      --olive:#6b7300;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      color:var(--text);
+      background:#fff;
+    }
+    .exam-shell {
+      max-width: 1280px;
+      margin: 0 auto;
+      min-height: 100vh;
+      padding: 34px 32px 42px;
+      display:flex;
+      flex-direction:column;
+    }
+    .topbar {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding: 0 10px 16px;
+      margin-bottom: 10px;
+      border-bottom: 5px solid transparent;
+      border-image: repeating-linear-gradient(135deg, var(--blue) 0 3px, transparent 3px 8px) 12;
+    }
+    .brand {
+      font-size: 18px;
+      font-weight: 700;
+      color:#3a3a3a;
+    }
+    .close {
+      border:none;
+      background:#f8f8f8;
+      color:#444;
+      font-weight:700;
+      font-size:14px;
+      padding:10px 16px;
+      display:flex;
+      align-items:center;
+      gap:6px;
+      text-transform:uppercase;
+    }
+    .close .x {
+      width:16px;
+      height:16px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      background:#444;
+      color:#fff;
+      line-height:1;
+      font-size:12px;
+    }
+    .main {
+      flex:1;
+      display:grid;
+      grid-template-columns: minmax(0, 1fr) minmax(420px, 500px);
+      gap: 36px;
+      align-items:start;
+      padding: 6px 8px 0;
+    }
+    .left-col {
+      min-width:0;
+    }
+    .right-col {
+      min-width:0;
+      padding-top: 4px;
+    }
+    .top-question-row {
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:24px;
+      margin-bottom: 18px;
+      padding: 0 6px;
+    }
+    h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--heading);
+      font-size: 28px;
+      margin: 0;
+      line-height: 1.2;
+    }
+    .utility {
+      text-align:right;
+      flex:0 0 auto;
+      min-width: 195px;
+      display:flex;
+      flex-direction:column;
+      align-items:flex-end;
+      gap:10px;
+    }
+    .timer-row {
+      display:flex;
+      align-items:center;
+      justify-content:flex-end;
+      gap:14px;
+      width:100%;
+    }
+    .timer {
+      font-weight:700;
+      margin-bottom:0;
+      white-space:nowrap;
+    }
+    .timer span { font-weight:400; }
+    .flag-row {
+      display:flex;
+      justify-content:flex-end;
+      width:100%;
+    }
+    .calc {
+      width:33px;
+      height:43px;
+      border:4px solid var(--olive);
+      position:relative;
+      flex:0 0 auto;
+    }
+    .calc:before {
+      content:"";
+      position:absolute;
+      left:6px;
+      right:6px;
+      top:5px;
+      height:6px;
+      background:#fff;
+    }
+    .calc:after {
+      content:"";
+      position:absolute;
+      left:6px;
+      top:18px;
+      width:4px;
+      height:4px;
+      background:#fff;
+      box-shadow:9px 0 #fff,18px 0 #fff,0 9px #fff,9px 9px #fff,18px 9px #fff,0 18px #fff,9px 18px #fff,18px 18px #fff;
+    }
+    .flag {
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      border:1px solid #d6d6d6;
+      background:#fff;
+      padding:11px 16px;
+      color:#555;
+      font-weight:700;
+      box-shadow:0 1px 2px rgba(0,0,0,.05);
+    }
+    .flag-icon {
+      width:22px;
+      height:27px;
+      border:3px solid #555;
+      border-top:none;
+      position:relative;
+    }
+    .flag-icon:before {
+      content:"";
+      position:absolute;
+      left:5px;
+      top:-9px;
+      width:13px;
+      height:24px;
+      background:#555;
+      clip-path:polygon(0 0,100% 0,100% 78%,50% 58%,0 78%);
+    }
+    .passage-title {
+      font-weight:700;
+      font-size:18px;
+      color:#444;
+      margin: 0 0 14px;
+    }
+    .passage {
+      font-size:16px;
+      line-height:1.52;
+      color:#595959;
+      padding: 0 6px 8px;
+    }
+    .passage p {
+      margin: 0 0 14px;
+    }
+    .passage ul {
+      margin: 0 0 14px 24px;
+      padding:0;
+    }
+    .passage li {
+      margin: 0 0 7px;
+    }
+    .stimulus {
+      font-weight:700;
+      font-size:18px;
+      color:#444;
+      margin: 0 0 2px;
+    }
+    .diagram-stimulus {
+      margin: 14px 0 26px;
+      text-align:left;
+    }
+    .diagram-stimulus img {
+      display:block;
+      height:auto;
+      max-width:100%;
+      background:#fff;
+      border:0;
+    }
+    .question-text {
+      border-top:1px solid #dfdfdf;
+      padding-top:8px;
+      font-weight:700;
+      color:#3d3d3d;
+      font-size:17px;
+      line-height:1.35;
+      margin-bottom:16px;
+    }
+    .dots {
+      display:flex;
+      align-items:center;
+      gap:11px;
+      margin: 0 0 24px;
+      overflow:hidden;
+      flex-wrap:nowrap;
+    }
+    .dot {
+      width:6px;
+      height:6px;
+      border-radius:50%;
+      background:var(--dot);
+      flex:0 0 auto;
+    }
+    .dot:nth-child(7n) { background:var(--dot-light); }
+    .dot.active {
+      width:9px;
+      height:9px;
+      background:var(--dot-active);
+      box-shadow:0 0 0 2px rgba(139,187,230,.18);
+    }
+    .options {
+      display:flex;
+      flex-direction:column;
+      gap:7px;
+      padding-bottom: 10px;
+    }
+    .option {
+      min-height: 54px;
+      display:flex;
+      align-items:flex-start;
+      gap:16px;
+      padding:12px 14px;
+      border:2px solid transparent;
+      border-radius:2px;
+      cursor:pointer;
+      user-select:none;
+      background:#fff;
+    }
+    .option:hover,
+    .option.selected {
+      border-color:var(--blue-strong);
+      box-shadow:0 0 2px rgba(80,145,255,.45);
+    }
+    .option.correct {
+      border-color:#4caf50;
+      background:#f1fbf3;
+      box-shadow:0 0 2px rgba(76,175,80,.45);
+    }
+    .option.incorrect {
+      border-color:#e15757;
+      background:#fff4f4;
+      box-shadow:0 0 2px rgba(225,87,87,.45);
+    }
+    .option.correct .radio::after {
+      content:"";
+      width:9px;
+      height:9px;
+      border-radius:50%;
+      background:#3f9b45;
+      box-shadow:0 0 2px #2f7d35;
+    }
+    .option.incorrect .radio::after {
+      content:"";
+      width:9px;
+      height:9px;
+      border-radius:50%;
+      background:#c84242;
+      box-shadow:0 0 2px #8f2929;
+    }
+    .radio {
+      width:22px;
+      height:22px;
+      border-radius:50%;
+      border:2px solid #9d9d9d;
+      background:#e8e8e8;
+      display:inline-grid;
+      place-items:center;
+      flex:0 0 auto;
+      margin-top:1px;
+    }
+    .selected .radio::after {
+      content:"";
+      width:9px;
+      height:9px;
+      border-radius:50%;
+      background:#656565;
+      box-shadow:0 0 2px #333;
+    }
+    .option-text {
+      line-height:1.45;
+      color:#5a5a5a;
+      font-size:16px;
+    }
+    .answer-feedback {
+      margin-top:14px;
+      padding:12px 14px;
+      border-left:4px solid #4caf50;
+      background:#f1fbf3;
+      color:#315d34;
+      font-weight:700;
+      line-height:1.45;
+      display:none;
+    }
+    .answer-feedback.show {
+      display:block;
+    }
+    .answer-feedback.wrong {
+      border-left-color:#e15757;
+      background:#fff4f4;
+      color:#7a2d2d;
+    }
+    .bottom-controls {
+      margin-top: 28px;
+      padding: 0 10px;
+    }
+    .nav {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
+    }
+    .arrow-btn {
+      border:none;
+      background:var(--btn);
+      color:var(--btn-text);
+      font-weight:700;
+      min-width:126px;
+      height:45px;
+      cursor:pointer;
+      position:relative;
+      text-transform:uppercase;
+      letter-spacing:.2px;
+    }
+    .prev {
+      clip-path:polygon(22px 0,100% 0,100% 100%,22px 100%,0 50%);
+      padding-left:18px;
+    }
+    .next {
+      clip-path:polygon(0 0,calc(100% - 22px) 0,100% 50%,calc(100% - 22px) 100%,0 100%);
+      padding-right:18px;
+    }
+    .arrow-btn:disabled {
+      opacity:.45;
+      cursor:not-allowed;
+    }
+    .status {
+      margin-top:12px;
+      text-align:center;
+      color:#777;
+      font-size:13px;
+    }
+    @media (max-width: 980px) {
+      .exam-shell {
+        padding: 18px 14px 28px;
+      }
+      .topbar {
+        padding: 0 0 12px;
+      }
+      .brand {
+        font-size: 15px;
+      }
+      .close {
+        font-size:12px;
+        padding:8px 10px;
+      }
+      .top-question-row {
+        flex-direction:column;
+        gap:10px;
+        margin-bottom:14px;
+        padding:0;
+      }
+      .utility {
+        width:auto;
+        min-width:0;
+        text-align:right;
+        align-items:flex-end;
+        align-self:flex-end;
+        margin-left:auto;
+        gap:8px;
+      }
+      .timer-row {
+        justify-content:flex-end;
+        gap:10px;
+      }
+      .flag-row {
+        justify-content:flex-end;
+        width:100%;
+      }
+      .calc {
+        width:28px;
+        height:38px;
+        border-width:3px;
+      }
+      .calc:before {
+        left:5px;
+        right:5px;
+        top:5px;
+        height:5px;
+      }
+      .calc:after {
+        left:5px;
+        top:16px;
+        width:3px;
+        height:3px;
+        box-shadow:8px 0 #fff,16px 0 #fff,0 8px #fff,8px 8px #fff,16px 8px #fff,0 16px #fff,8px 16px #fff,16px 16px #fff;
+      }
+      .flag {
+        min-width:96px;
+        justify-content:center;
+        padding:9px 12px;
+        font-size:13px;
+      }
+      .flag-icon {
+        width:20px;
+        height:24px;
+      }
+      .main {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding:0;
+      }
+      h1 {
+        font-size:24px;
+      }
+      .passage-title, .stimulus {
+        font-size:17px;
+      }
+      .passage,
+      .option-text {
+        font-size:14px;
+      }
+      .question-text {
+        font-size:15px;
+      }
+      .diagram-stimulus {
+        margin: 12px 0 22px;
+      }
+      .diagram-stimulus img {
+        width:100% !important;
+        max-width:100% !important;
+      }
+      .dots {
+        gap:8px;
+        margin-bottom:18px;
+      }
+      .dot {
+        width:5px;
+        height:5px;
+      }
+      .dot.active {
+        width:8px;
+        height:8px;
+      }
+      .option {
+        gap:12px;
+        padding:10px 8px;
+        min-height:52px;
+      }
+      .radio {
+        width:21px;
+        height:21px;
+      }
+      .bottom-controls {
+        padding:0;
+        margin-top:20px;
+      }
+      .arrow-btn {
+        min-width:110px;
+        height:42px;
+        font-size:12px;
+      }
+      .status {
+        font-size:12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="exam-shell">
+    <header class="topbar">
+      <div class="brand" id="brandTitle">TEAS Version 7 - Reading</div>
+      <button class="close" type="button"><span class="x">×</span> Close</button>
+    </header>
+
+    <div class="top-question-row">
+      <h1 id="questionNumber">Question: 1 of 45</h1>
+      <div class="utility">
+        <div class="timer-row">
+          <div class="timer">Time Remaining: <span id="timer">00:55:00</span></div>
+          <div class="calc" aria-label="calculator icon"></div>
+        </div>
+        <div class="flag-row">
+          <button class="flag" type="button"><span class="flag-icon"></span> FLAG</button>
+        </div>
+      </div>
+    </div>
+
+    <main class="main">
+      <section class="left-col">
+        <div class="passage-title" id="passageTitle"></div>
+        <div class="passage" id="passage"></div>
+      </section>
+
+      <section class="right-col">
+        <div class="question-text" id="questionText"></div>
+        <div class="stimulus" id="stimulus"></div>
+        <div class="dots" id="dots" aria-hidden="true"></div>
+        <div class="options" id="options"></div>
+        <div class="answer-feedback" id="answerFeedback"></div>
+      </section>
+    </main>
+
+    <div class="bottom-controls">
+      <nav class="nav">
+        <button class="arrow-btn prev" id="prevBtn" type="button">Previous</button>
+        <button class="arrow-btn next" id="nextBtn" type="button">Continue</button>
+      </nav>
+      <div class="status" id="status"></div>
+    </div>
+  </div>
+
+<script>
+const questions = [
+  {
+    "number": 1,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>The Farallon Islands, or Devil's Teeth, as they are referred to by sailors, are a group of small islands with rocky, barren terrain and treacherous underwater currents, 48 km (30 miles) off the coast of San Francisco, California. Although the islands are small, with a combined total land area of 0.41 km² (0.16 square miles), they are positioned in a major ocean current, which enables them to house dense populations of birds, rodents, seals, and other water mammals.</p><p>The abundance of wildlife first attracted Russian and American fur traders in the early 1800s, who then nearly eliminated the seal population in the area. The islands then became an agricultural resource for San Francisco during the Gold Rush era when egg companies began harvesting bird eggs on the islands. In 1863, violence between rival egg companies erupted on the islands (known as the \"Egg War\"), which inadvertently attracted national attention and provoked lawmakers to pass legislation to protect and rehabilitate the islands' natural ecosystem.</p><p>In 1881, an executive order was passed that decreed egging illegal on the Farallons. This ended private enterprises on the islands and was reinforced in 1909 when President Theodore Roosevelt created the Farallon Reservation to restrict human access and preserve the northern islands. Protection was expanded in 1967 to include all the Farallon Islands, and over time many of the islands' original inhabitants have returned.</p><p>The Farallons are now home to the world's largest population of western gulls. Seals have returned, as well as otters and sea lions, which in turn attracts great white sharks. The combination of sharks, underwater currents, and jagged coastline are probably what earned the Farallons their nickname \"Devil's Teeth,\" though it hasn't stopped a few adventurous people from swimming. Four people have completed the 30-mile swim from the islands to San Francisco; the fastest person completed the journey in 14 hours.</p>",
+    "stimulus": "",
+    "stimulusHtml": "",
+    "sourceNumber": 1,
+    "question": "Which of the following supports the detail that the Farallon Islands are a natural home to many animals?",
+    "options": [
+      "Abundant land",
+      "Human presence",
+      "Lush landscape",
+      "Ocean currents"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 2,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>The Farallon Islands, or Devil's Teeth, as they are referred to by sailors, are a group of small islands with rocky, barren terrain and treacherous underwater currents, 48 km (30 miles) off the coast of San Francisco, California. Although the islands are small, with a combined total land area of 0.41 km² (0.16 square miles), they are positioned in a major ocean current, which enables them to house dense populations of birds, rodents, seals, and other water mammals.</p><p>The abundance of wildlife first attracted Russian and American fur traders in the early 1800s, who then nearly eliminated the seal population in the area. The islands then became an agricultural resource for San Francisco during the Gold Rush era when egg companies began harvesting bird eggs on the islands. In 1863, violence between rival egg companies erupted on the islands (known as the \"Egg War\"), which inadvertently attracted national attention and provoked lawmakers to pass legislation to protect and rehabilitate the islands' natural ecosystem.</p><p>In 1881, an executive order was passed that decreed egging illegal on the Farallons. This ended private enterprises on the islands and was reinforced in 1909 when President Theodore Roosevelt created the Farallon Reservation to restrict human access and preserve the northern islands. Protection was expanded in 1967 to include all the Farallon Islands, and over time many of the islands' original inhabitants have returned.</p><p>The Farallons are now home to the world's largest population of western gulls. Seals have returned, as well as otters and sea lions, which in turn attracts great white sharks. The combination of sharks, underwater currents, and jagged coastline are probably what earned the Farallons their nickname \"Devil's Teeth,\" though it hasn't stopped a few adventurous people from swimming. Four people have completed the 30-mile swim from the islands to San Francisco; the fastest person completed the journey in 14 hours.</p>",
+    "stimulus": "",
+    "stimulusHtml": "",
+    "sourceNumber": 2,
+    "question": "Which of the following sentences best describes the sequence of facts in the article?",
+    "options": [
+      "The Farallon Islands are home to many birds and marine mammals; egging is a form of vandalism that frightened birds away in 1881; fur traders probably hunted seals and otters.",
+      "A group of small islands not far from San Francisco hosts many western seagulls; seagull eggs were a delicacy in the Gold Rush days; Roosevelt put a stop to egg harvesting in 1909.",
+      "The Farallon Islands are located off the coast of San Francisco; fur traders and egg companies once nearly decimated the islands' animal populations; all islands became protected in 1967.",
+      "Small islands called The Devil's Teeth lie 30 miles off the coast of San Francisco; egg harvesting and fur trading nearly wiped out the animal population; it is illegal to swim there."
+    ],
+    "correctIndex": 2
+  },
+  {
+    "number": 3,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>The Farallon Islands, or Devil's Teeth, as they are referred to by sailors, are a group of small islands with rocky, barren terrain and treacherous underwater currents, 48 km (30 miles) off the coast of San Francisco, California. Although the islands are small, with a combined total land area of 0.41 km² (0.16 square miles), they are positioned in a major ocean current, which enables them to house dense populations of birds, rodents, seals, and other water mammals.</p><p>The abundance of wildlife first attracted Russian and American fur traders in the early 1800s, who then nearly eliminated the seal population in the area. The islands then became an agricultural resource for San Francisco during the Gold Rush era when egg companies began harvesting bird eggs on the islands. In 1863, violence between rival egg companies erupted on the islands (known as the \"Egg War\"), which inadvertently attracted national attention and provoked lawmakers to pass legislation to protect and rehabilitate the islands' natural ecosystem.</p><p>In 1881, an executive order was passed that decreed egging illegal on the Farallons. This ended private enterprises on the islands and was reinforced in 1909 when President Theodore Roosevelt created the Farallon Reservation to restrict human access and preserve the northern islands. Protection was expanded in 1967 to include all the Farallon Islands, and over time many of the islands' original inhabitants have returned.</p><p>The Farallons are now home to the world's largest population of western gulls. Seals have returned, as well as otters and sea lions, which in turn attracts great white sharks. The combination of sharks, underwater currents, and jagged coastline are probably what earned the Farallons their nickname \"Devil's Teeth,\" though it hasn't stopped a few adventurous people from swimming. Four people have completed the 30-mile swim from the islands to San Francisco; the fastest person completed the journey in 14 hours.</p>",
+    "stimulus": "",
+    "stimulusHtml": "",
+    "sourceNumber": 3,
+    "question": "Which of the following is the main idea of the passage?",
+    "options": [
+      "The ecosystem of the Farallon Islands has always been unstable.",
+      "The Farallon Islands are a dedicated sanctuary for western gulls.",
+      "Humans disrupted the ecosystem of the Farallon Islands and helped to restore it.",
+      "The Farallon Islands are currently an agricultural resource for San Francisco."
+    ],
+    "correctIndex": 2
+  },
+  {
+    "number": 4,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>The Farallon Islands, or Devil's Teeth, as they are referred to by sailors, are a group of small islands with rocky, barren terrain and treacherous underwater currents, 48 km (30 miles) off the coast of San Francisco, California. Although the islands are small, with a combined total land area of 0.41 km² (0.16 square miles), they are positioned in a major ocean current, which enables them to house dense populations of birds, rodents, seals, and other water mammals.</p><p>The abundance of wildlife first attracted Russian and American fur traders in the early 1800s, who then nearly eliminated the seal population in the area. The islands then became an agricultural resource for San Francisco during the Gold Rush era when egg companies began harvesting bird eggs on the islands. In 1863, violence between rival egg companies erupted on the islands (known as the \"Egg War\"), which inadvertently attracted national attention and provoked lawmakers to pass legislation to protect and rehabilitate the islands' natural ecosystem.</p><p>In 1881, an executive order was passed that decreed egging illegal on the Farallons. This ended private enterprises on the islands and was reinforced in 1909 when President Theodore Roosevelt created the Farallon Reservation to restrict human access and preserve the northern islands. Protection was expanded in 1967 to include all the Farallon Islands, and over time many of the islands' original inhabitants have returned.</p><p>The Farallons are now home to the world's largest population of western gulls. Seals have returned, as well as otters and sea lions, which in turn attracts great white sharks. The combination of sharks, underwater currents, and jagged coastline are probably what earned the Farallons their nickname \"Devil's Teeth,\" though it hasn't stopped a few adventurous people from swimming. Four people have completed the 30-mile swim from the islands to San Francisco; the fastest person completed the journey in 14 hours.</p>",
+    "stimulus": "",
+    "stimulusHtml": "",
+    "sourceNumber": 4,
+    "question": "With which of the following organizations might the author of this article most closely associate?",
+    "options": [
+      "A nature conservancy group",
+      "An educational special interest group",
+      "A group that supports first-time novelists",
+      "A group that studies marine mammal behavior"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 5,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>The Farallon Islands, or Devil's Teeth, as they are referred to by sailors, are a group of small islands with rocky, barren terrain and treacherous underwater currents, 48 km (30 miles) off the coast of San Francisco, California. Although the islands are small, with a combined total land area of 0.41 km² (0.16 square miles), they are positioned in a major ocean current, which enables them to house dense populations of birds, rodents, seals, and other water mammals.</p><p>The abundance of wildlife first attracted Russian and American fur traders in the early 1800s, who then nearly eliminated the seal population in the area. The islands then became an agricultural resource for San Francisco during the Gold Rush era when egg companies began harvesting bird eggs on the islands. In 1863, violence between rival egg companies erupted on the islands (known as the \"Egg War\"), which inadvertently attracted national attention and provoked lawmakers to pass legislation to protect and rehabilitate the islands' natural ecosystem.</p><p>In 1881, an executive order was passed that decreed egging illegal on the Farallons. This ended private enterprises on the islands and was reinforced in 1909 when President Theodore Roosevelt created the Farallon Reservation to restrict human access and preserve the northern islands. Protection was expanded in 1967 to include all the Farallon Islands, and over time many of the islands' original inhabitants have returned.</p><p>The Farallons are now home to the world's largest population of western gulls. Seals have returned, as well as otters and sea lions, which in turn attracts great white sharks. The combination of sharks, underwater currents, and jagged coastline are probably what earned the Farallons their nickname \"Devil's Teeth,\" though it hasn't stopped a few adventurous people from swimming. Four people have completed the 30-mile swim from the islands to San Francisco; the fastest person completed the journey in 14 hours.</p>",
+    "stimulus": "",
+    "stimulusHtml": "",
+    "sourceNumber": 5,
+    "question": "Which of the following is a credible source that the author might have consulted to help write the article?",
+    "options": [
+      "A copy of a story published by the Fish and Wildlife Service, originally written by a former refuge manager",
+      "A biography of President Theodore Roosevelt, with an emphasis on his passion for hunting",
+      "An 1890 cartographer's notes on efforts to map Northern California's coastline",
+      "A nutritionist's scholarly journal article on Gold Rush miners' diets"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 6,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "stimulusHtml": "",
+    "sourceNumber": 6,
+    "question": "[Missing screenshot: QUESTION 6 OF 45.png]",
+    "options": [
+      "Missing screenshot",
+      "Missing screenshot",
+      "Missing screenshot",
+      "Missing screenshot"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 7,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>The Farallon Islands, or Devil's Teeth, as they are referred to by sailors, are a group of small islands with rocky, barren terrain and treacherous underwater currents, 48 km (30 miles) off the coast of San Francisco, California. Although the islands are small, with a combined total land area of 0.41 km² (0.16 square miles), they are positioned in a major ocean current, which enables them to house dense populations of birds, rodents, seals, and other water mammals.</p><p>The abundance of wildlife first attracted Russian and American fur traders in the early 1800s, who then nearly eliminated the seal population in the area. The islands then became an agricultural resource for San Francisco during the Gold Rush era when egg companies began harvesting bird eggs on the islands. In 1863, violence between rival egg companies erupted on the islands (known as the \"Egg War\"), which inadvertently attracted national attention and provoked lawmakers to pass legislation to protect and rehabilitate the islands' natural ecosystem.</p><p>In 1881, an executive order was passed that decreed egging illegal on the Farallons. This ended private enterprises on the islands and was reinforced in 1909 when President Theodore Roosevelt created the Farallon Reservation to restrict human access and preserve the northern islands. Protection was expanded in 1967 to include all the Farallon Islands, and over time many of the islands' original inhabitants have returned.</p><p>The Farallons are now home to the world's largest population of western gulls. Seals have returned, as well as otters and sea lions, which in turn attracts great white sharks. The combination of sharks, underwater currents, and jagged coastline are probably what earned the Farallons their nickname \"Devil's Teeth,\" though it hasn't stopped a few adventurous people from swimming. Four people have completed the 30-mile swim from the islands to San Francisco; the fastest person completed the journey in 14 hours.</p>",
+    "stimulus": "",
+    "stimulusHtml": "",
+    "sourceNumber": 7,
+    "question": "Which of the following pieces of evidence does the author use to speculate why the Farallon Islands are called \"The Devil's Teeth\"?",
+    "options": [
+      "They have always been called that by sailors who travel those waters.",
+      "In 1863, violence broke out on the islands during the Egg War.",
+      "The islands have sharks, choppy currents, and irregular coastline.",
+      "Swimming from San Francisco to the islands is very risky."
+    ],
+    "correctIndex": 2
+  },
+  {
+    "number": 8,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>In 1943, the war in the Pacific raged on, First Lady Eleanor Roosevelt went to rally the troops' spirits, despite the disapproval of military command. Roosevelt planned a grueling itinerary. She visited several islands and hundreds of wounded in her first 6 days. The indefatigable First Lady inspected Navy hospitals, delivered a speech, attended receptions, and visited convalescing officers, all within 12 hours of her arrival. She lifted spirits among the wounded and morale among the troops. She continued her exhausting tour for a month, speaking to every patient in troop hospitals and taking down addresses to contact family members. Roosevelt traveled non-stop, risked her life, and greeted the last patient she saw with the same heartfelt sincerity as the first.</p>",
+    "stimulus": "",
+    "stimulusHtml": "",
+    "sourceNumber": 8,
+    "question": "Which of the following is a reasonable prediction from the passage?",
+    "options": [
+      "Eleanor Roosevelt listened to the wishes of military command, despite their disapproval.",
+      "Eleanor Roosevelt stopped visiting hospitals and attending receptions after her tour.",
+      "Eleanor Roosevelt began taking down the addresses of everyone she met after the war.",
+      "Eleanor Roosevelt was tired both physically and emotionally after her tour."
+    ],
+    "correctIndex": 1
+  },
+  {
+    "number": 9,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>In 1943, the war in the Pacific raged on, First Lady Eleanor Roosevelt went to rally the troops' spirits, despite the disapproval of military command. Roosevelt planned a grueling itinerary. She visited several islands and hundreds of wounded in her first 6 days. The indefatigable First Lady inspected Navy hospitals, delivered a speech, attended receptions, and visited convalescing officers, all within 12 hours of her arrival. She lifted spirits among the wounded and morale among the troops. She continued her exhausting tour for a month, speaking to every patient in troop hospitals and taking down addresses to contact family members. Roosevelt traveled non-stop, risked her life, and greeted the last patient she saw with the same heartfelt sincerity as the first.</p>",
+    "stimulus": "",
+    "stimulusHtml": "",
+    "sourceNumber": 9,
+    "question": "Which of the following is a counter-claim to the claim that Eleanor Roosevelt was a positive force of encouragement to troops in the Pacific theater in World War II?",
+    "options": [
+      "Eleanor Roosevelt greeted soldiers in the Pacific theater with heartfelt sincerity.",
+      "The weary soldiers in the Pacific theater felt homesick upon the First Lady's arrival.",
+      "Eleanor Roosevelt immediately began motivating others without fanfare or ceremony.",
+      "The military command embraced the First Lady's plans to visit soldiers in the Pacific theater."
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 10,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "stimulusHtml": "<div style=\"border:2px solid #333;padding:16px 18px;margin:0 0 24px;max-width:560px;line-height:1.45;\"><p><strong>Do words like exhausted, listless, or worn-out describe you?</strong></p><p><strong>Feel better fast with Pro-10 shakes!</strong></p><ul><li>Our high-protein formula was developed by an experienced team of physicians and nutritionists.</li><li>76% of customers surveyed report having more energy after drinking Pro-10 for just 2 weeks.</li><li>Choose from six delicious flavors!</li><li>Get 10 shakes free with the purchase of a 30-day supply.</li></ul><p>For more information, visit our website at www.pro10shake.com or call 888-555-5555 to talk with a consultant today.</p></div>",
+    "sourceNumber": 10,
+    "question": "Which of the following is a reasonable inference based on the information presented in the advertisement?",
+    "options": [
+      "Pro-10 shakes contribute to a person's overall health and well-being.",
+      "Seventy-six percent of customers felt better in 3 days.",
+      "Pro-10 shakes are affordable.",
+      "An increase in protein affects energy levels."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 11,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "stimulusHtml": "<div style=\"border:2px solid #333;padding:16px 18px;margin:0 0 24px;max-width:560px;line-height:1.45;\"><p><strong>Do words like exhausted, listless, or worn-out describe you?</strong></p><p><strong>Feel better fast with Pro-10 shakes!</strong></p><ul><li>Our high-protein formula was developed by an experienced team of physicians and nutritionists.</li><li>76% of customers surveyed report having more energy after drinking Pro-10 for just 2 weeks.</li><li>Choose from six delicious flavors!</li><li>Get 10 shakes free with the purchase of a 30-day supply.</li></ul><p>For more information, visit our website at www.pro10shake.com or call 888-555-5555 to talk with a consultant today.</p></div>",
+    "sourceNumber": 11,
+    "question": "Which of the following would be a relevant addition to the advertisement as a data source to persuade potential customers of the health benefits of the shakes?",
+    "options": [
+      "In a consumer survey, customers report that they generally like the shakes, but they could be less chalky and gritty.",
+      "The production of Pro-10 shakes occurs in 10 stages, which is where the name comes from!",
+      "In an independent study, Pro-10 shakes increased iron levels in people who have anemia by 10% when consumed twice daily.",
+      "The Pro-10 website was created with you in mind! It's available on your mobile device."
+    ],
+    "correctIndex": 2
+  },
+  {
+    "number": 12,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "Hedy Lamarr, the Inventor",
+    "passageHtml": "<p>Hedy Lamarr was a woman of many talents. She was first known as a European film actress in the 1930s. She began starring in American films with MGM Studios in the late 1930s and early 1940s. Some of her more popular films included Boom Town (1940) and White Cargo (1942); however, her roles generally did not include very many spoken lines and she became bored. To relieve this boredom, Lamarr took up inventing.</p><p>Hedy Lamarr did not have any formal training, but she did not allow that to stop her from teaching herself in her spare time. Although she had a number of failed inventions, such as an improved traffic light and a carbonated drink, Lamarr did not stop coming up with ideas. She even spent time working with the science engineering team employed by Howard Hughes, the aviation tycoon.</p><p>During World War II, Lamarr learned that one of the military's new technologies, radio-controlled torpedoes, were too easily jammed and redirected. She came up with a type of radio signal that changed, or \"hopped,\" frequencies and was unable to be tracked or disrupted. With the assistance of her friend George Antheil, she was able to design the system and patent it in August 1942.</p><p>Unfortunately, the United States Navy was not interested. The technology of the era wasn't quite good enough to easily implement Lamarr's system, and the Navy was not particularly interested in civilian inventions at the time. It wasn't until 20 years later, during the Cuban Missile Crisis, that a version of Lamarr's system began appearing on Navy ships.</p><p>The work Lamarr and Antheil did creating this frequency-hopping system led to many technologies that are often taken for granted today. Their work led to the development of cell phones, Bluetooth, and Wi-Fi.</p>",
+    "stimulus": "",
+    "stimulusHtml": "",
+    "sourceNumber": 12,
+    "question": "Which of the following conclusions can be drawn about Hedy Lamarr's acting career?",
+    "options": [
+      "Hedy Lamarr was content with her contribution to film.",
+      "Hedy Lamarr worked in American films with MGM Studios.",
+      "Hedy Lamarr wanted more opportunities to speak while acting.",
+      "Hedy Lamarr was the first European actress of the 1930s."
+    ],
+    "correctIndex": 2
+  },
+  {
+    "number": 13,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "Hedy Lamarr, the Inventor",
+    "passageHtml": "<p>Hedy Lamarr was a woman of many talents. She was first known as a European film actress in the 1930s. She began starring in American films with MGM Studios in the late 1930s and early 1940s. Some of her more popular films included Boom Town (1940) and White Cargo (1942); however, her roles generally did not include very many spoken lines and she became bored. To relieve this boredom, Lamarr took up inventing.</p><p>Hedy Lamarr did not have any formal training, but she did not allow that to stop her from teaching herself in her spare time. Although she had a number of failed inventions, such as an improved traffic light and a carbonated drink, Lamarr did not stop coming up with ideas. She even spent time working with the science engineering team employed by Howard Hughes, the aviation tycoon.</p><p>During World War II, Lamarr learned that one of the military's new technologies, radio-controlled torpedoes, were too easily jammed and redirected. She came up with a type of radio signal that changed, or \"hopped,\" frequencies and was unable to be tracked or disrupted. With the assistance of her friend George Antheil, she was able to design the system and patent it in August 1942.</p><p>Unfortunately, the United States Navy was not interested. The technology of the era wasn't quite good enough to easily implement Lamarr's system, and the Navy was not particularly interested in civilian inventions at the time. It wasn't until 20 years later, during the Cuban Missile Crisis, that a version of Lamarr's system began appearing on Navy ships.</p><p>The work Lamarr and Antheil did creating this frequency-hopping system led to many technologies that are often taken for granted today. Their work led to the development of cell phones, Bluetooth, and Wi-Fi.</p>",
+    "stimulus": "",
+    "stimulusHtml": "",
+    "sourceNumber": 13,
+    "question": "Which of the following details supports the main idea that Hedy Lamarr was a self-taught inventor who created a frequency hopping system used by many modern inventions?",
+    "options": [
+      "She did not stop coming up with new ideas, and she refused to be bored while acting.",
+      "She did not have any formal training, yet she designed and patented a new system.",
+      "Although the U.S. Navy wasn't interested, she went on to star in American films.",
+      "Despite her failure during the Cuban Missile Crisis, she spent time working with Howard Hughes."
+    ],
+    "correctIndex": 1
+  },
+  {
+    "number": 14,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "Hedy Lamarr, the Inventor",
+    "passageHtml": "<p>Hedy Lamarr was a woman of many talents. She was first known as a European film actress in the 1930s. She began starring in American films with MGM Studios in the late 1930s and early 1940s. Some of her more popular films included Boom Town (1940) and White Cargo (1942); however, her roles generally did not include very many spoken lines and she became bored. To relieve this boredom, Lamarr took up inventing.</p><p>Hedy Lamarr did not have any formal training, but she did not allow that to stop her from teaching herself in her spare time. Although she had a number of failed inventions, such as an improved traffic light and a carbonated drink, Lamarr did not stop coming up with ideas. She even spent time working with the science engineering team employed by Howard Hughes, the aviation tycoon.</p><p>During World War II, Lamarr learned that one of the military's new technologies, radio-controlled torpedoes, were too easily jammed and redirected. She came up with a type of radio signal that changed, or \"hopped,\" frequencies and was unable to be tracked or disrupted. With the assistance of her friend George Antheil, she was able to design the system and patent it in August 1942.</p><p>Unfortunately, the United States Navy was not interested. The technology of the era wasn't quite good enough to easily implement Lamarr's system, and the Navy was not particularly interested in civilian inventions at the time. It wasn't until 20 years later, during the Cuban Missile Crisis, that a version of Lamarr's system began appearing on Navy ships.</p><p>The work Lamarr and Antheil did creating this frequency-hopping system led to many technologies that are often taken for granted today. Their work led to the development of cell phones, Bluetooth, and Wi-Fi.</p>",
+    "stimulus": "",
+    "stimulusHtml": "<ol><li>She was able to design the system and patent it in August 1942.</li><li>Their work led to the development of cell phones, Bluetooth, and Wi-Fi.</li><li>It wasn't until 20 years later, during the Cuban Missile Crisis, that a version of Lamarr's system began appearing on Navy ships.</li><li>She was first known as a European film actress in the 1930s.</li><li>During World War II, Lamarr learned that one of the military's new technologies, radio-controlled torpedoes, were too easily jammed and redirected.</li></ol>",
+    "sourceNumber": 14,
+    "question": "Which of the following correctly sequences the events in the Hedy Lamarr passage?",
+    "options": [
+      "1, 3, 4, 2, 5",
+      "1, 3, 2, 5, 4",
+      "4, 1, 5, 3, 2",
+      "4, 5, 1, 3, 2"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 15,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "Hedy Lamarr, the Inventor",
+    "passageHtml": "<p>Hedy Lamarr was a woman of many talents. She was first known as a European film actress in the 1930s. She began starring in American films with MGM Studios in the late 1930s and early 1940s. Some of her more popular films included Boom Town (1940) and White Cargo (1942); however, her roles generally did not include very many spoken lines and she became bored. To relieve this boredom, Lamarr took up inventing.</p><p>Hedy Lamarr did not have any formal training, but she did not allow that to stop her from teaching herself in her spare time. Although she had a number of failed inventions, such as an improved traffic light and a carbonated drink, Lamarr did not stop coming up with ideas. She even spent time working with the science engineering team employed by Howard Hughes, the aviation tycoon.</p><p>During World War II, Lamarr learned that one of the military's new technologies, radio-controlled torpedoes, were too easily jammed and redirected. She came up with a type of radio signal that changed, or \"hopped,\" frequencies and was unable to be tracked or disrupted. With the assistance of her friend George Antheil, she was able to design the system and patent it in August 1942.</p><p>Unfortunately, the United States Navy was not interested. The technology of the era wasn't quite good enough to easily implement Lamarr's system, and the Navy was not particularly interested in civilian inventions at the time. It wasn't until 20 years later, during the Cuban Missile Crisis, that a version of Lamarr's system began appearing on Navy ships.</p><p>The work Lamarr and Antheil did creating this frequency-hopping system led to many technologies that are often taken for granted today. Their work led to the development of cell phones, Bluetooth, and Wi-Fi.</p>",
+    "stimulus": "",
+    "stimulusHtml": "",
+    "sourceNumber": 15,
+    "question": "Which of the following would provide relevant and accurate information relating to the inventions of Hedy Lamarr?",
+    "options": [
+      "A diagram of a Wi-Fi network created after Lamarr's death",
+      "A note from Howard Hughes on how well Lamarr fit in with the other inventors",
+      "The patent application completed by Lamarr and Antheil",
+      "A book by Lamarr's daughter about her mother's dedication to inventing"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "number": 16,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "Hedy Lamarr, the Inventor",
+    "passageHtml": "<p>Hedy Lamarr was a woman of many talents. She was first known as a European film actress in the 1930s. She began starring in American films with MGM Studios in the late 1930s and early 1940s. Some of her more popular films included Boom Town (1940) and White Cargo (1942); however, her roles generally did not include very many spoken lines and she became bored. To relieve this boredom, Lamarr took up inventing.</p><p>Hedy Lamarr did not have any formal training, but she did not allow that to stop her from teaching herself in her spare time. Although she had a number of failed inventions, such as an improved traffic light and a carbonated drink, Lamarr did not stop coming up with ideas. She even spent time working with the science engineering team employed by Howard Hughes, the aviation tycoon.</p><p>During World War II, Lamarr learned that one of the military's new technologies, radio-controlled torpedoes, were too easily jammed and redirected. She came up with a type of radio signal that changed, or \"hopped,\" frequencies and was unable to be tracked or disrupted. With the assistance of her friend George Antheil, she was able to design the system and patent it in August 1942.</p><p>Unfortunately, the United States Navy was not interested. The technology of the era wasn't quite good enough to easily implement Lamarr's system, and the Navy was not particularly interested in civilian inventions at the time. It wasn't until 20 years later, during the Cuban Missile Crisis, that a version of Lamarr's system began appearing on Navy ships.</p><p>The work Lamarr and Antheil did creating this frequency-hopping system led to many technologies that are often taken for granted today. Their work led to the development of cell phones, Bluetooth, and Wi-Fi.</p>",
+    "stimulus": "",
+    "stimulusHtml": "",
+    "sourceNumber": 16,
+    "question": "Which of the following contains a stereotype about Hedy Lamarr?",
+    "options": [
+      "Hedy Lamarr was the best actress in Hollywood in the 1930s, and she could have had myriad more lines to speak in the film White Cargo.",
+      "Hedy Lamarr went to school to be an inventor, but others thought she was better suited to being an actress.",
+      "Hedy Lamarr broke many barriers for women in the field of acting, but performing Boom Town for Howard Hughes had to have been the highlight of her career.",
+      "Hedy Lamarr was a great actress, but she should have stayed in a field where women excel and out of science."
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 17,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>Manhattan seems to sprout shiny new skyscrapers as easily as a garden grows weeds, but despite the modern appearance of the concrete jungle at the heart of New York City, every engineer knows that before breaking ground, they need to step back in time, with the help of Viele's map.</p><p>In 1865, Egbert Viele, a civil engineer and Civil War veteran who surveyed the land for Central Park and later served in Congress, published a map that is still crucial almost 160 years later. His map showed all the original marshes and waterways of Manhattan. Even today, engineers rely on his work to determine soil conditions and any underground water that still flows through a building site, potentially undermining foundations.</p>",
+    "stimulus": "",
+    "stimulusHtml": "",
+    "sourceNumber": 17,
+    "question": "Which of the following pieces of evidence from the text supports the conclusion that Viele's work had an impact on the development of Manhattan island?",
+    "options": [
+      "Builders must analyze potential sites for stability, which affects the building type and zoning options.",
+      "Viele proposed that structures be made with locally made concrete mixed with water sources on the island.",
+      "Central Park continues to flood, which Viele set out to prevent with his map.",
+      "Residents of Manhattan Island find it easy to grow gardens due to the well-established water map."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 18,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>Manhattan seems to sprout shiny new skyscrapers as easily as a garden grows weeds, but despite the modern appearance of the concrete jungle at the heart of New York City, every engineer knows that before breaking ground, they need to step back in time, with the help of Viele's map.</p><p>In 1865, Egbert Viele, a civil engineer and Civil War veteran who surveyed the land for Central Park and later served in Congress, published a map that is still crucial almost 160 years later. His map showed all the original marshes and waterways of Manhattan. Even today, engineers rely on his work to determine soil conditions and any underground water that still flows through a building site, potentially undermining foundations.</p>",
+    "stimulus": "",
+    "stimulusHtml": "",
+    "sourceNumber": 18,
+    "question": "Which of the following additional resources would validate the information given in Viele's map?",
+    "options": [
+      "A map of the New York City transit system",
+      "A map showing population density of New York City by borough in 1865 and 1965",
+      "A map of Civil War battle sites in and around Manhattan",
+      "A map of the wetlands on Manhattan Island used to observe migratory birds"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 19,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>Unlike most others who follow along with popular trends, I am able to truly see that the beard is superior to the mustache. First, you have so much more hair and space to work with when styling a beard than you do with a mustache. You can trim and cut a beard into so many styles: the Muttonchop, the Goatee, the Stubble, the Chin Strap. You can even add things to your beard: braids, beads, glitter, and color -- the possibilities of what you can add to a beard are endless! There are even professional competitions that surround the stylish nature of beards.</p>",
+    "stimulus": "",
+    "stimulusHtml": "",
+    "sourceNumber": 19,
+    "question": "Which of the following can be inferred from evidence given in the passage?",
+    "options": [
+      "Mustaches cannot easily be styled.",
+      "No competitions exist for the best mustache.",
+      "The writer enjoys having a beard.",
+      "The writer is a professional barber."
+    ],
+    "correctIndex": 2
+  },
+  {
+    "number": 20,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>Unlike most others who follow along with popular trends, I am able to truly see that the beard is superior to the mustache. First, you have so much more hair and space to work with when styling a beard than you do with a mustache. You can trim and cut a beard into so many styles: the Muttonchop, the Goatee, the Stubble, the Chin Strap. You can even add things to your beard: braids, beads, glitter, and color -- the possibilities of what you can add to a beard are endless! There are even professional competitions that surround the stylish nature of beards.</p>",
+    "stimulus": "",
+    "stimulusHtml": "",
+    "sourceNumber": 20,
+    "question": "Which of the following is a counterclaim to the argument in the passage?",
+    "options": [
+      "The beard is not just a passing trend.",
+      "You should grow a beard because they come in a variety of styles.",
+      "If you have a beard, you can dye it pink.",
+      "Beards may be a hazard in professional lines of employment."
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 21,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>Mourning geckos (Lepidodactylus lugubris) are truly a unique species. This gecko is small, as it only grows up to 10 cm or 4 inches. With a range of Hawaii, the South Pacific islands, and Central and South America these geckos have one of the largest ranges among reptiles.</p><p>What really sets this species apart is how they reproduce. Mourning geckos are all female and reproduce through parthenogenesis, where the mother essentially clones herself to create her offspring. However, their genes have the ability to recombine to allow genetic variation and mutation. Like many other geckos, mourning geckos lay two eggs at a time several times a year. The eggs incubate for 65 to 103 days.</p>",
+    "stimulus": "",
+    "stimulusHtml": "",
+    "sourceNumber": 21,
+    "question": "Which of the following is a conclusion the reader might draw from the information in the passage?",
+    "options": [
+      "Genetic variation and mutations may give mourning geckos a better chance for survival.",
+      "Their small size means mourning geckos are easy to keep as pets.",
+      "Mourning geckos are an endangered species.",
+      "Because their offspring are clones, all mourning geckos are identical."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 22,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>Mourning geckos (Lepidodactylus lugubris) are truly a unique species. This gecko is small, as it only grows up to 10 cm or 4 inches. With a range of Hawaii, the South Pacific islands, and Central and South America these geckos have one of the largest ranges among reptiles.</p><p>What really sets this species apart is how they reproduce. Mourning geckos are all female and reproduce through parthenogenesis, where the mother essentially clones herself to create her offspring. However, their genes have the ability to recombine to allow genetic variation and mutation. Like many other geckos, mourning geckos lay two eggs at a time several times a year. The eggs incubate for 65 to 103 days.</p>",
+    "stimulus": "",
+    "stimulusHtml": "",
+    "sourceNumber": 22,
+    "question": "Which of the following credentials would increase the author's credibility?",
+    "options": [
+      "A senior zoologist at a zoo in South America",
+      "A wildlife photographer for a well-known nature periodical",
+      "The editor of a prominent American newspaper",
+      "The head librarian at a nationally renowned university"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 23,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>On February 2 of each year, the United States observes the unusual holiday of Groundhog Day, as a day of hope that winter is over and spring is beginning. This tradition has been officially observed in the U.S. since the 1800s, and is believed to have developed from European folk traditions in which a bear, fox, badger, or even hedgehog would serve as the symbolic meteorologist. Although other cultures and towns observe Groundhog Day (or something similar), the town of Punxsutawney, Pennsylvania takes special pride in being home to the one true forecasting groundhog, Punxsutawney Phil. At the turn of the twentieth century, townspeople formed the Punxsutawney Groundhog Club to perpetuate the joyful rituals and events surrounding Groundhog Day. Over the years, these events have come to include a scavenger hunt, a talent show, and a ball.</p><p>Legend has it that on Groundhog Day the official weather forecasting groundhog awakens from hibernation and comes out of his burrow to look for his shadow. If he sees his shadow, six more weeks of winter are to come, and Punxsutawney Phil goes back to bed. However, if he does not see his shadow, Punxsutawney Phil takes this as a sign that spring has arrived, and he remains above ground. Of course, common sense tells us that February 2 is too early for spring to begin, and that while animals may be attuned to various elements of nature from which humans might learn, they are unlikely to act on their instincts based on a schedule set by a Gregorian calendar. Nevertheless, a visit to Pennsylvania to see Punxsutawney Phil and all of the fun he inspires each year might just provide the touch of hope needed to reach the end of winter.</p>",
+    "stimulus": "",
+    "stimulusHtml": "",
+    "sourceNumber": 23,
+    "question": "Which of the following pairs of search terms entered into a search engine with the phrase \"Groundhog Day\" is likely to produce information about the origin of Groundhog Day?",
+    "options": [
+      "Weather and farming",
+      "Habitat and diet",
+      "Holiday and festivities",
+      "History and folklore"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 24,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>On February 2 of each year, the United States observes the unusual holiday of Groundhog Day, as a day of hope that winter is over and spring is beginning. This tradition has been officially observed in the U.S. since the 1800s, and is believed to have developed from European folk traditions in which a bear, fox, badger, or even hedgehog would serve as the symbolic meteorologist. Although other cultures and towns observe Groundhog Day (or something similar), the town of Punxsutawney, Pennsylvania takes special pride in being home to the one true forecasting groundhog, Punxsutawney Phil. At the turn of the twentieth century, townspeople formed the Punxsutawney Groundhog Club to perpetuate the joyful rituals and events surrounding Groundhog Day. Over the years, these events have come to include a scavenger hunt, a talent show, and a ball.</p><p>Legend has it that on Groundhog Day the official weather forecasting groundhog awakens from hibernation and comes out of his burrow to look for his shadow. If he sees his shadow, six more weeks of winter are to come, and Punxsutawney Phil goes back to bed. However, if he does not see his shadow, Punxsutawney Phil takes this as a sign that spring has arrived, and he remains above ground. Of course, common sense tells us that February 2 is too early for spring to begin, and that while animals may be attuned to various elements of nature from which humans might learn, they are unlikely to act on their instincts based on a schedule set by a Gregorian calendar. Nevertheless, a visit to Pennsylvania to see Punxsutawney Phil and all of the fun he inspires each year might just provide the touch of hope needed to reach the end of winter.</p>",
+    "stimulus": "",
+    "stimulusHtml": "",
+    "sourceNumber": 24,
+    "question": "Which of the following evidence from the passage supports the inference that Groundhog Day is an entertaining tradition?",
+    "options": [
+      "Legend has it that on Groundhog Day, the official weather forecasting groundhog awakens from hibernation and comes out of his burrow to look for his shadow.",
+      "Over the years, these events have come to include a scavenger hunt, a talent show, and a ball.",
+      "This tradition has been officially observed in the U.S. since the 1800s and is believed to have developed from European folk traditions.",
+      "On February 2 of each year, the United States observes the unusual holiday of Groundhog Day, a day of hope that winter is over and spring is beginning."
+    ],
+    "correctIndex": 1
+  },
+  {
+    "number": 25,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>On February 2 of each year, the United States observes the unusual holiday of Groundhog Day, as a day of hope that winter is over and spring is beginning. This tradition has been officially observed in the U.S. since the 1800s, and is believed to have developed from European folk traditions in which a bear, fox, badger, or even hedgehog would serve as the symbolic meteorologist. Although other cultures and towns observe Groundhog Day (or something similar), the town of Punxsutawney, Pennsylvania takes special pride in being home to the one true forecasting groundhog, Punxsutawney Phil. At the turn of the twentieth century, townspeople formed the Punxsutawney Groundhog Club to perpetuate the joyful rituals and events surrounding Groundhog Day. Over the years, these events have come to include a scavenger hunt, a talent show, and a ball.</p><p>Legend has it that on Groundhog Day the official weather forecasting groundhog awakens from hibernation and comes out of his burrow to look for his shadow. If he sees his shadow, six more weeks of winter are to come, and Punxsutawney Phil goes back to bed. However, if he does not see his shadow, Punxsutawney Phil takes this as a sign that spring has arrived, and he remains above ground. Of course, common sense tells us that February 2 is too early for spring to begin, and that while animals may be attuned to various elements of nature from which humans might learn, they are unlikely to act on their instincts based on a schedule set by a Gregorian calendar. Nevertheless, a visit to Pennsylvania to see Punxsutawney Phil and all of the fun he inspires each year might just provide the touch of hope needed to reach the end of winter.</p>",
+    "stimulus": "",
+    "stimulusHtml": "",
+    "sourceNumber": 25,
+    "question": "What source would be most useful in determining the reliability of Punxsutawney Phil's predictions over a number of years?",
+    "options": [
+      "An encyclopedia entry on mammals in the northeast U.S.",
+      "A memoir from a member of The Groundhog Club",
+      "A historical survey of customs in Pennsylvania",
+      "A record of weather patterns in the last decade"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 26,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "stimulusHtml": "<div style=\"border:2px solid #333;padding:16px 18px;margin:0 0 24px;max-width:560px;line-height:1.45;\"><p><strong>Peanut Butter Cookies</strong></p><p>Grandma Harry &nbsp;&nbsp; 30 minutes &nbsp;&nbsp; Cookies/Desserts &nbsp;&nbsp; Makes 1 dozen</p><p>1 egg white<br>3/4 cup sugar<br>1 cup peanut butter<br>1 teaspoon vanilla<br>1/2 cup flour</p><p>Beat egg white until foamy. Stir in sugar, beat again until stiff peaks form. Gently fold in peanut butter and vanilla. Add flour in small increments until dough forms. Chill dough for at least 2 hours. Roll into balls, roll in sugar, press down with a fork, and bake at 350° F for 10 to 12 minutes. Let cool on cookie sheet. These are very fragile.</p></div>",
+    "sourceNumber": 26,
+    "question": "Which of the following conclusions can be taken from the passage?",
+    "options": [
+      "The cookies made with this recipe are especially good for midnight snacks.",
+      "The cookies made from this recipe would be good to serve at a large party.",
+      "The cookies made with this recipe would be good to send to college students.",
+      "The cookies made with this recipe may have been handed down in a family."
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 27,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "stimulusHtml": "<div style=\"border:2px solid #333;padding:16px 18px;margin:0 0 24px;max-width:560px;line-height:1.45;\"><p><strong>Peanut Butter Cookies</strong></p><p>Grandma Harry &nbsp;&nbsp; 30 minutes &nbsp;&nbsp; Cookies/Desserts &nbsp;&nbsp; Makes 1 dozen</p><p>1 egg white<br>3/4 cup sugar<br>1 cup peanut butter<br>1 teaspoon vanilla<br>1/2 cup flour</p><p>Beat egg white until foamy. Stir in sugar, beat again until stiff peaks form. Gently fold in peanut butter and vanilla. Add flour in small increments until dough forms. Chill dough for at least 2 hours. Roll into balls, roll in sugar, press down with a fork, and bake at 350° F for 10 to 12 minutes. Let cool on cookie sheet. These are very fragile.</p></div>",
+    "sourceNumber": 27,
+    "question": "Which of the following statements about the passage is true?",
+    "options": [
+      "These cookies should be cooled on a baking rack.",
+      "Folding in peanut butter must be done with an electric appliance.",
+      "These cookies can be cooked in a microwave oven.",
+      "Beating egg whites means stirring them vigorously."
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 28,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "stimulusHtml": "",
+    "sourceNumber": 28,
+    "question": "The jurors for the trial were randomly selected from a pool.\n\nIn which of the following sentences does the word \"pool\" have the same meaning as the sentence above?",
+    "options": [
+      "They looked nervously at the pool of oil under the car.",
+      "The group planned to meet at nine o'clock at the pool hall.",
+      "The children had to pool their money to buy ice cream.",
+      "The pool of available workers diminished during the summer."
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 29,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "stimulusHtml": "",
+    "sourceNumber": 29,
+    "question": "A banking website requires its customers to create a secure password. It requires a password that is eight or more characters long and uses at least four letters, at least three numbers, and at least one punctuation mark. No more than two letters can be in a sequence, and the first character should be a number. A punctuation mark cannot be the first or last character, and the password should end in a letter.\n\nWhich of the following options meets the website's password requirements?",
+    "options": [
+      "rm522jw",
+      "Rmj_sw?22",
+      "2.2rm!5e",
+      "522rm!jw"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 30,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "stimulusHtml": "<div style=\"border:2px solid #333;padding:16px 18px;margin:0 0 24px;max-width:560px;line-height:1.45;\"><p><strong>ABC Caregivers</strong> is looking for an after-school caregiver to begin working with new clients on Monday, Oct. 2. The family seeks a candidate who is available from 3:00 to 7:00 p.m. Monday through Friday. The family guarantees pay for 20 hours a week, even if the caregiver works less, as well as up to 10 days paid vacation. Care is for a 12-year-old child who is involved in three different sports. A qualified candidate should be comfortable driving to and from practices, help with homework when needed, and hold certification in first aid and CPR.</p><p>Minimum requirements for this position also include a valid driver's license and a working cell phone. To be considered for this position, please email info@abccaregivers.com.</p></div>",
+    "sourceNumber": 30,
+    "question": "Which of the following pieces of information is provided in the classified ad?",
+    "options": [
+      "The days per week a caregiver is needed",
+      "The anticipated end date of the employment opportunity",
+      "The number of references the candidate should supply",
+      "How often the child's practices are held"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 31,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "stimulusHtml": "<p>Do you want to maximize the value of your home? Our company offers a manual showing which upgrades to a home provide the greatest return. When you register with one of our agents, the guide is free! Call right away and get the information every homeowner needs! 1-800-444-HOME.</p>",
+    "sourceNumber": 31,
+    "question": "Which of the following is the main purpose of the advertisement?",
+    "options": [
+      "To inform",
+      "To entertain",
+      "To question",
+      "To persuade"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 32,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "stimulusHtml": "",
+    "sourceNumber": 32,
+    "question": "A high school student is researching 19th century Mississippi River steamboat pilots for a history report. Which of the following combinations of keywords should she type into the internet search engine to begin her research?",
+    "options": [
+      "\"steamboat pilots,\" \"Mississippi River,\" and \"1800s\"",
+      "\"famous rivers\" and \"1900s\"",
+      "\"boats,\" \"famous pilots,\" and \"United States of America\"",
+      "\"Mississippi River\" and \"steamboats\""
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 33,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "stimulusHtml": "",
+    "sourceNumber": 33,
+    "question": "When reading a textbook, where can a reader find all of the instances of a given word in the text?",
+    "options": [
+      "Introduction",
+      "Table of contents",
+      "Index",
+      "Glossary"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "number": 34,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "stimulusHtml": "",
+    "sourceNumber": 34,
+    "question": "A high school football team arrives to practice one day to find that all of their equipment is missing. The coach wants to make sure he has considered every possibility before he alerts the principal. Which of the following pieces of evidence would be relevant to help explain what happened to the equipment?",
+    "options": [
+      "The equipment has failed a recent safety inspection.",
+      "The football team often exchanges pranks with their biggest rival, a high school team from the next town.",
+      "The school board has instituted budget cuts to the football program.",
+      "Many of the players' parents have raised concerns over the potential for head injuries in contact football."
+    ],
+    "correctIndex": 1
+  },
+  {
+    "number": 35,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "stimulusHtml": "<div style=\"font-weight:700;margin-bottom:8px;\">TABLE OF CONTENTS</div><table style=\"border-collapse:collapse;font-size:16px;margin:0 0 24px;max-width:100%;\"><tbody><tr><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">Introduction</td><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">4</td></tr><tr><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">Marketing</td><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">6</td></tr><tr><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">Operations</td><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">9</td></tr><tr><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">Financial Projections</td><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">17</td></tr><tr><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;;padding-left:32px;\">Year 1</td><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">18</td></tr><tr><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;;padding-left:32px;\">Year 2</td><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">20</td></tr><tr><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;;padding-left:32px;\">Year 3</td><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">22</td></tr><tr><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">Staff Projections</td><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">26</td></tr><tr><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">Equipment Projections</td><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">39</td></tr><tr><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">Contingency Planning</td><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">51</td></tr><tr><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">Appendices</td><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">62</td></tr></tbody></table>",
+    "sourceNumber": 35,
+    "question": "Use the table of contents to answer the question. Which of the following page ranges most likely focuses on the company's predicted profits and losses?",
+    "options": [
+      "9-16",
+      "17-25",
+      "26-50",
+      "51-55"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "number": 36,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>The Americans with Disabilities Act (ADA) passed on July 26, 1990, and was an exciting victory for disability rights in the U.S. The ADA is a civil rights law that allows mainstream life for people with disabilities. This law includes the prohibition of discrimination and provides equality of opportunity.</p><p>The passage of the ADA occurred, in part, because of testimony from people with disabilities about their experiences with discrimination. Multiple individuals shared their testimony about disability discrimination with government leaders. This included a woman who had cerebral palsy barred from a theater, a veteran who couldn't access public transportation, and a breast cancer survivor who lost employment chances because of their medical history. Legislation like ADA, which prohibits institutional bigotry, is important for societal progress.</p>",
+    "stimulus": "",
+    "stimulusHtml": "<p><strong>Stimulus: 1 of 1</strong></p><p>In a speech to the American Association of People with Disabilities (AAPD), U.S. Senator and disabled veteran Tammy Duckworth said, \"I want to congratulate AAPD for 25 incredible years of working on the issues that matter most. From education to health care, voting to housing, you've refused to let Americans with disabilities be pushed to the margins. While we've come a long way since the ink dried on the ADA 30 years ago, everyone here knows how far we still have to go over the next 30 to make this country actually truly accessible.\"</p>",
+    "sourceNumber": 36,
+    "question": "Which of the following sources could be used to find additional information about the effect of the legislation discussed in the two passages?",
+    "options": [
+      "American Journal of Science",
+      "Federal Election Commission Records",
+      "Journal of Educational Research",
+      "Disability Studies Quarterly"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 37,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "stimulusHtml": "<p>Even though she did not appear to be paying attention, she was cognizant of her surroundings.</p>",
+    "sourceNumber": 37,
+    "question": "Which of the following words is an antonym for the word \"cognizant\" as used in the sentence?",
+    "options": [
+      "Wary",
+      "Ignorant",
+      "Critical",
+      "Dismissive"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "number": 38,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "stimulusHtml": "",
+    "sourceNumber": 38,
+    "question": "Which of the following is a commonly recurring theme in fictional writing?",
+    "options": [
+      "Good and evil are in constant struggle.",
+      "Power is more important than love.",
+      "Progress is independent of human action.",
+      "Wealth always brings happiness."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 39,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "stimulusHtml": "<div style=\"font-weight:700;margin-bottom:8px;\">Federal Land as a Percentage of Total Northeastern State Land Area</div><table style=\"border-collapse:collapse;font-size:16px;margin:0 0 24px;max-width:100%;\"><thead><tr><th style=\"border:1px solid #d9d9d9;padding:8px 12px;text-align:left;font-weight:700;\">State</th><th style=\"border:1px solid #d9d9d9;padding:8px 12px;text-align:left;font-weight:700;\">Percent of Federal Land</th></tr></thead><tbody><tr><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">Connecticut</td><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">0.4</td></tr><tr><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">Delaware</td><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">2.0</td></tr><tr><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">Maine</td><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">1.1</td></tr><tr><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">Maryland</td><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">2.8</td></tr><tr><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">Massachusetts</td><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">1.9</td></tr><tr><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">New Hampshire</td><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">13.4</td></tr><tr><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">New Jersey</td><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">3.1</td></tr><tr><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">New York</td><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">0.8</td></tr><tr><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">Pennsylvania</td><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">2.5</td></tr><tr><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">Rhode Island</td><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">0.4</td></tr><tr><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">Vermont</td><td style=\"border:1px solid #e1e1e1;padding:8px 12px;text-align:left;\">7.5</td></tr></tbody></table>",
+    "sourceNumber": 39,
+    "question": "Which of the following statements is true according to the information provided in the table?",
+    "options": [
+      "Delaware and Maine combined have the same percentage of federal land as New Jersey.",
+      "New York and Massachusetts combined have a greater percentage of federal land than Maryland.",
+      "Connecticut has a lower percentage of federal land than any other state.",
+      "Vermont has the greatest percentage of federal land."
+    ],
+    "correctIndex": 1
+  },
+  {
+    "number": 40,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "stimulusHtml": "",
+    "sourceNumber": 40,
+    "question": "Which of the following is a true statement regarding themes?",
+    "options": [
+      "The themes explored by Shakespeare have no relevance to a modern audience.",
+      "Common themes appear throughout various literary genres.",
+      "It is impossible to accurately compare themes in poetry to themes in fiction.",
+      "Themes are superficial and have no deeper meaning or significance."
+    ],
+    "correctIndex": 1
+  },
+  {
+    "number": 41,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<div style=\"border:2px solid #333;padding:16px 18px;margin:0 0 24px;max-width:560px;line-height:1.45;\"><p>One way of classifying types of clouds is by the way in which they are formed. Two categories are cumulus and stratus. Cumulus clouds are formed when areas of moist air are warmed and rise quickly. Cumulus clouds are puffy or billowy and resemble piles of cotton. Stratus clouds are formed when warmer moist air rises over cold air. Stratus clouds resemble a blanket spread out across the sky.</p></div>",
+    "stimulus": "",
+    "stimulusHtml": "",
+    "sourceNumber": 41,
+    "question": "Which of the following is the main idea of the paragraph?",
+    "options": [
+      "The correct categorization of clouds",
+      "The effect of moisture in the air",
+      "The formation of clouds",
+      "The description of cumulus clouds"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "number": 42,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "stimulusHtml": "<ol type=\"I\"><li>Rocks<ol type=\"A\"><li>Igneous (e.g., granite)</li><li>Sedimentary<ol><li>Clastic (e.g., sandstone)</li><li>Biochemical (e.g., limestone)</li></ol></li><li>Metamorphic<ol><li>Formed from igneous (e.g., orthogneiss)</li><li>Formed from sedimentary (e.g., marble)</li></ol></li></ol></li></ol>",
+    "sourceNumber": 42,
+    "question": "Based on the above outline, which of the following can most reasonably be inferred?",
+    "options": [
+      "Igneous rocks make up the largest portion of the Earth's crust.",
+      "Metamorphic rocks are the most recently formed of the three types of rocks.",
+      "Types of sedimentary rocks include clastic and biochemical.",
+      "The formation of a given sedimentary rock cannot involve both clastic and biochemical processes."
+    ],
+    "correctIndex": 2
+  },
+  {
+    "number": 43,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "stimulusHtml": "",
+    "sourceNumber": 43,
+    "question": "The presentation on reducing carbon emissions was organized to highlight the most salient points to the board of directors.\n\nUsing context clues, which of the following is a synonym for salient?",
+    "options": [
+      "Whimsical",
+      "Momentary",
+      "Important",
+      "Salacious"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "number": 44,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "stimulusHtml": "<p><strong>Cooking with Super Fire Charcoal</strong><br><strong>1. Arrange the Coals:</strong> In a pyramid. Add lighter fluid according to lighter fluid directions.<br><strong>2. Light the Coals:</strong> Leave the grill uncovered. Flames will die out while coals start to ash over.<br><strong>3. Spread the Coals:</strong> In a single layer when covered with ash (about 10 minutes). Begin cooking.</p><p><strong>FOR YOUR SAFETY!</strong><br>Do not add lighter fluid directly to burning or hot charcoal.<br>Never grill indoors.<br>Store in a cool, dry place.</p>",
+    "sourceNumber": 44,
+    "question": "Which of the following is correct according to the directions?",
+    "options": [
+      "This charcoal should be stored outdoors.",
+      "Lighter fluid should be added when the coals start to ash.",
+      "The coals should be in a single layer when the lighter fluid is added.",
+      "The user should read the lighter fluid directions before grilling."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 45,
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "stimulusHtml": "",
+    "sourceNumber": 45,
+    "question": "When evaluating an author's point of view, which of the following is important for the reader to consider?",
+    "options": [
+      "The author's success in achieving the purpose of their writing",
+      "The author's biographical information, such as date of birth",
+      "The author's personal or business interest in the subject",
+      "The author's written use of jargon and informal language"
+    ],
+    "correctIndex": 2
+  }
+];
+const totalQuestions = questions.length;
+const initialSeconds = 60 * 60;
+let current = 0;
+let answers = Array(questions.length).fill(null);
+let remaining = initialSeconds;
+
+const qNumber = document.getElementById('questionNumber');
+const brandTitle = document.getElementById('brandTitle');
+const passageTitle = document.getElementById('passageTitle');
+const passageEl = document.getElementById('passage');
+const stimulusEl = document.getElementById('stimulus');
+const questionText = document.getElementById('questionText');
+const dotsEl = document.getElementById('dots');
+const optionsEl = document.getElementById('options');
+const feedbackEl = document.getElementById('answerFeedback');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+const timerEl = document.getElementById('timer');
+const statusEl = document.getElementById('status');
+const mainEl = document.querySelector('.main');
+const leftColEl = document.querySelector('.left-col');
+const rightColEl = document.querySelector('.right-col');
+
+function buildDots(activeNumber) {
+  dotsEl.innerHTML = '';
+  for (let i = 1; i <= totalQuestions; i++) {
+    const d = document.createElement('span');
+    d.className = 'dot' + (i === activeNumber ? ' active' : '');
+    dotsEl.appendChild(d);
+  }
+}
+
+function setQuestionLayout(item) {
+  const hasLeftContent = Boolean((item.passageTitle || '').trim() || (item.passageHtml || '').trim());
+  if (hasLeftContent) {
+    mainEl.style.gridTemplateColumns = '';
+    leftColEl.style.display = '';
+    rightColEl.style.paddingTop = '';
+  } else {
+    mainEl.style.gridTemplateColumns = '1fr';
+    leftColEl.style.display = 'none';
+    rightColEl.style.paddingTop = '4px';
+  }
+}
+
+function render() {
+  const item = questions[current];
+  setQuestionLayout(item);
+
+  brandTitle.textContent = item.sectionTitle || 'ATI TEAS Version 7 - Reading';
+  qNumber.textContent = `Question: ${item.number} of ${totalQuestions}`;
+  passageTitle.textContent = item.passageTitle || '';
+  passageEl.innerHTML = item.passageHtml || '';
+  stimulusEl.innerHTML = item.stimulusHtml || item.stimulus || '';
+  questionText.innerHTML = (item.question || '').replace(/\n/g, '<br>');
+
+  buildDots(item.number);
+
+  optionsEl.innerHTML = '';
+  item.options.forEach((opt, index) => {
+    const row = document.createElement('div');
+    const answered = answers[current] !== null;
+    let className = 'option';
+    if (answers[current] === index) className += ' selected';
+    if (answered && index === item.correctIndex) className += ' correct';
+    if (answered && answers[current] === index && index !== item.correctIndex) className += ' incorrect';
+    row.className = className;
+    row.tabIndex = 0;
+
+    const radio = document.createElement('span');
+    radio.className = 'radio';
+
+    const label = document.createElement('span');
+    label.className = 'option-text';
+    label.textContent = opt;
+
+    row.appendChild(radio);
+    row.appendChild(label);
+
+    row.addEventListener('click', () => selectOption(index));
+    row.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        selectOption(index);
+      }
+    });
+
+    optionsEl.appendChild(row);
+  });
+
+  if (answers[current] !== null) {
+    const correctText = item.options[item.correctIndex];
+    const isCorrect = answers[current] === item.correctIndex;
+    feedbackEl.className = 'answer-feedback show' + (isCorrect ? '' : ' wrong');
+    feedbackEl.textContent = isCorrect
+      ? `Correct. Answer: ${correctText}`
+      : `Incorrect. Correct answer: ${correctText}`;
+  } else {
+    feedbackEl.className = 'answer-feedback';
+    feedbackEl.textContent = '';
+  }
+
+  prevBtn.disabled = current === 0;
+  nextBtn.textContent = current === questions.length - 1 ? 'Finish' : 'Continue';
+  statusEl.textContent = `${answers.filter(a => a !== null).length} of ${questions.length} uploaded reading questions answered`;
+}
+
+function selectOption(index) {
+  answers[current] = index;
+  render();
+}
+
+prevBtn.addEventListener('click', () => {
+  if (current > 0) {
+    current--;
+    render();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+});
+
+nextBtn.addEventListener('click', () => {
+  if (current < questions.length - 1) {
+    current++;
+    render();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  } else {
+    alert('You have reached the end of the uploaded reading questions.');
+  }
+});
+
+function tick() {
+  if (remaining > 0) remaining--;
+  const h = String(Math.floor(remaining / 3600)).padStart(2, '0');
+  const m = String(Math.floor((remaining % 3600) / 60)).padStart(2, '0');
+  const s = String(remaining % 60).padStart(2, '0');
+  timerEl.textContent = `${h}:${m}:${s}`;
+}
+
+render();
+setInterval(tick, 1000);
+</script>
+</body>
+</html>

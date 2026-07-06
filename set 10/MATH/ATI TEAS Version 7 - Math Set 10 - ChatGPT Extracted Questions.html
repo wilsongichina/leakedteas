@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ATI TEAS Version 7 Science Practice Questions</title>
+  <style>
+    :root {
+      --text:#4a4a4a;
+      --heading:#333;
+      --blue:#caebfb;
+      --blue-strong:#b7dcff;
+      --btn:#b6e4e7;
+      --btn-text:#50646b;
+      --dot:#8b8f92;
+      --dot-light:#c1e5fb;
+      --dot-active:#89bce8;
+      --olive:#6b7300;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      color:var(--text);
+      background:#fff;
+    }
+    .exam-shell {
+      max-width: 1280px;
+      margin: 0 auto;
+      min-height: 100vh;
+      padding: 34px 32px 42px;
+      display:flex;
+      flex-direction:column;
+    }
+    .topbar {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding: 0 10px 16px;
+      margin-bottom: 10px;
+      border-bottom: 5px solid transparent;
+      border-image: repeating-linear-gradient(135deg, var(--blue) 0 3px, transparent 3px 8px) 12;
+    }
+    .brand {
+      font-size: 18px;
+      font-weight: 700;
+      color:#3a3a3a;
+    }
+    .close {
+      border:none;
+      background:#f8f8f8;
+      color:#444;
+      font-weight:700;
+      font-size:14px;
+      padding:10px 16px;
+      display:flex;
+      align-items:center;
+      gap:6px;
+      text-transform:uppercase;
+    }
+    .close .x {
+      width:16px;
+      height:16px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      background:#444;
+      color:#fff;
+      line-height:1;
+      font-size:12px;
+    }
+    .main {
+      flex:1;
+      display:grid;
+      grid-template-columns: minmax(0, 1fr) minmax(420px, 500px);
+      gap: 36px;
+      align-items:start;
+      padding: 6px 8px 0;
+    }
+    .left-col {
+      min-width:0;
+    }
+    .right-col {
+      min-width:0;
+      padding-top: 4px;
+    }
+    .top-question-row {
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:24px;
+      margin-bottom: 18px;
+      padding: 0 6px;
+    }
+    h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--heading);
+      font-size: 28px;
+      margin: 0;
+      line-height: 1.2;
+    }
+    .utility {
+      text-align:right;
+      flex:0 0 auto;
+      min-width: 195px;
+      display:flex;
+      flex-direction:column;
+      align-items:flex-end;
+      gap:10px;
+    }
+    .timer-row {
+      display:flex;
+      align-items:center;
+      justify-content:flex-end;
+      gap:14px;
+      width:100%;
+    }
+    .timer {
+      font-weight:700;
+      margin-bottom:0;
+      white-space:nowrap;
+    }
+    .timer span { font-weight:400; }
+    .flag-row {
+      display:flex;
+      justify-content:flex-end;
+      width:100%;
+    }
+    .calc {
+      width:33px;
+      height:43px;
+      border:4px solid var(--olive);
+      position:relative;
+      flex:0 0 auto;
+    }
+    .calc:before {
+      content:"";
+      position:absolute;
+      left:6px;
+      right:6px;
+      top:5px;
+      height:6px;
+      background:#fff;
+    }
+    .calc:after {
+      content:"";
+      position:absolute;
+      left:6px;
+      top:18px;
+      width:4px;
+      height:4px;
+      background:#fff;
+      box-shadow:9px 0 #fff,18px 0 #fff,0 9px #fff,9px 9px #fff,18px 9px #fff,0 18px #fff,9px 18px #fff,18px 18px #fff;
+    }
+    .flag {
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      border:1px solid #d6d6d6;
+      background:#fff;
+      padding:11px 16px;
+      color:#555;
+      font-weight:700;
+      box-shadow:0 1px 2px rgba(0,0,0,.05);
+    }
+    .flag-icon {
+      width:22px;
+      height:27px;
+      border:3px solid #555;
+      border-top:none;
+      position:relative;
+    }
+    .flag-icon:before {
+      content:"";
+      position:absolute;
+      left:5px;
+      top:-9px;
+      width:13px;
+      height:24px;
+      background:#555;
+      clip-path:polygon(0 0,100% 0,100% 78%,50% 58%,0 78%);
+    }
+    .passage-title {
+      font-weight:700;
+      font-size:18px;
+      color:#444;
+      margin: 0 0 14px;
+    }
+    .passage {
+      font-size:16px;
+      line-height:1.52;
+      color:#595959;
+      padding: 0 6px 8px;
+    }
+    .passage p {
+      margin: 0 0 14px;
+    }
+    .passage ul {
+      margin: 0 0 14px 24px;
+      padding:0;
+    }
+    .passage li {
+      margin: 0 0 7px;
+    }
+    .stimulus {
+      font-weight:700;
+      font-size:18px;
+      color:#444;
+      margin: 0 0 2px;
+    }
+    .diagram-stimulus {
+      margin: 14px 0 26px;
+      text-align:left;
+    }
+    .diagram-stimulus img {
+      display:block;
+      height:auto;
+      max-width:100%;
+      background:#fff;
+      border:0;
+    }
+    .question-text {
+      border-top:1px solid #dfdfdf;
+      padding-top:8px;
+      font-weight:700;
+      color:#3d3d3d;
+      font-size:17px;
+      line-height:1.35;
+      margin-bottom:16px;
+    }
+    .dots {
+      display:flex;
+      align-items:center;
+      gap:11px;
+      margin: 0 0 24px;
+      overflow:hidden;
+      flex-wrap:nowrap;
+    }
+    .dot {
+      width:6px;
+      height:6px;
+      border-radius:50%;
+      background:var(--dot);
+      flex:0 0 auto;
+    }
+    .dot:nth-child(7n) { background:var(--dot-light); }
+    .dot.active {
+      width:9px;
+      height:9px;
+      background:var(--dot-active);
+      box-shadow:0 0 0 2px rgba(139,187,230,.18);
+    }
+    .options {
+      display:flex;
+      flex-direction:column;
+      gap:7px;
+      padding-bottom: 10px;
+    }
+    .option {
+      min-height: 54px;
+      display:flex;
+      align-items:flex-start;
+      gap:16px;
+      padding:12px 14px;
+      border:2px solid transparent;
+      border-radius:2px;
+      cursor:pointer;
+      user-select:none;
+      background:#fff;
+    }
+    .option:hover,
+    .option.selected {
+      border-color:var(--blue-strong);
+      box-shadow:0 0 2px rgba(80,145,255,.45);
+    }
+    .option.correct {
+      border-color:#4caf50;
+      background:#f1fbf3;
+      box-shadow:0 0 2px rgba(76,175,80,.45);
+    }
+    .option.incorrect {
+      border-color:#e15757;
+      background:#fff4f4;
+      box-shadow:0 0 2px rgba(225,87,87,.45);
+    }
+    .option.correct .radio::after {
+      content:"";
+      width:9px;
+      height:9px;
+      border-radius:50%;
+      background:#3f9b45;
+      box-shadow:0 0 2px #2f7d35;
+    }
+    .option.incorrect .radio::after {
+      content:"";
+      width:9px;
+      height:9px;
+      border-radius:50%;
+      background:#c84242;
+      box-shadow:0 0 2px #8f2929;
+    }
+    .radio {
+      width:22px;
+      height:22px;
+      border-radius:50%;
+      border:2px solid #9d9d9d;
+      background:#e8e8e8;
+      display:inline-grid;
+      place-items:center;
+      flex:0 0 auto;
+      margin-top:1px;
+    }
+    .selected .radio::after {
+      content:"";
+      width:9px;
+      height:9px;
+      border-radius:50%;
+      background:#656565;
+      box-shadow:0 0 2px #333;
+    }
+    .option-text {
+      line-height:1.45;
+      color:#5a5a5a;
+      font-size:16px;
+    }
+    .answer-feedback {
+      margin-top:14px;
+      padding:12px 14px;
+      border-left:4px solid #4caf50;
+      background:#f1fbf3;
+      color:#315d34;
+      font-weight:700;
+      line-height:1.45;
+      display:none;
+    }
+    .answer-feedback.show {
+      display:block;
+    }
+    .answer-feedback.wrong {
+      border-left-color:#e15757;
+      background:#fff4f4;
+      color:#7a2d2d;
+    }
+    .bottom-controls {
+      margin-top: 28px;
+      padding: 0 10px;
+    }
+    .nav {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
+    }
+    .arrow-btn {
+      border:none;
+      background:var(--btn);
+      color:var(--btn-text);
+      font-weight:700;
+      min-width:126px;
+      height:45px;
+      cursor:pointer;
+      position:relative;
+      text-transform:uppercase;
+      letter-spacing:.2px;
+    }
+    .prev {
+      clip-path:polygon(22px 0,100% 0,100% 100%,22px 100%,0 50%);
+      padding-left:18px;
+    }
+    .next {
+      clip-path:polygon(0 0,calc(100% - 22px) 0,100% 50%,calc(100% - 22px) 100%,0 100%);
+      padding-right:18px;
+    }
+    .arrow-btn:disabled {
+      opacity:.45;
+      cursor:not-allowed;
+    }
+    .status {
+      margin-top:12px;
+      text-align:center;
+      color:#777;
+      font-size:13px;
+    }
+    @media (max-width: 980px) {
+      .exam-shell {
+        padding: 18px 14px 28px;
+      }
+      .topbar {
+        padding: 0 0 12px;
+      }
+      .brand {
+        font-size: 15px;
+      }
+      .close {
+        font-size:12px;
+        padding:8px 10px;
+      }
+      .top-question-row {
+        flex-direction:column;
+        gap:10px;
+        margin-bottom:14px;
+        padding:0;
+      }
+      .utility {
+        width:auto;
+        min-width:0;
+        text-align:right;
+        align-items:flex-end;
+        align-self:flex-end;
+        margin-left:auto;
+        gap:8px;
+      }
+      .timer-row {
+        justify-content:flex-end;
+        gap:10px;
+      }
+      .flag-row {
+        justify-content:flex-end;
+        width:100%;
+      }
+      .calc {
+        width:28px;
+        height:38px;
+        border-width:3px;
+      }
+      .calc:before {
+        left:5px;
+        right:5px;
+        top:5px;
+        height:5px;
+      }
+      .calc:after {
+        left:5px;
+        top:16px;
+        width:3px;
+        height:3px;
+        box-shadow:8px 0 #fff,16px 0 #fff,0 8px #fff,8px 8px #fff,16px 8px #fff,0 16px #fff,8px 16px #fff,16px 16px #fff;
+      }
+      .flag {
+        min-width:96px;
+        justify-content:center;
+        padding:9px 12px;
+        font-size:13px;
+      }
+      .flag-icon {
+        width:20px;
+        height:24px;
+      }
+      .main {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding:0;
+      }
+      h1 {
+        font-size:24px;
+      }
+      .passage-title, .stimulus {
+        font-size:17px;
+      }
+      .passage,
+      .option-text {
+        font-size:14px;
+      }
+      .question-text {
+        font-size:15px;
+      }
+      .diagram-stimulus {
+        margin: 12px 0 22px;
+      }
+      .diagram-stimulus img {
+        width:100% !important;
+        max-width:100% !important;
+      }
+      .dots {
+        gap:8px;
+        margin-bottom:18px;
+      }
+      .dot {
+        width:5px;
+        height:5px;
+      }
+      .dot.active {
+        width:8px;
+        height:8px;
+      }
+      .option {
+        gap:12px;
+        padding:10px 8px;
+        min-height:52px;
+      }
+      .radio {
+        width:21px;
+        height:21px;
+      }
+      .bottom-controls {
+        padding:0;
+        margin-top:20px;
+      }
+      .arrow-btn {
+        min-width:110px;
+        height:42px;
+        font-size:12px;
+      }
+      .status {
+        font-size:12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="exam-shell">
+    <header class="topbar">
+      <div class="brand" id="brandTitle">TEAS Version 7 - Reading</div>
+      <button class="close" type="button"><span class="x">×</span> Close</button>
+    </header>
+
+    <div class="top-question-row">
+      <h1 id="questionNumber">Question: 1 of 45</h1>
+      <div class="utility">
+        <div class="timer-row">
+          <div class="timer">Time Remaining: <span id="timer">00:55:00</span></div>
+          <div class="calc" aria-label="calculator icon"></div>
+        </div>
+        <div class="flag-row">
+          <button class="flag" type="button"><span class="flag-icon"></span> FLAG</button>
+        </div>
+      </div>
+    </div>
+
+    <main class="main">
+      <section class="left-col">
+        <div class="passage-title" id="passageTitle"></div>
+        <div class="passage" id="passage"></div>
+      </section>
+
+      <section class="right-col">
+        <div class="question-text" id="questionText"></div>
+        <div class="stimulus" id="stimulus"></div>
+        <div class="dots" id="dots" aria-hidden="true"></div>
+        <div class="options" id="options"></div>
+        <div class="answer-feedback" id="answerFeedback"></div>
+      </section>
+    </main>
+
+    <div class="bottom-controls">
+      <nav class="nav">
+        <button class="arrow-btn prev" id="prevBtn" type="button">Previous</button>
+        <button class="arrow-btn next" id="nextBtn" type="button">Continue</button>
+      </nav>
+      <div class="status" id="status"></div>
+    </div>
+  </div>
+
+<script>
+const questions = [
+  {
+    "number": 1,
+    "sectionTitle": "ATI TEAS Version 7 - Math",
+    "sourceNumber": "QUESTION 1 OF 38.png",
+    "stimulusHtml": "",
+    "question": "Which of the following fractions is equivalent to 12/16?",
+    "options": [
+      "2/6",
+      "4/3",
+      "20/32",
+      "6/8"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 2,
+    "sectionTitle": "ATI TEAS Version 7 - Math",
+    "sourceNumber": "QUESTION 2 OF 38.png",
+    "stimulusHtml": "",
+    "question": "A gardener is planning to plant a border of flowers around a rectangular garden that measures 15 meters (m) in length and 10 meters in width. Which of the following is the total length of flower border needed for the garden?",
+    "options": [
+      "100 m",
+      "25 m",
+      "150 m",
+      "50 m"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 3,
+    "sectionTitle": "ATI TEAS Version 7 - Math",
+    "sourceNumber": "QUESTION 3 OF 38.png",
+    "stimulusHtml": "",
+    "question": "Four friends are sharing a pizza. One friend eats half of the pizza. The other three friends equally divide the rest among themselves. What portion of the pizza did each of the other three friends receive?",
+    "options": [
+      "1/3",
+      "1/4",
+      "1/5",
+      "1/6"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 4,
+    "sectionTitle": "ATI TEAS Version 7 - Math",
+    "sourceNumber": "QUESTION 4 OF 38.png",
+    "stimulusHtml": "",
+    "question": "A jar contains 6 red marbles, 4 blue marbles, and 10 green marbles. If a marble is selected at random from the jar, which of the following is the probability that it is not red?",
+    "options": [
+      "1/5",
+      "3/10",
+      "1/2",
+      "7/10"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 5,
+    "sectionTitle": "ATI TEAS Version 7 - Math",
+    "sourceNumber": "QUESTION 5 OF 38.png",
+    "stimulusHtml": "",
+    "question": "A teacher has asked all the students in the class which days of the week they get up after 8 a.m. Which of the following is the best way to display the frequency for each day of the week?",
+    "options": [
+      "Histogram",
+      "Bar graph",
+      "Scatterplot",
+      "Pie graph"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "number": 6,
+    "sectionTitle": "ATI TEAS Version 7 - Math",
+    "sourceNumber": "QUESTION 6 OF 38.png",
+    "stimulusHtml": "",
+    "question": "Which of the following correctly rounds the value below to the hundredths place?<br><br>1782.96471",
+    "options": [
+      "1,782.96",
+      "1,800",
+      "1,782.96400",
+      "1,782.97"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 7,
+    "sectionTitle": "ATI TEAS Version 7 - Math",
+    "sourceNumber": "QUESTION 7 OF 38.png",
+    "stimulusHtml": "",
+    "question": "An employee earned a 20% raise. Their new salary is $60,000. How much was their salary before the raise?",
+    "options": [
+      "$50,000",
+      "$12,000",
+      "$72,000",
+      "$48,000"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 8,
+    "sectionTitle": "ATI TEAS Version 7 - Math",
+    "sourceNumber": "QUESTION 8 OF 38.png",
+    "stimulusHtml": "",
+    "question": "A nurse is administering a total of 70 milligrams of medication to two patients. The dosage for Patient A must be 2.5 times the dosage for Patient B. Which of the following dosages should be administered to Patient A?",
+    "options": [
+      "56 mg",
+      "50 mg",
+      "20 mg",
+      "28 mg"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "number": 9,
+    "sectionTitle": "ATI TEAS Version 7 - Math",
+    "sourceNumber": "QUESTION 9 OF 38.png",
+    "stimulusHtml": "<div class=\"diagram-stimulus\"><img src=\"set10-assets/math-q9-shaded-region.png\" alt=\"Shaded region diagram\" /></div>",
+    "question": "Which expression represents the area of the shaded region shown? <em>Prompt inferred because the source screenshot is cropped at the top.</em>",
+    "options": [
+      "(16 + 4π) in²",
+      "(16 - 4π) in²",
+      "(16π - 16) in²",
+      "(4π + 16) in²"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "number": 10,
+    "sectionTitle": "ATI TEAS Version 7 - Math",
+    "sourceNumber": "QUESTION 10 OF 38.png",
+    "stimulusHtml": "",
+    "question": "Which of the following pairs of fractions is equivalent?",
+    "options": [
+      "5/9 and 45/72",
+      "3/8 and 8/13",
+      "4/7 and 7/4",
+      "2/3 and 10/15"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 11,
+    "sectionTitle": "ATI TEAS Version 7 - Math",
+    "sourceNumber": "QUESTION 11 OF 38.png",
+    "stimulusHtml": "",
+    "question": "A garden has four sides. Three sides measure 5.5 meters (m) each, and one side measures 8.2 meters. Which of the following is the perimeter of the garden?",
+    "options": [
+      "27.4 m",
+      "13.7 m",
+      "24.7 m",
+      "16.5 m"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "number": 12,
+    "sectionTitle": "ATI TEAS Version 7 - Math",
+    "sourceNumber": "QUESTION 12 OF 38.png",
+    "stimulusHtml": "",
+    "question": "If a data set contains the numbers 5, 8, 10, 12, and 15, which of the following statements about the data set is true?",
+    "options": [
+      "The median is equal to the mean.",
+      "The median is greater than the mean.",
+      "The mean is greater than the median.",
+      "The range is less than the median."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 13,
+    "sectionTitle": "ATI TEAS Version 7 - Math",
+    "sourceNumber": "QUESTION 13 OF 38.png",
+    "stimulusHtml": "",
+    "question": "A store sells two kinds of candles, scented and unscented. The scented candles burn 1/12 inch in 20 min. The unscented candles burn 1/6 inch in 30 min. Which type of candle burns faster in 1 hour and what is its burn rate?",
+    "options": [
+      "The scented candles burn faster, at a rate of 1/3 inch/hr.",
+      "The scented candles burn faster, at a rate of 1/4 inch/hr.",
+      "The unscented candles burn faster, at a rate of 1/3 inch/hr.",
+      "Both candles burn at the same rate of 1/4 inch/hr."
+    ],
+    "correctIndex": 2
+  },
+  {
+    "number": 14,
+    "sectionTitle": "ATI TEAS Version 7 - Math",
+    "sourceNumber": "QUESTION 14 OF 38.png",
+    "stimulusHtml": "",
+    "question": "Which of the following is the correct simplification of the expression below?<br><br>20 - 18 ÷ 2 × 3 + (6 - 7)²",
+    "options": [
+      "16",
+      "18",
+      "-8",
+      "-6"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 15,
+    "sectionTitle": "ATI TEAS Version 7 - Math",
+    "sourceNumber": "QUESTION 15 OF 38.png",
+    "stimulusHtml": "",
+    "question": "Which of the following pairs of variables exhibit a positive correlation?",
+    "options": [
+      "Age and life expectancy",
+      "Stock market goes down, people lose money",
+      "Temperature and heater usage",
+      "Distance traveled and fuel used"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 16,
+    "sectionTitle": "ATI TEAS Version 7 - Math",
+    "sourceNumber": "QUESTION 16 OF 38.png",
+    "stimulusHtml": "",
+    "question": "A student is selling homemade lemonade. To make the lemonade, she must buy lemons for $0.75 each. She sells each cup of lemonade for $0.50.<br><br>Which of the following equations describes the overall profit, P, that the student would make by selling lemonade if x represents the number of lemons she buys and y represents the number of cups she sells?",
+    "options": [
+      "P = 0.50y - 0.75x",
+      "P = 0.75x - 0.50y",
+      "P = 0.50x - 0.75y",
+      "P = 0.75y - 0.50x"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 17,
+    "sectionTitle": "ATI TEAS Version 7 - Math",
+    "sourceNumber": "QUESTION 17 OF 38.png",
+    "stimulusHtml": "",
+    "question": "Which of the following pairs of fractions is equivalent to 5/6 and 7/8?",
+    "options": [
+      "20/48 and 42/48",
+      "20/24 and 21/24",
+      "10/12 and 14/12",
+      "10/16 and 14/16"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "number": 18,
+    "sectionTitle": "ATI TEAS Version 7 - Math",
+    "sourceNumber": "QUESTION 18 OF 38.png",
+    "stimulusHtml": "",
+    "question": "Which of the following is the fractional representation of the ratio below?<br><br>18:48",
+    "options": [
+      "4/1",
+      "3/8",
+      "8/3",
+      "1/4"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "number": 19,
+    "sectionTitle": "ATI TEAS Version 7 - Math",
+    "sourceNumber": "QUESTION 19 OF 38.png",
+    "stimulusHtml": "",
+    "question": "Which of the following is the place value of 6 in the number below?<br><br>123.45678",
+    "options": [
+      "Thousandths place",
+      "Ten-thousandths place",
+      "Hundredths place",
+      "Tenths place"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 20,
+    "sectionTitle": "ATI TEAS Version 7 - Math",
+    "sourceNumber": "QUESTION 20 OF 38.png",
+    "stimulusHtml": "",
+    "question": "A garden is designed in the shape of a quadrilateral. The garden can be divided into two right triangles, each with the base of 6 meters and height of 4 meters. Which of the following is the total area of the garden in square meters?",
+    "options": [
+      "48 square meters",
+      "24 square meters",
+      "20 square meters",
+      "12 square meters"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "number": 21,
+    "sectionTitle": "ATI TEAS Version 7 - Math",
+    "sourceNumber": "QUESTION 21 OF 38.png",
+    "stimulusHtml": "",
+    "question": "The length of a person's shadow is proportional to their height. If a person's shadow is 120 cm long and their height is 180 cm, how long is the shadow of a person who is 135 cm tall at the same time of day?",
+    "options": [
+      "75 cm",
+      "90 cm",
+      "160 cm",
+      "202.5 cm"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "number": 22,
+    "sectionTitle": "ATI TEAS Version 7 - Math",
+    "sourceNumber": "QUESTION 22 OF 38.png",
+    "stimulusHtml": "",
+    "question": "Which of the following is the range of the data set below?<br><br>8, 22, 15, 30, 14, 26, 17",
+    "options": [
+      "18",
+      "9",
+      "14",
+      "22"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 23,
+    "sectionTitle": "ATI TEAS Version 7 - Math",
+    "sourceNumber": "QUESTION 23 OF 38.png",
+    "stimulusHtml": "",
+    "question": "A recipe requires 3 cups of milk, but the only tool available is a household measuring cup that uses pints (pt). How many pints of milk are needed for the recipe?<br><br>Note: 1 pt = 2 cups",
+    "options": [
+      "6 pt",
+      "1.5 pt",
+      "2.5 pt",
+      "3 pt"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "number": 24,
+    "sectionTitle": "ATI TEAS Version 7 - Math",
+    "sourceNumber": "QUESTION 24 OF 38.png",
+    "stimulusHtml": "",
+    "question": "Identify the order of the following values from least to greatest. Use all the options.",
+    "options": [
+      "Correct order: -1.62, -1.36, -0.56, -0.52, 0.19, 0.9"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 25,
+    "sectionTitle": "ATI TEAS Version 7 - Math",
+    "sourceNumber": "QUESTION 25 OF 38.png",
+    "stimulusHtml": "",
+    "question": "A nurse needs to administer a dose of 750 milligrams of medication. If the nurse wants to administer 2 doses, which of the following is the amount of medication in grams?",
+    "options": [
+      "150,000 grams",
+      "1,500,000 grams",
+      "15 grams",
+      "1.5 grams"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 26,
+    "sectionTitle": "ATI TEAS Version 7 - Math",
+    "sourceNumber": "QUESTION 26 OF 38.png",
+    "stimulusHtml": "",
+    "question": "A recipe calls for 2.5 teaspoons of vanilla. 1 teaspoon equals approximately 4.93 mL. Which of the following is the correct amount of vanilla in mL?",
+    "options": [
+      "5.33 mL",
+      "7.43 mL",
+      "0.507 mL",
+      "12.325 mL"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 27,
+    "sectionTitle": "ATI TEAS Version 7 - Math",
+    "sourceNumber": "QUESTION 27 OF 38.png",
+    "stimulusHtml": "",
+    "question": "Place the following lengths in order from longest to shortest. Hint: 1 inch is approximately 2.54 centimeters.",
+    "options": [
+      "Correct order: 2 meters, 4.5 feet, 120 centimeters, 24 inches, 0.1 yards"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 28,
+    "sectionTitle": "ATI TEAS Version 7 - Math",
+    "sourceNumber": "QUESTION 28 OF 38.png",
+    "stimulusHtml": "",
+    "question": "Which of the following decimals equals 2.75%?",
+    "options": [
+      "0.0275",
+      "27.5",
+      "275",
+      "0.275"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 29,
+    "sectionTitle": "ATI TEAS Version 7 - Math",
+    "sourceNumber": "QUESTION 29 OF 38.png",
+    "stimulusHtml": "<div class=\"diagram-stimulus\"><img src=\"set10-assets/math-q29-scatterplot.png\" alt=\"Scatterplot of speed and stopping distance\" /></div>",
+    "question": "Which of the following statements best describes the relationship shown in the scatterplot? <em>Prompt inferred because the source screenshot is cropped at the top.</em>",
+    "options": [
+      "The stopping distance of a car may be predicted perfectly from its speed.",
+      "There is a negative correlation between stopping distance and speed.",
+      "There is no correlation between stopping distance and speed.",
+      "There is a positive correlation between stopping distance and speed."
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 30,
+    "sectionTitle": "ATI TEAS Version 7 - Math",
+    "sourceNumber": "QUESTION 30 OF 38.png",
+    "stimulusHtml": "",
+    "question": "A person's height is 5 feet, 10 inches. Which of the following is the appropriate estimate of this person's height in centimeters? (Note: 1 in = 2.54 cm)",
+    "options": [
+      "28 cm",
+      "152 cm",
+      "85 cm",
+      "178 cm"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 31,
+    "sectionTitle": "ATI TEAS Version 7 - Math",
+    "sourceNumber": "QUESTION 31 OF 38.png",
+    "stimulusHtml": "",
+    "question": "Which of the following numbers represents the median of the following data set?<br><br>23, 19, 22, 17, 20, 18, 22",
+    "options": [
+      "20",
+      "22",
+      "17",
+      "21"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 32,
+    "sectionTitle": "ATI TEAS Version 7 - Math",
+    "sourceNumber": "QUESTION 32 OF 38.png",
+    "stimulusHtml": "",
+    "question": "Which of the following inequalities is the solution to the inequality below?<br><br>-3(x + 1) > 2x + 7",
+    "options": [
+      "x > -6/5",
+      "x < -2",
+      "x > -2",
+      "x < -6/5"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "number": 33,
+    "sectionTitle": "ATI TEAS Version 7 - Math",
+    "sourceNumber": "QUESTION 33 OF 38.png",
+    "stimulusHtml": "<div class=\"diagram-stimulus\"><img src=\"set10-assets/math-q33-pie-chart.png\" alt=\"Circle graph showing 35% freshman, 29% sophomore, and 20% junior\" /></div>",
+    "question": "The circle graph shows the distribution of students by class. Which value best estimates the number of sophomores? <em>Prompt inferred because the source screenshot is cropped at the top.</em>",
+    "options": [
+      "255",
+      "204",
+      "447",
+      "370"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "number": 34,
+    "sectionTitle": "ATI TEAS Version 7 - Math",
+    "sourceNumber": "QUESTION 34 OF 38.png",
+    "stimulusHtml": "",
+    "question": "Which of the following numbers is an outlier in the data set below?<br><br>7, 9, 10, 10, 12, 14, 43",
+    "options": [
+      "14",
+      "43",
+      "10",
+      "7"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "number": 35,
+    "sectionTitle": "ATI TEAS Version 7 - Math",
+    "sourceNumber": "QUESTION 35 OF 38.png",
+    "stimulusHtml": "",
+    "question": "Which of the following values is the greatest?",
+    "options": [
+      "9/2",
+      "10/3",
+      "4.4",
+      "4.25"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 36,
+    "sectionTitle": "ATI TEAS Version 7 - Math",
+    "sourceNumber": "QUESTION 36 OF 38.png",
+    "stimulusHtml": "",
+    "question": "A rectangular box has a length of 8 meters (m), a width of 5 meters, and a height of 3 meters. Which of the following is the volume of the box in cubic meters (m³)?",
+    "options": [
+      "158 m³",
+      "120 m³",
+      "40 m³",
+      "24 m³"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "number": 37,
+    "sectionTitle": "ATI TEAS Version 7 - Math",
+    "sourceNumber": "QUESTION 37 OF 38.png",
+    "stimulusHtml": "",
+    "question": "Which of the following fractions is closest to 55.5%?",
+    "options": [
+      "5/9",
+      "4/9",
+      "6/10",
+      "5/6"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "number": 38,
+    "sectionTitle": "ATI TEAS Version 7 - Math",
+    "sourceNumber": "QUESTION 38 OF 38.png",
+    "stimulusHtml": "",
+    "question": "A professional football stadium has 36 sections labeled 101-136. Each section has 38 rows of standard stadium seating. Each row of each section on this level averages 22 seats. Estimate the number of seats available in the stadium by rounding each value to the nearest tens place.",
+    "options": [
+      "30,096",
+      "18,000",
+      "48,000",
+      "32,000"
+    ],
+    "correctIndex": 3
+  }
+];
+const totalQuestions = questions.length;
+const initialSeconds = 60 * 60;
+let current = 0;
+let answers = Array(questions.length).fill(null);
+let remaining = initialSeconds;
+
+const qNumber = document.getElementById('questionNumber');
+const brandTitle = document.getElementById('brandTitle');
+const passageTitle = document.getElementById('passageTitle');
+const passageEl = document.getElementById('passage');
+const stimulusEl = document.getElementById('stimulus');
+const questionText = document.getElementById('questionText');
+const dotsEl = document.getElementById('dots');
+const optionsEl = document.getElementById('options');
+const feedbackEl = document.getElementById('answerFeedback');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+const timerEl = document.getElementById('timer');
+const statusEl = document.getElementById('status');
+const mainEl = document.querySelector('.main');
+const leftColEl = document.querySelector('.left-col');
+const rightColEl = document.querySelector('.right-col');
+
+function buildDots(activeNumber) {
+  dotsEl.innerHTML = '';
+  for (let i = 1; i <= totalQuestions; i++) {
+    const d = document.createElement('span');
+    d.className = 'dot' + (i === activeNumber ? ' active' : '');
+    dotsEl.appendChild(d);
+  }
+}
+
+function setQuestionLayout(item) {
+  const hasLeftContent = Boolean((item.passageTitle || '').trim() || (item.passageHtml || '').trim());
+  if (hasLeftContent) {
+    mainEl.style.gridTemplateColumns = '';
+    leftColEl.style.display = '';
+    rightColEl.style.paddingTop = '';
+  } else {
+    mainEl.style.gridTemplateColumns = '1fr';
+    leftColEl.style.display = 'none';
+    rightColEl.style.paddingTop = '4px';
+  }
+}
+
+function render() {
+  const item = questions[current];
+  setQuestionLayout(item);
+
+  brandTitle.textContent = item.sectionTitle || 'ATI TEAS Version 7 - Math';
+  qNumber.textContent = `Question: ${item.number} of ${totalQuestions}`;
+  passageTitle.textContent = item.passageTitle || '';
+  passageEl.innerHTML = item.passageHtml || '';
+  stimulusEl.innerHTML = item.stimulusHtml || item.stimulus || '';
+  questionText.innerHTML = (item.question || '').replace(/\n/g, '<br>');
+
+  buildDots(item.number);
+
+  optionsEl.innerHTML = '';
+  item.options.forEach((opt, index) => {
+    const row = document.createElement('div');
+    const answered = answers[current] !== null;
+    let className = 'option';
+    if (answers[current] === index) className += ' selected';
+    if (answered && index === item.correctIndex) className += ' correct';
+    if (answered && answers[current] === index && index !== item.correctIndex) className += ' incorrect';
+    row.className = className;
+    row.tabIndex = 0;
+
+    const radio = document.createElement('span');
+    radio.className = 'radio';
+
+    const label = document.createElement('span');
+    label.className = 'option-text';
+    label.textContent = opt;
+
+    row.appendChild(radio);
+    row.appendChild(label);
+
+    row.addEventListener('click', () => selectOption(index));
+    row.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        selectOption(index);
+      }
+    });
+
+    optionsEl.appendChild(row);
+  });
+
+  if (answers[current] !== null) {
+    const correctText = item.options[item.correctIndex];
+    const isCorrect = answers[current] === item.correctIndex;
+    feedbackEl.className = 'answer-feedback show' + (isCorrect ? '' : ' wrong');
+    feedbackEl.textContent = isCorrect
+      ? `Correct. Answer: ${correctText}`
+      : `Incorrect. Correct answer: ${correctText}`;
+  } else {
+    feedbackEl.className = 'answer-feedback';
+    feedbackEl.textContent = '';
+  }
+
+  prevBtn.disabled = current === 0;
+  nextBtn.textContent = current === questions.length - 1 ? 'Finish' : 'Continue';
+  statusEl.textContent = `${answers.filter(a => a !== null).length} of ${questions.length} uploaded Math questions answered`;
+}
+
+function selectOption(index) {
+  answers[current] = index;
+  render();
+}
+
+prevBtn.addEventListener('click', () => {
+  if (current > 0) {
+    current--;
+    render();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+});
+
+nextBtn.addEventListener('click', () => {
+  if (current < questions.length - 1) {
+    current++;
+    render();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  } else {
+    alert('You have reached the end of the uploaded Math questions.');
+  }
+});
+
+function tick() {
+  if (remaining > 0) remaining--;
+  const h = String(Math.floor(remaining / 3600)).padStart(2, '0');
+  const m = String(Math.floor((remaining % 3600) / 60)).padStart(2, '0');
+  const s = String(remaining % 60).padStart(2, '0');
+  timerEl.textContent = `${h}:${m}:${s}`;
+}
+
+render();
+setInterval(tick, 1000);
+</script>
+</body>
+</html>

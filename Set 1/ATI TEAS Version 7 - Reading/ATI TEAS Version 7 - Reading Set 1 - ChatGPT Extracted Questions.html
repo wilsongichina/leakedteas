@@ -1,0 +1,1419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ATI TEAS Version 7 Reading Set 1 Practice Questions</title>
+  <style>
+    :root {
+      --text:#4a4a4a;
+      --heading:#333;
+      --blue:#caebfb;
+      --blue-strong:#b7dcff;
+      --btn:#b6e4e7;
+      --btn-text:#50646b;
+      --dot:#8b8f92;
+      --dot-light:#c1e5fb;
+      --dot-active:#89bce8;
+      --olive:#6b7300;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      color:var(--text);
+      background:#fff;
+    }
+    .exam-shell {
+      max-width: 1280px;
+      margin: 0 auto;
+      min-height: 100vh;
+      padding: 34px 32px 42px;
+      display:flex;
+      flex-direction:column;
+    }
+    .topbar {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding: 0 10px 16px;
+      margin-bottom: 10px;
+      border-bottom: 5px solid transparent;
+      border-image: repeating-linear-gradient(135deg, var(--blue) 0 3px, transparent 3px 8px) 12;
+    }
+    .brand {
+      font-size: 18px;
+      font-weight: 700;
+      color:#3a3a3a;
+    }
+    .close {
+      border:none;
+      background:#f8f8f8;
+      color:#444;
+      font-weight:700;
+      font-size:14px;
+      padding:10px 16px;
+      display:flex;
+      align-items:center;
+      gap:6px;
+      text-transform:uppercase;
+    }
+    .close .x {
+      width:16px;
+      height:16px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      background:#444;
+      color:#fff;
+      line-height:1;
+      font-size:12px;
+    }
+    .main {
+      flex:1;
+      display:grid;
+      grid-template-columns: minmax(0, 1fr) minmax(420px, 500px);
+      gap: 36px;
+      align-items:start;
+      padding: 6px 8px 0;
+    }
+    .left-col {
+      min-width:0;
+    }
+    .right-col {
+      min-width:0;
+      padding-top: 4px;
+    }
+    .top-question-row {
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:24px;
+      margin-bottom: 18px;
+      padding: 0 6px;
+    }
+    h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--heading);
+      font-size: 28px;
+      margin: 0;
+      line-height: 1.2;
+    }
+    .utility {
+      text-align:right;
+      flex:0 0 auto;
+      min-width: 195px;
+      display:flex;
+      flex-direction:column;
+      align-items:flex-end;
+      gap:10px;
+    }
+    .timer-row {
+      display:flex;
+      align-items:center;
+      justify-content:flex-end;
+      gap:14px;
+      width:100%;
+    }
+    .timer {
+      font-weight:700;
+      margin-bottom:0;
+      white-space:nowrap;
+    }
+    .timer span { font-weight:400; }
+    .flag-row {
+      display:flex;
+      justify-content:flex-end;
+      width:100%;
+    }
+    .calc {
+      width:33px;
+      height:43px;
+      border:4px solid var(--olive);
+      position:relative;
+      flex:0 0 auto;
+    }
+    .calc:before {
+      content:"";
+      position:absolute;
+      left:6px;
+      right:6px;
+      top:5px;
+      height:6px;
+      background:#fff;
+    }
+    .calc:after {
+      content:"";
+      position:absolute;
+      left:6px;
+      top:18px;
+      width:4px;
+      height:4px;
+      background:#fff;
+      box-shadow:9px 0 #fff,18px 0 #fff,0 9px #fff,9px 9px #fff,18px 9px #fff,0 18px #fff,9px 18px #fff,18px 18px #fff;
+    }
+    .flag {
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      border:1px solid #d6d6d6;
+      background:#fff;
+      padding:11px 16px;
+      color:#555;
+      font-weight:700;
+      box-shadow:0 1px 2px rgba(0,0,0,.05);
+    }
+    .flag-icon {
+      width:22px;
+      height:27px;
+      border:3px solid #555;
+      border-top:none;
+      position:relative;
+    }
+    .flag-icon:before {
+      content:"";
+      position:absolute;
+      left:5px;
+      top:-9px;
+      width:13px;
+      height:24px;
+      background:#555;
+      clip-path:polygon(0 0,100% 0,100% 78%,50% 58%,0 78%);
+    }
+    .passage-title {
+      font-weight:700;
+      font-size:18px;
+      color:#444;
+      margin: 0 0 14px;
+    }
+    .passage {
+      font-size:16px;
+      line-height:1.52;
+      color:#595959;
+      padding: 0 6px 8px;
+    }
+    .passage p {
+      margin: 0 0 14px;
+    }
+    .passage ul {
+      margin: 0 0 14px 24px;
+      padding:0;
+    }
+    .passage li {
+      margin: 0 0 7px;
+    }
+    .stimulus {
+      font-weight:700;
+      font-size:18px;
+      color:#444;
+      margin: 0 0 2px;
+    }
+    .diagram-stimulus {
+      margin: 14px 0 26px;
+      text-align:left;
+    }
+    .diagram-stimulus img {
+      display:block;
+      height:auto;
+      max-width:100%;
+      background:#fff;
+      border:0;
+    }
+    .question-text {
+      border-top:1px solid #dfdfdf;
+      padding-top:8px;
+      font-weight:700;
+      color:#3d3d3d;
+      font-size:17px;
+      line-height:1.35;
+      margin-bottom:16px;
+    }
+    .dots {
+      display:flex;
+      align-items:center;
+      gap:11px;
+      margin: 0 0 24px;
+      overflow:hidden;
+      flex-wrap:nowrap;
+    }
+    .dot {
+      width:6px;
+      height:6px;
+      border-radius:50%;
+      background:var(--dot);
+      flex:0 0 auto;
+    }
+    .dot:nth-child(7n) { background:var(--dot-light); }
+    .dot.active {
+      width:9px;
+      height:9px;
+      background:var(--dot-active);
+      box-shadow:0 0 0 2px rgba(139,187,230,.18);
+    }
+    .options {
+      display:flex;
+      flex-direction:column;
+      gap:7px;
+      padding-bottom: 10px;
+    }
+    .option {
+      min-height: 54px;
+      display:flex;
+      align-items:flex-start;
+      gap:16px;
+      padding:12px 14px;
+      border:2px solid transparent;
+      border-radius:2px;
+      cursor:pointer;
+      user-select:none;
+      background:#fff;
+    }
+    .option:hover,
+    .option.selected {
+      border-color:var(--blue-strong);
+      box-shadow:0 0 2px rgba(80,145,255,.45);
+    }
+    .option.correct {
+      border-color:#4caf50;
+      background:#f1fbf3;
+      box-shadow:0 0 2px rgba(76,175,80,.45);
+    }
+    .option.incorrect {
+      border-color:#e15757;
+      background:#fff4f4;
+      box-shadow:0 0 2px rgba(225,87,87,.45);
+    }
+    .option.correct .radio::after {
+      content:"";
+      width:9px;
+      height:9px;
+      border-radius:50%;
+      background:#3f9b45;
+      box-shadow:0 0 2px #2f7d35;
+    }
+    .option.incorrect .radio::after {
+      content:"";
+      width:9px;
+      height:9px;
+      border-radius:50%;
+      background:#c84242;
+      box-shadow:0 0 2px #8f2929;
+    }
+    .radio {
+      width:22px;
+      height:22px;
+      border-radius:50%;
+      border:2px solid #9d9d9d;
+      background:#e8e8e8;
+      display:inline-grid;
+      place-items:center;
+      flex:0 0 auto;
+      margin-top:1px;
+    }
+    .selected .radio::after {
+      content:"";
+      width:9px;
+      height:9px;
+      border-radius:50%;
+      background:#656565;
+      box-shadow:0 0 2px #333;
+    }
+    .option-text {
+      line-height:1.45;
+      color:#5a5a5a;
+      font-size:16px;
+    }
+    .answer-feedback {
+      margin-top:14px;
+      padding:12px 14px;
+      border-left:4px solid #4caf50;
+      background:#f1fbf3;
+      color:#315d34;
+      font-weight:700;
+      line-height:1.45;
+      display:none;
+    }
+    .answer-feedback.show {
+      display:block;
+    }
+    .answer-feedback.wrong {
+      border-left-color:#e15757;
+      background:#fff4f4;
+      color:#7a2d2d;
+    }
+    .bottom-controls {
+      margin-top: 28px;
+      padding: 0 10px;
+    }
+    .nav {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
+    }
+    .arrow-btn {
+      border:none;
+      background:var(--btn);
+      color:var(--btn-text);
+      font-weight:700;
+      min-width:126px;
+      height:45px;
+      cursor:pointer;
+      position:relative;
+      text-transform:uppercase;
+      letter-spacing:.2px;
+    }
+    .prev {
+      clip-path:polygon(22px 0,100% 0,100% 100%,22px 100%,0 50%);
+      padding-left:18px;
+    }
+    .next {
+      clip-path:polygon(0 0,calc(100% - 22px) 0,100% 50%,calc(100% - 22px) 100%,0 100%);
+      padding-right:18px;
+    }
+    .arrow-btn:disabled {
+      opacity:.45;
+      cursor:not-allowed;
+    }
+    .status {
+      margin-top:12px;
+      text-align:center;
+      color:#777;
+      font-size:13px;
+    }
+    @media (max-width: 980px) {
+      .exam-shell {
+        padding: 18px 14px 28px;
+      }
+      .topbar {
+        padding: 0 0 12px;
+      }
+      .brand {
+        font-size: 15px;
+      }
+      .close {
+        font-size:12px;
+        padding:8px 10px;
+      }
+      .top-question-row {
+        flex-direction:column;
+        gap:10px;
+        margin-bottom:14px;
+        padding:0;
+      }
+      .utility {
+        width:auto;
+        min-width:0;
+        text-align:right;
+        align-items:flex-end;
+        align-self:flex-end;
+        margin-left:auto;
+        gap:8px;
+      }
+      .timer-row {
+        justify-content:flex-end;
+        gap:10px;
+      }
+      .flag-row {
+        justify-content:flex-end;
+        width:100%;
+      }
+      .calc {
+        width:28px;
+        height:38px;
+        border-width:3px;
+      }
+      .calc:before {
+        left:5px;
+        right:5px;
+        top:5px;
+        height:5px;
+      }
+      .calc:after {
+        left:5px;
+        top:16px;
+        width:3px;
+        height:3px;
+        box-shadow:8px 0 #fff,16px 0 #fff,0 8px #fff,8px 8px #fff,16px 8px #fff,0 16px #fff,8px 16px #fff,16px 16px #fff;
+      }
+      .flag {
+        min-width:96px;
+        justify-content:center;
+        padding:9px 12px;
+        font-size:13px;
+      }
+      .flag-icon {
+        width:20px;
+        height:24px;
+      }
+      .main {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding:0;
+      }
+      h1 {
+        font-size:24px;
+      }
+      .passage-title, .stimulus {
+        font-size:17px;
+      }
+      .passage,
+      .option-text {
+        font-size:14px;
+      }
+      .question-text {
+        font-size:15px;
+      }
+      .diagram-stimulus {
+        margin: 12px 0 22px;
+      }
+      .diagram-stimulus img {
+        width:100% !important;
+        max-width:100% !important;
+      }
+      .dots {
+        gap:8px;
+        margin-bottom:18px;
+      }
+      .dot {
+        width:5px;
+        height:5px;
+      }
+      .dot.active {
+        width:8px;
+        height:8px;
+      }
+      .option {
+        gap:12px;
+        padding:10px 8px;
+        min-height:52px;
+      }
+      .radio {
+        width:21px;
+        height:21px;
+      }
+      .bottom-controls {
+        padding:0;
+        margin-top:20px;
+      }
+      .arrow-btn {
+        min-width:110px;
+        height:42px;
+        font-size:12px;
+      }
+      .status {
+        font-size:12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="exam-shell">
+    <header class="topbar">
+      <div class="brand" id="brandTitle">TEAS Version 7 - Reading</div>
+      <button class="close" type="button"><span class="x">×</span> Close</button>
+    </header>
+
+    <div class="top-question-row">
+      <h1 id="questionNumber">Question: 1 of 45</h1>
+      <div class="utility">
+        <div class="timer-row">
+          <div class="timer">Time Remaining: <span id="timer">00:55:00</span></div>
+          <div class="calc" aria-label="calculator icon"></div>
+        </div>
+        <div class="flag-row">
+          <button class="flag" type="button"><span class="flag-icon"></span> FLAG</button>
+        </div>
+      </div>
+    </div>
+
+    <main class="main">
+      <section class="left-col">
+        <div class="passage-title" id="passageTitle"></div>
+        <div class="passage" id="passage"></div>
+      </section>
+
+      <section class="right-col">
+        <div class="question-text" id="questionText"></div>
+        <div class="stimulus" id="stimulus"></div>
+        <div class="dots" id="dots" aria-hidden="true"></div>
+        <div class="options" id="options"></div>
+        <div class="answer-feedback" id="answerFeedback"></div>
+      </section>
+    </main>
+
+    <div class="bottom-controls">
+      <nav class="nav">
+        <button class="arrow-btn prev" id="prevBtn" type="button">Previous</button>
+        <button class="arrow-btn next" id="nextBtn" type="button">Continue</button>
+      </nav>
+      <div class="status" id="status"></div>
+    </div>
+  </div>
+
+<script>
+const questions = [
+  {
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>Dear Aunt Suzanne,</p><p>I have a few minutes before I get on the bus from Galway back to Dublin and wanted to tell you how my class trip to Ireland is going. We just spent 2 days on Inis Mor, the largest of the Aran Islands, which are just off the central west coast of Ireland. We took a ferry from Galway, a ride that takes about an hour and was quite gray and stormy.</p><p>For an island that is only about 12 square miles, there is a lot to do and see on Inis Mor! After eating steak and vegetable stew and brown bread with butter, we went to the sweater market, where all kinds of woolen products are sold. The Aran Islands are known for their wool because sheep thrive here and generations have used woolen sweaters and hats to survive long cold days of fishing on the open sea. In fact, I learned that each family or clan has its own signature knitting pattern and some are able to tell which family someone belongs to by the pattern of their sweater! The Healy pattern is an interesting combination of twists and braids, and I found you a birthday souvenir with a beautiful example.</p><p>The next day, we rented bicycles and toured the island. We saw ancient ruins, a prehistoric hill fort, and a white sand beach. We also climbed down to a mysterious rock formation known as \"The Worm Hole,\" a rectangular hole in a stone shore that fills with thrashing waves and looks like it houses a terrible serpent. The Worm Hole was difficult to find, and when we stopped someone for directions, she only spoke Gaelic! Sometimes this island seems stuck in an earlier time.</p><p>I'm excited to see you when I get home. I have lots more pictures to share!</p><p>Love, Eva</p>",
+    "stimulus": "",
+    "number": 1,
+    "sourceNumber": 1,
+    "question": "According to the passage, which of the following events happens last?",
+    "options": [
+      "Eva purchases a patterned sweater.",
+      "Eva took a ferry from Galway.",
+      "Eva takes a bus to Dublin.",
+      "Eva eats steak and vegetable stew."
+    ],
+    "correctIndex": 2
+  },
+  {
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>Dear Aunt Suzanne,</p><p>I have a few minutes before I get on the bus from Galway back to Dublin and wanted to tell you how my class trip to Ireland is going. We just spent 2 days on Inis Mor, the largest of the Aran Islands, which are just off the central west coast of Ireland. We took a ferry from Galway, a ride that takes about an hour and was quite gray and stormy.</p><p>For an island that is only about 12 square miles, there is a lot to do and see on Inis Mor! After eating steak and vegetable stew and brown bread with butter, we went to the sweater market, where all kinds of woolen products are sold. The Aran Islands are known for their wool because sheep thrive here and generations have used woolen sweaters and hats to survive long cold days of fishing on the open sea. In fact, I learned that each family or clan has its own signature knitting pattern and some are able to tell which family someone belongs to by the pattern of their sweater! The Healy pattern is an interesting combination of twists and braids, and I found you a birthday souvenir with a beautiful example.</p><p>The next day, we rented bicycles and toured the island. We saw ancient ruins, a prehistoric hill fort, and a white sand beach. We also climbed down to a mysterious rock formation known as \"The Worm Hole,\" a rectangular hole in a stone shore that fills with thrashing waves and looks like it houses a terrible serpent. The Worm Hole was difficult to find, and when we stopped someone for directions, she only spoke Gaelic! Sometimes this island seems stuck in an earlier time.</p><p>I'm excited to see you when I get home. I have lots more pictures to share!</p><p>Love, Eva</p>",
+    "stimulus": "",
+    "number": 2,
+    "sourceNumber": 2,
+    "question": "Which of the following statements can be inferred from the passage?",
+    "options": [
+      "Eva understands the Gaelic language.",
+      "Bicycles are the only way to get around the island.",
+      "Healy is the name of an Irish family or clan.",
+      "The Worm Hole refers to a serpent."
+    ],
+    "correctIndex": 2
+  },
+  {
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>Dear Aunt Suzanne,</p><p>I have a few minutes before I get on the bus from Galway back to Dublin and wanted to tell you how my class trip to Ireland is going. We just spent 2 days on Inis Mor, the largest of the Aran Islands, which are just off the central west coast of Ireland. We took a ferry from Galway, a ride that takes about an hour and was quite gray and stormy.</p><p>For an island that is only about 12 square miles, there is a lot to do and see on Inis Mor! After eating steak and vegetable stew and brown bread with butter, we went to the sweater market, where all kinds of woolen products are sold. The Aran Islands are known for their wool because sheep thrive here and generations have used woolen sweaters and hats to survive long cold days of fishing on the open sea. In fact, I learned that each family or clan has its own signature knitting pattern and some are able to tell which family someone belongs to by the pattern of their sweater! The Healy pattern is an interesting combination of twists and braids, and I found you a birthday souvenir with a beautiful example.</p><p>The next day, we rented bicycles and toured the island. We saw ancient ruins, a prehistoric hill fort, and a white sand beach. We also climbed down to a mysterious rock formation known as \"The Worm Hole,\" a rectangular hole in a stone shore that fills with thrashing waves and looks like it houses a terrible serpent. The Worm Hole was difficult to find, and when we stopped someone for directions, she only spoke Gaelic! Sometimes this island seems stuck in an earlier time.</p><p>I'm excited to see you when I get home. I have lots more pictures to share!</p><p>Love, Eva</p>",
+    "stimulus": "",
+    "number": 3,
+    "sourceNumber": 3,
+    "question": "Which of the following sentences accurately summarizes the passage?",
+    "options": [
+      "On a personal trip abroad, Eva is focused on seeing as much as possible in a short amount of time and gathering souvenirs for everyone she knows.",
+      "In an email to her aunt, Eva brags about touring Ireland and the extravagant purchases she has made there.",
+      "On a school trip to Ireland, Eva has spent time in the Aran Islands, where she has learned about the culture and visited several significant landmarks.",
+      "In an email to her aunt, Eva reports that the Aran Islands contain a strong agricultural community with long-standing traditions."
+    ],
+    "correctIndex": 2
+  },
+  {
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>Dear Aunt Suzanne,</p><p>I have a few minutes before I get on the bus from Galway back to Dublin and wanted to tell you how my class trip to Ireland is going. We just spent 2 days on Inis Mor, the largest of the Aran Islands, which are just off the central west coast of Ireland. We took a ferry from Galway, a ride that takes about an hour and was quite gray and stormy.</p><p>For an island that is only about 12 square miles, there is a lot to do and see on Inis Mor! After eating steak and vegetable stew and brown bread with butter, we went to the sweater market, where all kinds of woolen products are sold. The Aran Islands are known for their wool because sheep thrive here and generations have used woolen sweaters and hats to survive long cold days of fishing on the open sea. In fact, I learned that each family or clan has its own signature knitting pattern and some are able to tell which family someone belongs to by the pattern of their sweater! The Healy pattern is an interesting combination of twists and braids, and I found you a birthday souvenir with a beautiful example.</p><p>The next day, we rented bicycles and toured the island. We saw ancient ruins, a prehistoric hill fort, and a white sand beach. We also climbed down to a mysterious rock formation known as \"The Worm Hole,\" a rectangular hole in a stone shore that fills with thrashing waves and looks like it houses a terrible serpent. The Worm Hole was difficult to find, and when we stopped someone for directions, she only spoke Gaelic! Sometimes this island seems stuck in an earlier time.</p><p>I'm excited to see you when I get home. I have lots more pictures to share!</p><p>Love, Eva</p>",
+    "stimulus": "",
+    "number": 4,
+    "sourceNumber": 4,
+    "question": "Which of the following words used in the passage indicates Eva's opinion?",
+    "options": [
+      "Stuck",
+      "Prehistoric",
+      "Ancient",
+      "Gray"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>Dear Aunt Suzanne,</p><p>I have a few minutes before I get on the bus from Galway back to Dublin and wanted to tell you how my class trip to Ireland is going. We just spent 2 days on Inis Mor, the largest of the Aran Islands, which are just off the central west coast of Ireland. We took a ferry from Galway, a ride that takes about an hour and was quite gray and stormy.</p><p>For an island that is only about 12 square miles, there is a lot to do and see on Inis Mor! After eating steak and vegetable stew and brown bread with butter, we went to the sweater market, where all kinds of woolen products are sold. The Aran Islands are known for their wool because sheep thrive here and generations have used woolen sweaters and hats to survive long cold days of fishing on the open sea. In fact, I learned that each family or clan has its own signature knitting pattern and some are able to tell which family someone belongs to by the pattern of their sweater! The Healy pattern is an interesting combination of twists and braids, and I found you a birthday souvenir with a beautiful example.</p><p>The next day, we rented bicycles and toured the island. We saw ancient ruins, a prehistoric hill fort, and a white sand beach. We also climbed down to a mysterious rock formation known as \"The Worm Hole,\" a rectangular hole in a stone shore that fills with thrashing waves and looks like it houses a terrible serpent. The Worm Hole was difficult to find, and when we stopped someone for directions, she only spoke Gaelic! Sometimes this island seems stuck in an earlier time.</p><p>I'm excited to see you when I get home. I have lots more pictures to share!</p><p>Love, Eva</p>",
+    "stimulus": "",
+    "number": 5,
+    "sourceNumber": 5,
+    "question": "Which of the following details supports the inference that Eva's family has Irish roots?",
+    "options": [
+      "Eva is taking a lot of pictures while on her trip to Ireland.",
+      "Eva has found an example of the Healy knitting pattern for her aunt.",
+      "Eva is communicating with her aunt while on a class trip to Ireland.",
+      "Eva is learning about the culture and traditions in Ireland."
+    ],
+    "correctIndex": 1
+  },
+  {
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>Dear Aunt Suzanne,</p><p>I have a few minutes before I get on the bus from Galway back to Dublin and wanted to tell you how my class trip to Ireland is going. We just spent 2 days on Inis Mor, the largest of the Aran Islands, which are just off the central west coast of Ireland. We took a ferry from Galway, a ride that takes about an hour and was quite gray and stormy.</p><p>For an island that is only about 12 square miles, there is a lot to do and see on Inis Mor! After eating steak and vegetable stew and brown bread with butter, we went to the sweater market, where all kinds of woolen products are sold. The Aran Islands are known for their wool because sheep thrive here and generations have used woolen sweaters and hats to survive long cold days of fishing on the open sea. In fact, I learned that each family or clan has its own signature knitting pattern and some are able to tell which family someone belongs to by the pattern of their sweater! The Healy pattern is an interesting combination of twists and braids, and I found you a birthday souvenir with a beautiful example.</p><p>The next day, we rented bicycles and toured the island. We saw ancient ruins, a prehistoric hill fort, and a white sand beach. We also climbed down to a mysterious rock formation known as \"The Worm Hole,\" a rectangular hole in a stone shore that fills with thrashing waves and looks like it houses a terrible serpent. The Worm Hole was difficult to find, and when we stopped someone for directions, she only spoke Gaelic! Sometimes this island seems stuck in an earlier time.</p><p>I'm excited to see you when I get home. I have lots more pictures to share!</p><p>Love, Eva</p>",
+    "stimulus": "",
+    "number": 6,
+    "sourceNumber": 6,
+    "question": "Which of the following additional sources would have a comparable theme to the passage?",
+    "options": [
+      "An essay about Irish agriculture",
+      "A postcard sent from the Aran Islands",
+      "An instructional book on knitting",
+      "A journal entry about Dublin's food and weather"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "Letter from the Chair of Elkinsville Ecological Society",
+    "passageHtml": "<p>Many of you have heard about the proposed northward expansion of the interstate, which currently ends just south of Elkinsville. In the recent debate over how this work will go forward, the focus has been on weighing economic costs and benefits. Indeed, many local politicians claim to favor the project because it will bring jobs in the short term and more visitors to Elkinsville in the long term. These politicians also argue that the proposed plan is the least environmentally damaging way to expand the highway farther upstate. This cannot be true, however, since the proposed expansion involves not just the widening of existing roads, but also the construction of more than a dozen miles of new-terrain highway.</p>",
+    "stimulus": "",
+    "number": 7,
+    "sourceNumber": 7,
+    "question": "Which of the following statements can be supported by evidence from the passage?",
+    "options": [
+      "Politicians in Elkinsville will win their efforts to approve the northern expansion of the interstate highway.",
+      "There are no Elkinsville Environmental Society members among the city's politicians.",
+      "A detailed environmental study of the northern expansion of the interstate has been conducted by the Elkinsville Ecological Society.",
+      "The Elkinsville Ecological Society will continue to oppose the northern expansion of the interstate."
+    ],
+    "correctIndex": 2
+  },
+  {
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "Letter from the Chair of Elkinsville Ecological Society",
+    "passageHtml": "<p>Many of you have heard about the proposed northward expansion of the interstate, which currently ends just south of Elkinsville. In the recent debate over how this work will go forward, the focus has been on weighing economic costs and benefits. Indeed, many local politicians claim to favor the project because it will bring jobs in the short term and more visitors to Elkinsville in the long term. These politicians also argue that the proposed plan is the least environmentally damaging way to expand the highway farther upstate. This cannot be true, however, since the proposed expansion involves not just the widening of existing roads, but also the construction of more than a dozen miles of new-terrain highway.</p>",
+    "stimulus": "",
+    "number": 8,
+    "sourceNumber": 8,
+    "question": "Where is it most likely that readers would encounter this text?",
+    "options": [
+      "The opinion section of the Elkinsville Daily Eagle newspaper",
+      "A brochure from the Elkinsville Chamber of Commerce",
+      "A tenth-grade science textbook at Elkinsville High School",
+      "A flyer on a bulletin board at Elkinsville City Hall"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "Beard Superiority",
+    "passageHtml": "<p>Unlike most others who follow along with popular trends, I am able to truly see that the beard is superior to the mustache. First, you have so much more hair and space to work with when styling a beard than you do with a mustache. You can trim and cut a beard into so many styles: the Muttonchop, the Goatee, the Stubble, the Chin Strap. You can even add things to your beard: braids, beads, glitter, and color -- the possibilities of what you can add to a beard are endless! There are even professional competitions that surround the stylish nature of beards.</p>",
+    "stimulus": "",
+    "number": 9,
+    "sourceNumber": 9,
+    "question": "Which of the following can be inferred from evidence given in the passage?",
+    "options": [
+      "The writer enjoys having a beard.",
+      "The writer is a professional barber.",
+      "No competitions exist for the best mustache.",
+      "Mustaches cannot easily be styled."
+    ],
+    "correctIndex": 3
+  },
+  {
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "Beard Superiority",
+    "passageHtml": "<p>Unlike most others who follow along with popular trends, I am able to truly see that the beard is superior to the mustache. First, you have so much more hair and space to work with when styling a beard than you do with a mustache. You can trim and cut a beard into so many styles: the Muttonchop, the Goatee, the Stubble, the Chin Strap. You can even add things to your beard: braids, beads, glitter, and color -- the possibilities of what you can add to a beard are endless! There are even professional competitions that surround the stylish nature of beards.</p>",
+    "stimulus": "",
+    "number": 10,
+    "sourceNumber": 10,
+    "question": "Which of the following is a counterclaim to the argument in the passage?",
+    "options": [
+      "If you have a beard, you can dye it pink.",
+      "You should grow a beard because they come in a variety of styles.",
+      "The beard is not just a passing trend.",
+      "Beards may be a hazard in professional lines of employment."
+    ],
+    "correctIndex": 3
+  },
+  {
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>\"The Santa Barbara Journal\": Exciting news today from Vandenberg Space Force Base as it has ended its Delta IV Heavy rocket program to make way for the new Atlas V program. Riddled with difficulties, Delta IV Heavy saw only moderate success throughout its 21-year history. Developed on the heels of the last tragic Space Shuttle flight, expectations for the Delta IV Heavy have far exceeded its reality. Future hopes now lie with the Atlas V program developed by Lockheed Martin.</p><p>A social media post: @ggh723 The space program is an outdated use of taxpayer funds. We have enough problems on earth to worry about what is happening in the universe.</p>",
+    "stimulus": "",
+    "number": 11,
+    "sourceNumber": 11,
+    "question": "Which of the following is evidence that supports the claim in the social media post?",
+    "options": [
+      "$1.5 billion was budgeted last year for social programs, while $10 million went to the space program.",
+      "Of the 41 million people who have received federal assistance, only 10% knew about the 1,600 technologies developed through the space program.",
+      "The federal government's spending on the space program helps to encourage economic growth.",
+      "The federal government's spending on the space program outpaces its contribution to education in the United States."
+    ],
+    "correctIndex": 3
+  },
+  {
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>\"The Santa Barbara Journal\": Exciting news today from Vandenberg Space Force Base as it has ended its Delta IV Heavy rocket program to make way for the new Atlas V program. Riddled with difficulties, Delta IV Heavy saw only moderate success throughout its 21-year history. Developed on the heels of the last tragic Space Shuttle flight, expectations for the Delta IV Heavy have far exceeded its reality. Future hopes now lie with the Atlas V program developed by Lockheed Martin.</p><p>A social media post: @ggh723 The space program is an outdated use of taxpayer funds. We have enough problems on earth to worry about what is happening in the universe.</p>",
+    "stimulus": "",
+    "number": 12,
+    "sourceNumber": 12,
+    "question": "Which of the following themes do the two above passages share?",
+    "options": [
+      "Space travel inspires the populace to look beyond our planet.",
+      "The space program evokes a variety of reactions.",
+      "Technical innovation can sometimes lead to tragedies.",
+      "Economics play an important role in society."
+    ],
+    "correctIndex": 1
+  },
+  {
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>Do words like exhausted, listless, or worn-out describe you?</p><p>Feel better fast with Pro-10 shakes!</p><p>Our high-protein formula was developed by an experienced team of physicians and nutritionists.<br>76% of customers surveyed report having more energy after drinking Pro-10 for just 2 weeks.<br>Choose from six delicious flavors!<br>Get 10 shakes free with the purchase of a 30-day supply.</p><p>For more information, visit our website at www.pro10shake.com or call 888-555-5555 to talk with a consultant today.</p>",
+    "stimulus": "",
+    "number": 13,
+    "sourceNumber": 13,
+    "question": "Which of the following is a fact presented in the advertisement?",
+    "options": [
+      "The physicians and nutritionists that developed the shake formula are noted experts in the dietary field.",
+      "The six shake flavors are delicious.",
+      "About three-quarters of those who drink Pro-10 shakes for 2 weeks report having more energy.",
+      "A customer will feel better fast if they drink Pro-10 shakes."
+    ],
+    "correctIndex": 2
+  },
+  {
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>Do words like exhausted, listless, or worn-out describe you?</p><p>Feel better fast with Pro-10 shakes!</p><p>Our high-protein formula was developed by an experienced team of physicians and nutritionists.<br>76% of customers surveyed report having more energy after drinking Pro-10 for just 2 weeks.<br>Choose from six delicious flavors!<br>Get 10 shakes free with the purchase of a 30-day supply.</p><p>For more information, visit our website at www.pro10shake.com or call 888-555-5555 to talk with a consultant today.</p>",
+    "stimulus": "",
+    "number": 14,
+    "sourceNumber": 14,
+    "question": "Which of the following is a reasonable inference based on the information presented in the advertisement?",
+    "options": [
+      "Seventy-six percent of customers felt better in 3 days.",
+      "An increase in protein affects energy levels.",
+      "Pro-10 shakes contribute to a person's overall health and well-being.",
+      "Pro-10 shakes are affordable."
+    ],
+    "correctIndex": 1
+  },
+  {
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>In 1943, the war in the Pacific raged on. First Lady Eleanor Roosevelt went to rally the troops' spirits, despite the disapproval of military command. Roosevelt planned a grueling itinerary. She visited several islands and hundreds of wounded in her first 6 days. The indefatigable First Lady inspected Navy hospitals, delivered a speech, attended receptions, and visited convalescing officers, all within 12 hours of her arrival. She lifted spirits among the wounded and morale among the troops. She continued her exhausting tour for a month, speaking to every patient in troop hospitals and taking down addresses to contact family members. Roosevelt traveled non-stop, risked her life, and greeted the last patient she saw with the same heartfelt sincerity as the first.</p>",
+    "stimulus": "",
+    "number": 15,
+    "sourceNumber": 15,
+    "question": "Which of the following conclusions can be drawn from the passage?",
+    "options": [
+      "Eleanor Roosevelt became First Lady before the war in the Pacific ended.",
+      "Eleanor Roosevelt did not enjoy giving oral speeches to troops.",
+      "Eleanor Roosevelt was present during most battles in Asia during WWII.",
+      "Eleanor Roosevelt hand-wrote notes to every troop's family."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>In 1943, the war in the Pacific raged on. First Lady Eleanor Roosevelt went to rally the troops' spirits, despite the disapproval of military command. Roosevelt planned a grueling itinerary. She visited several islands and hundreds of wounded in her first 6 days. The indefatigable First Lady inspected Navy hospitals, delivered a speech, attended receptions, and visited convalescing officers, all within 12 hours of her arrival. She lifted spirits among the wounded and morale among the troops. She continued her exhausting tour for a month, speaking to every patient in troop hospitals and taking down addresses to contact family members. Roosevelt traveled non-stop, risked her life, and greeted the last patient she saw with the same heartfelt sincerity as the first.</p>",
+    "stimulus": "",
+    "number": 16,
+    "sourceNumber": 16,
+    "question": "Which of the following publications would have a different point of view of Eleanor Roosevelt compared to the author's point of view?",
+    "options": [
+      "A personal memoir from an injured naval officer who fought in the Pacific theater",
+      "A brochure about women's contributions to the U.S. war effort",
+      "A historical Japanese military document outlining how to damage enemy morale",
+      "A newspaper clipping from The Honolulu Star-Bulletin in 1944"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>What is all this talk of cicadas lately in the United States? You might be wondering why the media has featured it, but in fact, the discussion about cicadas has emerged about as predictably as the cicadas themselves from their underground refuge. Let's get oriented with some background on cicadas.</p><p>What is a cicada? A typical definition will at least tell you that the cicada is a large, loud insect with long transparent wings, mostly found in warm countries. A more detailed response might also inform you that cicadas have short antennae and wide-set eyes that jut out, with delicate, translucent wings -- and that not only is the cicada loud, but few creatures make a louder sound. In fact, it is male cicadas that are the noisy ones, to the tune of 80 to 100 decibels, which is like the roar of a loud engine. This is because male cicadas make a strident, high buzzing by vibrating two membranes on its abdomen called tymbals, effectively turning its body into a kind of echo chamber or drum. Female cicadas cannot replicate the buzzing, though they respond with a clicking sound when they are ready to mate.</p><p>Although there are several species of cicada, mating typically takes place in trees whereafter the female deposits the eggs into the bark. When the eggs hatch, the larval cicadas, called nymphs, drop to the ground and burrow. They then live as nymphs for most of their lives over 6 feet underground, with both male and female cicadas dying within weeks of their emergence from the soil. This is particularly true for North American cicadas, especially the Magicicada, or periodical cicadas, which regularly emerge in intervals of 13 or 17 years, depending on the species and the location. This is why talk of cicadas in the media is as predictable as their emergence in the U.S.</p>",
+    "stimulus": "",
+    "number": 17,
+    "sourceNumber": 17,
+    "question": "Which of the following events happens first after the male cicada calls to the female cicada, according to the passage?",
+    "options": [
+      "The male and female mate in the trees.",
+      "Nymphs drop to the ground.",
+      "The female makes a clicking sound.",
+      "The female deposits the eggs."
+    ],
+    "correctIndex": 2
+  },
+  {
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>What is all this talk of cicadas lately in the United States? You might be wondering why the media has featured it, but in fact, the discussion about cicadas has emerged about as predictably as the cicadas themselves from their underground refuge. Let's get oriented with some background on cicadas.</p><p>What is a cicada? A typical definition will at least tell you that the cicada is a large, loud insect with long transparent wings, mostly found in warm countries. A more detailed response might also inform you that cicadas have short antennae and wide-set eyes that jut out, with delicate, translucent wings -- and that not only is the cicada loud, but few creatures make a louder sound. In fact, it is male cicadas that are the noisy ones, to the tune of 80 to 100 decibels, which is like the roar of a loud engine. This is because male cicadas make a strident, high buzzing by vibrating two membranes on its abdomen called tymbals, effectively turning its body into a kind of echo chamber or drum. Female cicadas cannot replicate the buzzing, though they respond with a clicking sound when they are ready to mate.</p><p>Although there are several species of cicada, mating typically takes place in trees whereafter the female deposits the eggs into the bark. When the eggs hatch, the larval cicadas, called nymphs, drop to the ground and burrow. They then live as nymphs for most of their lives over 6 feet underground, with both male and female cicadas dying within weeks of their emergence from the soil. This is particularly true for North American cicadas, especially the Magicicada, or periodical cicadas, which regularly emerge in intervals of 13 or 17 years, depending on the species and the location. This is why talk of cicadas in the media is as predictable as their emergence in the U.S.</p>",
+    "stimulus": "",
+    "number": 18,
+    "sourceNumber": 18,
+    "question": "Which of the following perspectives can be inferred from the passage?",
+    "options": [
+      "Cicadas and public interest about cicadas are inspirational.",
+      "Cicadas and public interest about cicadas are inexplicable.",
+      "Cicadas and public interest about cicadas are cyclical.",
+      "Cicadas and public interest about cicadas are global."
+    ],
+    "correctIndex": 2
+  },
+  {
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>What is all this talk of cicadas lately in the United States? You might be wondering why the media has featured it, but in fact, the discussion about cicadas has emerged about as predictably as the cicadas themselves from their underground refuge. Let's get oriented with some background on cicadas.</p><p>What is a cicada? A typical definition will at least tell you that the cicada is a large, loud insect with long transparent wings, mostly found in warm countries. A more detailed response might also inform you that cicadas have short antennae and wide-set eyes that jut out, with delicate, translucent wings -- and that not only is the cicada loud, but few creatures make a louder sound. In fact, it is male cicadas that are the noisy ones, to the tune of 80 to 100 decibels, which is like the roar of a loud engine. This is because male cicadas make a strident, high buzzing by vibrating two membranes on its abdomen called tymbals, effectively turning its body into a kind of echo chamber or drum. Female cicadas cannot replicate the buzzing, though they respond with a clicking sound when they are ready to mate.</p><p>Although there are several species of cicada, mating typically takes place in trees whereafter the female deposits the eggs into the bark. When the eggs hatch, the larval cicadas, called nymphs, drop to the ground and burrow. They then live as nymphs for most of their lives over 6 feet underground, with both male and female cicadas dying within weeks of their emergence from the soil. This is particularly true for North American cicadas, especially the Magicicada, or periodical cicadas, which regularly emerge in intervals of 13 or 17 years, depending on the species and the location. This is why talk of cicadas in the media is as predictable as their emergence in the U.S.</p>",
+    "stimulus": "",
+    "number": 19,
+    "sourceNumber": 19,
+    "question": "Source screenshot for Question 19 is missing: file \"19 of 45.png\" displays Question 20.",
+    "options": [
+      "Source screenshot missing",
+      "Source screenshot missing",
+      "Source screenshot missing",
+      "Source screenshot missing"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>What is all this talk of cicadas lately in the United States? You might be wondering why the media has featured it, but in fact, the discussion about cicadas has emerged about as predictably as the cicadas themselves from their underground refuge. Let's get oriented with some background on cicadas.</p><p>What is a cicada? A typical definition will at least tell you that the cicada is a large, loud insect with long transparent wings, mostly found in warm countries. A more detailed response might also inform you that cicadas have short antennae and wide-set eyes that jut out, with delicate, translucent wings -- and that not only is the cicada loud, but few creatures make a louder sound. In fact, it is male cicadas that are the noisy ones, to the tune of 80 to 100 decibels, which is like the roar of a loud engine. This is because male cicadas make a strident, high buzzing by vibrating two membranes on its abdomen called tymbals, effectively turning its body into a kind of echo chamber or drum. Female cicadas cannot replicate the buzzing, though they respond with a clicking sound when they are ready to mate.</p><p>Although there are several species of cicada, mating typically takes place in trees whereafter the female deposits the eggs into the bark. When the eggs hatch, the larval cicadas, called nymphs, drop to the ground and burrow. They then live as nymphs for most of their lives over 6 feet underground, with both male and female cicadas dying within weeks of their emergence from the soil. This is particularly true for North American cicadas, especially the Magicicada, or periodical cicadas, which regularly emerge in intervals of 13 or 17 years, depending on the species and the location. This is why talk of cicadas in the media is as predictable as their emergence in the U.S.</p>",
+    "stimulus": "",
+    "number": 20,
+    "sourceNumber": 20,
+    "question": "Which of the following best describes the theme of this passage?",
+    "options": [
+      "Disinformation in the media is responsible for conflicting information about the cicada life cycle.",
+      "Disinformation in the media falsely identifies climate change as the root cause of the cicada's near extinction.",
+      "Media attention to cicadas is as predictable as cicada life cycles.",
+      "Media attention to cicadas can also bring attention to climate change."
+    ],
+    "correctIndex": 2
+  },
+  {
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>What is all this talk of cicadas lately in the United States? You might be wondering why the media has featured it, but in fact, the discussion about cicadas has emerged about as predictably as the cicadas themselves from their underground refuge. Let's get oriented with some background on cicadas.</p><p>What is a cicada? A typical definition will at least tell you that the cicada is a large, loud insect with long transparent wings, mostly found in warm countries. A more detailed response might also inform you that cicadas have short antennae and wide-set eyes that jut out, with delicate, translucent wings -- and that not only is the cicada loud, but few creatures make a louder sound. In fact, it is male cicadas that are the noisy ones, to the tune of 80 to 100 decibels, which is like the roar of a loud engine. This is because male cicadas make a strident, high buzzing by vibrating two membranes on its abdomen called tymbals, effectively turning its body into a kind of echo chamber or drum. Female cicadas cannot replicate the buzzing, though they respond with a clicking sound when they are ready to mate.</p><p>Although there are several species of cicada, mating typically takes place in trees whereafter the female deposits the eggs into the bark. When the eggs hatch, the larval cicadas, called nymphs, drop to the ground and burrow. They then live as nymphs for most of their lives over 6 feet underground, with both male and female cicadas dying within weeks of their emergence from the soil. This is particularly true for North American cicadas, especially the Magicicada, or periodical cicadas, which regularly emerge in intervals of 13 or 17 years, depending on the species and the location. This is why talk of cicadas in the media is as predictable as their emergence in the U.S.</p>",
+    "stimulus": "",
+    "number": 21,
+    "sourceNumber": 21,
+    "question": "Which of the following is the most likely reason male cicadas make a buzzing sound?",
+    "options": [
+      "To locate food sources",
+      "To ward off predators",
+      "To attract a mate",
+      "To orient via echolocation"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>What is all this talk of cicadas lately in the United States? You might be wondering why the media has featured it, but in fact, the discussion about cicadas has emerged about as predictably as the cicadas themselves from their underground refuge. Let's get oriented with some background on cicadas.</p><p>What is a cicada? A typical definition will at least tell you that the cicada is a large, loud insect with long transparent wings, mostly found in warm countries. A more detailed response might also inform you that cicadas have short antennae and wide-set eyes that jut out, with delicate, translucent wings -- and that not only is the cicada loud, but few creatures make a louder sound. In fact, it is male cicadas that are the noisy ones, to the tune of 80 to 100 decibels, which is like the roar of a loud engine. This is because male cicadas make a strident, high buzzing by vibrating two membranes on its abdomen called tymbals, effectively turning its body into a kind of echo chamber or drum. Female cicadas cannot replicate the buzzing, though they respond with a clicking sound when they are ready to mate.</p><p>Although there are several species of cicada, mating typically takes place in trees whereafter the female deposits the eggs into the bark. When the eggs hatch, the larval cicadas, called nymphs, drop to the ground and burrow. They then live as nymphs for most of their lives over 6 feet underground, with both male and female cicadas dying within weeks of their emergence from the soil. This is particularly true for North American cicadas, especially the Magicicada, or periodical cicadas, which regularly emerge in intervals of 13 or 17 years, depending on the species and the location. This is why talk of cicadas in the media is as predictable as their emergence in the U.S.</p>",
+    "stimulus": "",
+    "number": 22,
+    "sourceNumber": 22,
+    "question": "Which of the following statements from the passage offers evidence that female cicadas do not have tymbals attached to their abdomen?",
+    "options": [
+      "\"...the female deposits the eggs into the bark.\"",
+      "\"...the male cicada makes a strident, high buzzing by vibrating two membranes on its abdomen called tymbals...\"",
+      "\"Female cicadas cannot replicate the buzzing...\"",
+      "\"...the cicada is a large, loud insect...\""
+    ],
+    "correctIndex": 2
+  },
+  {
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "A Day with Humpbacks",
+    "passageHtml": "<p>I sit on the headlands of Neah Bay, Washington, and watch a mother humpback and her calf slip through the icy Pacific waters. I recognize this whale by her distinctive tail pattern, as unique to this humpback as my fingerprints are to me. Once, heavy hunting using harpoons extirpated the species from the region, and only a ban on whaling allowed populations of humpbacks to recover.</p><p>As this gray female rises to the surface, she exhales, sending up a spout nearly 20 feet high. She rolls on her side and lifts her scalloped-edge flipper in salute, then slaps it on the water. I adjust my lens and take my shot. This is the only type of whale hunting I find acceptable -- hunting with a camera.</p>",
+    "stimulus": "",
+    "number": 23,
+    "sourceNumber": 23,
+    "question": "Which of the following statements conveys the main idea of the passage?",
+    "options": [
+      "Humpback whale populations are finally recovering after nearly being wiped out.",
+      "Humpback whales travel in waters near Washington.",
+      "Cameras and harpoons are both ways of hunting humpback whales.",
+      "This particular humpback whale has never been seen previously by the author."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "A Day with Humpbacks",
+    "passageHtml": "<p>I sit on the headlands of Neah Bay, Washington, and watch a mother humpback and her calf slip through the icy Pacific waters. I recognize this whale by her distinctive tail pattern, as unique to this humpback as my fingerprints are to me. Once, heavy hunting using harpoons extirpated the species from the region, and only a ban on whaling allowed populations of humpbacks to recover.</p><p>As this gray female rises to the surface, she exhales, sending up a spout nearly 20 feet high. She rolls on her side and lifts her scalloped-edge flipper in salute, then slaps it on the water. I adjust my lens and take my shot. This is the only type of whale hunting I find acceptable -- hunting with a camera.</p>",
+    "stimulus": "",
+    "number": 24,
+    "sourceNumber": 24,
+    "question": "Which of the following statements about the passage is true?",
+    "options": [
+      "In the passage, the writer describes taking many photographs as the whale frolics in the icy Pacific Ocean.",
+      "In the passage, the writer argues that beluga whales are so endangered, you should only hunt them with your camera.",
+      "In the passage, the writer argues the benefits of photographing whales to enable their identification.",
+      "In the passage, the writer describes the whale surfacing, exhaling, and slapping her flipper on the water."
+    ],
+    "correctIndex": 3
+  },
+  {
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>On February 2 of each year, the United States observes the unusual holiday of Groundhog Day, a day of hope that winter is over and spring is beginning. This tradition has been officially observed in the U.S. since the 1800s, and is believed to have developed from European folk traditions in which a bear, fox, badger, or even hedgehog would serve as the symbolic meteorologist. Although other cultures and towns observe Groundhog Day (or something similar), the town of Punxsutawney, Pennsylvania takes special pride in being home to the one true forecasting groundhog, Punxsutawney Phil. At the turn of the twentieth century, townspeople formed the Punxsutawney Groundhog Club to perpetuate the joyful rituals and events surrounding Groundhog Day. Over the years, these events have come to include a scavenger hunt, a talent show, and a ball.</p><p>Legend has it that on Groundhog Day the official weather forecasting groundhog awakens from hibernation and comes out of his burrow to look for his shadow. If he sees his shadow, six more weeks of winter are to come, and Punxsutawney Phil goes back to bed. However, if he does not see his shadow, Punxsutawney Phil takes this as a sign that spring has arrived, and he remains above ground. Of course, common sense tells us that February 2 is too early for spring to begin, and that while animals may be attuned to various elements of nature from which humans might learn, they are unlikely to act on their instincts based on a schedule set by a Gregorian calendar. Nevertheless, a visit to Pennsylvania to see Punxsutawney Phil and all of the fun he inspires each year might just provide the touch of hope needed to reach the end of winter.</p>",
+    "stimulus": "",
+    "number": 25,
+    "sourceNumber": 25,
+    "question": "Which of the following pairs of search terms entered into a search engine with the phrase \"Groundhog Day\" is likely to produce information about the origin of Groundhog Day?",
+    "options": [
+      "Holiday and festivities",
+      "Habitat and diet",
+      "History and folklore",
+      "Weather and farming"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>On February 2 of each year, the United States observes the unusual holiday of Groundhog Day, a day of hope that winter is over and spring is beginning. This tradition has been officially observed in the U.S. since the 1800s, and is believed to have developed from European folk traditions in which a bear, fox, badger, or even hedgehog would serve as the symbolic meteorologist. Although other cultures and towns observe Groundhog Day (or something similar), the town of Punxsutawney, Pennsylvania takes special pride in being home to the one true forecasting groundhog, Punxsutawney Phil. At the turn of the twentieth century, townspeople formed the Punxsutawney Groundhog Club to perpetuate the joyful rituals and events surrounding Groundhog Day. Over the years, these events have come to include a scavenger hunt, a talent show, and a ball.</p><p>Legend has it that on Groundhog Day the official weather forecasting groundhog awakens from hibernation and comes out of his burrow to look for his shadow. If he sees his shadow, six more weeks of winter are to come, and Punxsutawney Phil goes back to bed. However, if he does not see his shadow, Punxsutawney Phil takes this as a sign that spring has arrived, and he remains above ground. Of course, common sense tells us that February 2 is too early for spring to begin, and that while animals may be attuned to various elements of nature from which humans might learn, they are unlikely to act on their instincts based on a schedule set by a Gregorian calendar. Nevertheless, a visit to Pennsylvania to see Punxsutawney Phil and all of the fun he inspires each year might just provide the touch of hope needed to reach the end of winter.</p>",
+    "stimulus": "",
+    "number": 26,
+    "sourceNumber": 26,
+    "question": "Which of the following evidence from the passage supports the inference that Groundhog Day is an entertaining tradition?",
+    "options": [
+      "This tradition has been officially observed in the U.S. since the 1800s and is believed to have developed from European folk traditions.",
+      "Over the years, these events have come to include a scavenger hunt, a talent show, and a ball.",
+      "On February 2 of each year, the United States observes the unusual holiday of Groundhog Day, a day of hope that winter is over and spring is beginning.",
+      "Legend has it that on Groundhog Day, the official weather forecasting groundhog awakens from hibernation and comes out of his burrow to look for his shadow."
+    ],
+    "correctIndex": 1
+  },
+  {
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>On February 2 of each year, the United States observes the unusual holiday of Groundhog Day, a day of hope that winter is over and spring is beginning. This tradition has been officially observed in the U.S. since the 1800s, and is believed to have developed from European folk traditions in which a bear, fox, badger, or even hedgehog would serve as the symbolic meteorologist. Although other cultures and towns observe Groundhog Day (or something similar), the town of Punxsutawney, Pennsylvania takes special pride in being home to the one true forecasting groundhog, Punxsutawney Phil. At the turn of the twentieth century, townspeople formed the Punxsutawney Groundhog Club to perpetuate the joyful rituals and events surrounding Groundhog Day. Over the years, these events have come to include a scavenger hunt, a talent show, and a ball.</p><p>Legend has it that on Groundhog Day the official weather forecasting groundhog awakens from hibernation and comes out of his burrow to look for his shadow. If he sees his shadow, six more weeks of winter are to come, and Punxsutawney Phil goes back to bed. However, if he does not see his shadow, Punxsutawney Phil takes this as a sign that spring has arrived, and he remains above ground. Of course, common sense tells us that February 2 is too early for spring to begin, and that while animals may be attuned to various elements of nature from which humans might learn, they are unlikely to act on their instincts based on a schedule set by a Gregorian calendar. Nevertheless, a visit to Pennsylvania to see Punxsutawney Phil and all of the fun he inspires each year might just provide the touch of hope needed to reach the end of winter.</p>",
+    "stimulus": "",
+    "number": 27,
+    "sourceNumber": 27,
+    "question": "What source would be most useful in determining the reliability of Punxsutawney Phil's predictions over a number of years?",
+    "options": [
+      "An encyclopedia entry on mammals in the northeast U.S.",
+      "A record of weather patterns in the last decade",
+      "A memoir from a member of The Groundhog Club",
+      "A historical survey of customs in Pennsylvania"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>Peanut Butter Cookies</p><p>Grandma Harry &nbsp;&nbsp;&nbsp; 30 minutes &nbsp;&nbsp;&nbsp; Cookies/Desserts &nbsp;&nbsp;&nbsp; Makes 1 dozen</p><p>1 egg white<br>3/4 cup sugar<br>1 cup peanut butter<br>1 teaspoon vanilla<br>1/2 cup flour</p><p>Beat egg white until foamy. Stir in sugar, beat again until stiff peaks form. Gently fold in peanut butter and vanilla. Add flour in small increments until dough forms. Chill dough for at least 2 hours. Roll into balls, roll in sugar, press down with a fork, and bake at 350 degrees F for 10 to 12 minutes. Let cool on cookie sheet. These are very fragile.</p>",
+    "stimulus": "",
+    "number": 28,
+    "sourceNumber": 28,
+    "question": "Which of the following statements is true?",
+    "options": [
+      "The egg white and vanilla are beaten together in a bowl.",
+      "Each ball of dough must be pressed down with a fork before baking.",
+      "After adding flour, the cookies are baked for 10 to 12 minutes.",
+      "When beating the eggs and sugar, you shouldn't stop until soft peaks form."
+    ],
+    "correctIndex": 1
+  },
+  {
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>Peanut Butter Cookies</p><p>Grandma Harry &nbsp;&nbsp;&nbsp; 30 minutes &nbsp;&nbsp;&nbsp; Cookies/Desserts &nbsp;&nbsp;&nbsp; Makes 1 dozen</p><p>1 egg white<br>3/4 cup sugar<br>1 cup peanut butter<br>1 teaspoon vanilla<br>1/2 cup flour</p><p>Beat egg white until foamy. Stir in sugar, beat again until stiff peaks form. Gently fold in peanut butter and vanilla. Add flour in small increments until dough forms. Chill dough for at least 2 hours. Roll into balls, roll in sugar, press down with a fork, and bake at 350 degrees F for 10 to 12 minutes. Let cool on cookie sheet. These are very fragile.</p>",
+    "stimulus": "",
+    "number": 29,
+    "sourceNumber": 29,
+    "question": "Which of the following conclusions can be taken from the passage?",
+    "options": [
+      "The cookies made with this recipe are especially good for midnight snacks.",
+      "The cookies made with this recipe would be good to send to college students.",
+      "The cookies made with this recipe may have been handed down in a family.",
+      "The cookies made from this recipe would be good to serve at a large party."
+    ],
+    "correctIndex": 2
+  },
+  {
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p>Peanut Butter Cookies</p><p>Grandma Harry &nbsp;&nbsp;&nbsp; 30 minutes &nbsp;&nbsp;&nbsp; Cookies/Desserts &nbsp;&nbsp;&nbsp; Makes 1 dozen</p><p>1 egg white<br>3/4 cup sugar<br>1 cup peanut butter<br>1 teaspoon vanilla<br>1/2 cup flour</p><p>Beat egg white until foamy. Stir in sugar, beat again until stiff peaks form. Gently fold in peanut butter and vanilla. Add flour in small increments until dough forms. Chill dough for at least 2 hours. Roll into balls, roll in sugar, press down with a fork, and bake at 350 degrees F for 10 to 12 minutes. Let cool on cookie sheet. These are very fragile.</p>",
+    "stimulus": "",
+    "number": 30,
+    "sourceNumber": 30,
+    "question": "Which of the following statements about the passage is true?",
+    "options": [
+      "Beating egg whites means stirring them vigorously.",
+      "Folding in peanut butter must be done with an electric appliance.",
+      "These cookies should be cooled on a baking rack.",
+      "These cookies can be cooked in a microwave oven."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "number": 31,
+    "sourceNumber": 31,
+    "question": "After being released from prison, she applied her felonious talents to bank robbery. Which of the following words is the definition of \"felonious\" in the sentence above?",
+    "options": [
+      "Prolific",
+      "Financial",
+      "Expert",
+      "Criminal"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "number": 32,
+    "sourceNumber": 32,
+    "question": "This label appears on a bottle of over-the-counter cold medicine. This medication should be used to treat mild respiratory infections. Do not take this product unless directed by a doctor if you have a long-term respiratory problem such as emphysema or chronic bronchitis. Which of the following statements best summarizes the warning label?",
+    "options": [
+      "Patients who have a mild respiratory infection should consult a doctor.",
+      "This medication is intended to treat long-term respiratory illnesses.",
+      "If you have a respiratory problem, take this medication only if directed by a doctor.",
+      "Anyone taking this medication must have a doctor's recommendation."
+    ],
+    "correctIndex": 2
+  },
+  {
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "number": 33,
+    "sourceNumber": 33,
+    "question": "The athlete enjoyed the accolades of her teammates when she scored the winning goal. Which of the following words is the best synonym for the word \"accolades\" in the sentence above?",
+    "options": [
+      "Gratitude",
+      "Songs",
+      "Help",
+      "Praises"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "number": 34,
+    "sourceNumber": 34,
+    "question": "Gold is a widely known metal, often used for making jewelry. Pure gold is called 24-carat gold, but there is also 14-carat gold. Because gold is a soft metal, it is sometimes combined with another metal to harden it, such as copper. Fourteen-carat gold is named as such because 14 out of the 24 carats, approximately 60%, is gold and the remaining 10 carats, or 40%, is some other metal. Which of the following is the purpose of the passage above?",
+    "options": [
+      "To compare",
+      "To inform",
+      "To recommend",
+      "To analyze"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "number": 35,
+    "sourceNumber": 35,
+    "question": "Which of the following sources would provide relevant information about the cost of property destruction following a natural disaster?",
+    "options": [
+      "A newspaper article about the natural disaster",
+      "A pamphlet about local food and shelter resources",
+      "A speech celebrating community first responders",
+      "A photograph of the damage taken by a bystander"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "number": 36,
+    "sourceNumber": 36,
+    "question": "Which of the following information sources contains copyright information for a given book?",
+    "options": [
+      "Table of contents",
+      "Publication page",
+      "Title page",
+      "Index"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "number": 37,
+    "sourceNumber": 37,
+    "question": "Which of the following provides information about symbols used on a specific map?",
+    "options": [
+      "Legend",
+      "Index",
+      "Glossary",
+      "Table of contents"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "number": 38,
+    "sourceNumber": 38,
+    "question": "Which of the following areas of a textbook includes supplemental materials and additional information to the text?",
+    "options": [
+      "Bibliography",
+      "Index",
+      "Appendix",
+      "Glossary"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "number": 39,
+    "sourceNumber": 39,
+    "question": "A student is looking for information about the periodic table in a chemistry textbook. Which of the following textbook features should the student use to find the pages where this topic is discussed?",
+    "options": [
+      "Appendix",
+      "Index",
+      "References",
+      "Glossary"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "number": 40,
+    "sourceNumber": 40,
+    "question": "Which of the following is the main purpose of a newspaper editorial written in support of education reform?",
+    "options": [
+      "To express feelings or ideas",
+      "To explain something",
+      "To persuade readers",
+      "To entertain readers"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "number": 41,
+    "sourceNumber": 41,
+    "question": "Tommy pulled off his boots, carefully using the brush he kept on the porch to clean the mud off of them. When he came inside, he followed his daily ritual of climbing the stairs to the laundry room and carefully removing his coveralls. As he did every day, he changed into the clean white T-shirt and lounge pants that he'd left sitting next to the washing machine. Based on the passage, which of the following words describes Tommy?",
+    "options": [
+      "Considerate",
+      "Idle",
+      "Slow",
+      "Meticulous"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "<p><strong>Phone System Quick Reference Card</strong></p><p>Main Menu: Listen to new messages = 1; Listen to saved messages = 3; Listen to deleted messages = 4; Record and send a message = 2.</p><p>Listening Options: Pause = 1; Forward = 2; Back up five seconds = 3; Delete = 4; Save = 5; Skip to next message = 6; Reply = 7.</p><p>Recording Options: Approve for sending = #; Pause or continue = 2; Back up five seconds = 3; Discard and restart = 4; Review = 5.</p>",
+    "stimulus": "",
+    "number": 42,
+    "sourceNumber": 42,
+    "question": "If a user of this phone system wants to find the most recently deleted message, listen to it, and then record a reply, which of the following sequences of numbers will the user select?",
+    "options": [
+      "2, 4, 7, 2",
+      "1, 6, 7, 1",
+      "3, 2, 2",
+      "4, 7, 2"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "number": 43,
+    "sourceNumber": 43,
+    "question": "P W S A F M I X. Copy the letter string above on a piece of paper. Cross out the second and last letters. Replace all vowels with the letter C. Insert an O before the second C. Cross out the first and third letters. Double the second letter. Which of the following letter sequences remains on the page?",
+    "options": [
+      "SSFMOI",
+      "FSCFMC",
+      "SFFMOC",
+      "CFFMMC"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "number": 44,
+    "sourceNumber": 44,
+    "question": "A teacher asks a student to wipe down the whiteboard before leaving for art class, put away the math textbooks before wiping down the whiteboard, and take the daily attendance sheet to the principal on the way to art class. Which of the following should the student do first?",
+    "options": [
+      "Take the daily attendance sheet to the principal.",
+      "Put away the math textbooks.",
+      "Go to art class.",
+      "Wipe down the whiteboard."
+    ],
+    "correctIndex": 1
+  },
+  {
+    "sectionTitle": "ATI TEAS Version 7 - Reading",
+    "passageTitle": "",
+    "passageHtml": "",
+    "stimulus": "",
+    "number": 45,
+    "sourceNumber": 45,
+    "question": "Bakers' Heating & Air Conditioning Service. We specialize in home air, water, and heat problems. No HVAC residential job is too big or small for our experienced team. Certifications: Electrical, Plumbing, Heating, Cooling. Call 1-800-555-1313 for fast service. Don't delay, call today. **St. Louis & Kansas City areas only** For which of the following situations would this advertisement be useful?",
+    "options": [
+      "A homeowner in Detroit wants to have a new shower installed.",
+      "A commercial builder needs electrical work performed for a national chain of restaurants.",
+      "A St. Louis resident's water heater just stopped working.",
+      "A Kansas City business office has a problem with mold spores in its ventilation system."
+    ],
+    "correctIndex": 2
+  }
+];
+const totalQuestions = questions.length;
+const initialSeconds = 60 * 60;
+let current = 0;
+let answers = Array(questions.length).fill(null);
+let remaining = initialSeconds;
+
+const qNumber = document.getElementById('questionNumber');
+const brandTitle = document.getElementById('brandTitle');
+const passageTitle = document.getElementById('passageTitle');
+const passageEl = document.getElementById('passage');
+const stimulusEl = document.getElementById('stimulus');
+const questionText = document.getElementById('questionText');
+const dotsEl = document.getElementById('dots');
+const optionsEl = document.getElementById('options');
+const feedbackEl = document.getElementById('answerFeedback');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+const timerEl = document.getElementById('timer');
+const statusEl = document.getElementById('status');
+const mainEl = document.querySelector('.main');
+const leftColEl = document.querySelector('.left-col');
+const rightColEl = document.querySelector('.right-col');
+
+function buildDots(activeNumber) {
+  dotsEl.innerHTML = '';
+  for (let i = 1; i <= totalQuestions; i++) {
+    const d = document.createElement('span');
+    d.className = 'dot' + (i === activeNumber ? ' active' : '');
+    dotsEl.appendChild(d);
+  }
+}
+
+function setQuestionLayout(item) {
+  const hasLeftContent = Boolean((item.passageTitle || '').trim() || (item.passageHtml || '').trim());
+  if (hasLeftContent) {
+    mainEl.style.gridTemplateColumns = '';
+    leftColEl.style.display = '';
+    rightColEl.style.paddingTop = '';
+  } else {
+    mainEl.style.gridTemplateColumns = '1fr';
+    leftColEl.style.display = 'none';
+    rightColEl.style.paddingTop = '4px';
+  }
+}
+
+function render() {
+  const item = questions[current];
+  setQuestionLayout(item);
+
+  brandTitle.textContent = item.sectionTitle || 'ATI TEAS Version 7 - Reading';
+  qNumber.textContent = `Question: ${item.number} of ${totalQuestions}`;
+  passageTitle.textContent = item.passageTitle || '';
+  passageEl.innerHTML = item.passageHtml || '';
+  stimulusEl.innerHTML = item.stimulusHtml || item.stimulus || '';
+  questionText.innerHTML = (item.question || '').replace(/\n/g, '<br>');
+
+  buildDots(item.number);
+
+  optionsEl.innerHTML = '';
+  item.options.forEach((opt, index) => {
+    const row = document.createElement('div');
+    const answered = answers[current] !== null;
+    let className = 'option';
+    if (answers[current] === index) className += ' selected';
+    if (answered && index === item.correctIndex) className += ' correct';
+    if (answered && answers[current] === index && index !== item.correctIndex) className += ' incorrect';
+    row.className = className;
+    row.tabIndex = 0;
+
+    const radio = document.createElement('span');
+    radio.className = 'radio';
+
+    const label = document.createElement('span');
+    label.className = 'option-text';
+    label.textContent = opt;
+
+    row.appendChild(radio);
+    row.appendChild(label);
+
+    row.addEventListener('click', () => selectOption(index));
+    row.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        selectOption(index);
+      }
+    });
+
+    optionsEl.appendChild(row);
+  });
+
+  if (answers[current] !== null) {
+    const correctText = item.options[item.correctIndex];
+    const isCorrect = answers[current] === item.correctIndex;
+    feedbackEl.className = 'answer-feedback show' + (isCorrect ? '' : ' wrong');
+    feedbackEl.textContent = isCorrect
+      ? `Correct. Answer: ${correctText}`
+      : `Incorrect. Correct answer: ${correctText}`;
+  } else {
+    feedbackEl.className = 'answer-feedback';
+    feedbackEl.textContent = '';
+  }
+
+  prevBtn.disabled = current === 0;
+  nextBtn.textContent = current === questions.length - 1 ? 'Finish' : 'Continue';
+  statusEl.textContent = `${answers.filter(a => a !== null).length} of ${questions.length} uploaded Reading questions answered`;
+}
+
+function selectOption(index) {
+  answers[current] = index;
+  render();
+}
+
+prevBtn.addEventListener('click', () => {
+  if (current > 0) {
+    current--;
+    render();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+});
+
+nextBtn.addEventListener('click', () => {
+  if (current < questions.length - 1) {
+    current++;
+    render();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  } else {
+    alert('You have reached the end of the uploaded Reading questions.');
+  }
+});
+
+function tick() {
+  if (remaining > 0) remaining--;
+  const h = String(Math.floor(remaining / 3600)).padStart(2, '0');
+  const m = String(Math.floor((remaining % 3600) / 60)).padStart(2, '0');
+  const s = String(remaining % 60).padStart(2, '0');
+  timerEl.textContent = `${h}:${m}:${s}`;
+}
+
+render();
+setInterval(tick, 1000);
+</script>
+</body>
+</html>
