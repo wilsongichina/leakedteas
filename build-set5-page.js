@@ -117,7 +117,7 @@ function copySubjectAssets() {
 
 function updateSetPage(templateFile, outputFile, quizData) {
   let html = fs.readFileSync(templateFile, "utf8");
-  html = html.replace(/<title>.*?<\/title>/, "<title>TEAS Version 7 Set 5 Full Questions | Teas Gurus</title>");
+  html = html.replace(/<title>.*?<\/title>/, "<title>TEAS Version 7 Set 5 Full Questions | TG</title>");
   html = html.replace(
     /<meta name="description" content=".*?" \/>/,
     '<meta name="description" content="TEAS Version 7 Set 5 question list with Math, Science, and English sections." />'

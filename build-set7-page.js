@@ -199,8 +199,8 @@ function patchTemplate(html, quizData) {
   );
 
   html = html.replace(
-    /<title>TEAS Version 7 Set 10 Full Questions \| Teas Gurus<\/title>/,
-    "<title>TEAS Version 7 Set 7 Full Questions | Teas Gurus</title>"
+    /<title>TEAS Version 7 Set 10 Full Questions \| TG<\/title>/,
+    "<title>TEAS Version 7 Set 7 Full Questions | TG</title>"
   );
   html = html.replace(
     /content="TEAS Version 7 Set 10 full question list with Reading, Math, Science, and English sections\."/,
